@@ -13,8 +13,9 @@ namespace Biblioteca.dados
         void alterar(Usuario u);
         void excluir(Usuario u);
         List<Usuario> pesquisar(Usuario u);
+        
 
-    
+
 
     }
 }

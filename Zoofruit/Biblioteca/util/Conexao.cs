@@ -10,7 +10,9 @@ namespace Biblioteca.util
     public class Conexao
     {
         public SqlConnection sqlconn;
-        string stringdeconexao = "Data Source=localhost; Initial Catalog=zoofruit; User Id=aluno; Password=aluno;";
+        //string stringdeconexao = "Data Source=localhost; Initial Catalog=zoofruit; User Id=aluno; Password=aluno;";
+
+        string stringdeconexao = @"Data Source=MAIKONSILVA\SQLSERVER14; Initial Catalog=zoofruit; User Id=sa; Password=123456789;";
 
         public void openConnection()
         {

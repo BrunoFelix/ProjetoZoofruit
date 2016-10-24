@@ -1,3 +1,9 @@
+CREATE DATABASE zoofruit ;
+
+SET LANGUAGE 'Portuguese';
+
+USE Zoofruit;
+
 CREATE TABLE TipoUsuario (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	descricao VARCHAR (20) NOT NULL
@@ -91,5 +97,14 @@ CREATE TABLE FichaExecucao_Alimento (
 	quantidade INT NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
 	codigo_FichaExecucao INTEGER REFERENCES Ficha(codigo)
-	CONSTRAINT PK_FichaExecucao_Medicamento PRIMARY KEY(codigo_Alimento, codigo_FichaExecucao)
+	CONSTRAINT PK_FichaExecucao_Alimento PRIMARY KEY(codigo_Alimento, codigo_FichaExecucao)
 );
+
+GO
+INSERT INTO TipoUsuario([descricao]) VALUES ('Tratador');
+GO
+INSERT INTO Usuario([nome],[cpf],[login],[senha],[crmv],[codigo_TipoUsuario])VALUES('Administrador do Sistema','39194717338','admin','123','012345',1);
+
+
+
+        

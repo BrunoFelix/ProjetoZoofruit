@@ -40,7 +40,7 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT usuario.Cod_Usuario, cpf, login, senha, crmv, USUARIO.cod_tipousuario, TIPO_USUARIO.descricao FROM USUARIO LEFT JOIN TIPO_USUARIO ON (TIPO_USUARIO.Cod_TipoUsuario = USUARIO.COD_TIPOUSUARIO) where usuario.Cod_Usuario > 0 ";
+                string sql = "SELECT Usuario.codigo, Usuario.cpf, Usuario.login, Usuario.senha, Usuario.crmv, Usuario.codigo_TipoUsuario, TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoUsuario.codigo = Usuario.codigo_TipoUsuario) WHERE Usuario.codigo > 0 ";
         
                 if (u.Login != null && u.Login.Trim().Equals("") == false)
                 {
@@ -96,5 +96,6 @@ namespace Biblioteca.dados
             return listausuarios;
             
         }
+
     }
 }

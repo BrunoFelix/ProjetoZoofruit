@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Gui
 {
-    public partial class Manter_login : Form
+    public partial class Manter_animal : Form
     {
-        public Manter_login()
+        public Manter_animal()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -3,3 +3,8 @@ C:\Users\aluno\Desktop\BRUNO\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\aluno\Desktop\BRUNO\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\Users\aluno\Desktop\BRUNO\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\aluno\Desktop\BRUNO\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb

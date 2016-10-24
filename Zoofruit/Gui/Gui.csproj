@@ -52,6 +52,12 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_animal.Designer.cs">
+      <DependentUpon>Manter_animal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manter_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_animal.resx">
+      <DependentUpon>Manter_animal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login.resx">
       <DependentUpon>Manter_login.cs</DependentUpon>

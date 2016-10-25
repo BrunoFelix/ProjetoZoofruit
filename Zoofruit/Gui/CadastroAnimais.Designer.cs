@@ -44,6 +44,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dtgAnimal = new System.Windows.Forms.DataGridView();
             this.ptbAnimal = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAnimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnimal)).BeginInit();
             this.SuspendLayout();
@@ -184,6 +185,10 @@
             this.ptbAnimal.TabIndex = 18;
             this.ptbAnimal.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // CadastroAnimais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,5 +238,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dtgAnimal;
         private System.Windows.Forms.PictureBox ptbAnimal;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

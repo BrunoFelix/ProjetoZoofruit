@@ -30,13 +30,16 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nomeArquivo = OpenFileDialog.FileName;
-            Bitmap bmp = new Bitmap(nomeArquivo);
-            ptbAnimal.Image = bmp;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string nomeArquivo = openFileDialog1.FileName;
+                Bitmap bmp = new Bitmap(nomeArquivo);
+                ptbAnimal.Image = bmp;
 
-            MemoryStream ms = new MemoryStream();
-            bmp.Save(ms, ImageFormat.Bmp);
-            a.Foto = ms.ToArray();
+                MemoryStream ms = new MemoryStream();
+                bmp.Save(ms, ImageFormat.Bmp);
+                a.Foto = ms.ToArray();
+            }
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

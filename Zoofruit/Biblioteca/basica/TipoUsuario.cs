@@ -11,11 +11,6 @@ namespace Biblioteca.basica
         private int codigo;
         private string descricao;
 
-        public TipoUsuario()
-        {
-            
-        }
-
         public int Codigo
         {
             get

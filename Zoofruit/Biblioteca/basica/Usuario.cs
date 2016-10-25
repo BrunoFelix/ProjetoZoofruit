@@ -18,7 +18,6 @@ namespace Biblioteca.basica
         public Usuario()
         {
             tipousuario = new TipoUsuario();
-            
         }
 
         public int Codigo

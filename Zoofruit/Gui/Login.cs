@@ -50,7 +50,7 @@ namespace Gui
                     }
                     else
                     {
-                        MessageBox.Show("Usuário e senha inválidos!");
+                        MessageBox.Show("Usuário e senha não pertencem a nenhuma conta cadastrada no sistema!");
                     }
 
                 }

@@ -32,11 +32,5 @@ namespace Gui
         {
 
         }
-
-        private void animaisToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Manter_animal manteranimal = new Manter_animal();
-            manteranimal.Show();
-        }
     }
 }

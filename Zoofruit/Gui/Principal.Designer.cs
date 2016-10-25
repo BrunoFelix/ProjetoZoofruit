@@ -71,7 +71,6 @@
             this.animaisToolStripMenuItem.Name = "animaisToolStripMenuItem";
             this.animaisToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.animaisToolStripMenuItem.Text = "Animal";
-            this.animaisToolStripMenuItem.Click += new System.EventHandler(this.animaisToolStripMenuItem_Click);
             // 
             // tipoDeAnimalToolStripMenuItem
             // 

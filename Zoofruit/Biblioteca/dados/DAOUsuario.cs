@@ -20,17 +20,80 @@ namespace Biblioteca.dados
 
         public void adicionar(Usuario u)
         {
-            throw new NotImplementedException();
+            conexao.openConnection();
+            try
+            {
+                string sql = "INSERT INTO USUARIO (CPF, LOGIN, SENHA, CRMV, CODIGO_TIPOUSUARIO) VALUES (@CPF, @LOGIN, @SENHA, @CRMV, @CODIGO_TIPOUSUARIO)";
+
+                SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CPF", u.Cpf));
+                cmd.Parameters.Add(new SqlParameter("@LOGIN", u.Login));
+                cmd.Parameters.Add(new SqlParameter("@SENHA", u.Senha));
+                cmd.Parameters.Add(new SqlParameter("@CRMV", u.Crmv));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOUSUARIO", u.tipousuario.Codigo));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new DadosException(ex.Message);
+            }
+            finally
+            {
+                conexao.closeConnection();
+            }
         }
 
         public void alterar(Usuario u)
         {
-            throw new NotImplementedException();
+            conexao.openConnection();
+            try
+            {
+                string sql = "ALTER TABLE USUARIO SET CPF=@CPF, LOGIN=@LOGIN, SENHA=@SENHA, CRMV=@CRMV, CODIGO_TIPOUSUARIO=@CODIGO_TIPOUSUARIO) WHERE CODIGO=@CODIGO";
+
+                SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CPF", u.Cpf));
+                cmd.Parameters.Add(new SqlParameter("@LOGIN", u.Login));
+                cmd.Parameters.Add(new SqlParameter("@SENHA", u.Senha));
+                cmd.Parameters.Add(new SqlParameter("@CRMV", u.Crmv));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOUSUARIO", u.tipousuario.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO", u.Codigo));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new DadosException(ex.Message);
+            }
+            finally
+            {
+                conexao.closeConnection();
+            }
         }
 
         public void excluir(Usuario u)
         {
-            throw new NotImplementedException();
+            conexao.openConnection();
+            try
+            {
+                string sql = "DELETE FROM USUARIO WHERE CODIGO=@CODIGO";
+
+                SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO", u.Codigo));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new DadosException(ex.Message);
+            }
+            finally
+            {
+                conexao.closeConnection();
+            }
         }
 
         public List<Usuario> pesquisar(Usuario u)
@@ -40,7 +103,8 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT Usuario.codigo, Usuario.cpf, Usuario.login, Usuario.senha, Usuario.crmv, Usuario.codigo_TipoUsuario, TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoUsuario.codigo = Usuario.codigo_TipoUsuario) WHERE Usuario.codigo > 0 ";
+                string sql = "SELECT Usuario.codigo, Usuario.cpf, Usuario.login, Usuario.senha, Usuario.crmv, Usuario.codigo_TipoUsuario, "+ 
+                    "TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoUsuario.codigo = Usuario.codigo_TipoUsuario) WHERE Usuario.codigo > 0 ";
         
                 if (u.Login != null && u.Login.Trim().Equals("") == false)
                 {
@@ -90,11 +154,11 @@ namespace Biblioteca.dados
             }
             catch(Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new DadosException(ex.Message);
             }
 
             return listausuarios;
-            
+     
         }
 
     }

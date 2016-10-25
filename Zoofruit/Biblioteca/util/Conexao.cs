@@ -16,14 +16,28 @@ namespace Biblioteca.util
 
         public void openConnection()
         {
-            this.sqlconn = new SqlConnection(stringdeconexao);
-            this.sqlconn.Open();
+            try
+            {
+                this.sqlconn = new SqlConnection(stringdeconexao);
+                this.sqlconn.Open();
+            }
+            catch (SqlException ex)
+            {
+                throw new ConexaoException(ex.Message);
+            }
         }
 
         public void closeConnection()
         {
-            this.sqlconn.Close();
-            this.sqlconn.Dispose();
+            try
+            {
+                this.sqlconn.Close();
+                this.sqlconn.Dispose();
+            }
+            catch (SqlException ex)
+            {
+                throw new ConexaoException(ex.Message);
+            }
         }
     }
 }

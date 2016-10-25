@@ -47,6 +47,8 @@
     <Compile Include="negocio\RNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\Conexao.cs" />
+    <Compile Include="util\ConexaoException.cs" />
+    <Compile Include="util\DadosException.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

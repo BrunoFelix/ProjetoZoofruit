@@ -11,3 +11,8 @@ C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\D
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb

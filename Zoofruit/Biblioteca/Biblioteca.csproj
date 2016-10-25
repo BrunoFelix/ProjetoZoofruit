@@ -40,9 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="basica\Animal.cs" />
+    <Compile Include="basica\TipoAnimal.cs" />
     <Compile Include="basica\TipoUsuario.cs" />
     <Compile Include="basica\Usuario.cs" />
+    <Compile Include="dados\DAOAnimal.cs" />
     <Compile Include="dados\DAOUsuario.cs" />
+    <Compile Include="dados\IDAOAnimal.cs" />
     <Compile Include="dados\iDAOUsuario.cs" />
     <Compile Include="negocio\RNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

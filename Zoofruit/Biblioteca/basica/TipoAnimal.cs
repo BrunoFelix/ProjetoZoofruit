@@ -9,7 +9,7 @@ namespace Biblioteca.basica
     public class TipoAnimal
     {
         private int codigo;
-        private String tipo;
+        private string tipo;
 
         public int Codigo
         {
@@ -37,4 +37,3 @@ namespace Biblioteca.basica
             }
         }
     }
-}

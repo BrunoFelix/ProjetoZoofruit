@@ -9,17 +9,12 @@ namespace Biblioteca.basica
     public class Animal
     {
         private int codigo;
-        private String nome;
+        private string nome;
         private byte[] foto;
-        private String cor;
-        private String porte;
-        private Double peso;
+        private string cor;
+        private string porte;
+        private double peso;
         private TipoAnimal tipoAnimal;
-
-        public Animal()
-        {
-            tipoAnimal = new TipoAnimal();
-        }
 
         public int Codigo
         {
@@ -112,4 +107,3 @@ namespace Biblioteca.basica
             }
         }
     }
-}

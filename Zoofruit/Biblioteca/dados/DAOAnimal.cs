@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Biblioteca.basica;
 using Biblioteca.util;
 using System.Data.SqlClient;
+
 
 namespace Biblioteca.dados
 {
@@ -16,6 +14,7 @@ namespace Biblioteca.dados
         public DAOAnimal()
             {
             conexao = new Conexao();
+            Animal a = new Animal();
             }
 
         public void adicionar(Animal a)
@@ -23,7 +22,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "INSERT INTO ANIMAL (NOME, COR, PORTE, PESO, CODIGO_TIPOANIMAL) VALUES (@NOME, @COR, @PORTE, @PESO, @CODIGO_TIPOANIMAL)";
+                string sql = "INSERT INTO ANIMAL (NOME, COR, PORTE, PESO, CODIGO_TIPOANIMAL, FOTO) VALUES (@NOME, @COR, @PORTE, @PESO, @CODIGO_TIPOANIMAL, @FOTO)";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
@@ -32,6 +31,8 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@PORTE", a.Porte));
                 cmd.Parameters.Add(new SqlParameter("@PESO", a.Peso));
                 cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOANIMAL", a.TipoAnimal.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@FOTO", a.Foto));
+
 
                 cmd.ExecuteNonQuery();
             }

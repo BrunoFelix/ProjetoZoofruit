@@ -37,3 +37,4 @@ C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_lo
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources

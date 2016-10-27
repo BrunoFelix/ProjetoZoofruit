@@ -9,13 +9,19 @@ namespace Biblioteca.basica
     public class Ficha
     {
         private int codigo;
-        private string DataCriacao;
-        private int horaCriacao;
+        private string dataCriacao;
+        private string horaCriacao;
         private string dataValidade;
-        private TipoFicha tipoFicha;
+        private TipoAnimal tipoAnimal;
         private Usuario usuario;
         private Animal animal;
 
+        public Ficha()
+        {
+            animal = new Animal();
+            usuario = new Usuario();
+            tipoAnimal = new TipoAnimal();
+        }
         public int Codigo
         {
             get
@@ -29,20 +35,20 @@ namespace Biblioteca.basica
             }
         }
 
-        public string DataCriacao1
+        public string DataCriacao
         {
             get
             {
-                return DataCriacao;
+                return dataCriacao;
             }
 
             set
             {
-                DataCriacao = value;
+                dataCriacao = value;
             }
         }
 
-        public int HoraCriacao
+        public string HoraCriacao
         {
             get
             {
@@ -68,16 +74,16 @@ namespace Biblioteca.basica
             }
         }
 
-        public TipoFicha TipoFicha
+        public TipoAnimal TipoAnimal
         {
             get
             {
-                return tipoFicha;
+                return tipoAnimal;
             }
 
             set
             {
-                tipoFicha = value;
+                tipoAnimal = value;
             }
         }
 

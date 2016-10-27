@@ -42,8 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="basica\Alimento.cs" />
     <Compile Include="basica\Animal.cs" />
+    <Compile Include="basica\Ficha.cs" />
+    <Compile Include="basica\Medicamento.cs" />
     <Compile Include="basica\TipoAnimal.cs" />
+    <Compile Include="basica\TipoFicha.cs" />
     <Compile Include="basica\TipoUsuario.cs" />
     <Compile Include="basica\Usuario.cs" />
     <Compile Include="dados\DAOAnimal.cs" />

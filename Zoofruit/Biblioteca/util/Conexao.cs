@@ -12,7 +12,7 @@ namespace Biblioteca.util
         public SqlConnection sqlconn;
         //string stringdeconexao = "Data Source=localhost; Initial Catalog=zoofruit; User Id=aluno; Password=aluno;";
 
-       //string stringdeconexao = @"Data Source=MAIKONSILVA\SQLSERVER14; Initial Catalog=zoofruit; User Id=sa; Password=123456789;"; //Maikon
+       //string stringdeconexao = @"Data Source=MAIKONSILVA\SQLSERVER14; Initial Catalog=zoofruit; User Id=sa; Password=123456789;"; //MaikonS
 
         string stringdeconexao = @"Data Source=NOTEBOOK-M2SV9Q\SQLEXPRESS; Initial Catalog=zoofruit; User Id=TJ; Password=123456789;";
 

@@ -35,5 +35,6 @@ namespace Biblioteca.basica
             {
                 tipo = value;
             }
+         }
         }
     }

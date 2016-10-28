@@ -14,7 +14,7 @@ namespace Biblioteca.util
 
        //string stringdeconexao = @"Data Source=MAIKONSILVA\SQLSERVER14; Initial Catalog=zoofruit; User Id=sa; Password=123456789;";
 
-        string stringdeconexao = @"Data Source=DESKTOP-EPHSSJ8\SQLEXPRESS; Initial Catalog=zoofruit; User Id=sa; Password=123456;";
+        string stringdeconexao = @"Data Source=NOTEBOOK-M2SV9Q\SQLEXPRESS; Initial Catalog=zoofruit; User Id=TJ; Password=123456789;";
 
 
         public void openConnection()

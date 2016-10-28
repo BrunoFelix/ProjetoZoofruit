@@ -38,3 +38,17 @@ C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.dll
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.pdb
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login.resources
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
+D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache

@@ -135,12 +135,12 @@ namespace Biblioteca.dados
                 while (reader.Read())
                 {
                     Usuario usuario = new Usuario();
-                    usuario.Codigo = reader.GetInt32(reader.GetOrdinal("Cod_Usuario"));
+                    usuario.Codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
                     usuario.Cpf = reader.GetString(reader.GetOrdinal("cpf"));
                     usuario.Login = reader.GetString(reader.GetOrdinal("login"));
                     usuario.Senha = reader.GetString(reader.GetOrdinal("senha"));
                     usuario.Crmv = reader.GetString(reader.GetOrdinal("crmv"));
-                    usuario.tipousuario.Codigo = reader.GetInt32(reader.GetOrdinal("cod_tipousuario"));
+                    usuario.tipousuario.Codigo = reader.GetInt32(reader.GetOrdinal("codigo_TipoUsuario"));
                     usuario.tipousuario.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
 
                     listausuarios.Add(usuario);

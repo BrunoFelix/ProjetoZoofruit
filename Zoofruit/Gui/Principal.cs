@@ -32,5 +32,11 @@ namespace Gui
         {
 
         }
+
+        private void animaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CadastroAnimais cadastroanimais = new CadastroAnimais();
+            cadastroanimais.Show();
+        }
     }
 }

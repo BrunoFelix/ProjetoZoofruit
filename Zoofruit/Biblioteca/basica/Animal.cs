@@ -105,5 +105,6 @@ namespace Biblioteca.basica
             {
                 tipoAnimal = value;
             }
+            } 
         }
     }

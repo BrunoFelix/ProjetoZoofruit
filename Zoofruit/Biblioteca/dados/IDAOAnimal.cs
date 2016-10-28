@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.dados
 {
-   public interface IDAOAnimal
+   public interface iDAOAnimal
     {
         void adicionar(Animal a);
         void alterar(Animal a);

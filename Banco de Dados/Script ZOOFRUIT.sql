@@ -27,10 +27,10 @@ CREATE TABLE TipoAnimal (
 CREATE TABLE Animal (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
-	foto VARBINARY(MAX) NOT NULL,
+	foto VARBINARY(MAX),
 	cor VARCHAR (20) NOT NULL,
 	porte VARCHAR (8) NOT NULL,
-	peso DECIMAL (4,3) NOT NULL,
+	peso DECIMAL (10,2) NOT NULL,
 	codigo_TipoAnimal INTEGER REFERENCES TipoAnimal(codigo)
 );
 
@@ -60,7 +60,6 @@ CREATE TABLE Alimento (
 	nome VARCHAR (20) NOT NULL,
 	quantidade INT NOT NULL,
 	valor_calorico DECIMAL (4,3) NOT NULL,
-	dt_validade DATE NOT NULL,
 	dt_reposicao DATE NOT NULL
 );
 
@@ -75,7 +74,6 @@ CREATE TABLE Medicamento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
 	quantidade INT NOT NULL,
-	dt_validade DATE NOT NULL,
 	dt_reposicao DATE NOT NULL
 );
 

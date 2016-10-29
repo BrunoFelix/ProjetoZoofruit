@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace Biblioteca.dados
 {
-    class DAOAnimal : IDAOAnimal
+    class DAOAnimal : iDAOAnimal
     {
         Conexao conexao;
 

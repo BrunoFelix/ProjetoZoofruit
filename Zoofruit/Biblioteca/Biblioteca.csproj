@@ -50,8 +50,10 @@
     <Compile Include="basica\TipoFicha.cs" />
     <Compile Include="basica\TipoUsuario.cs" />
     <Compile Include="basica\Usuario.cs" />
+    <Compile Include="dados\DAOAlimento.cs" />
     <Compile Include="dados\DAOAnimal.cs" />
     <Compile Include="dados\DAOUsuario.cs" />
+    <Compile Include="dados\iDAOAlimento.cs" />
     <Compile Include="dados\IDAOAnimal.cs" />
     <Compile Include="dados\iDAOUsuario.cs" />
     <Compile Include="negocio\RNUsuario.cs" />

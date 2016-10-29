@@ -24,14 +24,13 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "INSERT INTO ALIMENTO (CODIGO, NOME, QUANTIDADE, VALOR_CALORICO, DT_VALIDADE, DT_REPOSICAO) VALUES (@CODIGO, @NOME, @QUANTIDADE, @VALOR_CALORICO, @DT_VALIDADE, @DT_REPOSICAO)";
+                string sql = "INSERT INTO ALIMENTO (CODIGO, NOME, QUANTIDADE, VALOR_CALORICO, DT_REPOSICAO) VALUES (@CODIGO, @NOME, @QUANTIDADE, @VALOR_CALORICO, @DT_REPOSICAO)";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
                 cmd.Parameters.Add(new SqlParameter("@NOME", a.Nome));
                 cmd.Parameters.Add(new SqlParameter("@QUANTIDADE", a.Quantidade));
                 cmd.Parameters.Add(new SqlParameter("@VALOR_CALORICO", a.ValorCalorico));
-                cmd.Parameters.Add(new SqlParameter("@DT_VALIDADE", a.DataValidade));
                 cmd.Parameters.Add(new SqlParameter("@DT_REPOSICAO", a.DataReposicao));
 
                 cmd.ExecuteNonQuery();
@@ -52,14 +51,13 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "ALTER TABLE USUARIO SET CODIGO=@CODIGO, NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_VALIDADE=@DT_VALIDADE, DT_REPOSICAO@DT_REPOSICAO";
+                string sql = "ALTER TABLE USUARIO SET CODIGO=@CODIGO, NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_REPOSICAO@DT_REPOSICAO";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
                 cmd.Parameters.Add(new SqlParameter("@NOME", a.Nome));
                 cmd.Parameters.Add(new SqlParameter("@QUANTIDADE", a.Quantidade));
                 cmd.Parameters.Add(new SqlParameter("@VALOR_CALORICO", a.ValorCalorico));
-                cmd.Parameters.Add(new SqlParameter("@DT_VALIDADE", a.DataValidade));
                 cmd.Parameters.Add(new SqlParameter("@DT_REPOSICAO", a.DataReposicao));
 
                 cmd.ExecuteNonQuery();
@@ -107,35 +105,34 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT Usuario.codigo, Usuario.cpf, Usuario.login, Usuario.senha, Usuario.crmv, Usuario.codigo_TipoUsuario, " +
+                string sql = "SELECT ALIMENTO.CODIGO ,ALIMENTO.NOME,ALIMENTO.QUANTIDADE, ALIMENTO.VALOR_CALORICO , ALIMENTO.DT_REPOSICAO FROM ALIMENTO ";
+                /**
 
-"TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoUsuario.codigo = Usuario.codigo_TipoUsuario) WHERE Usuario.codigo > 0 ";
+                 if (a.Nome != null && a.Nome.Trim().Equals("") == false)
+                 {
+                     sql += " and login = @nome";
+                 }
+
+                 if (u.Senha != null && u.Senha.Trim().Equals("") == false)
+                 {
+                     sql += " and senha = @senha";
+                 }
 
 
-                if (u.Login != null && u.Login.Trim().Equals("") == false)
-                {
-                    sql += " and login = @login";
-                }
 
-                if (u.Senha != null && u.Senha.Trim().Equals("") == false)
-                {
-                    sql += " and senha = @senha";
-                }
+                 if (u.Login != null && u.Login.Trim().Equals("") == false)
+                 {
+                     cmd.Parameters.Add("@login", SqlDbType.VarChar);
+                     cmd.Parameters["@login"].Value = u.Login;
+                 }
 
+                 if (u.Senha != null && u.Senha.Trim().Equals("") == false)
+                 {
+                     cmd.Parameters.Add("@senha", SqlDbType.VarChar);
+                     cmd.Parameters["@senha"].Value = u.Senha;
+                 } **/
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
-
-                if (u.Login != null && u.Login.Trim().Equals("") == false)
-                {
-                    cmd.Parameters.Add("@login", SqlDbType.VarChar);
-                    cmd.Parameters["@login"].Value = u.Login;
-                }
-
-                if (u.Senha != null && u.Senha.Trim().Equals("") == false)
-                {
-                    cmd.Parameters.Add("@senha", SqlDbType.VarChar);
-                    cmd.Parameters["@senha"].Value = u.Senha;
-                }
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -143,12 +140,11 @@ namespace Biblioteca.dados
                 {
                     Alimento alimento = new Alimento();
                     alimento.Codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
-                    alimento.Cpf = reader.GetString(reader.GetOrdinal("cpf"));
-                    alimento.Login = reader.GetString(reader.GetOrdinal("login"));
-                    alimento.Senha = reader.GetString(reader.GetOrdinal("senha"));
-                    alimento.Crmv = reader.GetString(reader.GetOrdinal("crmv"));
-                    alimento.tipousuario.Codigo = reader.GetInt32(reader.GetOrdinal("codigo_TipoUsuario"));
-                    alimento.tipousuario.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
+                    alimento.Nome = reader.GetString(reader.GetOrdinal("nome"));
+                    alimento.Quantidade = reader.GetInt32(reader.GetOrdinal("quantidade"));
+                    alimento.ValorCalorico = reader.GetInt32(reader.GetOrdinal("valor_calorico"));
+                    alimento.DataReposicao = reader.GetString(reader.GetOrdinal("dataReposicao"));
+                 
 
                     listaAlimentos.Add(alimento);
                 }
@@ -164,12 +160,10 @@ namespace Biblioteca.dados
                 throw new DadosException(ex.Message);
             }
 
-            return listausuarios;
+            return listaAlimentos;
 
         }
 
     }
 }
 
-    }
-}

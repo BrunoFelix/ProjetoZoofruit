@@ -11,7 +11,6 @@ namespace Biblioteca.basica
         private int codigo;
         private string nome;
         private int quantidade;
-        private string dataValidade;
         private string dataReposicao;
 
         public int Codigo
@@ -50,19 +49,6 @@ namespace Biblioteca.basica
             set
             {
                 quantidade = value;
-            }
-        }
-
-        public string DataValidade
-        {
-            get
-            {
-                return dataValidade;
-            }
-
-            set
-            {
-                dataValidade = value;
             }
         }
 

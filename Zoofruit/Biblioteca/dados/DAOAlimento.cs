@@ -144,7 +144,7 @@ namespace Biblioteca.dados
                     alimento.Quantidade = reader.GetInt32(reader.GetOrdinal("quantidade"));
                     alimento.ValorCalorico = reader.GetInt32(reader.GetOrdinal("valor_calorico"));
                     alimento.DataReposicao = reader.GetString(reader.GetOrdinal("dataReposicao"));
-                 
+
 
                     listaAlimentos.Add(alimento);
                 }

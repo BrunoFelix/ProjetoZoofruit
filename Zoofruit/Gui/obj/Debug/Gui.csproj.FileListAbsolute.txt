@@ -55,3 +55,14 @@ D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csp
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.dll
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.pdb
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache

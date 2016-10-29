@@ -61,7 +61,7 @@
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(28, 299);
+            this.btnAdicionar.Location = new System.Drawing.Point(16, 196);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 1;
@@ -71,7 +71,7 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(341, 299);
+            this.btnExcluir.Location = new System.Drawing.Point(233, 196);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 2;
@@ -80,7 +80,7 @@
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(189, 299);
+            this.btnAlterar.Location = new System.Drawing.Point(126, 196);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 3;
@@ -90,7 +90,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 168);
+            this.label1.Location = new System.Drawing.Point(13, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 13);
             this.label1.TabIndex = 5;
@@ -99,7 +99,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 100);
+            this.label3.Location = new System.Drawing.Point(12, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 7;
@@ -108,7 +108,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 206);
+            this.label4.Location = new System.Drawing.Point(12, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 8;
@@ -117,7 +117,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 133);
+            this.label5.Location = new System.Drawing.Point(9, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 9;
@@ -126,7 +126,7 @@
             // nome
             // 
             this.nome.AutoSize = true;
-            this.nome.Location = new System.Drawing.Point(25, 57);
+            this.nome.Location = new System.Drawing.Point(9, 41);
             this.nome.Name = "nome";
             this.nome.Size = new System.Drawing.Size(35, 13);
             this.nome.TabIndex = 10;
@@ -134,46 +134,46 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(66, 57);
+            this.txtNome.Location = new System.Drawing.Point(50, 34);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNome.Size = new System.Drawing.Size(425, 20);
             this.txtNome.TabIndex = 11;
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(66, 171);
+            this.txtPeso.Location = new System.Drawing.Point(50, 112);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(100, 20);
+            this.txtPeso.Size = new System.Drawing.Size(425, 20);
             this.txtPeso.TabIndex = 13;
             // 
             // txtPorte
             // 
-            this.txtPorte.Location = new System.Drawing.Point(66, 130);
+            this.txtPorte.Location = new System.Drawing.Point(50, 86);
             this.txtPorte.Name = "txtPorte";
-            this.txtPorte.Size = new System.Drawing.Size(100, 20);
+            this.txtPorte.Size = new System.Drawing.Size(425, 20);
             this.txtPorte.TabIndex = 14;
             // 
             // txtCor
             // 
-            this.txtCor.Location = new System.Drawing.Point(66, 100);
+            this.txtCor.Location = new System.Drawing.Point(50, 60);
             this.txtCor.Name = "txtCor";
-            this.txtCor.Size = new System.Drawing.Size(100, 20);
+            this.txtCor.Size = new System.Drawing.Size(425, 20);
             this.txtCor.TabIndex = 15;
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(66, 206);
+            this.comboBox1.Location = new System.Drawing.Point(50, 138);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(63, 21);
+            this.comboBox1.Size = new System.Drawing.Size(425, 21);
             this.comboBox1.TabIndex = 16;
             // 
             // dtgAnimal
             // 
             this.dtgAnimal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgAnimal.Location = new System.Drawing.Point(12, 370);
+            this.dtgAnimal.Location = new System.Drawing.Point(8, 248);
             this.dtgAnimal.Name = "dtgAnimal";
-            this.dtgAnimal.Size = new System.Drawing.Size(709, 234);
+            this.dtgAnimal.Size = new System.Drawing.Size(709, 328);
             this.dtgAnimal.TabIndex = 17;
             // 
             // ptbAnimal
@@ -194,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 610);
+            this.ClientSize = new System.Drawing.Size(729, 593);
             this.Controls.Add(this.ptbAnimal);
             this.Controls.Add(this.dtgAnimal);
             this.Controls.Add(this.comboBox1);

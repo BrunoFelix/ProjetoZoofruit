@@ -103,7 +103,7 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT Usuario.codigo, Usuario.cpf, Usuario.login, Usuario.senha, Usuario.crmv, Usuario.codigo_TipoUsuario, "+ 
+                string sql = "SELECT Usuario.codigo, Usuario.nome, Usuario.cpf, Usuario.login, Usuario.senha, Usuario.crmv, Usuario.codigo_TipoUsuario, "+ 
                     "TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoUsuario.codigo = Usuario.codigo_TipoUsuario) WHERE Usuario.codigo > 0 ";
         
                 if (u.Login != null && u.Login.Trim().Equals("") == false)
@@ -191,6 +191,7 @@ namespace Biblioteca.dados
                 {
                     Usuario usuario = new Usuario();
                     usuario.Codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
+                    usuario.Nome = reader.GetString(reader.GetOrdinal("nome"));
                     usuario.Cpf = reader.GetString(reader.GetOrdinal("cpf"));
                     usuario.Login = reader.GetString(reader.GetOrdinal("login"));
                     usuario.Senha = reader.GetString(reader.GetOrdinal("senha"));

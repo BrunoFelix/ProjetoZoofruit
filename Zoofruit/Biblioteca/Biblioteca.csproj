@@ -45,22 +45,33 @@
     <Compile Include="basica\Alimento.cs" />
     <Compile Include="basica\Animal.cs" />
     <Compile Include="basica\Ficha.cs" />
+    <Compile Include="basica\FichaAlimento.cs" />
+    <Compile Include="basica\FichaMedicamento.cs" />
     <Compile Include="basica\Medicamento.cs" />
     <Compile Include="basica\TipoAnimal.cs" />
-    <Compile Include="basica\TipoFicha.cs" />
     <Compile Include="basica\TipoUsuario.cs" />
     <Compile Include="basica\Usuario.cs" />
     <Compile Include="dados\DAOAlimento.cs" />
     <Compile Include="dados\DAOAnimal.cs" />
+    <Compile Include="dados\DAOFichaAlimento.cs" />
+    <Compile Include="dados\DAOFichaMedicamento.cs" />
+    <Compile Include="dados\DAOMedicamento.cs" />
     <Compile Include="dados\DAOUsuario.cs" />
     <Compile Include="dados\iDAOAlimento.cs" />
     <Compile Include="dados\IDAOAnimal.cs" />
+    <Compile Include="dados\iDAOFichaAlimento.cs" />
+    <Compile Include="dados\iDAOFichaMedicamento.cs" />
+    <Compile Include="dados\iDAOMedicamento.cs" />
     <Compile Include="dados\iDAOUsuario.cs" />
+    <Compile Include="negocio\RNAlimento.cs" />
+    <Compile Include="negocio\RNAnimal.cs" />
+    <Compile Include="negocio\RNMedicamento.cs" />
     <Compile Include="negocio\RNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\Conexao.cs" />
     <Compile Include="util\ConexaoException.cs" />
     <Compile Include="util\DadosException.cs" />
+    <Compile Include="util\NegocioException.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

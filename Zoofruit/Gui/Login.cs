@@ -15,8 +15,10 @@ namespace Gui
 {
     public partial class tela_login : Form
     {
+        public Usuario usuario;
         public tela_login()
         {
+            usuario = new Usuario();
             InitializeComponent();
         }
 
@@ -33,7 +35,6 @@ namespace Gui
                    
                     List<Usuario> listausuario = new List<Usuario>();
                     DAOUsuario daousuario = new DAOUsuario();
-                    Usuario usuario = new Usuario();
                     usuario.Login = tb_usuario.Text;
                     usuario.Senha = tb_senha.Text;
                     listausuario = daousuario.pesquisar(usuario);

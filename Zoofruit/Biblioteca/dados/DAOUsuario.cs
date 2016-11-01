@@ -116,6 +116,31 @@ namespace Biblioteca.dados
                     sql += " and senha = @senha";
                 }
 
+                if (u.Nome != null && u.Nome.Trim().Equals("") == false)
+                {
+                    sql += " and nome = @nome";
+                }
+
+                if (u.Cpf != null && u.Cpf.Trim().Equals("") == false)
+                {
+                    sql += " and cpf = @cpf";
+                }
+
+                if (u.Crmv != null && u.Crmv.Trim().Equals("") == false)
+                {
+                    sql += " and crmv = @crmv";
+                }
+
+                if (u.tipousuario.Descricao != null && u.tipousuario.Descricao.Trim().Equals("") == false)
+                {
+                    sql += " and TipoUsuario.descricao = @descricao";
+                }
+
+                if (u.Codigo > 0)
+                {
+                    sql += " and usuario.codigo = @codigo";
+                }
+
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 if (u.Login != null && u.Login.Trim().Equals("") == false)
@@ -128,6 +153,36 @@ namespace Biblioteca.dados
                 {
                     cmd.Parameters.Add("@senha", SqlDbType.VarChar);
                     cmd.Parameters["@senha"].Value = u.Senha;
+                }
+
+                if (u.Nome != null && u.Nome.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@nome", SqlDbType.VarChar);
+                    cmd.Parameters["@nome"].Value = u.Nome;
+                }
+
+                if (u.Cpf != null && u.Cpf.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@cpf", SqlDbType.VarChar);
+                    cmd.Parameters["@cpf"].Value = u.Cpf;
+                }
+
+                if (u.Crmv != null && u.Crmv.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@crmv", SqlDbType.VarChar);
+                    cmd.Parameters["@crmv"].Value = u.Crmv;
+                }
+
+                if (u.tipousuario.Descricao != null && u.tipousuario.Descricao.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@descricao", SqlDbType.VarChar);
+                    cmd.Parameters["@descricao"].Value = u.tipousuario.Descricao;
+                }
+
+                if (u.Codigo > 0)
+                {
+                    cmd.Parameters.Add("@codigo", SqlDbType.VarChar);
+                    cmd.Parameters["@codigo"].Value = u.Codigo;
                 }
 
                 SqlDataReader reader = cmd.ExecuteReader();

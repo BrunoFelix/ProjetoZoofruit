@@ -9,6 +9,7 @@ namespace Biblioteca.basica
     public class Usuario
     {
         private int codigo;
+        private string nome;
         private string cpf;
         private string login;
         private string senha;
@@ -82,6 +83,19 @@ namespace Biblioteca.basica
             set
             {
                 crmv = value;
+            }
+        }
+
+        public string Nome
+        {
+            get
+            {
+                return nome;
+            }
+
+            set
+            {
+                nome = value;
             }
         }
     }

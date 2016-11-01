@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.basica
 {
-    public class Ficha
+    public abstract class Ficha
     {
         private int codigo;
         private string dataCriacao;
         private string horaCriacao;
         private string dataValidade;
-        private TipoAnimal tipoAnimal;
         private Usuario usuario;
         private Animal animal;
 
@@ -20,7 +19,6 @@ namespace Biblioteca.basica
         {
             animal = new Animal();
             usuario = new Usuario();
-            tipoAnimal = new TipoAnimal();
         }
         public int Codigo
         {
@@ -71,19 +69,6 @@ namespace Biblioteca.basica
             set
             {
                 dataValidade = value;
-            }
-        }
-
-        public TipoAnimal TipoAnimal
-        {
-            get
-            {
-                return tipoAnimal;
-            }
-
-            set
-            {
-                tipoAnimal = value;
             }
         }
 

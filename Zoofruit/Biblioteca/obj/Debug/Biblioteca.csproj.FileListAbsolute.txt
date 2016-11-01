@@ -21,3 +21,5 @@ D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb

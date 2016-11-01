@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_login));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
+            this.tb_pesquisar = new System.Windows.Forms.TextBox();
+            this.comboBoxPesquisar = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,10 +44,6 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxPesquisar = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,8 +52,8 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.btn_pesquisar);
+            this.panel1.Controls.Add(this.tb_pesquisar);
             this.panel1.Controls.Add(this.comboBoxPesquisar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button3);
@@ -63,6 +63,51 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(953, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_pesquisar
+            // 
+            this.btn_pesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisar.Image")));
+            this.btn_pesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_pesquisar.Location = new System.Drawing.Point(917, 1);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(34, 42);
+            this.btn_pesquisar.TabIndex = 6;
+            this.btn_pesquisar.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
+            // 
+            // tb_pesquisar
+            // 
+            this.tb_pesquisar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tb_pesquisar.Location = new System.Drawing.Point(437, 19);
+            this.tb_pesquisar.Name = "tb_pesquisar";
+            this.tb_pesquisar.Size = new System.Drawing.Size(474, 20);
+            this.tb_pesquisar.TabIndex = 5;
+            // 
+            // comboBoxPesquisar
+            // 
+            this.comboBoxPesquisar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPesquisar.FormattingEnabled = true;
+            this.comboBoxPesquisar.Items.AddRange(new object[] {
+            "Código",
+            "Nome",
+            "CPF",
+            "CRMV",
+            "Login",
+            "Tipo de Usuário"});
+            this.comboBoxPesquisar.Location = new System.Drawing.Point(310, 19);
+            this.comboBoxPesquisar.Name = "comboBoxPesquisar";
+            this.comboBoxPesquisar.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxPesquisar.TabIndex = 4;
+            this.comboBoxPesquisar.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(306, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Pesquisar:";
             // 
             // button3
             // 
@@ -148,50 +193,6 @@
             this.columnHeader6.Text = "Tipo de Usuário";
             this.columnHeader6.Width = 195;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(306, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Pesquisar:";
-            // 
-            // comboBoxPesquisar
-            // 
-            this.comboBoxPesquisar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxPesquisar.FormattingEnabled = true;
-            this.comboBoxPesquisar.Items.AddRange(new object[] {
-            "Código",
-            "Nome",
-            "CPF",
-            "CRMV",
-            "Login",
-            "Tipo de Usuário"});
-            this.comboBoxPesquisar.Location = new System.Drawing.Point(310, 19);
-            this.comboBoxPesquisar.Name = "comboBoxPesquisar";
-            this.comboBoxPesquisar.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxPesquisar.TabIndex = 4;
-            this.comboBoxPesquisar.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Location = new System.Drawing.Point(437, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(474, 20);
-            this.textBox1.TabIndex = 5;
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(917, 1);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 42);
-            this.button4.TabIndex = 6;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // Manter_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +202,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Manter_login";
             this.Text = "Cadastro de Usuários";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Manter_login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -221,9 +223,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_pesquisar;
         private System.Windows.Forms.ComboBox comboBoxPesquisar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_pesquisar;
     }
 }

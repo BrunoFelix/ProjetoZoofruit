@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.basica;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace Gui
 {
     public partial class Principal : Form
     {
+        public Usuario usuario;
         public Principal()
         {
+            usuario = new Usuario();
             InitializeComponent();
         }
 

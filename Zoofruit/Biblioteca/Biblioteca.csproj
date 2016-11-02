@@ -56,12 +56,15 @@
     <Compile Include="dados\DAOFichaAlimento.cs" />
     <Compile Include="dados\DAOFichaMedicamento.cs" />
     <Compile Include="dados\DAOMedicamento.cs" />
+    <Compile Include="dados\DAOTipoUsuario.cs" />
     <Compile Include="dados\DAOUsuario.cs" />
     <Compile Include="dados\iDAOAlimento.cs" />
     <Compile Include="dados\IDAOAnimal.cs" />
     <Compile Include="dados\iDAOFichaAlimento.cs" />
     <Compile Include="dados\iDAOFichaMedicamento.cs" />
     <Compile Include="dados\iDAOMedicamento.cs" />
+    <Compile Include="dados\iDAOTipoAnimal.cs" />
+    <Compile Include="dados\iDAOTipoUsuario.cs" />
     <Compile Include="dados\iDAOUsuario.cs" />
     <Compile Include="negocio\RNAlimento.cs" />
     <Compile Include="negocio\RNAnimal.cs" />

@@ -19,7 +19,7 @@ namespace Biblioteca.dados
             conexao = new Conexao();
         }
 
-        public void adicionar(Medicamento m)
+        public void Adicionar(Medicamento m)
         {
             conexao.openConnection();
             try
@@ -43,7 +43,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public void alterar(Medicamento m)
+        public void Alterar(Medicamento m)
         {
             conexao.openConnection();
             try
@@ -68,7 +68,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public void excluir(Medicamento m)
+        public void Excluir(Medicamento m)
         {
             conexao.openConnection();
             try
@@ -91,7 +91,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public List<Medicamento> pesquisar(Medicamento m)
+        public List<Medicamento> Pesquisar(Medicamento m)
         {
             List<Medicamento> listamedicamento = new List<Medicamento>();
 

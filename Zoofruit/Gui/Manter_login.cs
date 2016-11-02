@@ -14,7 +14,25 @@ namespace Gui
 {
     public partial class Manter_login : Form
     {
-        public Manter_login()
+        public List<Usuario> listausuario = new List<Usuario>();
+        private static Manter_login manter_login;
+
+        public static Manter_login getInstance()
+        {
+            if (manter_login == null)
+            {
+                try
+                {
+                    manter_login = new Manter_login();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return manter_login;
+        }
+        private Manter_login()
         {
             InitializeComponent();
         }
@@ -24,17 +42,13 @@ namespace Gui
 
         }
 
-        public void AtualizarGrid(List<Usuario> listausuario)
-        {
-            List<Usuario> listausuario2 = new List<Usuario>();
-            listausuario2 = listausuario;
-           
-
+        public void AtualizarGrid()
+        {        
             lv_usuario.Items.Clear();
 
             ListViewItem item;
 
-            foreach (Usuario u in listausuario2)
+            foreach (Usuario u in listausuario)
             {
                 item = new ListViewItem();
                 item.Text = u.Codigo.ToString();
@@ -53,7 +67,8 @@ namespace Gui
             comboBoxPesquisar.SelectedIndex = 1;
             DAOUsuario daousuario = new DAOUsuario();
             Usuario usuario = new Usuario();
-            AtualizarGrid(daousuario.pesquisar(usuario));
+            listausuario = daousuario.Pesquisar(usuario);
+            AtualizarGrid();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -132,7 +147,39 @@ namespace Gui
                 }
             }
 
-            AtualizarGrid(daousuario.pesquisar(usuario));
+            listausuario = daousuario.Pesquisar(usuario);
+            AtualizarGrid();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            comboBoxPesquisar.SelectedIndex = 1;
+            tb_pesquisar.Text = "";
+            DAOUsuario daousuario = new DAOUsuario();
+            Usuario usuario = new Usuario();
+            listausuario = daousuario.Pesquisar(usuario);
+            AtualizarGrid();
+        }
+
+        private void lv_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Manter_login_ed manter_login_ed = new Manter_login_ed();
+            manter_login_ed.ShowDialog();
         }
     }
 }

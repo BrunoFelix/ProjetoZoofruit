@@ -27,8 +27,9 @@ namespace Gui
 
         private void usuárioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Manter_login manterlogin = new Manter_login();
+            Manter_login manterlogin = Manter_login.getInstance();
             manterlogin.Show();
+            manterlogin.BringToFront();
         }
 
         private void Principal_Load(object sender, EventArgs e)

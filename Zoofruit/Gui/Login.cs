@@ -37,7 +37,7 @@ namespace Gui
                     DAOUsuario daousuario = new DAOUsuario();
                     usuario.Login = tb_usuario.Text;
                     usuario.Senha = tb_senha.Text;
-                    listausuario = daousuario.pesquisar(usuario);
+                    listausuario = daousuario.Pesquisar(usuario);
 
                     if (listausuario.Count == 1)
                     {

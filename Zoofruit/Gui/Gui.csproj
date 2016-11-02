@@ -64,6 +64,12 @@
     <Compile Include="Manter_login.Designer.cs">
       <DependentUpon>Manter_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_login_ed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_login_ed.Designer.cs">
+      <DependentUpon>Manter_login_ed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login.resx">
       <DependentUpon>Manter_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_login_ed.resx">
+      <DependentUpon>Manter_login_ed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -111,6 +120,9 @@
       <Project>{165872eb-9d46-4402-ab19-eabbbce755a8}</Project>
       <Name>Biblioteca</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

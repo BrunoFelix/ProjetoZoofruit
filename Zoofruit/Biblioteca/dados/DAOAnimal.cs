@@ -17,7 +17,7 @@ namespace Biblioteca.dados
             Animal a = new Animal();
             }
 
-        public void adicionar(Animal a)
+        public void Adicionar(Animal a)
         {
             conexao.openConnection();
             try
@@ -46,7 +46,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public void alterar(Animal a)
+        public void Alterar(Animal a)
         {
             conexao.openConnection();
             try
@@ -74,7 +74,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public void excluir(Animal a)
+        public void Excluir(Animal a)
         {
             conexao.openConnection();
             try
@@ -97,7 +97,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public List<Animal> pesquisar(Animal a)
+        public List<Animal> Pesquisar(Animal a)
         {
             List<Animal> listaanimal = new List<Animal>();
 

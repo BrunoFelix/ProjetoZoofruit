@@ -9,9 +9,9 @@ namespace Biblioteca.dados
 {
    public interface iDAOAnimal
     {
-        void adicionar(Animal a);
-        void alterar(Animal a);
-        void excluir(Animal a);
-        List<Animal> pesquisar(Animal a);
+        void Adicionar(Animal a);
+        void Alterar(Animal a);
+        void Excluir(Animal a);
+        List<Animal> Pesquisar(Animal a);
     }
 }

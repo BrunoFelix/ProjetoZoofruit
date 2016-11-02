@@ -10,10 +10,10 @@ namespace Biblioteca.dados
 {
     public interface iDAOUsuario
     {
-        void adicionar(Usuario u); 
-        void alterar(Usuario u);
-        void excluir(Usuario u);
-        List<Usuario> pesquisar(Usuario u);
+        void Adicionar(Usuario u); 
+        void Alterar(Usuario u);
+        void Excluir(Usuario u);
+        List<Usuario> Pesquisar(Usuario u);
         
 
 

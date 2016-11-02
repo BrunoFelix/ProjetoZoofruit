@@ -18,15 +18,16 @@ namespace Biblioteca.dados
             conexao = new Conexao();
         }
 
-        public void adicionar(Usuario u)
+        public void Adicionar(Usuario u)
         {
             conexao.openConnection();
             try
             {
-                string sql = "INSERT INTO USUARIO (CPF, LOGIN, SENHA, CRMV, CODIGO_TIPOUSUARIO) VALUES (@CPF, @LOGIN, @SENHA, @CRMV, @CODIGO_TIPOUSUARIO)";
+                string sql = "INSERT INTO USUARIO (NOME, CPF, LOGIN, SENHA, CRMV, CODIGO_TIPOUSUARIO) VALUES (@NOME, @CPF, @LOGIN, @SENHA, @CRMV, @CODIGO_TIPOUSUARIO)";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
+                cmd.Parameters.Add(new SqlParameter("@NOME", u.Nome));
                 cmd.Parameters.Add(new SqlParameter("@CPF", u.Cpf));
                 cmd.Parameters.Add(new SqlParameter("@LOGIN", u.Login));
                 cmd.Parameters.Add(new SqlParameter("@SENHA", u.Senha));
@@ -45,7 +46,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public void alterar(Usuario u)
+        public void Alterar(Usuario u)
         {
             conexao.openConnection();
             try
@@ -73,7 +74,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public void excluir(Usuario u)
+        public void Excluir(Usuario u)
         {
             conexao.openConnection();
             try
@@ -96,7 +97,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public List<Usuario> pesquisar(Usuario u)
+        public List<Usuario> Pesquisar(Usuario u)
         {
             List<Usuario> listausuarios = new List<Usuario>();
 

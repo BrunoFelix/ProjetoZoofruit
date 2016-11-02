@@ -9,9 +9,9 @@ namespace Biblioteca.dados
 {
     interface iDAOFichaMedicamento
     {
-        void adicionar(FichaMedicamento fm);
-        void alterar(FichaMedicamento fm);
-        void excluir(FichaMedicamento fm);
-        List<FichaMedicamento> pesquisar(FichaMedicamento fm);
+        void Adicionar(FichaMedicamento fm);
+        void Alterar(FichaMedicamento fm);
+        void Excluir(FichaMedicamento fm);
+        List<FichaMedicamento> Pesquisar(FichaMedicamento fm);
     }
 }

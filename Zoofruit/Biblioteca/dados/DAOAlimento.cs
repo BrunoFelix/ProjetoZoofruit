@@ -19,7 +19,7 @@ namespace Biblioteca.dados
         }
 
         //Adicinona um Registro a Tabela Alimento.
-        public void adicionar(Alimento a)
+        public void Adicionar(Alimento a)
         {
             conexao.openConnection();
             try
@@ -46,7 +46,7 @@ namespace Biblioteca.dados
         }
 
         //Altera o Registro de um Aimento.
-        public void alterar(Alimento a)
+        public void Alterar(Alimento a)
         {
             conexao.openConnection();
             try
@@ -74,7 +74,7 @@ namespace Biblioteca.dados
 
 
         //Exclui o Registro de um Alimento.
-        public void excluir(Alimento a)
+        public void Excluir(Alimento a)
         {
             conexao.openConnection();
             try
@@ -98,7 +98,7 @@ namespace Biblioteca.dados
         }
 
         //Retorna uma Lista de todos os Alimentos.
-        public List<Alimento> pesquisar(Alimento a)
+        public List<Alimento> Pesquisar(Alimento a)
         {
             List<Alimento> listaAlimentos = new List<Alimento>();
 

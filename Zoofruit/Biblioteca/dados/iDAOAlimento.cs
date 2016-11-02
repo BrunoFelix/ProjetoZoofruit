@@ -9,9 +9,9 @@ namespace Biblioteca.dados
 {
     interface iDAOAlimento
     {
-        void adicionar(Alimento a);
-        void alterar(Alimento a);
-        void excluir(Alimento a);
-        List<Alimento> pesquisar(Alimento a);
+        void Adicionar(Alimento a);
+        void Alterar(Alimento a);
+        void Excluir(Alimento a);
+        List<Alimento> Pesquisar(Alimento a);
     }
 }

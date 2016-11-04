@@ -9,9 +9,9 @@ namespace Biblioteca.dados
 {
     interface iDAOFichaAlimento
     {
-        void Adicionar(FichaAlimento fa);
-        void Alterar(FichaAlimento fa);
-        void Excluir(FichaAlimento fa);
-        List<FichaAlimento> Pesquisar(FichaAlimento fa);
+        void Adicionar(FichaAlimento fm);
+        void Alterar(FichaAlimento fm);
+        void Excluir(FichaAlimento fm);
+        List<FichaAlimento> Pesquisar(FichaAlimento fm);
     }
 }

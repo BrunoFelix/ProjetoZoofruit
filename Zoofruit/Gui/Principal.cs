@@ -42,5 +42,12 @@ namespace Gui
             CadastroAnimais cadastroanimais = new CadastroAnimais();
             cadastroanimais.Show();
         }
+
+        private void alimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Manter_alimento manter_alimento = new Manter_alimento();
+            manter_alimento.Show();
+            manter_alimento.BringToFront();
+        }
     }
 }

@@ -99,7 +99,7 @@ namespace Biblioteca.dados
 
         public List<Usuario> Pesquisar(Usuario u)
         {
-            List<Usuario> listaUsuario = new List<Usuario>();
+            List<Usuario> listausuarios = new List<Usuario>();
 
             try
             {
@@ -200,7 +200,7 @@ namespace Biblioteca.dados
                     usuario.tipousuario.Codigo = reader.GetInt32(reader.GetOrdinal("codigo_TipoUsuario"));
                     usuario.tipousuario.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
 
-                    listaUsuario.Add(usuario);
+                    listausuarios.Add(usuario);
                 }
 
                 reader.Close();
@@ -214,7 +214,7 @@ namespace Biblioteca.dados
                 throw new DadosException(ex.Message);
             }
 
-            return listaUsuario;
+            return listausuarios;
      
         }
 

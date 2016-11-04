@@ -99,7 +99,7 @@ namespace Biblioteca.dados
 
         public List<Animal> Pesquisar(Animal a)
         {
-            List<Animal> listaAnimal = new List<Animal>();
+            List<Animal> listaanimal = new List<Animal>();
 
            try { 
             conexao.openConnection();
@@ -120,7 +120,7 @@ namespace Biblioteca.dados
                 animal.TipoAnimal.Codigo = reader.GetInt32(reader.GetOrdinal("cod_tipoAnimal"));
                 
 
-                listaAnimal.Add(animal);
+                listaanimal.Add(animal);
             }
 
             reader.Close();
@@ -134,7 +134,7 @@ namespace Biblioteca.dados
                 throw new DadosException(ex.Message);
     }
 
-            return listaAnimal;
+            return listaanimal;
         }
     }
 }

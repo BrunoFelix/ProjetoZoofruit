@@ -58,6 +58,18 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_alimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_alimento.Designer.cs">
+      <DependentUpon>Manter_alimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manter_alimento_ed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_alimento_ed.Designer.cs">
+      <DependentUpon>Manter_alimento_ed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manter_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_alimento.resx">
+      <DependentUpon>Manter_alimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_alimento_ed.resx">
+      <DependentUpon>Manter_alimento_ed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login.resx">
       <DependentUpon>Manter_login.cs</DependentUpon>

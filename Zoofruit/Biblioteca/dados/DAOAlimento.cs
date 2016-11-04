@@ -24,10 +24,11 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "INSERT INTO ALIMENTO (CODIGO, NOME, QUANTIDADE, VALOR_CALORICO, DT_REPOSICAO) VALUES (@CODIGO, @NOME, @QUANTIDADE, @VALOR_CALORICO, @DT_REPOSICAO)";
+                string sql = "INSERT INTO ALIMENTO (NOME, QUANTIDADE, VALOR_CALORICO, DT_REPOSICAO) VALUES (@NOME, @QUANTIDADE, @VALOR_CALORICO, @DT_REPOSICAO)";
+
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
-                cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
+                //cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
                 cmd.Parameters.Add(new SqlParameter("@NOME", a.Nome));
                 cmd.Parameters.Add(new SqlParameter("@QUANTIDADE", a.Quantidade));
                 cmd.Parameters.Add(new SqlParameter("@VALOR_CALORICO", a.ValorCalorico));
@@ -45,13 +46,13 @@ namespace Biblioteca.dados
             }
         }
 
-        //Altera o Registro de um Aimento.
+        //Altera o Registro de um Alimento.
         public void Alterar(Alimento a)
         {
             conexao.openConnection();
             try
             {
-                string sql = "ALTER TABLE USUARIO SET CODIGO=@CODIGO, NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_REPOSICAO=@DT_REPOSICAO WHERE CODIGO=@CODIGO";
+                string sql = "ALTER TABLE USUARIO SET CODIGO=@CODIGO, NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_REPOSICAO@DT_REPOSICAO";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));

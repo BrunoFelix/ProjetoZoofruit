@@ -19,7 +19,7 @@ namespace Biblioteca.dados
         }
         public List<TipoUsuario> Pesquisar(TipoUsuario tu)
         {
-            List<TipoUsuario> listaTipoUsuario = new List<TipoUsuario>();
+            List<TipoUsuario> listatipousuario = new List<TipoUsuario>();
 
             try
             {
@@ -58,7 +58,7 @@ namespace Biblioteca.dados
                     tipousuario.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO"));
                     tipousuario.Descricao = reader.GetString(reader.GetOrdinal("DESCRICAO"));
 
-                    listaTipoUsuario.Add(tipousuario);
+                    listatipousuario.Add(tipousuario);
                 }
 
                 reader.Close();
@@ -72,7 +72,7 @@ namespace Biblioteca.dados
                 throw new DadosException(ex.Message);
             }
 
-            return listaTipoUsuario;
+            return listatipousuario;
 
         }
     }

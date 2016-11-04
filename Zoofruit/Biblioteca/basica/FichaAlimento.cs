@@ -8,12 +8,10 @@ namespace Biblioteca.basica
 {
     public class FichaAlimento : Ficha
     {
-        double qtd_Calorias;
-
-        public List<Alimento> listaAlimento;
+        List<Alimento> listaalimento;
         public FichaAlimento() : base()
         {
-            listaAlimento = new List<Alimento>();
+            listaalimento = new List<Alimento>();
         }
     }
 }

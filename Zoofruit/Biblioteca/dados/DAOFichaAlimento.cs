@@ -97,12 +97,13 @@ namespace Biblioteca.dados
 
                 foreach (Alimento a in fa.listaAlimento)
                 {
-                    sql = "ALTER TABLE ALIMENTO_DA_FICHA SET QUANTIDADE=@QUANTIDADE, CODIGO_ALIMENTO=@CODIGO_ALIMENTO, CODIGO_FICHA=@CODIGO_FICHA";
+                    sql = "ALTER TABLE ALIMENTO_DA_FICHA SET QUANTIDADE=@QUANTIDADE, CODIGO_ALIMENTO=@CODIGO_ALIMENTO, CODIGO_FICHA=@CODIGO_FICHA WHERE CODIGO=@CODIGO";
                     SqlCommand cmd3 = new SqlCommand(sql, conexao.sqlconn);
 
                     cmd.Parameters.Add(new SqlParameter("@QUANTIDADE", a.Quantidade));
                     cmd.Parameters.Add(new SqlParameter("@CODIGO_ALIMENTO", a.Codigo));
                     cmd.Parameters.Add(new SqlParameter("@CODIGO_FICHA", codigo));
+                    cmd.Parameters.Add(new SqlParameter("@CODIGO", fa.Codigo))
 
                     cmd.ExecuteNonQuery();
                 }

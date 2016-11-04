@@ -93,7 +93,7 @@ namespace Biblioteca.dados
 
         public List<Medicamento> Pesquisar(Medicamento m)
         {
-            List<Medicamento> listamedicamento = new List<Medicamento>();
+            List<Medicamento> listaMedicamento = new List<Medicamento>();
 
             try
             {
@@ -134,7 +134,7 @@ namespace Biblioteca.dados
                     medicamento.Quantidade = reader.GetInt32(reader.GetOrdinal("QUANTIDADE"));
                     medicamento.DataReposicao = reader.GetString(reader.GetOrdinal("DT_REPOSICAO"));
 
-                    listamedicamento.Add(medicamento);
+                    listaMedicamento.Add(medicamento);
                 }
 
                 reader.Close();
@@ -148,7 +148,7 @@ namespace Biblioteca.dados
                 throw new DadosException(ex.Message);
             }
 
-            return listamedicamento;
+            return listaMedicamento;
 
         }
 

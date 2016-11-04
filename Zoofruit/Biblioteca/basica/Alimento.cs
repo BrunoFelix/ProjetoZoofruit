@@ -10,7 +10,7 @@ namespace Biblioteca.basica
     {
         private int codigo;
         private string nome;
-        private int quantidade;
+        private double quantidade;
         private double valorCalorico;
         private string dataReposicao;
 
@@ -40,7 +40,7 @@ namespace Biblioteca.basica
             }
         }
 
-        public int Quantidade
+        public double Quantidade
         {
             get
             {

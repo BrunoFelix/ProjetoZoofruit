@@ -10,8 +10,8 @@ namespace Biblioteca.dados
     interface iDAOMedicamento
     {
         void Adicionar(Medicamento m);
-        void Alterar(Medicamento a);
-        void Excluir(Medicamento a);
-        List<Medicamento> Pesquisar(Medicamento a);
+        void Alterar(Medicamento m);
+        void Excluir(Medicamento m);
+        List<Medicamento> Pesquisar(Medicamento m);
     }
 }

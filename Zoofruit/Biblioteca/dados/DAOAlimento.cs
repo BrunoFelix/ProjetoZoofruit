@@ -51,7 +51,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "ALTER TABLE USUARIO SET CODIGO=@CODIGO, NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_REPOSICAO@DT_REPOSICAO";
+                string sql = "ALTER TABLE USUARIO SET CODIGO=@CODIGO, NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_REPOSICAO=@DT_REPOSICAO WHERE CODIGO=@CODIGO";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));

@@ -82,3 +82,6 @@ C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Princ
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login_ed.resources
+C:\Users\aluno\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
+C:\Users\aluno\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
+C:\Users\aluno\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb

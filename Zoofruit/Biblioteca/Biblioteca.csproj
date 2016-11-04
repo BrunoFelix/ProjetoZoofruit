@@ -59,7 +59,7 @@
     <Compile Include="dados\DAOTipoUsuario.cs" />
     <Compile Include="dados\DAOUsuario.cs" />
     <Compile Include="dados\iDAOAlimento.cs" />
-    <Compile Include="dados\IDAOAnimal.cs" />
+    <Compile Include="dados\iDAOAnimal.cs" />
     <Compile Include="dados\iDAOFichaAlimento.cs" />
     <Compile Include="dados\iDAOFichaMedicamento.cs" />
     <Compile Include="dados\iDAOMedicamento.cs" />

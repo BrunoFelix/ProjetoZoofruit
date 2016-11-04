@@ -100,7 +100,7 @@ namespace Biblioteca.dados
         //Retorna uma Lista de todos os Alimentos.
         public List<Alimento> Pesquisar(Alimento a)
         {
-            List<Alimento> listaAlimentos = new List<Alimento>();
+            List<Alimento> listaAlimento = new List<Alimento>();
 
             try
             {
@@ -146,7 +146,7 @@ namespace Biblioteca.dados
                     alimento.DataReposicao = reader.GetString(reader.GetOrdinal("dataReposicao"));
 
 
-                    listaAlimentos.Add(alimento);
+                    listaAlimento.Add(alimento);
                 }
 
                 reader.Close();
@@ -160,7 +160,7 @@ namespace Biblioteca.dados
                 throw new DadosException(ex.Message);
             }
 
-            return listaAlimentos;
+            return listaAlimento;
 
         }
 

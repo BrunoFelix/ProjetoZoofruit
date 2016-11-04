@@ -103,7 +103,7 @@ namespace Biblioteca.dados
                     cmd.Parameters.Add(new SqlParameter("@QUANTIDADE", a.Quantidade));
                     cmd.Parameters.Add(new SqlParameter("@CODIGO_ALIMENTO", a.Codigo));
                     cmd.Parameters.Add(new SqlParameter("@CODIGO_FICHA", codigo));
-                    cmd.Parameters.Add(new SqlParameter("@CODIGO", fa.Codigo))
+                    cmd.Parameters.Add(new SqlParameter("@CODIGO", fa.Codigo));
 
                     cmd.ExecuteNonQuery();
                 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.util
 {
-    class NegocioException : Exception
+    public class NegocioException : Exception
     {
         public NegocioException() : base()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.basica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -14,10 +15,7 @@ namespace Webservice
     {
 
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        List<Usuario> ListarUsuario(Usuario u);
 
         // TODO: Add your service operations here
     }

@@ -1,5 +1,5 @@
-﻿using Biblioteca.basica;
-using Biblioteca.dados;
+﻿
+using Gui.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +14,9 @@ namespace Gui
 {
     public partial class Manter_login : Form
     {
-        public List<Usuario> listausuario = new List<Usuario>();
+        public List<Usuario> listausuario;
         private static Manter_login manter_login;
+        Service1 webservice;
 
         public static Manter_login getInstance()
         {
@@ -35,6 +36,8 @@ namespace Gui
         private Manter_login()
         {
             InitializeComponent();
+            webservice = new Service1();
+            listausuario = new List<Usuario>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,15 +62,15 @@ namespace Gui
                 item.SubItems.Add(u.tipousuario.Descricao);
 
                 lv_usuario.Items.Add(item);
-            }  
+            }
         }
 
         private void Manter_login_Load(object sender, EventArgs e)
         {
             comboBoxPesquisar.SelectedIndex = 1;
-            DAOUsuario daousuario = new DAOUsuario();
+            Service1 webservice = new Service1();
             Usuario usuario = new Usuario();
-            listausuario = daousuario.Pesquisar(usuario);
+            listausuario = webservice.ListarUsuario(usuario).ToList();
             AtualizarGrid();
         }
 
@@ -78,7 +81,7 @@ namespace Gui
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
-            DAOUsuario daousuario = new DAOUsuario();
+         /*   RNUsuario rnusuario = new RNUsuario();
             Usuario usuario = new Usuario();
             if (comboBoxPesquisar.SelectedIndex == 0)
             {
@@ -147,18 +150,18 @@ namespace Gui
                 }
             }
 
-            listausuario = daousuario.Pesquisar(usuario);
-            AtualizarGrid();
+            listausuario = rnusuario.ListarUsuario(usuario);
+            AtualizarGrid();*/
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            comboBoxPesquisar.SelectedIndex = 1;
+           /* comboBoxPesquisar.SelectedIndex = 1;
             tb_pesquisar.Text = "";
-            DAOUsuario daousuario = new DAOUsuario();
+            RNUsuario rnusuario = new RNUsuario();
             Usuario usuario = new Usuario();
-            listausuario = daousuario.Pesquisar(usuario);
-            AtualizarGrid();
+            listausuario = rnusuario.ListarUsuario(usuario);
+            AtualizarGrid();*/
         }
 
         private void lv_usuario_SelectedIndexChanged(object sender, EventArgs e)

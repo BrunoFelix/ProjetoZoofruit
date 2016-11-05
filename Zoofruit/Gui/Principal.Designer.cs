@@ -84,7 +84,6 @@
             this.alimentoToolStripMenuItem.Name = "alimentoToolStripMenuItem";
             this.alimentoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.alimentoToolStripMenuItem.Text = "Alimento";
-            this.alimentoToolStripMenuItem.Click += new System.EventHandler(this.alimentoToolStripMenuItem_Click);
             // 
             // medicaçãoToolStripMenuItem
             // 

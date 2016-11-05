@@ -1,5 +1,4 @@
-﻿using Biblioteca.basica;
-using Biblioteca.dados;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +13,13 @@ namespace Gui
 {
     public partial class Manter_login_ed : Form
     {
-        List<TipoUsuario> listatipousuario;
+        /*List<TipoUsuario> listatipousuario;
         DAOTipoUsuario daotipousuario;
-        DAOUsuario daousuario;
+        DAOUsuario daousuario;*/
         public Manter_login_ed()
         {
             InitializeComponent();
-            listatipousuario = new List<TipoUsuario>();
+            /*listatipousuario = new List<TipoUsuario>();
             daotipousuario = new DAOTipoUsuario();
             daousuario = new DAOUsuario();
             TipoUsuario tipousuario = new TipoUsuario();
@@ -29,7 +28,7 @@ namespace Gui
             foreach (TipoUsuario a in listatipousuario)
             {
                 comboBox1.Items.Add(a.Descricao);
-            }
+            }*/
         }
 
         private void Manter_login_ed_Load(object sender, EventArgs e)
@@ -51,7 +50,7 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
+            /*Usuario usuario = new Usuario();
             usuario.Nome = tb_nome.Text;
             usuario.Cpf = tb_cpf.Text;
             usuario.Crmv = tb_crmv.Text;
@@ -60,7 +59,7 @@ namespace Gui
             usuario.tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
             daousuario.Adicionar(usuario);
             ((Manter_login)Application.OpenForms["manter_login"]).listausuario.Add(usuario);
-            ((Manter_login)Application.OpenForms["manter_login"]).AtualizarGrid();
+            ((Manter_login)Application.OpenForms["manter_login"]).AtualizarGrid();*/
         }
     }
 }

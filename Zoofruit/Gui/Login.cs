@@ -1,6 +1,5 @@
-﻿using Biblioteca.basica;
-using Biblioteca.dados;
-using Biblioteca.util;
+﻿
+using Gui.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,17 +26,15 @@ namespace Gui
 
             try
             {
-                Conexao connection = new Conexao();
-                connection.openConnection();
-
                 if ((tb_usuario.Text != "") && (tb_senha.Text != ""))
                 {
                    
                     List<Usuario> listausuario = new List<Usuario>();
-                    DAOUsuario daousuario = new DAOUsuario();
+                    Service1 webservice = new Service1();
                     usuario.Login = tb_usuario.Text;
                     usuario.Senha = tb_senha.Text;
-                    listausuario = daousuario.Pesquisar(usuario);
+                    usuario.tipousuario = new TipoUsuario();
+                    listausuario = webservice.ListarUsuario(usuario).ToList();
 
                     if (listausuario.Count == 1)
                     {

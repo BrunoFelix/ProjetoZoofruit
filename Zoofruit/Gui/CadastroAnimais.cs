@@ -1,4 +1,4 @@
-﻿using Biblioteca.basica;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ namespace Gui
 {
     public partial class CadastroAnimais : Form
     {
-        Animal a = new Animal();
+        //Animal a = new Animal();
 
         public CadastroAnimais()
         {
@@ -30,7 +30,7 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            /*if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string nomeArquivo = openFileDialog1.FileName;
                 Bitmap bmp = new Bitmap(nomeArquivo);
@@ -39,7 +39,7 @@ namespace Gui
                 MemoryStream ms = new MemoryStream();
                 bmp.Save(ms, ImageFormat.Bmp);
                 a.Foto = ms.ToArray();
-            }
+            }*/
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)

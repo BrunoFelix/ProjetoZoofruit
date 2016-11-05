@@ -24,10 +24,10 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "INSERT INTO ALIMENTO (CODIGO, NOME, QUANTIDADE, VALOR_CALORICO, DT_REPOSICAO) VALUES (@CODIGO, @NOME, @QUANTIDADE, @VALOR_CALORICO, @DT_REPOSICAO)";
+                string sql = "INSERT INTO ALIMENTO ( NOME, QUANTIDADE, VALOR_CALORICO, DT_REPOSICAO) VALUES (@NOME, @QUANTIDADE, @VALOR_CALORICO, @DT_REPOSICAO)";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
-                cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
+              
                 cmd.Parameters.Add(new SqlParameter("@NOME", a.Nome));
                 cmd.Parameters.Add(new SqlParameter("@QUANTIDADE", a.Quantidade));
                 cmd.Parameters.Add(new SqlParameter("@VALOR_CALORICO", a.ValorCalorico));
@@ -51,7 +51,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "ALTER TABLE USUARIO SET NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_REPOSICAO=@DT_REPOSICAO WHERE CODIGO=@CODIGO";
+                string sql = "ALTER TABLE ALIMENTO SET NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO, DT_REPOSICAO=@DT_REPOSICAO WHERE CODIGO=@CODIGO";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@NOME", a.Nome));
@@ -106,31 +106,6 @@ namespace Biblioteca.dados
             {
                 conexao.openConnection();
                 string sql = "SELECT ALIMENTO.CODIGO ,ALIMENTO.NOME,ALIMENTO.QUANTIDADE, ALIMENTO.VALOR_CALORICO , ALIMENTO.DT_REPOSICAO FROM ALIMENTO ";
-                /**
-
-                 if (a.Nome != null && a.Nome.Trim().Equals("") == false)
-                 {
-                     sql += " and login = @nome";
-                 }
-
-                 if (u.Senha != null && u.Senha.Trim().Equals("") == false)
-                 {
-                     sql += " and senha = @senha";
-                 }
-
-
-
-                 if (u.Login != null && u.Login.Trim().Equals("") == false)
-                 {
-                     cmd.Parameters.Add("@login", SqlDbType.VarChar);
-                     cmd.Parameters["@login"].Value = u.Login;
-                 }
-
-                 if (u.Senha != null && u.Senha.Trim().Equals("") == false)
-                 {
-                     cmd.Parameters.Add("@senha", SqlDbType.VarChar);
-                     cmd.Parameters["@senha"].Value = u.Senha;
-                 } **/
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 

@@ -38,7 +38,7 @@
             this.comboBoxPesquisar = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.listViewAlimento = new System.Windows.Forms.ListView();
+            this.lv_alimento = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -156,20 +156,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listViewAlimento
+            // lv_alimento
             // 
-            this.listViewAlimento.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lv_alimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lv_alimento.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.listViewAlimento.Location = new System.Drawing.Point(3, 50);
-            this.listViewAlimento.Name = "listViewAlimento";
-            this.listViewAlimento.Size = new System.Drawing.Size(965, 495);
-            this.listViewAlimento.TabIndex = 9;
-            this.listViewAlimento.UseCompatibleStateImageBehavior = false;
-            this.listViewAlimento.View = System.Windows.Forms.View.Details;
+            this.lv_alimento.Location = new System.Drawing.Point(3, 50);
+            this.lv_alimento.Name = "lv_alimento";
+            this.lv_alimento.Size = new System.Drawing.Size(965, 495);
+            this.lv_alimento.TabIndex = 1;
+            this.lv_alimento.UseCompatibleStateImageBehavior = false;
+            this.lv_alimento.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -201,11 +204,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 543);
-            this.Controls.Add(this.listViewAlimento);
+            this.Controls.Add(this.lv_alimento);
             this.Controls.Add(this.panel1);
             this.Name = "Manter_alimento";
-            this.Text = "Manter Alimento";
+            this.Text = "Cadastro de Alimentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Manter_alimento_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -222,7 +226,7 @@
         private System.Windows.Forms.ComboBox comboBoxPesquisar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listViewAlimento;
+        private System.Windows.Forms.ListView lv_alimento;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

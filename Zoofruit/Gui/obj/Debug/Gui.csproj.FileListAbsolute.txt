@@ -57,8 +57,6 @@ C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gu
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
-C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.dll
-C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.pdb
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
@@ -95,3 +93,4 @@ C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.Manter_
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login_ed.resources

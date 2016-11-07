@@ -60,6 +60,18 @@
     <Compile Include="Login.designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_alimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_alimento.Designer.cs">
+      <DependentUpon>Manter_alimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manter_alimento_ed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_alimento_ed.Designer.cs">
+      <DependentUpon>Manter_alimento_ed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manter_login.cs">
       <SubType>Form</SubType>
     </Compile>

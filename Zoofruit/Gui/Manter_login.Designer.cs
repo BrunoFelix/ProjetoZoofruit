@@ -37,6 +37,7 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.comboBoxPesquisar = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +115,18 @@
             this.panel1.Size = new System.Drawing.Size(965, 48);
             this.panel1.TabIndex = 2;
             // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.Location = new System.Drawing.Point(192, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 48);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Excluir [F4]";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // button2
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
@@ -150,6 +162,7 @@
             this.btn_pesquisar.Text = "[F5]";
             this.btn_pesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_pesquisar.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click_1);
             // 
             // tb_pesquisar
             // 
@@ -196,18 +209,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(192, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 48);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Excluir [F4]";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // Manter_login
             // 

@@ -22,6 +22,7 @@ namespace Biblioteca.negocio
             try
             {
                 ValidarPreenchimentoDados(u);
+                ValidarDados(u);
                 daousuario.Adicionar(u);
             }
             catch(Exception ex)
@@ -55,7 +56,7 @@ namespace Biblioteca.negocio
             }
         }
 
-         public List<Usuario> NListarUsuario(Usuario u)
+        public List<Usuario> NListarUsuario(Usuario u)
         {
             try
             {
@@ -105,9 +106,21 @@ namespace Biblioteca.negocio
 
         private void ValidarDados(Usuario u)
         {
-            if (u.Nome != null && u.Nome.Equals("") == false)
+            if (u.Nome.Length < 3)
             {
-                throw new NegocioException("O campo Nome precisa ser preenchido!");
+                throw new NegocioException("Nome inválido!");
+            }
+            if (u.Cpf.Length != 11)
+            {
+                throw new NegocioException("CPF inválido!");
+            }
+            if (u.Login.Length < 3)
+            {
+                throw new NegocioException("Login inválido!");
+            }
+            if (u.Senha.Length < 3)
+            {
+                throw new NegocioException("Senha inválido!");
             }
         }
     }

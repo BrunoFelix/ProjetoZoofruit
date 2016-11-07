@@ -144,6 +144,9 @@
     <None Include="Web References\localhost\Service11.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Web References\localhost\TipoUsuario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\localhost\Usuario.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

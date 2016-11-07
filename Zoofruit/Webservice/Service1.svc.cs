@@ -15,14 +15,33 @@ namespace Webservice
 
     public class Service1 : IService1
     {
-        RNUsuario rnusuario; 
+
+
+        RNUsuario rnusuario;
+        RNTipoUsuario rntipousuario;
+         
         private Service1()
         {
             rnusuario = new RNUsuario();
+            rntipousuario = new RNTipoUsuario();
         }
+
+
+        /* ------------------- Usuario -------------------------------------- */
+        public void InserirUsuario(Usuario u)
+        {
+            rnusuario.Adicionar(u);
+        }
+
+        public List<TipoUsuario> ListarTipoUsuario(TipoUsuario tu)
+        {
+            return rntipousuario.NListarTipoUsuario(tu);
+        }
+
         public List<Usuario> ListarUsuario(Usuario u)
         {
             return rnusuario.NListarUsuario(u);
         }
+        /* ------------------- Usuario -------------------------------------- */
     }
 }

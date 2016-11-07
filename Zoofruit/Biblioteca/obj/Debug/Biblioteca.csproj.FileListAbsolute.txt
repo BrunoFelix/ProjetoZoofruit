@@ -33,3 +33,7 @@ C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Biblioteca\bin\Debug\Bibl
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb

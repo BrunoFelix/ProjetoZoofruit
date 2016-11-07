@@ -29,7 +29,11 @@ namespace Gui.localhost {
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback ListarTipoUsuarioOperationCompleted;
+        
         private System.Threading.SendOrPostCallback ListarUsuarioOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InserirUsuarioOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -70,7 +74,44 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
+        public event ListarTipoUsuarioCompletedEventHandler ListarTipoUsuarioCompleted;
+        
+        /// <remarks/>
         public event ListarUsuarioCompletedEventHandler ListarUsuarioCompleted;
+        
+        /// <remarks/>
+        public event InserirUsuarioCompletedEventHandler InserirUsuarioCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+        public TipoUsuario[] ListarTipoUsuario([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] TipoUsuario tu) {
+            object[] results = this.Invoke("ListarTipoUsuario", new object[] {
+                        tu});
+            return ((TipoUsuario[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarTipoUsuarioAsync(TipoUsuario tu) {
+            this.ListarTipoUsuarioAsync(tu, null);
+        }
+        
+        /// <remarks/>
+        public void ListarTipoUsuarioAsync(TipoUsuario tu, object userState) {
+            if ((this.ListarTipoUsuarioOperationCompleted == null)) {
+                this.ListarTipoUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarTipoUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("ListarTipoUsuario", new object[] {
+                        tu}, this.ListarTipoUsuarioOperationCompleted, userState);
+        }
+        
+        private void OnListarTipoUsuarioOperationCompleted(object arg) {
+            if ((this.ListarTipoUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarTipoUsuarioCompleted(this, new ListarTipoUsuarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -104,6 +145,34 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InserirUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InserirUsuario([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Usuario u) {
+            this.Invoke("InserirUsuario", new object[] {
+                        u});
+        }
+        
+        /// <remarks/>
+        public void InserirUsuarioAsync(Usuario u) {
+            this.InserirUsuarioAsync(u, null);
+        }
+        
+        /// <remarks/>
+        public void InserirUsuarioAsync(Usuario u, object userState) {
+            if ((this.InserirUsuarioOperationCompleted == null)) {
+                this.InserirUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInserirUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("InserirUsuario", new object[] {
+                        u}, this.InserirUsuarioOperationCompleted, userState);
+        }
+        
+        private void OnInserirUsuarioOperationCompleted(object arg) {
+            if ((this.InserirUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InserirUsuarioCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -119,6 +188,53 @@ namespace Gui.localhost {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class TipoUsuario {
+        
+        private int codigoField;
+        
+        private bool codigoFieldSpecified;
+        
+        private string descricaoField;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodigoSpecified {
+            get {
+                return this.codigoFieldSpecified;
+            }
+            set {
+                this.codigoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Descricao {
+            get {
+                return this.descricaoField;
+            }
+            set {
+                this.descricaoField = value;
+            }
         }
     }
     
@@ -235,48 +351,27 @@ namespace Gui.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
-    [System.SerializableAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void ListarTipoUsuarioCompletedEventHandler(object sender, ListarTipoUsuarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
-    public partial class TipoUsuario {
+    public partial class ListarTipoUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
-        private int codigoField;
+        private object[] results;
         
-        private bool codigoFieldSpecified;
-        
-        private string descricaoField;
-        
-        /// <remarks/>
-        public int Codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-            }
+        internal ListarTipoUsuarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CodigoSpecified {
+        public TipoUsuario[] Result {
             get {
-                return this.codigoFieldSpecified;
-            }
-            set {
-                this.codigoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Descricao {
-            get {
-                return this.descricaoField;
-            }
-            set {
-                this.descricaoField = value;
+                this.RaiseExceptionIfNecessary();
+                return ((TipoUsuario[])(this.results[0]));
             }
         }
     }
@@ -306,6 +401,10 @@ namespace Gui.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void InserirUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

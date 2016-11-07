@@ -1,5 +1,4 @@
-﻿using Biblioteca.basica;
-using Biblioteca.dados;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,7 @@ namespace Gui
 {
     public partial class Manter_alimento : Form
     {
-        public List<Alimento> listalimento = new List<Alimento>();
+        //public List<Alimento> listalimento = new List<Alimento>();
         private static Manter_alimento manter_alimento;
         public Manter_alimento()
         {
@@ -39,7 +38,7 @@ namespace Gui
 
         public void AtualizarGrid()
         {
-            lv_alimento.Items.Clear();
+            /*lv_alimento.Items.Clear();
 
             ListViewItem item;
 
@@ -53,7 +52,7 @@ namespace Gui
                 item.SubItems.Add(a.DataReposicao.ToString());
             
                // listalimento.Items.Add(item);
-            }
+            }*/
         }
 
         private void button1_Click(object sender, EventArgs e)

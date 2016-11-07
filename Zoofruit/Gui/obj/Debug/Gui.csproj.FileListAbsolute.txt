@@ -94,3 +94,4 @@ C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.Princip
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login_ed.resources
+C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache

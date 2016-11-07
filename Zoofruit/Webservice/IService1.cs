@@ -15,7 +15,13 @@ namespace Webservice
     {
 
         [OperationContract]
+        List<TipoUsuario> ListarTipoUsuario(TipoUsuario tu);
+
+        [OperationContract]
         List<Usuario> ListarUsuario(Usuario u);
+
+        [OperationContract]
+        void InserirUsuario(Usuario u);
 
         // TODO: Add your service operations here
     }

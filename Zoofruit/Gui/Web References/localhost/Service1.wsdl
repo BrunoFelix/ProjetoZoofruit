@@ -7,22 +7,60 @@
       <xsd:import schemaLocation="http://localhost:16487/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_ListarTipoUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarTipoUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoUsuarioResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ListarUsuario_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarUsuario" />
   </wsdl:message>
   <wsdl:message name="IService1_ListarUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:ListarUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_InserirUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirUsuarioResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="ListarTipoUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoUsuario" message="tns:IService1_ListarTipoUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarTipoUsuarioResponse" message="tns:IService1_ListarTipoUsuario_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="ListarUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarUsuario" message="tns:IService1_ListarUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarUsuarioResponse" message="tns:IService1_ListarUsuario_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InserirUsuario" message="tns:IService1_InserirUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InserirUsuarioResponse" message="tns:IService1_InserirUsuario_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarTipoUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarTipoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="ListarUsuario">
       <soap:operation soapAction="http://tempuri.org/IService1/ListarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/InserirUsuario" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -69,6 +69,7 @@
     <Compile Include="negocio\RNAlimento.cs" />
     <Compile Include="negocio\RNAnimal.cs" />
     <Compile Include="negocio\RNMedicamento.cs" />
+    <Compile Include="negocio\RNTipoUsuario.cs" />
     <Compile Include="negocio\RNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="util\Conexao.cs" />

@@ -68,7 +68,6 @@ namespace Gui
         private void Manter_login_Load(object sender, EventArgs e)
         {
             comboBoxPesquisar.SelectedIndex = 1;
-            Service1 webservice = new Service1();
             Usuario usuario = new Usuario();
             listausuario = webservice.ListarUsuario(usuario).ToList();
             AtualizarGrid();
@@ -79,9 +78,8 @@ namespace Gui
             
         }
 
-        private void btn_pesquisar_Click(object sender, EventArgs e)
+        public void btn_pesquisar_Click(object sender, EventArgs e)
         {
-         /*   RNUsuario rnusuario = new RNUsuario();
             Usuario usuario = new Usuario();
             if (comboBoxPesquisar.SelectedIndex == 0)
             {
@@ -150,8 +148,8 @@ namespace Gui
                 }
             }
 
-            listausuario = rnusuario.ListarUsuario(usuario);
-            AtualizarGrid();*/
+            listausuario = webservice.ListarUsuario(usuario).ToList();
+            AtualizarGrid();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -183,6 +181,11 @@ namespace Gui
         {
             Manter_login_ed manter_login_ed = new Manter_login_ed();
             manter_login_ed.ShowDialog();
+        }
+
+        private void btn_pesquisar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

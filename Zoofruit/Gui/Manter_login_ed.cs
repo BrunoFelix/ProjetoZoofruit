@@ -1,4 +1,5 @@
 ﻿
+using Gui.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +14,19 @@ namespace Gui
 {
     public partial class Manter_login_ed : Form
     {
-        /*List<TipoUsuario> listatipousuario;
-        DAOTipoUsuario daotipousuario;
-        DAOUsuario daousuario;*/
+        List<TipoUsuario> listatipousuario;
+        Service1 webservice;
         public Manter_login_ed()
         {
             InitializeComponent();
-            /*listatipousuario = new List<TipoUsuario>();
-            daotipousuario = new DAOTipoUsuario();
-            daousuario = new DAOUsuario();
+            listatipousuario = new List<TipoUsuario>();
+            webservice = new Service1();
             TipoUsuario tipousuario = new TipoUsuario();
-            listatipousuario = daotipousuario.Pesquisar(tipousuario);
-
+            listatipousuario = webservice.ListarTipoUsuario(tipousuario).ToList();
             foreach (TipoUsuario a in listatipousuario)
             {
                 comboBox1.Items.Add(a.Descricao);
-            }*/
+            }
         }
 
         private void Manter_login_ed_Load(object sender, EventArgs e)
@@ -50,16 +48,15 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*Usuario usuario = new Usuario();
+            Usuario usuario = new Usuario();
             usuario.Nome = tb_nome.Text;
             usuario.Cpf = tb_cpf.Text;
             usuario.Crmv = tb_crmv.Text;
             usuario.Login = tb_login.Text;
             usuario.Senha = tb_senha.Text;
             usuario.tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
-            daousuario.Adicionar(usuario);
-            ((Manter_login)Application.OpenForms["manter_login"]).listausuario.Add(usuario);
-            ((Manter_login)Application.OpenForms["manter_login"]).AtualizarGrid();*/
+            webservice.InserirUsuario(usuario);
+            ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click(sender, e);
         }
     }
 }

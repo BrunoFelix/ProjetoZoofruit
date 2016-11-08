@@ -1,4 +1,5 @@
 ﻿
+using Gui.localhost;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,13 @@ namespace Gui
 {
     public partial class Manter_alimento : Form
     {
-        //public List<Alimento> listalimento = new List<Alimento>();
+        public List<Alimento> listalimento = new List<Alimento>();
         private static Manter_alimento manter_alimento;
+        Service1 webservice;
         public Manter_alimento()
         {
             InitializeComponent();
+            webservice = new Service1();
         }
      
         public static Manter_alimento getInstance()

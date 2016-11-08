@@ -69,6 +69,8 @@ namespace Gui
         {
             comboBoxPesquisar.SelectedIndex = 1;
             Usuario usuario = new Usuario();
+            TipoUsuario tipousuario = new TipoUsuario();
+            usuario.tipousuario = tipousuario;
             listausuario = webservice.ListarUsuario(usuario).ToList();
             AtualizarGrid();
         }
@@ -80,13 +82,53 @@ namespace Gui
 
         public void btn_pesquisar_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            comboBoxPesquisar.SelectedIndex = 1;
+            tb_pesquisar.Text = "";
             Usuario usuario = new Usuario();
+            TipoUsuario tipousuario = new TipoUsuario();
+            usuario.tipousuario = tipousuario;
+            listausuario = webservice.ListarUsuario(usuario).ToList();
+            AtualizarGrid();
+        }
+
+        private void lv_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Manter_login_ed manter_login_ed = new Manter_login_ed();
+            manter_login_ed.ShowDialog();
+        }
+
+        private void btn_pesquisar_Click_1(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            TipoUsuario tipousuario = new TipoUsuario();
+            usuario.tipousuario = tipousuario;
             if (comboBoxPesquisar.SelectedIndex == 0)
             {
                 try
                 {
                     usuario.Codigo = Int32.Parse(tb_pesquisar.Text);
-                }catch(Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -152,40 +194,27 @@ namespace Gui
             AtualizarGrid();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-           /* comboBoxPesquisar.SelectedIndex = 1;
-            tb_pesquisar.Text = "";
-            RNUsuario rnusuario = new RNUsuario();
-            Usuario usuario = new Usuario();
-            listausuario = rnusuario.ListarUsuario(usuario);
-            AtualizarGrid();*/
+            if (lv_usuario.SelectedIndices.Count > 0) {
+                if (MessageBox.Show("Deseja remover o registro selecionado?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    webservice.ExcluirUsuario(listausuario.ElementAt(lv_usuario.SelectedIndices[0]));
+                    listausuario.Remove(listausuario.ElementAt(lv_usuario.SelectedIndices[0]));
+                    MessageBox.Show("Removido com sucesso!");
+                }
+            }
         }
 
-        private void lv_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked_1(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            Manter_login_ed manter_login_ed = new Manter_login_ed();
-            manter_login_ed.ShowDialog();
-        }
-
-        private void btn_pesquisar_Click_1(object sender, EventArgs e)
-        {
-
+            if (lv_usuario.SelectedIndices.Count > 0)
+            {
+                Usuario usuario = new Usuario();
+                usuario = listausuario.ElementAt(lv_usuario.SelectedIndices[0]);
+                Manter_login_ed manter_login_ed = new Manter_login_ed(usuario);
+                manter_login_ed.ShowDialog();
+            }
         }
     }
 }

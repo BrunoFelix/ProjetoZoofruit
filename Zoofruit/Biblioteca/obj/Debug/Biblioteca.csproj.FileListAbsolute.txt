@@ -8,9 +8,6 @@ C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\D
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
@@ -21,8 +18,6 @@ D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
@@ -37,3 +32,7 @@ C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblio
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb

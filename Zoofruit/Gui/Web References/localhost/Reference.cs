@@ -23,7 +23,7 @@ namespace Gui.localhost {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
@@ -34,6 +34,26 @@ namespace Gui.localhost {
         private System.Threading.SendOrPostCallback ListarUsuarioOperationCompleted;
         
         private System.Threading.SendOrPostCallback InserirUsuarioOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarUsuarioOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirUsuarioOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ListarAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InserirAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ListarMedicamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InserirMedicamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarMedicamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirMedicamentoOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -81,6 +101,36 @@ namespace Gui.localhost {
         
         /// <remarks/>
         public event InserirUsuarioCompletedEventHandler InserirUsuarioCompleted;
+        
+        /// <remarks/>
+        public event AlterarUsuarioCompletedEventHandler AlterarUsuarioCompleted;
+        
+        /// <remarks/>
+        public event ExcluirUsuarioCompletedEventHandler ExcluirUsuarioCompleted;
+        
+        /// <remarks/>
+        public event ListarAlimentoCompletedEventHandler ListarAlimentoCompleted;
+        
+        /// <remarks/>
+        public event InserirAlimentoCompletedEventHandler InserirAlimentoCompleted;
+        
+        /// <remarks/>
+        public event AlterarAlimentoCompletedEventHandler AlterarAlimentoCompleted;
+        
+        /// <remarks/>
+        public event ExcluirAlimentoCompletedEventHandler ExcluirAlimentoCompleted;
+        
+        /// <remarks/>
+        public event ListarMedicamentoCompletedEventHandler ListarMedicamentoCompleted;
+        
+        /// <remarks/>
+        public event InserirMedicamentoCompletedEventHandler InserirMedicamentoCompleted;
+        
+        /// <remarks/>
+        public event AlterarMedicamentoCompletedEventHandler AlterarMedicamentoCompleted;
+        
+        /// <remarks/>
+        public event ExcluirMedicamentoCompletedEventHandler ExcluirMedicamentoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -173,6 +223,292 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AlterarUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AlterarUsuario([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Usuario u) {
+            this.Invoke("AlterarUsuario", new object[] {
+                        u});
+        }
+        
+        /// <remarks/>
+        public void AlterarUsuarioAsync(Usuario u) {
+            this.AlterarUsuarioAsync(u, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarUsuarioAsync(Usuario u, object userState) {
+            if ((this.AlterarUsuarioOperationCompleted == null)) {
+                this.AlterarUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("AlterarUsuario", new object[] {
+                        u}, this.AlterarUsuarioOperationCompleted, userState);
+        }
+        
+        private void OnAlterarUsuarioOperationCompleted(object arg) {
+            if ((this.AlterarUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarUsuarioCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ExcluirUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void ExcluirUsuario([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Usuario u) {
+            this.Invoke("ExcluirUsuario", new object[] {
+                        u});
+        }
+        
+        /// <remarks/>
+        public void ExcluirUsuarioAsync(Usuario u) {
+            this.ExcluirUsuarioAsync(u, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirUsuarioAsync(Usuario u, object userState) {
+            if ((this.ExcluirUsuarioOperationCompleted == null)) {
+                this.ExcluirUsuarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirUsuarioOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirUsuario", new object[] {
+                        u}, this.ExcluirUsuarioOperationCompleted, userState);
+        }
+        
+        private void OnExcluirUsuarioOperationCompleted(object arg) {
+            if ((this.ExcluirUsuarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirUsuarioCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+        public Alimento[] ListarAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Alimento a) {
+            object[] results = this.Invoke("ListarAlimento", new object[] {
+                        a});
+            return ((Alimento[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarAlimentoAsync(Alimento a) {
+            this.ListarAlimentoAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void ListarAlimentoAsync(Alimento a, object userState) {
+            if ((this.ListarAlimentoOperationCompleted == null)) {
+                this.ListarAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("ListarAlimento", new object[] {
+                        a}, this.ListarAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnListarAlimentoOperationCompleted(object arg) {
+            if ((this.ListarAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarAlimentoCompleted(this, new ListarAlimentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InserirAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InserirAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Alimento a) {
+            this.Invoke("InserirAlimento", new object[] {
+                        a});
+        }
+        
+        /// <remarks/>
+        public void InserirAlimentoAsync(Alimento a) {
+            this.InserirAlimentoAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void InserirAlimentoAsync(Alimento a, object userState) {
+            if ((this.InserirAlimentoOperationCompleted == null)) {
+                this.InserirAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInserirAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("InserirAlimento", new object[] {
+                        a}, this.InserirAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnInserirAlimentoOperationCompleted(object arg) {
+            if ((this.InserirAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InserirAlimentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AlterarAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AlterarAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Alimento a) {
+            this.Invoke("AlterarAlimento", new object[] {
+                        a});
+        }
+        
+        /// <remarks/>
+        public void AlterarAlimentoAsync(Alimento a) {
+            this.AlterarAlimentoAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarAlimentoAsync(Alimento a, object userState) {
+            if ((this.AlterarAlimentoOperationCompleted == null)) {
+                this.AlterarAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("AlterarAlimento", new object[] {
+                        a}, this.AlterarAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnAlterarAlimentoOperationCompleted(object arg) {
+            if ((this.AlterarAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarAlimentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ExcluirAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void ExcluirAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Alimento a) {
+            this.Invoke("ExcluirAlimento", new object[] {
+                        a});
+        }
+        
+        /// <remarks/>
+        public void ExcluirAlimentoAsync(Alimento a) {
+            this.ExcluirAlimentoAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirAlimentoAsync(Alimento a, object userState) {
+            if ((this.ExcluirAlimentoOperationCompleted == null)) {
+                this.ExcluirAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirAlimento", new object[] {
+                        a}, this.ExcluirAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnExcluirAlimentoOperationCompleted(object arg) {
+            if ((this.ExcluirAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirAlimentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarMedicamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+        public Medicamento[] ListarMedicamento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Medicamento m) {
+            object[] results = this.Invoke("ListarMedicamento", new object[] {
+                        m});
+            return ((Medicamento[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarMedicamentoAsync(Medicamento m) {
+            this.ListarMedicamentoAsync(m, null);
+        }
+        
+        /// <remarks/>
+        public void ListarMedicamentoAsync(Medicamento m, object userState) {
+            if ((this.ListarMedicamentoOperationCompleted == null)) {
+                this.ListarMedicamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarMedicamentoOperationCompleted);
+            }
+            this.InvokeAsync("ListarMedicamento", new object[] {
+                        m}, this.ListarMedicamentoOperationCompleted, userState);
+        }
+        
+        private void OnListarMedicamentoOperationCompleted(object arg) {
+            if ((this.ListarMedicamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarMedicamentoCompleted(this, new ListarMedicamentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InserirMedicamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InserirMedicamento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Medicamento m) {
+            this.Invoke("InserirMedicamento", new object[] {
+                        m});
+        }
+        
+        /// <remarks/>
+        public void InserirMedicamentoAsync(Medicamento m) {
+            this.InserirMedicamentoAsync(m, null);
+        }
+        
+        /// <remarks/>
+        public void InserirMedicamentoAsync(Medicamento m, object userState) {
+            if ((this.InserirMedicamentoOperationCompleted == null)) {
+                this.InserirMedicamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInserirMedicamentoOperationCompleted);
+            }
+            this.InvokeAsync("InserirMedicamento", new object[] {
+                        m}, this.InserirMedicamentoOperationCompleted, userState);
+        }
+        
+        private void OnInserirMedicamentoOperationCompleted(object arg) {
+            if ((this.InserirMedicamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InserirMedicamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AlterarMedicamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AlterarMedicamento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Medicamento m) {
+            this.Invoke("AlterarMedicamento", new object[] {
+                        m});
+        }
+        
+        /// <remarks/>
+        public void AlterarMedicamentoAsync(Medicamento m) {
+            this.AlterarMedicamentoAsync(m, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarMedicamentoAsync(Medicamento m, object userState) {
+            if ((this.AlterarMedicamentoOperationCompleted == null)) {
+                this.AlterarMedicamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarMedicamentoOperationCompleted);
+            }
+            this.InvokeAsync("AlterarMedicamento", new object[] {
+                        m}, this.AlterarMedicamentoOperationCompleted, userState);
+        }
+        
+        private void OnAlterarMedicamentoOperationCompleted(object arg) {
+            if ((this.AlterarMedicamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarMedicamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ExcluirMedicamento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void ExcluirMedicamento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Medicamento m) {
+            this.Invoke("ExcluirMedicamento", new object[] {
+                        m});
+        }
+        
+        /// <remarks/>
+        public void ExcluirMedicamentoAsync(Medicamento m) {
+            this.ExcluirMedicamentoAsync(m, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirMedicamentoAsync(Medicamento m, object userState) {
+            if ((this.ExcluirMedicamentoOperationCompleted == null)) {
+                this.ExcluirMedicamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirMedicamentoOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirMedicamento", new object[] {
+                        m}, this.ExcluirMedicamentoOperationCompleted, userState);
+        }
+        
+        private void OnExcluirMedicamentoOperationCompleted(object arg) {
+            if ((this.ExcluirMedicamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirMedicamentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -192,7 +528,7 @@ namespace Gui.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -239,7 +575,202 @@ namespace Gui.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class Medicamento {
+        
+        private int codigoField;
+        
+        private bool codigoFieldSpecified;
+        
+        private string dataReposicaoField;
+        
+        private string nomeField;
+        
+        private int quantidadeField;
+        
+        private bool quantidadeFieldSpecified;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodigoSpecified {
+            get {
+                return this.codigoFieldSpecified;
+            }
+            set {
+                this.codigoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string DataReposicao {
+            get {
+                return this.dataReposicaoField;
+            }
+            set {
+                this.dataReposicaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Nome {
+            get {
+                return this.nomeField;
+            }
+            set {
+                this.nomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool QuantidadeSpecified {
+            get {
+                return this.quantidadeFieldSpecified;
+            }
+            set {
+                this.quantidadeFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class Alimento {
+        
+        private int codigoField;
+        
+        private bool codigoFieldSpecified;
+        
+        private string dataReposicaoField;
+        
+        private string nomeField;
+        
+        private double quantidadeField;
+        
+        private bool quantidadeFieldSpecified;
+        
+        private double valorCaloricoField;
+        
+        private bool valorCaloricoFieldSpecified;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodigoSpecified {
+            get {
+                return this.codigoFieldSpecified;
+            }
+            set {
+                this.codigoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string DataReposicao {
+            get {
+                return this.dataReposicaoField;
+            }
+            set {
+                this.dataReposicaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Nome {
+            get {
+                return this.nomeField;
+            }
+            set {
+                this.nomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool QuantidadeSpecified {
+            get {
+                return this.quantidadeFieldSpecified;
+            }
+            set {
+                this.quantidadeFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCalorico {
+            get {
+                return this.valorCaloricoField;
+            }
+            set {
+                this.valorCaloricoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool ValorCaloricoSpecified {
+            get {
+                return this.valorCaloricoFieldSpecified;
+            }
+            set {
+                this.valorCaloricoFieldSpecified = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -351,11 +882,11 @@ namespace Gui.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void ListarTipoUsuarioCompletedEventHandler(object sender, ListarTipoUsuarioCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ListarTipoUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -377,11 +908,11 @@ namespace Gui.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void ListarUsuarioCompletedEventHandler(object sender, ListarUsuarioCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class ListarUsuarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -403,8 +934,92 @@ namespace Gui.localhost {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void InserirUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void AlterarUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ExcluirUsuarioCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ListarAlimentoCompletedEventHandler(object sender, ListarAlimentoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarAlimentoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarAlimentoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Alimento[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Alimento[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void InserirAlimentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void AlterarAlimentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ExcluirAlimentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ListarMedicamentoCompletedEventHandler(object sender, ListarMedicamentoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarMedicamentoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarMedicamentoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Medicamento[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Medicamento[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void InserirMedicamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void AlterarMedicamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ExcluirMedicamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

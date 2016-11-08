@@ -13,7 +13,7 @@ namespace Biblioteca.dados
         void Adicionar(Usuario u); 
         void Alterar(Usuario u);
         void Excluir(Usuario u);
-        List<Usuario> Pesquisar(Usuario u);
+        List<Usuario> Pesquisar(Usuario u, bool alt=false);
         
 
 

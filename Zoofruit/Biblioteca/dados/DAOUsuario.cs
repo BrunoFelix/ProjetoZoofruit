@@ -97,7 +97,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public List<Usuario> Pesquisar(Usuario u)
+        public List<Usuario> Pesquisar(Usuario u, bool alt=false)
         {
             List<Usuario> listaUsuario = new List<Usuario>();
 
@@ -137,9 +137,20 @@ namespace Biblioteca.dados
                     sql += " and TipoUsuario.descricao = @descricao";
                 }
 
-                if (u.Codigo > 0)
+                if (alt == false)
                 {
-                    sql += " and usuario.codigo = @codigo";
+                    if (u.Codigo > 0)
+                    {
+                        sql += " and usuario.codigo = @codigo";
+                    }
+
+                }
+                else
+                {
+                    if (u.Codigo > 0)
+                    {
+                        sql += " and usuario.codigo <> @codigo";
+                    }
                 }
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);

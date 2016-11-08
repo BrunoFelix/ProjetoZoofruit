@@ -31,4 +31,35 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
+  <xs:complexType name="Alimento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="DataReposicao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantidade" type="xs:double" />
+      <xs:element minOccurs="0" name="ValorCalorico" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Alimento" nillable="true" type="tns:Alimento" />
+  <xs:complexType name="ArrayOfAlimento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Alimento" nillable="true" type="tns:Alimento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlimento" nillable="true" type="tns:ArrayOfAlimento" />
+  <xs:complexType name="Medicamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="DataReposicao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantidade" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Medicamento" nillable="true" type="tns:Medicamento" />
+  <xs:complexType name="ArrayOfMedicamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Medicamento" nillable="true" type="tns:Medicamento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMedicamento" nillable="true" type="tns:ArrayOfMedicamento" />
 </xs:schema>

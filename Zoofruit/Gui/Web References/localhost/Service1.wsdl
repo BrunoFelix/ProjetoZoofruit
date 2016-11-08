@@ -25,6 +25,66 @@
   <wsdl:message name="IService1_InserirUsuario_OutputMessage">
     <wsdl:part name="parameters" element="tns:InserirUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AlterarUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirUsuario_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirUsuario" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirUsuario_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarAlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirAlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarAlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirAlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarMedicamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarMedicamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirMedicamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirMedicamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarMedicamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarMedicamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirMedicamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirMedicamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirMedicamentoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ListarTipoUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoUsuario" message="tns:IService1_ListarTipoUsuario_InputMessage" />
@@ -37,6 +97,46 @@
     <wsdl:operation name="InserirUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/InserirUsuario" message="tns:IService1_InserirUsuario_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/InserirUsuarioResponse" message="tns:IService1_InserirUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarUsuario" message="tns:IService1_AlterarUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarUsuarioResponse" message="tns:IService1_AlterarUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirUsuario" message="tns:IService1_ExcluirUsuario_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirUsuarioResponse" message="tns:IService1_ExcluirUsuario_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarAlimento" message="tns:IService1_ListarAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarAlimentoResponse" message="tns:IService1_ListarAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InserirAlimento" message="tns:IService1_InserirAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InserirAlimentoResponse" message="tns:IService1_InserirAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarAlimento" message="tns:IService1_AlterarAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarAlimentoResponse" message="tns:IService1_AlterarAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirAlimento" message="tns:IService1_ExcluirAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirAlimentoResponse" message="tns:IService1_ExcluirAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarMedicamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarMedicamento" message="tns:IService1_ListarMedicamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarMedicamentoResponse" message="tns:IService1_ListarMedicamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirMedicamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InserirMedicamento" message="tns:IService1_InserirMedicamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InserirMedicamentoResponse" message="tns:IService1_InserirMedicamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarMedicamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarMedicamento" message="tns:IService1_AlterarMedicamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarMedicamentoResponse" message="tns:IService1_AlterarMedicamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirMedicamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirMedicamento" message="tns:IService1_ExcluirMedicamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirMedicamentoResponse" message="tns:IService1_ExcluirMedicamento_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -61,6 +161,96 @@
     </wsdl:operation>
     <wsdl:operation name="InserirUsuario">
       <soap:operation soapAction="http://tempuri.org/IService1/InserirUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirUsuario">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/InserirAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarMedicamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirMedicamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/InserirMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarMedicamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirMedicamento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirMedicamento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

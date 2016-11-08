@@ -13,7 +13,7 @@ namespace Webservice
     [ServiceContract]
     public interface IService1
     {
-
+        #region Usuario
         [OperationContract]
         List<TipoUsuario> ListarTipoUsuario(TipoUsuario tu);
 
@@ -23,7 +23,40 @@ namespace Webservice
         [OperationContract]
         void InserirUsuario(Usuario u);
 
-        // TODO: Add your service operations here
+        [OperationContract]
+        void AlterarUsuario(Usuario u);
+
+        [OperationContract]
+        void ExcluirUsuario(Usuario u);
+        #endregion
+
+        #region Alimento
+        [OperationContract]
+        List<Alimento> ListarAlimento(Alimento a);
+
+        [OperationContract]
+        void InserirAlimento(Alimento a);
+
+        [OperationContract]
+        void AlterarAlimento(Alimento a);
+
+        [OperationContract]
+        void ExcluirAlimento(Alimento a);
+        #endregion
+
+        #region Medicamento
+        [OperationContract]
+        List<Medicamento> ListarMedicamento(Medicamento m);
+
+        [OperationContract]
+        void InserirMedicamento(Medicamento m);
+
+        [OperationContract]
+        void AlterarMedicamento(Medicamento m);
+
+        [OperationContract]
+        void ExcluirMedicamento(Medicamento m);
+        #endregion
     }
 
 

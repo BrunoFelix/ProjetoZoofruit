@@ -23,6 +23,7 @@ namespace Biblioteca.negocio
             {
                 ValidarPreenchimentoDados(u);
                 ValidarDados(u);
+                VerificarDuplicidade(u);
                 daousuario.Adicionar(u);
             }
             catch(Exception ex)
@@ -36,6 +37,8 @@ namespace Biblioteca.negocio
             try
             {
                 ValidarPreenchimentoDados(u);
+                ValidarDados(u);
+                VerificarDuplicidade(u, true);
                 daousuario.Alterar(u);
             }
             catch (Exception ex)
@@ -74,23 +77,19 @@ namespace Biblioteca.negocio
 
         private void ValidarPreenchimentoDados(Usuario u)
         {
-            if (u.Codigo <= 0)
-            {
-                throw new NegocioException("O valor do campo código precisa ser maior que zero!");
-            }
-            if (u.Login != null && u.Login.Equals("") == false)
+            if (u.Login == null && u.Login.Equals("") == true)
             {
                 throw new NegocioException("O campo Login precisa ser preenchido!");
             }
-            if (u.Nome != null && u.Nome.Equals("") == false)
+            if (u.Nome == null && u.Nome.Equals("") == true)
             {
                 throw new NegocioException("O campo Nome precisa ser preenchido!");
             }
-            if (u.Cpf != null && u.Cpf.Equals("") == false)
+            if (u.Cpf == null && u.Cpf.Equals("") == true)
             {
                 throw new NegocioException("O campo CPF precisa ser preenchido!");
             }
-            if (u.Senha != null && u.Senha.Equals("") == false)
+            if (u.Senha == null && u.Senha.Equals("") == true)
             {
                 throw new NegocioException("O campo Senha precisa ser preenchido!");
             }
@@ -98,7 +97,7 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("O campo Tipo de Usuário precisa ser preenchido!");
             }
-            if (u.tipousuario.Codigo == 1 && (u.Crmv != null && u.Crmv.Equals("") == false))
+            if (u.tipousuario.Codigo == 1 && (u.Crmv == null && u.Crmv.Equals("") == true))
             {
                 throw new NegocioException("O campo CRMV precisa ser preenchido!");
             }
@@ -106,7 +105,7 @@ namespace Biblioteca.negocio
 
         private void ValidarDados(Usuario u)
         {
-            if (u.Nome.Length < 3)
+            if (u.Nome.Length < 3 && u.Nome.Length > 60)
             {
                 throw new NegocioException("Nome inválido!");
             }
@@ -114,13 +113,34 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("CPF inválido!");
             }
-            if (u.Login.Length < 3)
+            if (u.Crmv.Length > 15)
             {
-                throw new NegocioException("Login inválido!");
+                throw new NegocioException("CRMV inválido!");
             }
-            if (u.Senha.Length < 3)
+            if (u.Login.Length < 3 && u.Login.Length > 20)
             {
-                throw new NegocioException("Senha inválido!");
+                throw new NegocioException("O campo login deve conter entre 3 e 20 caracteres!");
+            }
+            if (u.Senha.Length < 3 && u.Login.Length > 8)
+            {
+                throw new NegocioException("O campo senha deve conter entre 3 e 8 caracteres!");
+            }
+        }
+
+        private void VerificarDuplicidade(Usuario u, bool alt=false)
+        {
+            Usuario u2 = new Usuario();
+            u2.Codigo = u.Codigo;
+            u2.Cpf = u.Cpf;
+            if (daousuario.Pesquisar(u2, alt).Count > 0)
+            {
+                throw new NegocioException("CPF digitado já consta no sistema!");
+            }
+            u2.Login = u.Login;
+            u2.Senha = u.Senha;
+            if (daousuario.Pesquisar(u2, alt).Count > 0)
+            {
+                throw new NegocioException("Login e senha digitados já constam no sistema!");
             }
         }
     }

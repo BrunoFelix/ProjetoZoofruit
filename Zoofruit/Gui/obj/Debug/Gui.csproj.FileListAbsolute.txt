@@ -11,19 +11,6 @@ C:\Users\aluno\Desktop\BRUNO\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\Users\aluno\Desktop\BRUNO\Zoofruit\Gui\obj\Debug\Gui.pdb
 C:\Users\aluno\Desktop\BRUNO\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
 C:\Users\aluno\Desktop\BRUNO\Zoofruit\Gui\obj\Debug\Gui.Manter_login.resources
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login.resources
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
@@ -64,7 +51,6 @@ C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gu
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
@@ -79,7 +65,6 @@ C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Mante
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login_ed.resources
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\bin\Debug\Gui.exe.config
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.pdb
@@ -95,3 +80,17 @@ C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.Propert
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login_ed.resources
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login_ed.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb

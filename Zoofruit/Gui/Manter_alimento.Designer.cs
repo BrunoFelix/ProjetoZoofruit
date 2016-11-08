@@ -43,7 +43,6 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,8 +126,7 @@
             "Código",
             "Nome",
             "Valor Calórico",
-            "Quantidade",
-            "Data de ultima reposição"});
+            "Quantidade"});
             this.comboBoxPesquisar.Location = new System.Drawing.Point(296, 24);
             this.comboBoxPesquisar.Name = "comboBoxPesquisar";
             this.comboBoxPesquisar.Size = new System.Drawing.Size(121, 21);
@@ -165,9 +163,8 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.lv_alimento.Location = new System.Drawing.Point(3, 50);
+            this.columnHeader4});
+            this.lv_alimento.Location = new System.Drawing.Point(0, 48);
             this.lv_alimento.Name = "lv_alimento";
             this.lv_alimento.Size = new System.Drawing.Size(965, 495);
             this.lv_alimento.TabIndex = 1;
@@ -193,11 +190,6 @@
             // 
             this.columnHeader4.Text = "Quantidade";
             this.columnHeader4.Width = 125;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Data ultima reposição";
-            this.columnHeader5.Width = 339;
             // 
             // Manter_alimento
             // 
@@ -231,6 +223,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

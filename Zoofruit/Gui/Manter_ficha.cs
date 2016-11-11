@@ -16,6 +16,7 @@ namespace Gui
         public List<Animal> listaanimal;
         private static Manter_ficha manter_ficha;
         Service1 webservice;
+        public Animal excluiranimal;
 
         public static Manter_ficha getInstance()
         {
@@ -37,6 +38,7 @@ namespace Gui
             InitializeComponent();
             webservice = new Service1();
             listaanimal = new List<Animal>();
+            excluiranimal = new Animal();
         }
 
         public void AtualizarGrid()
@@ -131,6 +133,15 @@ namespace Gui
         private void Manter_ficha_FormClosed(object sender, FormClosedEventArgs e)
         {
             manter_ficha = null;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Animal animal = new Animal();
+            TipoAnimal tipoanimal = new TipoAnimal();
+            animal.TipoAnimal = tipoanimal;
+            excluiranimal = webservice.ExcluirAnimal(animal).ToInt32();
+            AtualizarGrid();
         }
     }
 }

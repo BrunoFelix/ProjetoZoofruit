@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_ficha));
             this.lv_animal = new System.Windows.Forms.ListView();
+            this.Código = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Porte = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Peso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView3 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,12 +55,6 @@
             this.tb_pesquisar = new System.Windows.Forms.TextBox();
             this.comboBox_pesquisar_animal = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Código = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Cor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Porte = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Peso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,36 @@
             this.lv_animal.TabIndex = 0;
             this.lv_animal.UseCompatibleStateImageBehavior = false;
             this.lv_animal.View = System.Windows.Forms.View.Details;
+            // 
+            // Código
+            // 
+            this.Código.Text = "Código";
+            this.Código.Width = 71;
+            // 
+            // Nome
+            // 
+            this.Nome.Text = "Nome";
+            this.Nome.Width = 330;
+            // 
+            // Cor
+            // 
+            this.Cor.Text = "Cor";
+            this.Cor.Width = 256;
+            // 
+            // Porte
+            // 
+            this.Porte.Text = "Porte";
+            this.Porte.Width = 214;
+            // 
+            // Peso
+            // 
+            this.Peso.Text = "Peso";
+            this.Peso.Width = 126;
+            // 
+            // Tipo
+            // 
+            this.Tipo.Text = "Tipo";
+            this.Tipo.Width = 348;
             // 
             // listView2
             // 
@@ -179,6 +209,7 @@
             this.button4.Text = "Excluir [F4]";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_alterar_animal
             // 
@@ -300,36 +331,6 @@
             this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 24;
             this.label4.Text = "Pesquisar:";
-            // 
-            // Código
-            // 
-            this.Código.Text = "Código";
-            this.Código.Width = 71;
-            // 
-            // Nome
-            // 
-            this.Nome.Text = "Nome";
-            this.Nome.Width = 330;
-            // 
-            // Cor
-            // 
-            this.Cor.Text = "Cor";
-            this.Cor.Width = 256;
-            // 
-            // Porte
-            // 
-            this.Porte.Text = "Porte";
-            this.Porte.Width = 214;
-            // 
-            // Peso
-            // 
-            this.Peso.Text = "Peso";
-            this.Peso.Width = 126;
-            // 
-            // Tipo
-            // 
-            this.Tipo.Text = "Tipo";
-            this.Tipo.Width = 348;
             // 
             // Manter_ficha
             // 

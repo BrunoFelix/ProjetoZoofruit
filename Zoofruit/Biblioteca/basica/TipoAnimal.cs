@@ -9,7 +9,7 @@ namespace Biblioteca.basica
     public class TipoAnimal
     {
         private int codigo;
-        private string tipo;
+        private string descricao;
 
         public int Codigo
         {
@@ -24,17 +24,18 @@ namespace Biblioteca.basica
             }
         }
 
-        public string Tipo
+        public string Descricao
         {
             get
             {
-                return tipo;
+                return descricao;
             }
 
             set
             {
-                tipo = value;
+                descricao = value;
             }
-         }
         }
     }
+
+}

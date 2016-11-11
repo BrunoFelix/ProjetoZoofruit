@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadastroAnimais.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroAnimais.Designer.cs">
-      <DependentUpon>CadastroAnimais.cs</DependentUpon>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -71,6 +71,18 @@
     </Compile>
     <Compile Include="Manter_alimento_ed.Designer.cs">
       <DependentUpon>Manter_alimento_ed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manter_animal_ed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_animal_ed.Designer.cs">
+      <DependentUpon>Manter_animal_ed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manter_ficha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_ficha.Designer.cs">
+      <DependentUpon>Manter_ficha.cs</DependentUpon>
     </Compile>
     <Compile Include="Manter_login.cs">
       <SubType>Form</SubType>
@@ -97,14 +109,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CadastroAnimais.resx">
-      <DependentUpon>CadastroAnimais.cs</DependentUpon>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_alimento.resx">
       <DependentUpon>Manter_alimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_animal_ed.resx">
+      <DependentUpon>Manter_animal_ed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_ficha.resx">
+      <DependentUpon>Manter_ficha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login.resx">
       <DependentUpon>Manter_login.cs</DependentUpon>
@@ -134,6 +152,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Web References\localhost\Alimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\localhost\Animal.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\localhost\Medicamento.datasource">

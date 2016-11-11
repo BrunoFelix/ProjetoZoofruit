@@ -22,6 +22,7 @@ namespace Webservice
         RNMedicamento rnmedicamento;
         RNAlimento rnalimento;
         RNAnimal rnanimal;
+        RNTipoAnimal rntipoanimal;
 
         private Service1()
         {
@@ -30,6 +31,7 @@ namespace Webservice
             rnmedicamento = new RNMedicamento();
             rnalimento = new RNAlimento();
             rnanimal = new RNAnimal();
+            rntipoanimal = new RNTipoAnimal();
         }
 
 
@@ -102,6 +104,10 @@ namespace Webservice
         }
 
         /* ------------------- Animal -------------------------------------- */
+        /*public List<Animal> ListarTipoAnimal(TipoAnimal ta)
+        {
+            return rntipoanimal.NListarTipoAnimal(ta);
+        }*/
         public List<Animal> ListarAnimal(Animal a)
         {
             return rnanimal.NListarAnimal(a);

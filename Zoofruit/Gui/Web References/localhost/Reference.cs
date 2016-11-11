@@ -55,6 +55,14 @@ namespace Gui.localhost {
         
         private System.Threading.SendOrPostCallback ExcluirMedicamentoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ListarAnimalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InserirAnimalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarAnimalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirAnimalOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -131,6 +139,18 @@ namespace Gui.localhost {
         
         /// <remarks/>
         public event ExcluirMedicamentoCompletedEventHandler ExcluirMedicamentoCompleted;
+        
+        /// <remarks/>
+        public event ListarAnimalCompletedEventHandler ListarAnimalCompleted;
+        
+        /// <remarks/>
+        public event InserirAnimalCompletedEventHandler InserirAnimalCompleted;
+        
+        /// <remarks/>
+        public event AlterarAnimalCompletedEventHandler AlterarAnimalCompleted;
+        
+        /// <remarks/>
+        public event ExcluirAnimalCompletedEventHandler ExcluirAnimalCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -509,6 +529,121 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+        public Animal[] ListarAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Animal a) {
+            object[] results = this.Invoke("ListarAnimal", new object[] {
+                        a});
+            return ((Animal[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarAnimalAsync(Animal a) {
+            this.ListarAnimalAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void ListarAnimalAsync(Animal a, object userState) {
+            if ((this.ListarAnimalOperationCompleted == null)) {
+                this.ListarAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarAnimalOperationCompleted);
+            }
+            this.InvokeAsync("ListarAnimal", new object[] {
+                        a}, this.ListarAnimalOperationCompleted, userState);
+        }
+        
+        private void OnListarAnimalOperationCompleted(object arg) {
+            if ((this.ListarAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarAnimalCompleted(this, new ListarAnimalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InserirAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InserirAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Animal a) {
+            this.Invoke("InserirAnimal", new object[] {
+                        a});
+        }
+        
+        /// <remarks/>
+        public void InserirAnimalAsync(Animal a) {
+            this.InserirAnimalAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void InserirAnimalAsync(Animal a, object userState) {
+            if ((this.InserirAnimalOperationCompleted == null)) {
+                this.InserirAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInserirAnimalOperationCompleted);
+            }
+            this.InvokeAsync("InserirAnimal", new object[] {
+                        a}, this.InserirAnimalOperationCompleted, userState);
+        }
+        
+        private void OnInserirAnimalOperationCompleted(object arg) {
+            if ((this.InserirAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InserirAnimalCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AlterarAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AlterarAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Animal a) {
+            this.Invoke("AlterarAnimal", new object[] {
+                        a});
+        }
+        
+        /// <remarks/>
+        public void AlterarAnimalAsync(Animal a) {
+            this.AlterarAnimalAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarAnimalAsync(Animal a, object userState) {
+            if ((this.AlterarAnimalOperationCompleted == null)) {
+                this.AlterarAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarAnimalOperationCompleted);
+            }
+            this.InvokeAsync("AlterarAnimal", new object[] {
+                        a}, this.AlterarAnimalOperationCompleted, userState);
+        }
+        
+        private void OnAlterarAnimalOperationCompleted(object arg) {
+            if ((this.AlterarAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarAnimalCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ExcluirAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void ExcluirAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] Animal a) {
+            this.Invoke("ExcluirAnimal", new object[] {
+                        a});
+        }
+        
+        /// <remarks/>
+        public void ExcluirAnimalAsync(Animal a) {
+            this.ExcluirAnimalAsync(a, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirAnimalAsync(Animal a, object userState) {
+            if ((this.ExcluirAnimalOperationCompleted == null)) {
+                this.ExcluirAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirAnimalOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirAnimal", new object[] {
+                        a}, this.ExcluirAnimalOperationCompleted, userState);
+        }
+        
+        private void OnExcluirAnimalOperationCompleted(object arg) {
+            if ((this.ExcluirAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirAnimalCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -570,6 +705,177 @@ namespace Gui.localhost {
             }
             set {
                 this.descricaoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class TipoAnimal {
+        
+        private int codigoField;
+        
+        private bool codigoFieldSpecified;
+        
+        private string descricaoField;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodigoSpecified {
+            get {
+                return this.codigoFieldSpecified;
+            }
+            set {
+                this.codigoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Descricao {
+            get {
+                return this.descricaoField;
+            }
+            set {
+                this.descricaoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class Animal {
+        
+        private int codigoField;
+        
+        private bool codigoFieldSpecified;
+        
+        private string corField;
+        
+        private byte[] fotoField;
+        
+        private string nomeField;
+        
+        private double pesoField;
+        
+        private bool pesoFieldSpecified;
+        
+        private string porteField;
+        
+        private TipoAnimal tipoAnimalField;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodigoSpecified {
+            get {
+                return this.codigoFieldSpecified;
+            }
+            set {
+                this.codigoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Cor {
+            get {
+                return this.corField;
+            }
+            set {
+                this.corField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", IsNullable=true)]
+        public byte[] Foto {
+            get {
+                return this.fotoField;
+            }
+            set {
+                this.fotoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Nome {
+            get {
+                return this.nomeField;
+            }
+            set {
+                this.nomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Peso {
+            get {
+                return this.pesoField;
+            }
+            set {
+                this.pesoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool PesoSpecified {
+            get {
+                return this.pesoFieldSpecified;
+            }
+            set {
+                this.pesoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Porte {
+            get {
+                return this.porteField;
+            }
+            set {
+                this.porteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public TipoAnimal TipoAnimal {
+            get {
+                return this.tipoAnimalField;
+            }
+            set {
+                this.tipoAnimalField = value;
             }
         }
     }
@@ -1020,6 +1326,44 @@ namespace Gui.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void ExcluirMedicamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ListarAnimalCompletedEventHandler(object sender, ListarAnimalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarAnimalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarAnimalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Animal[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Animal[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void InserirAnimalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void AlterarAnimalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ExcluirAnimalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

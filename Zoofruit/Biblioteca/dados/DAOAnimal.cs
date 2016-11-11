@@ -104,7 +104,7 @@ namespace Biblioteca.dados
            try { 
             conexao.openConnection();
             string sql = "SELECT Animal.Nome, Animal.Cor, Animal.Porte, Animal.Peso, Animal.codigo_TipoAnimal, " +
-                "TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 ";
+                "TipoAnimal.descricao FROM Animal LEFT JOIN TipoAnimal ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 ";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
                 SqlDataReader reader = cmd.ExecuteReader();

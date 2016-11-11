@@ -56,6 +56,7 @@
     <Compile Include="dados\DAOFichaAlimento.cs" />
     <Compile Include="dados\DAOFichaMedicamento.cs" />
     <Compile Include="dados\DAOMedicamento.cs" />
+    <Compile Include="dados\DAOTipoAnimal.cs" />
     <Compile Include="dados\DAOTipoUsuario.cs" />
     <Compile Include="dados\DAOUsuario.cs" />
     <Compile Include="dados\iDAOAlimento.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="negocio\RNAlimento.cs" />
     <Compile Include="negocio\RNAnimal.cs" />
     <Compile Include="negocio\RNMedicamento.cs" />
+    <Compile Include="negocio\RNTipoAnimal.cs" />
     <Compile Include="negocio\RNTipoUsuario.cs" />
     <Compile Include="negocio\RNUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

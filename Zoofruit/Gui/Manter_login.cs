@@ -216,5 +216,10 @@ namespace Gui
                 manter_login_ed.ShowDialog();
             }
         }
+
+        private void Manter_login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            manter_login = null;
+        }
     }
 }

@@ -72,7 +72,6 @@ namespace Biblioteca.negocio
         }
 
         //######################################### VALIDAÇÕES
-    }
-    {
+
     }
 }

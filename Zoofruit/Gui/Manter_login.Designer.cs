@@ -223,6 +223,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuários";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manter_login_FormClosed);
             this.Load += new System.EventHandler(this.Manter_login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

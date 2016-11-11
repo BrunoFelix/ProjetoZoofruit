@@ -40,8 +40,14 @@ namespace Gui
 
         private void animaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CadastroAnimais cadastroanimais = new CadastroAnimais();
-            cadastroanimais.Show();
+
+        }
+
+        private void consultarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Manter_ficha manter_ficha = Manter_ficha.getInstance();
+            manter_ficha.Show();
+            manter_ficha.BringToFront();
         }
     }
 }

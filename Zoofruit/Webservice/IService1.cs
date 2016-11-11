@@ -57,6 +57,24 @@ namespace Webservice
         [OperationContract]
         void ExcluirMedicamento(Medicamento m);
         #endregion
+
+        #region Animal
+
+        /*[OperationContract]
+        List<Animal> ListarTipoAnimal(TipoAnimal ta);*/
+
+        [OperationContract]
+        List<Animal> ListarAnimal(Animal a);
+
+        [OperationContract]
+        void InserirAnimal(Animal a);
+
+        [OperationContract]
+        void AlterarAnimal(Animal a);
+
+        [OperationContract]
+        void ExcluirAnimal(Animal a);
+        #endregion
     }
 
 

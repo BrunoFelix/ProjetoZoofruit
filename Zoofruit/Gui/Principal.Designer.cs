@@ -113,6 +113,7 @@
             this.consultarAnimalToolStripMenuItem.Name = "consultarAnimalToolStripMenuItem";
             this.consultarAnimalToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.consultarAnimalToolStripMenuItem.Text = "Consultar animal";
+            this.consultarAnimalToolStripMenuItem.Click += new System.EventHandler(this.consultarAnimalToolStripMenuItem_Click);
             // 
             // quadroDeTarefasToolStripMenuItem
             // 

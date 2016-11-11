@@ -62,4 +62,29 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfMedicamento" nillable="true" type="tns:ArrayOfMedicamento" />
+  <xs:complexType name="Animal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Cor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Foto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Peso" type="xs:double" />
+      <xs:element minOccurs="0" name="Porte" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoAnimal" nillable="true" type="tns:TipoAnimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Animal" nillable="true" type="tns:Animal" />
+  <xs:complexType name="TipoAnimal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TipoAnimal" nillable="true" type="tns:TipoAnimal" />
+  <xs:complexType name="ArrayOfAnimal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Animal" nillable="true" type="tns:Animal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAnimal" nillable="true" type="tns:ArrayOfAnimal" />
 </xs:schema>

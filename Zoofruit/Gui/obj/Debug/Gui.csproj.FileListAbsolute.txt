@@ -16,15 +16,12 @@ C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
-C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.dll
-C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Biblioteca.pdb
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login.resources
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Resources.resources
 C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
-C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
@@ -96,3 +93,8 @@ C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Re
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Teste.Form1.resources
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento.resources
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_animal_ed.resources
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha.resources
+C:\Users\Henrique\Documents\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login_ed.resources

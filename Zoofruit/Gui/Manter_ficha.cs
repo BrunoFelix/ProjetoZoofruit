@@ -139,7 +139,7 @@ namespace Gui
         {
             Animal animal = new Animal();
             TipoAnimal tipoanimal = new TipoAnimal();
-            //animal.TipoAnimal = tipoanimal;
+            animal.TipoAnimal = tipoanimal;
             excluiranimal = webservice.ExcluirAnimal(animal);
             AtualizarGrid();
         }

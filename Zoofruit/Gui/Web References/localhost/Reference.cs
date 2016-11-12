@@ -55,6 +55,8 @@ namespace Gui.localhost {
         
         private System.Threading.SendOrPostCallback ExcluirMedicamentoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ListarTipoAnimalOperationCompleted;
+        
         private System.Threading.SendOrPostCallback ListarAnimalOperationCompleted;
         
         private System.Threading.SendOrPostCallback InserirAnimalOperationCompleted;
@@ -139,6 +141,9 @@ namespace Gui.localhost {
         
         /// <remarks/>
         public event ExcluirMedicamentoCompletedEventHandler ExcluirMedicamentoCompleted;
+        
+        /// <remarks/>
+        public event ListarTipoAnimalCompletedEventHandler ListarTipoAnimalCompleted;
         
         /// <remarks/>
         public event ListarAnimalCompletedEventHandler ListarAnimalCompleted;
@@ -529,6 +534,37 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+        public TipoAnimal[] ListarTipoAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] TipoAnimal ta) {
+            object[] results = this.Invoke("ListarTipoAnimal", new object[] {
+                        ta});
+            return ((TipoAnimal[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarTipoAnimalAsync(TipoAnimal ta) {
+            this.ListarTipoAnimalAsync(ta, null);
+        }
+        
+        /// <remarks/>
+        public void ListarTipoAnimalAsync(TipoAnimal ta, object userState) {
+            if ((this.ListarTipoAnimalOperationCompleted == null)) {
+                this.ListarTipoAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarTipoAnimalOperationCompleted);
+            }
+            this.InvokeAsync("ListarTipoAnimal", new object[] {
+                        ta}, this.ListarTipoAnimalOperationCompleted, userState);
+        }
+        
+        private void OnListarTipoAnimalOperationCompleted(object arg) {
+            if ((this.ListarTipoAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarTipoAnimalCompleted(this, new ListarTipoAnimalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
@@ -715,53 +751,6 @@ namespace Gui.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
-    public partial class TipoAnimal {
-        
-        private int codigoField;
-        
-        private bool codigoFieldSpecified;
-        
-        private string descricaoField;
-        
-        /// <remarks/>
-        public int Codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool CodigoSpecified {
-            get {
-                return this.codigoFieldSpecified;
-            }
-            set {
-                this.codigoFieldSpecified = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Descricao {
-            get {
-                return this.descricaoField;
-            }
-            set {
-                this.descricaoField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
     public partial class Animal {
         
         private int codigoField;
@@ -876,6 +865,53 @@ namespace Gui.localhost {
             }
             set {
                 this.tipoAnimalField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1038.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class TipoAnimal {
+        
+        private int codigoField;
+        
+        private bool codigoFieldSpecified;
+        
+        private string descricaoField;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodigoSpecified {
+            get {
+                return this.codigoFieldSpecified;
+            }
+            set {
+                this.codigoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Descricao {
+            get {
+                return this.descricaoField;
+            }
+            set {
+                this.descricaoField = value;
             }
         }
     }
@@ -1326,6 +1362,32 @@ namespace Gui.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
     public delegate void ExcluirMedicamentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    public delegate void ListarTipoAnimalCompletedEventHandler(object sender, ListarTipoAnimalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarTipoAnimalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarTipoAnimalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TipoAnimal[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TipoAnimal[])(this.results[0]));
+            }
+        }
+    }
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1038.0")]

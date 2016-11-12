@@ -85,6 +85,12 @@
   <wsdl:message name="IService1_ExcluirMedicamento_OutputMessage">
     <wsdl:part name="parameters" element="tns:ExcluirMedicamentoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ListarTipoAnimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoAnimal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarTipoAnimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoAnimalResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_ListarAnimal_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarAnimal" />
   </wsdl:message>
@@ -161,6 +167,10 @@
     <wsdl:operation name="ExcluirMedicamento">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirMedicamento" message="tns:IService1_ExcluirMedicamento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirMedicamentoResponse" message="tns:IService1_ExcluirMedicamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoAnimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoAnimal" message="tns:IService1_ListarTipoAnimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarTipoAnimalResponse" message="tns:IService1_ListarTipoAnimal_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ListarAnimal">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarAnimal" message="tns:IService1_ListarAnimal_InputMessage" />
@@ -291,6 +301,15 @@
     </wsdl:operation>
     <wsdl:operation name="ExcluirMedicamento">
       <soap:operation soapAction="http://tempuri.org/IService1/ExcluirMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoAnimal">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarTipoAnimal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

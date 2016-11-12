@@ -22,7 +22,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "INSERT INTO ANIMAL (NOME, COR, PORTE, PESO, CODIGO_TIPOANIMAL, FOTO) VALUES (@NOME, @COR, @PORTE, @PESO, @CODIGO_TIPOANIMAL, @FOTO)";
+                string sql = "INSERT INTO ANIMAL (NOME, COR, PORTE, PESO, CODIGO_TIPOANIMAL) VALUES (@NOME, @COR, @PORTE, @PESO, @CODIGO_TIPOANIMAL)";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
@@ -31,7 +31,7 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@PORTE", a.Porte));
                 cmd.Parameters.Add(new SqlParameter("@PESO", a.Peso));
                 cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOANIMAL", a.TipoAnimal.Codigo));
-                cmd.Parameters.Add(new SqlParameter("@FOTO", a.Foto));
+                //cmd.Parameters.Add(new SqlParameter("@FOTO", a.Foto));
 
 
                 cmd.ExecuteNonQuery();
@@ -103,7 +103,7 @@ namespace Biblioteca.dados
 
            try { 
             conexao.openConnection();
-            string sql = "SELECT Animal.Nome, Animal.Cor, Animal.Porte, Animal.Peso, Animal.codigo_TipoAnimal, " +
+            string sql = "SELECT Animal.codigo, Animal.Nome, Animal.Cor, Animal.Porte, Animal.Peso, Animal.codigo_TipoAnimal, " +
                 "TipoAnimal.descricao FROM Animal LEFT JOIN TipoAnimal ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 ";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
@@ -112,12 +112,12 @@ namespace Biblioteca.dados
             while (reader.Read())
             {
                 Animal animal = new Animal();
-                animal.Codigo = reader.GetInt32(reader.GetOrdinal("Cod_Animal"));
+                animal.Codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
                 animal.Nome= reader.GetString(reader.GetOrdinal("Nome"));
                 animal.Cor = reader.GetString(reader.GetOrdinal("Cor"));
                 animal.Porte = reader.GetString(reader.GetOrdinal("Porte"));
                 animal.Peso = reader.GetDouble(reader.GetOrdinal("Peso"));
-                animal.TipoAnimal.Codigo = reader.GetInt32(reader.GetOrdinal("cod_tipoAnimal"));
+                animal.TipoAnimal.Codigo = reader.GetInt32(reader.GetOrdinal("codigo_tipoanimal"));
                 
 
                 listaAnimal.Add(animal);

@@ -118,9 +118,6 @@
     <EmbeddedResource Include="Manter_alimento.resx">
       <DependentUpon>Manter_alimento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manter_alimento_ed.resx">
-      <DependentUpon>Manter_alimento_ed.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Manter_animal_ed.resx">
       <DependentUpon>Manter_animal_ed.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +173,9 @@
     </None>
     <None Include="Web References\localhost\Service11.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\localhost\TipoAnimal.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\localhost\TipoUsuario.datasource">
       <DependentUpon>Reference.map</DependentUpon>

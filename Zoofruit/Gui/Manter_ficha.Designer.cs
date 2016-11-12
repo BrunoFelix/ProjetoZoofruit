@@ -125,7 +125,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView3.Location = new System.Drawing.Point(0, 670);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1245, 174);
+            this.listView3.Size = new System.Drawing.Size(1245, 79);
             this.listView3.TabIndex = 2;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
@@ -314,10 +314,10 @@
             this.comboBox_pesquisar_animal.Items.AddRange(new object[] {
             "Código",
             "Nome",
-            "CPF",
-            "CRMV",
-            "Login",
-            "Tipo de Usuário"});
+            "Cor",
+            "Porte",
+            "Peso",
+            "Tipo"});
             this.comboBox_pesquisar_animal.Location = new System.Drawing.Point(30, 21);
             this.comboBox_pesquisar_animal.Name = "comboBox_pesquisar_animal";
             this.comboBox_pesquisar_animal.Size = new System.Drawing.Size(121, 21);
@@ -337,7 +337,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1246, 836);
+            this.ClientSize = new System.Drawing.Size(1246, 741);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button9);

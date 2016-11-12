@@ -1,4 +1,5 @@
 ﻿using Biblioteca.basica;
+using Biblioteca.dados;
 using Biblioteca.util;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,17 @@ namespace Biblioteca.negocio
 {
     public class RNTipoAnimal : NegocioException
     {
-        public List<TipoAnimal> NListarTipoAnimal(TipoAnimal a)
+        DAOTipoAnimal daotipoanimal;
+
+        public RNTipoAnimal()
+        {
+            daotipoanimal = new DAOTipoAnimal();
+        }
+        public List<TipoAnimal> NListarTipoAnimal(TipoAnimal ta)
         {
             try
             {
-                return null;
+                return daotipoanimal.Pesquisar(ta);
             }
             catch (Exception ex)
             {

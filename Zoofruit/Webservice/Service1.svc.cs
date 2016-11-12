@@ -104,10 +104,10 @@ namespace Webservice
         }
 
         /* ------------------- Animal -------------------------------------- */
-        /*public List<Animal> ListarTipoAnimal(TipoAnimal ta)
+        public List<TipoAnimal> ListarTipoAnimal(TipoAnimal ta)
         {
             return rntipoanimal.NListarTipoAnimal(ta);
-        }*/
+        }
         public List<Animal> ListarAnimal(Animal a)
         {
             return rnanimal.NListarAnimal(a);

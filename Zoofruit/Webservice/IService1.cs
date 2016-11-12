@@ -60,8 +60,8 @@ namespace Webservice
 
         #region Animal
 
-        /*[OperationContract]
-        List<Animal> ListarTipoAnimal(TipoAnimal ta);*/
+        [OperationContract]
+        List<TipoAnimal> ListarTipoAnimal(TipoAnimal ta);
 
         [OperationContract]
         List<Animal> ListarAnimal(Animal a);

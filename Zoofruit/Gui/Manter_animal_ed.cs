@@ -27,7 +27,7 @@ namespace Gui
             webservice = new Service1();
             animal = new Animal();
 
-            //listatipoanimal = webservice.ListarTipoUsuario(tipoanimal).ToList();
+            listatipoanimal = webservice.ListarTipoAnimal(tipoanimal).ToList();
             foreach (TipoAnimal a in listatipoanimal)
             {
                 comboBox1.Items.Add(a.Descricao);

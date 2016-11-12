@@ -16,7 +16,7 @@ namespace Gui
         public List<Animal> listaanimal;
         private static Manter_ficha manter_ficha;
         Service1 webservice;
-        public Animal excluiranimal;
+        public Animal animal;
 
         public static Manter_ficha getInstance()
         {
@@ -38,7 +38,9 @@ namespace Gui
             InitializeComponent();
             webservice = new Service1();
             listaanimal = new List<Animal>();
-            excluiranimal = new Animal();
+            TipoAnimal tipoanimal = new TipoAnimal();
+            animal = new Animal();
+            animal.TipoAnimal = tipoanimal;
         }
 
         public void AtualizarGrid()
@@ -95,7 +97,76 @@ namespace Gui
 
         public void btn_pesquisar_animal_Click(object sender, EventArgs e)
         {
+            if (comboBox_pesquisar_animal.SelectedIndex == 0)
+            {
+                try
+                {
+                    animal.Codigo = Int32.Parse(tb_pesquisar.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Pesquisa inválida!");
+                }
+            }
+            else if (comboBox_pesquisar_animal.SelectedIndex == 1)
+            {
+                try
+                {
+                    animal.Nome = tb_pesquisar.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Pesquisa inválida!");
+                }
+            }
+            else if (comboBox_pesquisar_animal.SelectedIndex == 2)
+            {
+                try
+                {
+                    animal.Cor = tb_pesquisar.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Pesquisa inválida!");
+                }
+            }
+            else if (comboBox_pesquisar_animal.SelectedIndex == 3)
+            {
+                try
+                {
+                    animal.Porte = tb_pesquisar.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Pesquisa inválida!");
+                }
 
+            }
+            else if (comboBox_pesquisar_animal.SelectedIndex == 4)
+            {
+                try
+                {
+                    animal.Peso = double.Parse(tb_pesquisar.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Pesquisa inválida!");
+                }
+            }
+            else if (comboBox_pesquisar_animal.SelectedIndex == 5)
+            {
+                try
+                {
+                    animal.TipoAnimal.Descricao = tb_pesquisar.Text;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Pesquisa inválida!");
+                }
+            }
+
+            listaanimal = webservice.ListarAnimal(animal).ToList();
+            AtualizarGrid();
         }
 
         private void btn_novo_animal_Click(object sender, EventArgs e)
@@ -140,7 +211,7 @@ namespace Gui
             Animal animal = new Animal();
             TipoAnimal tipoanimal = new TipoAnimal();
             animal.TipoAnimal = tipoanimal;
-            //excluiranimal = webservice.ExcluirAnimal(animal);
+            webservice.ExcluirAnimal(animal);
             AtualizarGrid();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Biblioteca.basica;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace Biblioteca.dados
 {
     interface iDAOTipoAnimal
     {
-
+        List<TipoAnimal> Pesquisar(TipoAnimal ta);
     }
 }

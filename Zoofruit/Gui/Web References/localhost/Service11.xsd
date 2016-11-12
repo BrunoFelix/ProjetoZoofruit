@@ -83,7 +83,7 @@
       <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Peso" type="xs:double" />
       <xs:element minOccurs="0" name="Porte" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TipoAnimal" nillable="true" type="tns:TipoAnimal" />
+      <xs:element minOccurs="0" name="tipoAnimal" nillable="true" type="tns:TipoAnimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Animal" nillable="true" type="tns:Animal" />

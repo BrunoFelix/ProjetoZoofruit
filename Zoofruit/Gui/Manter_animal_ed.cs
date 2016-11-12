@@ -55,7 +55,7 @@ namespace Gui
             tb_peso.Text = animal.Peso.ToString();
             tb_porte.Text = animal.Porte;
 
-            int index = comboBox1.FindString(animal.TipoAnimal.Descricao);
+            int index = comboBox1.FindString(animal.tipoAnimal.Descricao);
             comboBox1.SelectedIndex = index;
         }
 
@@ -83,7 +83,7 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.animal == null)
+            if (this.animal.Codigo == 0)
             {
                 animal.Nome = tb_nome.Text;
                 animal.Cor = tb_cor.Text;
@@ -97,7 +97,7 @@ namespace Gui
                 }
                 //animal.Foto = tb_senha.Text;
                 tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
-                animal.TipoAnimal = tipoanimal;
+                animal.tipoAnimal = tipoanimal;
                 webservice.InserirAnimal(animal);
                 ((Manter_ficha)Application.OpenForms["manter_ficha"]).btn_pesquisar_animal_Click(sender, e);
             }
@@ -118,8 +118,8 @@ namespace Gui
                 }
                 //animal.Foto = tb_senha.Text;
                 tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
-                animal.TipoAnimal = tipoanimal;
-                webservice.InserirAnimal(animal);
+                animal.tipoAnimal = tipoanimal;
+                webservice.AlterarAnimal(animal);
                 ((Manter_ficha)Application.OpenForms["manter_ficha"]).btn_pesquisar_animal_Click(sender, e);
             }
         }

@@ -30,12 +30,13 @@ CREATE TABLE Animal (
 	foto VARBINARY(MAX),
 	cor VARCHAR (20),
 	porte VARCHAR (8),
-	peso NUMERIC (10,2),
+	peso float,
 	codigo_TipoAnimal INTEGER REFERENCES TipoAnimal(codigo)
 );
 
 CREATE TABLE Ficha (
 	codigo INTEGER IDENTITY (1,1) PRIMARY KEY,
+	descricao VARCHAR(60),
 	dt_criacao DATE NOT NULL,
 	hr_cricacao TIME NOT NULL,
 	dt_validade DATE NOT NULL,
@@ -105,7 +106,11 @@ INSERT INTO TipoUsuario([descricao]) VALUES ('Veterinário');
 GO
 INSERT INTO Usuario([nome],[cpf],[login],[senha],[crmv],[codigo_TipoUsuario])VALUES('Administrador do Sistema','39194717338','admin','123','012345',1);
 GO
-INSERT INTO TipoUsuario([descricao]) VALUES ('Tratador');
+INSERT INTO TipoAnimal([descricao]) VALUES ('Felino');
+GO
+INSERT INTO TipoAnimal([descricao]) VALUES ('Roedor');
+GO
+INSERT INTO TipoAnimal([descricao]) VALUES ('Réptil');
 
 
 

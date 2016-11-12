@@ -32,12 +32,12 @@ C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblio
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb

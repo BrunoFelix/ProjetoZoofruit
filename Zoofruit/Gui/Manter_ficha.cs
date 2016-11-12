@@ -38,9 +38,8 @@ namespace Gui
             InitializeComponent();
             webservice = new Service1();
             listaanimal = new List<Animal>();
-            TipoAnimal tipoanimal = new TipoAnimal();
             animal = new Animal();
-            animal.TipoAnimal = tipoanimal;
+            animal.tipoAnimal = new TipoAnimal();
         }
 
         public void AtualizarGrid()
@@ -57,7 +56,7 @@ namespace Gui
                 item.SubItems.Add(a.Cor);
                 item.SubItems.Add(a.Porte);
                 item.SubItems.Add(Convert.ToString(a.Peso));
-                item.SubItems.Add(a.TipoAnimal.Descricao);
+                item.SubItems.Add(a.tipoAnimal.Descricao);
 
                 lv_animal.Items.Add(item);
             }
@@ -157,7 +156,7 @@ namespace Gui
             {
                 try
                 {
-                    animal.TipoAnimal.Descricao = tb_pesquisar.Text;
+                    animal.tipoAnimal.Descricao = tb_pesquisar.Text;
                 }
                 catch (Exception ex)
                 {
@@ -190,8 +189,7 @@ namespace Gui
         {
             comboBox_pesquisar_animal.SelectedIndex = 1;
             Animal animal = new Animal();
-            TipoAnimal tipoanimal = new TipoAnimal();
-            animal.TipoAnimal = tipoanimal;
+            animal.tipoAnimal = new TipoAnimal();
             listaanimal = webservice.ListarAnimal(animal).ToList();
             AtualizarGrid();
         }
@@ -210,9 +208,15 @@ namespace Gui
         {
             Animal animal = new Animal();
             TipoAnimal tipoanimal = new TipoAnimal();
-            animal.TipoAnimal = tipoanimal;
+            animal.tipoAnimal = tipoanimal;
             webservice.ExcluirAnimal(animal);
             AtualizarGrid();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Manter_ficha_ed manter_ficha_ed = new Manter_ficha_ed(1);
+            manter_ficha_ed.ShowDialog();
         }
     }
 }

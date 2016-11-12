@@ -14,7 +14,12 @@ namespace Biblioteca.basica
         private string cor;
         private string porte;
         private double peso;
-        private TipoAnimal tipoAnimal;
+        public TipoAnimal tipoAnimal;
+
+        public Animal()
+        {
+            tipoAnimal = new TipoAnimal();
+        }
 
         public int Codigo
         {
@@ -93,18 +98,5 @@ namespace Biblioteca.basica
                 peso = value;
             }
         }
-
-        public TipoAnimal TipoAnimal
-        {
-            get
-            {
-                return tipoAnimal;
-            }
-
-            set
-            {
-                tipoAnimal = value;
-            }
-            } 
-        }
-    }
+     }
+}

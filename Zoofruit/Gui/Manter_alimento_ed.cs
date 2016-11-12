@@ -15,7 +15,7 @@ namespace Gui
     {
       
         Service1 webservice;
-       // Alimento alimento;
+        Alimento alimento;
         public Manter_alimento_ed()
         {
             InitializeComponent();

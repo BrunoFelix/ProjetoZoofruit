@@ -22,3 +22,11 @@ C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.pdb
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.dll
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.pdb
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll.config
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.pdb
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.dll
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.pdb
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.csprojResolveAssemblyReference.cache
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.dll
+C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.pdb

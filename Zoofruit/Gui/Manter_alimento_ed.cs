@@ -15,7 +15,7 @@ namespace Gui
     {
       
         Service1 webservice;
-        Alimento alimento;
+       // Alimento alimento;
         public Manter_alimento_ed()
         {
             InitializeComponent();
@@ -44,6 +44,30 @@ namespace Gui
                 alimento.DataReposicao = tb_dataultimareposicao.Text;
                 webservice.AlterarAlimento(alimento);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (this.alimento == null)
+            {
+                Alimento alimento = new Alimento();
+                alimento.Nome = tb_nome.Text;
+                alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
+                alimento.Quantidade = double.Parse(tb_quantidade.Text);
+                alimento.DataReposicao = tb_dataultimareposicao.Text;
+                webservice.InserirAlimento(alimento);
+            }
+            else
+            {
+                Alimento alimento = new Alimento();
+                alimento.Nome = tb_nome.Text;
+                alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
+                alimento.Quantidade = double.Parse(tb_quantidade.Text);
+                alimento.DataReposicao = tb_dataultimareposicao.Text;
+                webservice.AlterarAlimento(alimento);
+            }
+
         }
     }
 }

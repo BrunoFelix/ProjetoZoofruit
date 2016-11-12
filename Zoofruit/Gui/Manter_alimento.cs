@@ -41,32 +41,17 @@ namespace Gui
 
         public void AtualizarGrid()
         {
-            /*lv_alimento.Items.Clear();
-
-            ListViewItem item;
-
-            foreach (Alimento a in listalimento)
-            {
-                item = new ListViewItem();
-                item.Text = a.Codigo.ToString();
-                item.SubItems.Add(a.Nome);
-                item.SubItems.Add(a.ValorCalorico.ToString());
-                item.SubItems.Add(a.Quantidade.ToString());
-                item.SubItems.Add(a.DataReposicao.ToString());
-            
-               // listalimento.Items.Add(item);
-            }*/
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Manter_alimento_ed manter_alimento_ed = new Manter_alimento_ed();
-            manter_alimento_ed.ShowDialog();
         }
 
         private void Manter_alimento_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Manter_alimento_ed manter_alimento_ed = new Manter_alimento_ed();
+            manter_alimento_ed.ShowDialog();
         }
     }
 }

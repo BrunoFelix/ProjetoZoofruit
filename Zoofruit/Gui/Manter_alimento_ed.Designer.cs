@@ -41,8 +41,8 @@
             this.tb_nome = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_codigo = new System.Windows.Forms.TextBox();
-            this.btncancelar = new System.Windows.Forms.Button();
-            this.btnconfirmar = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,40 +154,40 @@
             this.tb_codigo.Size = new System.Drawing.Size(66, 20);
             this.tb_codigo.TabIndex = 0;
             // 
-            // btncancelar
+            // button2
             // 
-            this.btncancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btncancelar.Image = ((System.Drawing.Image)(resources.GetObject("btncancelar.Image")));
-            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btncancelar.Location = new System.Drawing.Point(314, 237);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(97, 48);
-            this.btncancelar.TabIndex = 12;
-            this.btncancelar.Text = "Cancelar [F9]";
-            this.btncancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btncancelar.UseVisualStyleBackColor = true;
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(320, 233);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 48);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Cancelar [F9]";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnconfirmar
+            // button1
             // 
-            this.btnconfirmar.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnconfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnconfirmar.Image")));
-            this.btnconfirmar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnconfirmar.Location = new System.Drawing.Point(201, 237);
-            this.btnconfirmar.Name = "btnconfirmar";
-            this.btnconfirmar.Size = new System.Drawing.Size(97, 48);
-            this.btnconfirmar.TabIndex = 11;
-            this.btnconfirmar.Text = "Confirmar [F8]";
-            this.btnconfirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnconfirmar.UseVisualStyleBackColor = true;
-            this.btnconfirmar.Click += new System.EventHandler(this.btnconfirmar_Click);
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(217, 233);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 48);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Confirmar [F8]";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Manter_alimento_ed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 308);
-            this.Controls.Add(this.btncancelar);
-            this.Controls.Add(this.btnconfirmar);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Manter_alimento_ed";
             this.Text = "Alimentos";
@@ -211,7 +211,7 @@
         private System.Windows.Forms.TextBox tb_nome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_codigo;
-        private System.Windows.Forms.Button btncancelar;
-        private System.Windows.Forms.Button btnconfirmar;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -118,6 +118,9 @@
     <EmbeddedResource Include="Manter_alimento.resx">
       <DependentUpon>Manter_alimento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manter_alimento_ed.resx">
+      <DependentUpon>Manter_alimento_ed.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manter_animal_ed.resx">
       <DependentUpon>Manter_animal_ed.cs</DependentUpon>
     </EmbeddedResource>

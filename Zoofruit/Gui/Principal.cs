@@ -45,9 +45,14 @@ namespace Gui
 
         private void consultarAnimalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Manter_ficha manter_ficha = Manter_ficha.getInstance();
-            manter_ficha.Show();
-            manter_ficha.BringToFront();
+           
+        }
+
+        private void alimentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Manter_alimento manteralimento = Manter_alimento.getInstance();
+            manteralimento.Show();
+            manteralimento.BringToFront();
         }
     }
 }

@@ -9,6 +9,11 @@ CREATE TABLE TipoUsuario (
 	descricao VARCHAR (20) NOT NULL
 );
 
+CREATE TABLE TipoAnimal (
+	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
+	descricao VARCHAR (20) NOT NULL
+);
+
 CREATE TABLE Usuario (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR(60) not null,
@@ -19,18 +24,13 @@ CREATE TABLE Usuario (
 	codigo_TipoUsuario INTEGER REFERENCES TipoUsuario(codigo)
 );
 
-CREATE TABLE TipoAnimal (
-	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
-	descricao VARCHAR (20) NOT NULL
-);
-
 CREATE TABLE Animal (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
 	foto VARBINARY(MAX),
-	cor VARCHAR (20) NOT NULL,
-	porte VARCHAR (8) NOT NULL,
-	peso DECIMAL (10,2) NOT NULL,
+	cor VARCHAR (20),
+	porte VARCHAR (8),
+	peso NUMERIC (10,2),
 	codigo_TipoAnimal INTEGER REFERENCES TipoAnimal(codigo)
 );
 
@@ -58,13 +58,13 @@ CREATE TABLE FichaExecucao (
 CREATE TABLE Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
-	quantidade INT NOT NULL,
+	quantidade NUMERIC(10,2) NOT NULL,
 	valor_calorico DECIMAL (4,3) NOT NULL,
 	dt_reposicao DATE NOT NULL
 );
 
 CREATE TABLE Ficha_Alimento (
-	quantidade INT NOT NULL,
+	quantidade NUMERIC(10,2) NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
 	codigo_Ficha INTEGER REFERENCES Ficha(codigo),
 	CONSTRAINT PK_Ficha_Alimento PRIMARY KEY(codigo_Alimento, codigo_Ficha)
@@ -73,26 +73,26 @@ CREATE TABLE Ficha_Alimento (
 CREATE TABLE Medicamento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
-	quantidade INT NOT NULL,
+	quantidade NUMERIC(10,2) NOT NULL,
 	dt_reposicao DATE NOT NULL
 );
 
 CREATE TABLE Ficha_Medicamento (
-	quantidade INT NOT NULL,
+	quantidade NUMERIC(10,2) NOT NULL,
 	codigo_Medicamento INTEGER REFERENCES Medicamento(codigo),
 	codigo_Ficha INTEGER REFERENCES Ficha(codigo)
 	CONSTRAINT PK_Ficha_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_Ficha)
 );
 
 CREATE TABLE FichaExecucao_Medicamento (
-	quantidade INT NOT NULL,
+	quantidade NUMERIC(10,2) NOT NULL,
 	codigo_Medicamento INTEGER REFERENCES Medicamento(codigo),
 	codigo_FichaExecucao INTEGER REFERENCES Ficha(codigo)
 	CONSTRAINT PK_FichaExecucao_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_FichaExecucao)
 );
 
 CREATE TABLE FichaExecucao_Alimento (
-	quantidade INT NOT NULL,
+	quantidade NUMERIC(10,2) NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
 	codigo_FichaExecucao INTEGER REFERENCES Ficha(codigo)
 	CONSTRAINT PK_FichaExecucao_Alimento PRIMARY KEY(codigo_Alimento, codigo_FichaExecucao)
@@ -101,7 +101,11 @@ CREATE TABLE FichaExecucao_Alimento (
 GO
 INSERT INTO TipoUsuario([descricao]) VALUES ('Tratador');
 GO
+INSERT INTO TipoUsuario([descricao]) VALUES ('Veterinário');
+GO
 INSERT INTO Usuario([nome],[cpf],[login],[senha],[crmv],[codigo_TipoUsuario])VALUES('Administrador do Sistema','39194717338','admin','123','012345',1);
+GO
+INSERT INTO TipoUsuario([descricao]) VALUES ('Tratador');
 
 
 

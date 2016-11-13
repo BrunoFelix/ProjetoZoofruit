@@ -34,26 +34,44 @@ CREATE TABLE Animal (
 	codigo_TipoAnimal INTEGER REFERENCES TipoAnimal(codigo)
 );
 
-CREATE TABLE Ficha (
+CREATE TABLE Ficha_Alimento (
 	codigo INTEGER IDENTITY (1,1) PRIMARY KEY,
 	descricao VARCHAR(60),
-	dt_criacao DATE NOT NULL,
-	hr_cricacao TIME NOT NULL,
+	dt_criacao DATETIME NOT NULL,
 	dt_validade DATE NOT NULL,
-	tipo VARCHAR (11) NOT NULL,
+	qtd_max_cal float NOT NULL,
+	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
+	codigo_Animal INTEGER REFERENCES Animal(codigo)
+);
+
+CREATE TABLE Ficha_Medicamento (
+	codigo INTEGER IDENTITY (1,1) PRIMARY KEY,
+	descricao VARCHAR(60),
+	dt_criacao DATETIME NOT NULL,
+	dt_validade DATE NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
 	codigo_Animal INTEGER REFERENCES Animal(codigo)
 );
 
 
-CREATE TABLE FichaExecucao (
+CREATE TABLE Ficha_Execucao_Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	dt_execucao DATE NOT NULL,
 	hr_execucao TIME NOT NULL,
 	status VARCHAR (12) NOT NULL,
 	observacao VARCHAR (50) NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
-	codigo_Ficha INTEGER REFERENCES Ficha(codigo)
+	codigo_Ficha INTEGER REFERENCES Ficha_Alimento(codigo)
+);
+
+CREATE TABLE Ficha_Execucao_Medicamento (
+	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
+	dt_execucao DATE NOT NULL,
+	hr_execucao TIME NOT NULL,
+	status VARCHAR (12) NOT NULL,
+	observacao VARCHAR (50) NOT NULL,
+	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
+	codigo_Ficha INTEGER REFERENCES Ficha_Medicamento(codigo)
 );
 
 CREATE TABLE Alimento (
@@ -64,39 +82,39 @@ CREATE TABLE Alimento (
 	dt_reposicao DATE NOT NULL
 );
 
-CREATE TABLE Ficha_Alimento (
-	quantidade NUMERIC(10,2) NOT NULL,
+CREATE TABLE Ficha_Contem_Alimento (
+	quantidade float NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
-	codigo_Ficha INTEGER REFERENCES Ficha(codigo),
+	codigo_Ficha INTEGER REFERENCES Ficha_Alimento(codigo),
 	CONSTRAINT PK_Ficha_Alimento PRIMARY KEY(codigo_Alimento, codigo_Ficha)
 );
 
 CREATE TABLE Medicamento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
-	quantidade NUMERIC(10,2) NOT NULL,
+	quantidade float NOT NULL,
 	dt_reposicao DATE NOT NULL
 );
 
-CREATE TABLE Ficha_Medicamento (
-	quantidade NUMERIC(10,2) NOT NULL,
+CREATE TABLE Ficha_Contem_Medicamento (
+	quantidade float NOT NULL,
 	codigo_Medicamento INTEGER REFERENCES Medicamento(codigo),
-	codigo_Ficha INTEGER REFERENCES Ficha(codigo)
-	CONSTRAINT PK_Ficha_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_Ficha)
+	codigo_Ficha INTEGER REFERENCES Ficha_Medicamento(codigo)
+	CONSTRAINT PK_Ficha_Contem_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_Ficha)
 );
 
-CREATE TABLE FichaExecucao_Medicamento (
-	quantidade NUMERIC(10,2) NOT NULL,
+CREATE TABLE Ficha_Execucao_Contem_Medicamento (
+	quantidade float NOT NULL,
 	codigo_Medicamento INTEGER REFERENCES Medicamento(codigo),
-	codigo_FichaExecucao INTEGER REFERENCES Ficha(codigo)
-	CONSTRAINT PK_FichaExecucao_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_FichaExecucao)
+	codigo_Ficha_Execucao_Medicamento INTEGER REFERENCES Ficha_Medicamento(codigo)
+	CONSTRAINT PK_Ficha_Execucao_Contem_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_Ficha_Execucao_Medicamento)
 );
 
-CREATE TABLE FichaExecucao_Alimento (
-	quantidade NUMERIC(10,2) NOT NULL,
+CREATE TABLE Ficha_Execucao_Contem_Alimento (
+	quantidade float NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
-	codigo_FichaExecucao INTEGER REFERENCES Ficha(codigo)
-	CONSTRAINT PK_FichaExecucao_Alimento PRIMARY KEY(codigo_Alimento, codigo_FichaExecucao)
+	codigo_Ficha_Execucao_Alimento INTEGER REFERENCES Ficha_Alimento(codigo)
+	CONSTRAINT PK_Ficha_Execucao_Contem_Alimento PRIMARY KEY(codigo_Alimento, codigo_Ficha_Execucao_Alimento)
 );
 
 GO
@@ -111,6 +129,8 @@ GO
 INSERT INTO TipoAnimal([descricao]) VALUES ('Roedor');
 GO
 INSERT INTO TipoAnimal([descricao]) VALUES ('Réptil');
+GO
+INSERT INTO Animal([nome],[cor],[porte],[peso],[codigo_TipoAnimal])VALUES('Leão', 'Amarelo','Médio','69.00',1);
 
 
 

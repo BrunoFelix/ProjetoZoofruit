@@ -75,6 +75,20 @@ namespace Webservice
         [OperationContract]
         void ExcluirAnimal(Animal a);
         #endregion
+
+        #region Ficha Alimento
+        [OperationContract]
+        List<FichaAlimento> ListarFichaAlimento(FichaAlimento fa);
+
+        [OperationContract]
+        void InserirFichaAlimento(FichaAlimento fa);
+
+        [OperationContract]
+        void AlterarFichaAlimento(FichaAlimento fa);
+
+        [OperationContract]
+        void ExcluirFichaAlimento(FichaAlimento fa);
+        #endregion
     }
 
 

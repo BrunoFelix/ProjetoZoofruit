@@ -115,6 +115,30 @@
   <wsdl:message name="IService1_ExcluirAnimal_OutputMessage">
     <wsdl:part name="parameters" element="tns:ExcluirAnimalResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ListarFichaAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFichaAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarFichaAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarFichaAlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirFichaAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirFichaAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirFichaAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirFichaAlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarFichaAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarFichaAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarFichaAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarFichaAlimentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirFichaAlimento_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirFichaAlimento" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirFichaAlimento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirFichaAlimentoResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ListarTipoUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoUsuario" message="tns:IService1_ListarTipoUsuario_InputMessage" />
@@ -187,6 +211,22 @@
     <wsdl:operation name="ExcluirAnimal">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirAnimal" message="tns:IService1_ExcluirAnimal_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirAnimalResponse" message="tns:IService1_ExcluirAnimal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarFichaAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarFichaAlimento" message="tns:IService1_ListarFichaAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarFichaAlimentoResponse" message="tns:IService1_ListarFichaAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirFichaAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InserirFichaAlimento" message="tns:IService1_InserirFichaAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InserirFichaAlimentoResponse" message="tns:IService1_InserirFichaAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarFichaAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarFichaAlimento" message="tns:IService1_AlterarFichaAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarFichaAlimentoResponse" message="tns:IService1_AlterarFichaAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirFichaAlimento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirFichaAlimento" message="tns:IService1_ExcluirFichaAlimento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirFichaAlimentoResponse" message="tns:IService1_ExcluirFichaAlimento_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -346,6 +386,42 @@
     </wsdl:operation>
     <wsdl:operation name="ExcluirAnimal">
       <soap:operation soapAction="http://tempuri.org/IService1/ExcluirAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarFichaAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarFichaAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirFichaAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/InserirFichaAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarFichaAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarFichaAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirFichaAlimento">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirFichaAlimento" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

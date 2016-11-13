@@ -27,6 +27,7 @@ namespace Gui.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Ficha))]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback ListarTipoUsuarioOperationCompleted;
@@ -64,6 +65,14 @@ namespace Gui.localhost {
         private System.Threading.SendOrPostCallback AlterarAnimalOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExcluirAnimalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ListarFichaAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InserirFichaAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarFichaAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirFichaAlimentoOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -156,6 +165,18 @@ namespace Gui.localhost {
         
         /// <remarks/>
         public event ExcluirAnimalCompletedEventHandler ExcluirAnimalCompleted;
+        
+        /// <remarks/>
+        public event ListarFichaAlimentoCompletedEventHandler ListarFichaAlimentoCompleted;
+        
+        /// <remarks/>
+        public event InserirFichaAlimentoCompletedEventHandler InserirFichaAlimentoCompleted;
+        
+        /// <remarks/>
+        public event AlterarFichaAlimentoCompletedEventHandler AlterarFichaAlimentoCompleted;
+        
+        /// <remarks/>
+        public event ExcluirFichaAlimentoCompletedEventHandler ExcluirFichaAlimentoCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -680,6 +701,121 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarFichaAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+        public FichaAlimento[] ListarFichaAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] FichaAlimento fa) {
+            object[] results = this.Invoke("ListarFichaAlimento", new object[] {
+                        fa});
+            return ((FichaAlimento[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarFichaAlimentoAsync(FichaAlimento fa) {
+            this.ListarFichaAlimentoAsync(fa, null);
+        }
+        
+        /// <remarks/>
+        public void ListarFichaAlimentoAsync(FichaAlimento fa, object userState) {
+            if ((this.ListarFichaAlimentoOperationCompleted == null)) {
+                this.ListarFichaAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarFichaAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("ListarFichaAlimento", new object[] {
+                        fa}, this.ListarFichaAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnListarFichaAlimentoOperationCompleted(object arg) {
+            if ((this.ListarFichaAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarFichaAlimentoCompleted(this, new ListarFichaAlimentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InserirFichaAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InserirFichaAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] FichaAlimento fa) {
+            this.Invoke("InserirFichaAlimento", new object[] {
+                        fa});
+        }
+        
+        /// <remarks/>
+        public void InserirFichaAlimentoAsync(FichaAlimento fa) {
+            this.InserirFichaAlimentoAsync(fa, null);
+        }
+        
+        /// <remarks/>
+        public void InserirFichaAlimentoAsync(FichaAlimento fa, object userState) {
+            if ((this.InserirFichaAlimentoOperationCompleted == null)) {
+                this.InserirFichaAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInserirFichaAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("InserirFichaAlimento", new object[] {
+                        fa}, this.InserirFichaAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnInserirFichaAlimentoOperationCompleted(object arg) {
+            if ((this.InserirFichaAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InserirFichaAlimentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AlterarFichaAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AlterarFichaAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] FichaAlimento fa) {
+            this.Invoke("AlterarFichaAlimento", new object[] {
+                        fa});
+        }
+        
+        /// <remarks/>
+        public void AlterarFichaAlimentoAsync(FichaAlimento fa) {
+            this.AlterarFichaAlimentoAsync(fa, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarFichaAlimentoAsync(FichaAlimento fa, object userState) {
+            if ((this.AlterarFichaAlimentoOperationCompleted == null)) {
+                this.AlterarFichaAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarFichaAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("AlterarFichaAlimento", new object[] {
+                        fa}, this.AlterarFichaAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnAlterarFichaAlimentoOperationCompleted(object arg) {
+            if ((this.AlterarFichaAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarFichaAlimentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ExcluirFichaAlimento", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void ExcluirFichaAlimento([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] FichaAlimento fa) {
+            this.Invoke("ExcluirFichaAlimento", new object[] {
+                        fa});
+        }
+        
+        /// <remarks/>
+        public void ExcluirFichaAlimentoAsync(FichaAlimento fa) {
+            this.ExcluirFichaAlimentoAsync(fa, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirFichaAlimentoAsync(FichaAlimento fa, object userState) {
+            if ((this.ExcluirFichaAlimentoOperationCompleted == null)) {
+                this.ExcluirFichaAlimentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirFichaAlimentoOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirFichaAlimento", new object[] {
+                        fa}, this.ExcluirFichaAlimentoOperationCompleted, userState);
+        }
+        
+        private void OnExcluirFichaAlimentoOperationCompleted(object arg) {
+            if ((this.ExcluirFichaAlimentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirFichaAlimentoCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -741,6 +877,106 @@ namespace Gui.localhost {
             }
             set {
                 this.descricaoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FichaAlimento))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class Ficha {
+        
+        private int codigoField;
+        
+        private bool codigoFieldSpecified;
+        
+        private string dataCriacaoField;
+        
+        private string dataValidadeField;
+        
+        private string descricaoField;
+        
+        private Animal animalField;
+        
+        private Usuario usuarioField;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CodigoSpecified {
+            get {
+                return this.codigoFieldSpecified;
+            }
+            set {
+                this.codigoFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string DataCriacao {
+            get {
+                return this.dataCriacaoField;
+            }
+            set {
+                this.dataCriacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string DataValidade {
+            get {
+                return this.dataValidadeField;
+            }
+            set {
+                this.dataValidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Descricao {
+            get {
+                return this.descricaoField;
+            }
+            set {
+                this.descricaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Animal animal {
+            get {
+                return this.animalField;
+            }
+            set {
+                this.animalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Usuario usuario {
+            get {
+                return this.usuarioField;
+            }
+            set {
+                this.usuarioField = value;
             }
         }
     }
@@ -922,19 +1158,23 @@ namespace Gui.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
-    public partial class Medicamento {
+    public partial class Usuario {
         
         private int codigoField;
         
         private bool codigoFieldSpecified;
         
-        private string dataReposicaoField;
+        private string cpfField;
+        
+        private string crmvField;
+        
+        private string loginField;
         
         private string nomeField;
         
-        private int quantidadeField;
+        private string senhaField;
         
-        private bool quantidadeFieldSpecified;
+        private TipoUsuario tipousuarioField;
         
         /// <remarks/>
         public int Codigo {
@@ -959,12 +1199,34 @@ namespace Gui.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string DataReposicao {
+        public string Cpf {
             get {
-                return this.dataReposicaoField;
+                return this.cpfField;
             }
             set {
-                this.dataReposicaoField = value;
+                this.cpfField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Crmv {
+            get {
+                return this.crmvField;
+            }
+            set {
+                this.crmvField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Login {
+            get {
+                return this.loginField;
+            }
+            set {
+                this.loginField = value;
             }
         }
         
@@ -980,23 +1242,71 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
-        public int Quantidade {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Senha {
             get {
-                return this.quantidadeField;
+                return this.senhaField;
             }
             set {
-                this.quantidadeField = value;
+                this.senhaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public TipoUsuario tipousuario {
+            get {
+                return this.tipousuarioField;
+            }
+            set {
+                this.tipousuarioField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class FichaAlimento : Ficha {
+        
+        private double qtd_max_calField;
+        
+        private bool qtd_max_calFieldSpecified;
+        
+        private Alimento[] listaAlimentoField;
+        
+        /// <remarks/>
+        public double Qtd_max_cal {
+            get {
+                return this.qtd_max_calField;
+            }
+            set {
+                this.qtd_max_calField = value;
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool QuantidadeSpecified {
+        public bool Qtd_max_calSpecified {
             get {
-                return this.quantidadeFieldSpecified;
+                return this.qtd_max_calFieldSpecified;
             }
             set {
-                this.quantidadeFieldSpecified = value;
+                this.qtd_max_calFieldSpecified = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Alimento[] listaAlimento {
+            get {
+                return this.listaAlimentoField;
+            }
+            set {
+                this.listaAlimentoField = value;
             }
         }
     }
@@ -1117,23 +1427,19 @@ namespace Gui.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
-    public partial class Usuario {
+    public partial class Medicamento {
         
         private int codigoField;
         
         private bool codigoFieldSpecified;
         
-        private string cpfField;
-        
-        private string crmvField;
-        
-        private string loginField;
+        private string dataReposicaoField;
         
         private string nomeField;
         
-        private string senhaField;
+        private int quantidadeField;
         
-        private TipoUsuario tipousuarioField;
+        private bool quantidadeFieldSpecified;
         
         /// <remarks/>
         public int Codigo {
@@ -1158,34 +1464,12 @@ namespace Gui.localhost {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Cpf {
+        public string DataReposicao {
             get {
-                return this.cpfField;
+                return this.dataReposicaoField;
             }
             set {
-                this.cpfField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Crmv {
-            get {
-                return this.crmvField;
-            }
-            set {
-                this.crmvField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Login {
-            get {
-                return this.loginField;
-            }
-            set {
-                this.loginField = value;
+                this.dataReposicaoField = value;
             }
         }
         
@@ -1201,24 +1485,23 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Senha {
+        public int Quantidade {
             get {
-                return this.senhaField;
+                return this.quantidadeField;
             }
             set {
-                this.senhaField = value;
+                this.quantidadeField = value;
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public TipoUsuario tipousuario {
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool QuantidadeSpecified {
             get {
-                return this.tipousuarioField;
+                return this.quantidadeFieldSpecified;
             }
             set {
-                this.tipousuarioField = value;
+                this.quantidadeFieldSpecified = value;
             }
         }
     }
@@ -1426,6 +1709,44 @@ namespace Gui.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void ExcluirAnimalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ListarFichaAlimentoCompletedEventHandler(object sender, ListarFichaAlimentoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarFichaAlimentoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarFichaAlimentoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public FichaAlimento[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((FichaAlimento[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void InserirFichaAlimentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void AlterarFichaAlimentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ExcluirFichaAlimentoCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

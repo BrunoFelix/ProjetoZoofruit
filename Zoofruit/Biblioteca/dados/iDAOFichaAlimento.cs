@@ -12,6 +12,6 @@ namespace Biblioteca.dados
         void Adicionar(FichaAlimento fa);
         void Alterar(FichaAlimento fa);
         void Excluir(FichaAlimento fa);
-        List<FichaAlimento> Pesquisar(FichaAlimento fa);
+        List<FichaAlimento> Pesquisar(FichaAlimento fa, bool alt=false);
     }
 }

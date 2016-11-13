@@ -9,11 +9,11 @@ namespace Biblioteca.basica
     public abstract class Ficha
     {
         private int codigo;
+        private string descricao;
         private string dataCriacao;
-        private string horaCriacao;
         private string dataValidade;
-        private Usuario usuario;
-        private Animal animal;
+        public Usuario usuario;
+        public Animal animal;
 
         public Ficha()
         {
@@ -46,19 +46,6 @@ namespace Biblioteca.basica
             }
         }
 
-        public string HoraCriacao
-        {
-            get
-            {
-                return horaCriacao;
-            }
-
-            set
-            {
-                horaCriacao = value;
-            }
-        }
-
         public string DataValidade
         {
             get
@@ -72,29 +59,16 @@ namespace Biblioteca.basica
             }
         }
 
-        public Usuario Usuario
+        public string Descricao
         {
             get
             {
-                return usuario;
+                return descricao;
             }
 
             set
             {
-                usuario = value;
-            }
-        }
-
-        public Animal Animal
-        {
-            get
-            {
-                return animal;
-            }
-
-            set
-            {
-                animal = value;
+                descricao = value;
             }
         }
     }

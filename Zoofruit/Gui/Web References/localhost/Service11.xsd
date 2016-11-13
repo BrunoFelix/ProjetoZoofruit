@@ -93,4 +93,32 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAnimal" nillable="true" type="tns:ArrayOfAnimal" />
+  <xs:complexType name="FichaAlimento">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Ficha">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Qtd_max_cal" type="xs:double" />
+          <xs:element minOccurs="0" name="listaAlimento" nillable="true" type="tns:ArrayOfAlimento" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FichaAlimento" nillable="true" type="tns:FichaAlimento" />
+  <xs:complexType name="Ficha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="DataCriacao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataValidade" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="animal" nillable="true" type="tns:Animal" />
+      <xs:element minOccurs="0" name="usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ficha" nillable="true" type="tns:Ficha" />
+  <xs:complexType name="ArrayOfFichaAlimento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FichaAlimento" nillable="true" type="tns:FichaAlimento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFichaAlimento" nillable="true" type="tns:ArrayOfFichaAlimento" />
 </xs:schema>

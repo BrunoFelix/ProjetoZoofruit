@@ -143,7 +143,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 48);
             this.button1.TabIndex = 37;
-            this.button1.Text = "Adicionar [F8]";
+            this.button1.Text = "Confirmar [F8]";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -160,6 +160,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Manter_ficha_alimento_ed";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alimentos da ficha";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

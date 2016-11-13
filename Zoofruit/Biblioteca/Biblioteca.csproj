@@ -69,6 +69,7 @@
     <Compile Include="dados\iDAOUsuario.cs" />
     <Compile Include="negocio\RNAlimento.cs" />
     <Compile Include="negocio\RNAnimal.cs" />
+    <Compile Include="negocio\RNFichaAlimento.cs" />
     <Compile Include="negocio\RNMedicamento.cs" />
     <Compile Include="negocio\RNTipoAnimal.cs" />
     <Compile Include="negocio\RNTipoUsuario.cs" />

@@ -175,6 +175,9 @@
     <None Include="Web References\localhost\Animal.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\localhost\FichaAlimento.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\localhost\Medicamento.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

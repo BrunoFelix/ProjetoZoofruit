@@ -14,6 +14,7 @@ namespace Gui
     public partial class Manter_ficha : Form
     {
         public List<Animal> listaanimal;
+        public List<FichaAlimento> listafichaanimal;
         private static Manter_ficha manter_ficha;
         Service1 webservice;
         public Animal animal;
@@ -38,6 +39,7 @@ namespace Gui
             InitializeComponent();
             webservice = new Service1();
             listaanimal = new List<Animal>();
+            listafichaanimal = new List<FichaAlimento>();
             animal = new Animal();
             animal.tipoAnimal = new TipoAnimal();
         }
@@ -218,5 +220,37 @@ namespace Gui
             Manter_ficha_ed manter_ficha_ed = new Manter_ficha_ed(1);
             manter_ficha_ed.ShowDialog();
         }
+
+        public void lv_animal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_animal.SelectedIndices.Count > 0)
+            {
+                FichaAlimento fichaalimento = new FichaAlimento();
+                fichaalimento.animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
+                fichaalimento.usuario = new Usuario();
+                listafichaanimal = webservice.ListarFichaAlimento(fichaalimento).ToList();
+                AtualizarGridFicha();
+            }
+        }
+
+        public void AtualizarGridFicha()
+        {
+            lv_ficha.Items.Clear();
+
+            ListViewItem item;
+
+            foreach (FichaAlimento fa in listafichaanimal)
+            {
+                item = new ListViewItem();
+                item.Text = fa.Codigo.ToString();
+                item.SubItems.Add(fa.Descricao);
+                item.SubItems.Add(fa.DataCriacao);
+                item.SubItems.Add(fa.DataValidade);
+                item.SubItems.Add(fa.usuario.Nome);
+
+                lv_ficha.Items.Add(item);
+            }
+        }
+
     }
 }

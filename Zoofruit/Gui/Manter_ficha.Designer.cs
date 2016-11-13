@@ -36,7 +36,12 @@
             this.Porte = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Peso = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tipo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lv_ficha = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView3 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,8 +52,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btn_alterar_animal = new System.Windows.Forms.Button();
             this.btn_novo_animal = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.btn_pesquisar_animal = new System.Windows.Forms.Button();
@@ -77,6 +80,7 @@
             this.lv_animal.TabIndex = 0;
             this.lv_animal.UseCompatibleStateImageBehavior = false;
             this.lv_animal.View = System.Windows.Forms.View.Details;
+            this.lv_animal.SelectedIndexChanged += new System.EventHandler(this.lv_animal_SelectedIndexChanged);
             // 
             // Código
             // 
@@ -108,15 +112,48 @@
             this.Tipo.Text = "Tipo";
             this.Tipo.Width = 348;
             // 
-            // listView2
+            // lv_ficha
             // 
-            this.listView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lv_ficha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView2.Location = new System.Drawing.Point(0, 421);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(1247, 203);
-            this.listView2.TabIndex = 1;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.lv_ficha.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lv_ficha.FullRowSelect = true;
+            this.lv_ficha.Location = new System.Drawing.Point(0, 421);
+            this.lv_ficha.MultiSelect = false;
+            this.lv_ficha.Name = "lv_ficha";
+            this.lv_ficha.Size = new System.Drawing.Size(1247, 203);
+            this.lv_ficha.TabIndex = 1;
+            this.lv_ficha.UseCompatibleStateImageBehavior = false;
+            this.lv_ficha.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Código";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Descricao";
+            this.columnHeader2.Width = 613;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Data Criação";
+            this.columnHeader3.Width = 181;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Data Validade";
+            this.columnHeader4.Width = 154;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Usuario";
+            this.columnHeader5.Width = 235;
             // 
             // listView3
             // 
@@ -125,7 +162,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView3.Location = new System.Drawing.Point(0, 670);
             this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1245, 79);
+            this.listView3.Size = new System.Drawing.Size(1245, 175);
             this.listView3.TabIndex = 2;
             this.listView3.UseCompatibleStateImageBehavior = false;
             // 
@@ -238,30 +275,6 @@
             this.btn_novo_animal.UseVisualStyleBackColor = true;
             this.btn_novo_animal.Click += new System.EventHandler(this.btn_novo_animal_Click);
             // 
-            // button9
-            // 
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(0, 623);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(97, 48);
-            this.button9.TabIndex = 16;
-            this.button9.Text = "Adicionar [F3]";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button7.Location = new System.Drawing.Point(96, 623);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(97, 48);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "Remover [F4]";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -338,10 +351,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1246, 741);
+            this.ClientSize = new System.Drawing.Size(1246, 837);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button9);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btn_alterar_animal);
             this.Controls.Add(this.btn_novo_animal);
@@ -352,10 +363,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView3);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.lv_ficha);
             this.Controls.Add(this.lv_animal);
             this.Name = "Manter_ficha";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Deactivate += new System.EventHandler(this.Manter_ficha_Deactivate);
@@ -372,7 +383,7 @@
         #endregion
 
         private System.Windows.Forms.ListView lv_animal;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lv_ficha;
         private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -383,8 +394,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_alterar_animal;
         private System.Windows.Forms.Button btn_novo_animal;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button btn_pesquisar_animal;
@@ -397,5 +406,10 @@
         private System.Windows.Forms.ColumnHeader Porte;
         private System.Windows.Forms.ColumnHeader Peso;
         private System.Windows.Forms.ColumnHeader Tipo;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }

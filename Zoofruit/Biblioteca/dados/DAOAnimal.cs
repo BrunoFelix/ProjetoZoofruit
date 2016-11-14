@@ -51,7 +51,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "ALTER TABLE USUARIO SET NOME=@NOME, COR=@COR, PORTE=@PORTE, PESO=@PESO, CODIGO_TIPOANIMAL=@CODIGO_TIPOANIMAL) WHERE CODIGO=@CODIGO";
+                string sql = "UPDATE ANIMAL SET NOME=@NOME, COR=@COR, PORTE=@PORTE, PESO=@PESO, CODIGO_TIPOANIMAL=@CODIGO_TIPOANIMAL WHERE CODIGO=@CODIGO";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
@@ -79,9 +79,25 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "DELETE FROM ANIMAL WHERE CODIGO=@CODIGO";
+                string sql = "DELETE FROM FICHA_ALIMENTO WHERE CODIGO_ANIMAL=@CODIGO_ANIMAL";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", a.Codigo));
+
+                cmd.ExecuteNonQuery();
+
+                sql = "DELETE FROM FICHA_MEDICAMENTO WHERE CODIGO_ANIMAL=@CODIGO_ANIMAL";
+
+                cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", a.Codigo));
+
+                cmd.ExecuteNonQuery();
+
+                sql = "DELETE FROM ANIMAL WHERE CODIGO=@CODIGO";
+
+                cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
 

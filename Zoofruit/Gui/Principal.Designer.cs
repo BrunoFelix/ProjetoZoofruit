@@ -40,6 +40,8 @@
             this.consultarAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quadroDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.histórioDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alimentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.medicamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,9 +113,12 @@
             // 
             // consultarAnimalToolStripMenuItem
             // 
+            this.consultarAnimalToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alimentoToolStripMenuItem1,
+            this.medicamentoToolStripMenuItem});
             this.consultarAnimalToolStripMenuItem.Name = "consultarAnimalToolStripMenuItem";
             this.consultarAnimalToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.consultarAnimalToolStripMenuItem.Text = "Consultar animal";
+            this.consultarAnimalToolStripMenuItem.Text = "Gerenciar Fichas";
             this.consultarAnimalToolStripMenuItem.Click += new System.EventHandler(this.consultarAnimalToolStripMenuItem_Click);
             // 
             // quadroDeTarefasToolStripMenuItem
@@ -128,6 +133,19 @@
             this.histórioDeTarefasToolStripMenuItem.Name = "histórioDeTarefasToolStripMenuItem";
             this.histórioDeTarefasToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.histórioDeTarefasToolStripMenuItem.Text = "Histório de tarefas";
+            // 
+            // alimentoToolStripMenuItem1
+            // 
+            this.alimentoToolStripMenuItem1.Name = "alimentoToolStripMenuItem1";
+            this.alimentoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.alimentoToolStripMenuItem1.Text = "Alimento";
+            this.alimentoToolStripMenuItem1.Click += new System.EventHandler(this.alimentoToolStripMenuItem1_Click);
+            // 
+            // medicamentoToolStripMenuItem
+            // 
+            this.medicamentoToolStripMenuItem.Name = "medicamentoToolStripMenuItem";
+            this.medicamentoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medicamentoToolStripMenuItem.Text = "Medicamento";
             // 
             // Principal
             // 
@@ -162,5 +180,7 @@
         private System.Windows.Forms.ToolStripMenuItem consultarAnimalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quadroDeTarefasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem histórioDeTarefasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alimentoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem medicamentoToolStripMenuItem;
     }
 }

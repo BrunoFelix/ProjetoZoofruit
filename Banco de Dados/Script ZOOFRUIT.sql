@@ -77,8 +77,8 @@ CREATE TABLE Ficha_Execucao_Medicamento (
 CREATE TABLE Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
-	quantidade NUMERIC(10,2) NOT NULL,
-	valor_calorico DECIMAL (4,3) NOT NULL,
+	quantidade FLOAT NOT NULL,
+	valor_calorico FLOAT NOT NULL,
 	dt_reposicao DATE NOT NULL
 );
 

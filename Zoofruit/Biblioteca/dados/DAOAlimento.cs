@@ -114,11 +114,11 @@ namespace Biblioteca.dados
                 while (reader.Read())
                 {
                     Alimento alimento = new Alimento();
-                    alimento.Codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
-                    alimento.Nome = reader.GetString(reader.GetOrdinal("nome"));
-                    alimento.Quantidade = reader.GetInt32(reader.GetOrdinal("quantidade"));
-                    alimento.ValorCalorico = reader.GetInt32(reader.GetOrdinal("valor_calorico"));
-                    alimento.DataReposicao = reader.GetString(reader.GetOrdinal("dataReposicao"));
+                    alimento.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO"));
+                    alimento.Nome = reader.GetString(reader.GetOrdinal("NOME"));
+                    alimento.Quantidade = reader.GetDouble(reader.GetOrdinal("QUANTIDADE"));
+                    alimento.ValorCalorico = reader.GetDouble(reader.GetOrdinal("VALOR_CALORICO"));
+                    alimento.DataReposicao = reader.GetDateTime(reader.GetOrdinal("DT_REPOSICAO")).ToString("dd/mm/yyyy");
 
 
                     listaAlimento.Add(alimento);

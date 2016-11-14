@@ -17,6 +17,7 @@ namespace Gui
         int tipoficha;
         Service1 webservice;
         FichaAlimento fichaalimento;
+        public List<Alimento> listaalimento = new List<Alimento>();
         public Manter_ficha_ed(int tipoficha)
         {
             InitializeComponent();
@@ -27,6 +28,24 @@ namespace Gui
             {
                 label3.Visible = false;
                 tb_qtd_max_cal.Visible = false;
+            }
+        }
+
+        public void atualizarGridALimento()
+        {
+            lv_alimento.Items.Clear();
+
+            ListViewItem item;
+
+            foreach (Alimento a in listaalimento)
+            {
+                item = new ListViewItem();
+                item.Text = a.Codigo.ToString();
+                item.SubItems.Add(a.Nome);
+                item.SubItems.Add(a.ValorCalorico.ToString());
+                item.SubItems.Add(a.Quantidade.ToString());
+
+                lv_alimento.Items.Add(item);
             }
         }
 
@@ -45,7 +64,7 @@ namespace Gui
             try
             {
                 fichaalimento.Qtd_max_cal = Convert.ToDouble(tb_qtd_max_cal.Text);
-            }catch (ArithmeticException ex)
+            }catch (Exception ex)
             {
                 MessageBox.Show("Quantidade máxima de calórias inválida!");
             }
@@ -57,6 +76,17 @@ namespace Gui
             webservice.InserirFichaAlimento(fichaalimento);
 
             ((Manter_ficha)Application.OpenForms["manter_ficha"]).lv_animal_SelectedIndexChanged(sender, e);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (lv_alimento.SelectedIndices.Count > 0)
+            {
+                if (MessageBox.Show("Deseja remover o alimento selecionado da ficha?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    listaalimento.Remove(listaalimento.ElementAt(lv_alimento.SelectedIndices[0]));                
+                }
+            }
         }
     }
 }

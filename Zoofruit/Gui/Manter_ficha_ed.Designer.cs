@@ -148,7 +148,9 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.lv_alimento.FullRowSelect = true;
             this.lv_alimento.Location = new System.Drawing.Point(4, 153);
+            this.lv_alimento.MultiSelect = false;
             this.lv_alimento.Name = "lv_alimento";
             this.lv_alimento.Size = new System.Drawing.Size(628, 312);
             this.lv_alimento.TabIndex = 37;
@@ -181,6 +183,7 @@
             this.button4.Text = "Remover";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_novo_animal
             // 

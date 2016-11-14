@@ -42,6 +42,7 @@ namespace Gui
             webservice = new Service1();
             animal = new Animal();
 
+            listatipoanimal = webservice.ListarTipoAnimal(tipoanimal).ToList();
             //listatipoanimal = webservice.ListarTipoUsuario(tipoanimal).ToList();
             foreach (TipoAnimal ta in listatipoanimal)
             {

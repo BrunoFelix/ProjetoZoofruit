@@ -66,6 +66,7 @@
             this.btn_pesquisar_animal.Text = "[F5]";
             this.btn_pesquisar_animal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_pesquisar_animal.UseVisualStyleBackColor = true;
+            this.btn_pesquisar_animal.Click += new System.EventHandler(this.btn_pesquisar_animal_Click);
             // 
             // tb_pesquisar
             // 
@@ -94,7 +95,9 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lv_alimento.FullRowSelect = true;
             this.lv_alimento.Location = new System.Drawing.Point(0, 47);
+            this.lv_alimento.MultiSelect = false;
             this.lv_alimento.Name = "lv_alimento";
             this.lv_alimento.Size = new System.Drawing.Size(1049, 312);
             this.lv_alimento.TabIndex = 36;
@@ -146,6 +149,7 @@
             this.button1.Text = "Confirmar [F8]";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Manter_ficha_alimento_ed
             // 

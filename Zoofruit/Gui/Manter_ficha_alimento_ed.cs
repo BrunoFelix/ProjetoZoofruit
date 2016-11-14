@@ -19,6 +19,9 @@ namespace Gui
         {
             InitializeComponent();
             webservice = new Service1();
+            Alimento alimento = new Alimento();
+            listalimento = webservice.ListarAlimento(alimento).ToList();
+            AtualizarGrid();
         }
 
         public void AtualizarGrid()
@@ -37,6 +40,45 @@ namespace Gui
 
                 lv_alimento.Items.Add(item);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Alimento alimento = new Alimento();
+
+            if (lv_alimento.SelectedIndices.Count > 0)
+            {
+                alimento = listalimento.ElementAt(lv_alimento.SelectedIndices[0]);
+
+                bool achou = false;
+        
+                foreach(Alimento a in ((Manter_ficha_ed)Application.OpenForms["manter_ficha_ed"]).listaalimento)
+                {
+                    if (a.Codigo == alimento.Codigo)
+                    {
+                        achou = true;
+                    }
+                }
+
+                if (!achou) {
+
+                    ((Manter_ficha_ed)Application.OpenForms["manter_ficha_ed"]).listaalimento.Add(alimento);
+                    ((Manter_ficha_ed)Application.OpenForms["manter_ficha_ed"]).atualizarGridALimento();  
+                }
+                else
+                {
+                    MessageBox.Show("Alimento já adicionado anteriormente!");
+                    this.DialogResult = DialogResult.None;
+                }
+            }
+        }
+
+        private void btn_pesquisar_animal_Click(object sender, EventArgs e)
+        {
+            Alimento alimento = new Alimento();
+            alimento.Nome = tb_pesquisar.Text;
+            listalimento = webservice.ListarAlimento(alimento).ToList();
+            AtualizarGrid();
         }
     }
 }

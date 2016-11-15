@@ -28,9 +28,9 @@ namespace Gui
 
         private void usuárioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Manter_login manterlogin = Manter_login.getInstance();
-            manterlogin.Show();
-            manterlogin.BringToFront();
+            Manter_login manter_login = Manter_login.getInstance();
+            manter_login.Show();
+            manter_login.BringToFront();
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -40,7 +40,9 @@ namespace Gui
 
         private void animaisToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Manter_animal manter_animal = Manter_animal.getInstance();
+            manter_animal.Show();
+            manter_animal.BringToFront();
         }
 
         private void consultarAnimalToolStripMenuItem_Click(object sender, EventArgs e)

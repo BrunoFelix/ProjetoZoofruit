@@ -42,22 +42,21 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.lv_alimento = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btn_alterar_animal = new System.Windows.Forms.Button();
-            this.btn_novo_animal = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.btn_pesquisar_animal = new System.Windows.Forms.Button();
-            this.tb_pesquisar = new System.Windows.Forms.TextBox();
-            this.comboBox_pesquisar_animal = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBox_pesquisar_animal = new System.Windows.Forms.ComboBox();
+            this.tb_pesquisar = new System.Windows.Forms.TextBox();
+            this.btn_pesquisar_animal = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +129,7 @@
             this.lv_ficha.TabIndex = 1;
             this.lv_ficha.UseCompatibleStateImageBehavior = false;
             this.lv_ficha.View = System.Windows.Forms.View.Details;
+            this.lv_ficha.SelectedIndexChanged += new System.EventHandler(this.lv_ficha_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -155,16 +155,20 @@
             this.columnHeader5.Text = "Usuario";
             this.columnHeader5.Width = 235;
             // 
-            // listView3
+            // lv_alimento
             // 
-            this.listView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lv_alimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView3.Location = new System.Drawing.Point(0, 670);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(1245, 175);
-            this.listView3.TabIndex = 2;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.lv_alimento.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7});
+            this.lv_alimento.Location = new System.Drawing.Point(0, 670);
+            this.lv_alimento.Name = "lv_alimento";
+            this.lv_alimento.Size = new System.Drawing.Size(1245, 175);
+            this.lv_alimento.TabIndex = 2;
+            this.lv_alimento.UseCompatibleStateImageBehavior = false;
+            this.lv_alimento.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 
@@ -236,90 +240,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button4
+            // label4
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(192, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 48);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Excluir [F4]";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btn_alterar_animal
-            // 
-            this.btn_alterar_animal.Image = ((System.Drawing.Image)(resources.GetObject("btn_alterar_animal.Image")));
-            this.btn_alterar_animal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_alterar_animal.Location = new System.Drawing.Point(96, 0);
-            this.btn_alterar_animal.Name = "btn_alterar_animal";
-            this.btn_alterar_animal.Size = new System.Drawing.Size(97, 48);
-            this.btn_alterar_animal.TabIndex = 14;
-            this.btn_alterar_animal.Text = "Alterar [F4]";
-            this.btn_alterar_animal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_alterar_animal.UseVisualStyleBackColor = true;
-            this.btn_alterar_animal.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btn_novo_animal
-            // 
-            this.btn_novo_animal.Image = ((System.Drawing.Image)(resources.GetObject("btn_novo_animal.Image")));
-            this.btn_novo_animal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_novo_animal.Location = new System.Drawing.Point(0, 0);
-            this.btn_novo_animal.Name = "btn_novo_animal";
-            this.btn_novo_animal.Size = new System.Drawing.Size(97, 48);
-            this.btn_novo_animal.TabIndex = 13;
-            this.btn_novo_animal.Text = "Novo [cF3]";
-            this.btn_novo_animal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_novo_animal.UseVisualStyleBackColor = true;
-            this.btn_novo_animal.Click += new System.EventHandler(this.btn_novo_animal_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.btn_pesquisar_animal);
-            this.panel1.Controls.Add(this.tb_pesquisar);
-            this.panel1.Controls.Add(this.comboBox_pesquisar_animal);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(773, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(471, 48);
-            this.panel1.TabIndex = 34;
-            // 
-            // button10
-            // 
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button10.Location = new System.Drawing.Point(437, 0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(34, 48);
-            this.button10.TabIndex = 28;
-            this.button10.Text = "[F6]";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // btn_pesquisar_animal
-            // 
-            this.btn_pesquisar_animal.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisar_animal.Image")));
-            this.btn_pesquisar_animal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_pesquisar_animal.Location = new System.Drawing.Point(405, 0);
-            this.btn_pesquisar_animal.Name = "btn_pesquisar_animal";
-            this.btn_pesquisar_animal.Size = new System.Drawing.Size(33, 48);
-            this.btn_pesquisar_animal.TabIndex = 27;
-            this.btn_pesquisar_animal.Text = "[F5]";
-            this.btn_pesquisar_animal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_pesquisar_animal.UseVisualStyleBackColor = true;
-            this.btn_pesquisar_animal.Click += new System.EventHandler(this.btn_pesquisar_animal_Click);
-            // 
-            // tb_pesquisar
-            // 
-            this.tb_pesquisar.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tb_pesquisar.Location = new System.Drawing.Point(157, 22);
-            this.tb_pesquisar.Name = "tb_pesquisar";
-            this.tb_pesquisar.Size = new System.Drawing.Size(243, 20);
-            this.tb_pesquisar.TabIndex = 26;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Pesquisar:";
             // 
             // comboBox_pesquisar_animal
             // 
@@ -337,14 +265,62 @@
             this.comboBox_pesquisar_animal.Size = new System.Drawing.Size(121, 21);
             this.comboBox_pesquisar_animal.TabIndex = 25;
             // 
-            // label4
+            // tb_pesquisar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Pesquisar:";
+            this.tb_pesquisar.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.tb_pesquisar.Location = new System.Drawing.Point(157, 22);
+            this.tb_pesquisar.Name = "tb_pesquisar";
+            this.tb_pesquisar.Size = new System.Drawing.Size(243, 20);
+            this.tb_pesquisar.TabIndex = 26;
+            // 
+            // btn_pesquisar_animal
+            // 
+            this.btn_pesquisar_animal.Image = ((System.Drawing.Image)(resources.GetObject("btn_pesquisar_animal.Image")));
+            this.btn_pesquisar_animal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_pesquisar_animal.Location = new System.Drawing.Point(405, 0);
+            this.btn_pesquisar_animal.Name = "btn_pesquisar_animal";
+            this.btn_pesquisar_animal.Size = new System.Drawing.Size(33, 48);
+            this.btn_pesquisar_animal.TabIndex = 27;
+            this.btn_pesquisar_animal.Text = "[F5]";
+            this.btn_pesquisar_animal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_pesquisar_animal.UseVisualStyleBackColor = true;
+            this.btn_pesquisar_animal.Click += new System.EventHandler(this.btn_pesquisar_animal_Click);
+            // 
+            // button10
+            // 
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button10.Location = new System.Drawing.Point(437, 0);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(34, 48);
+            this.button10.TabIndex = 28;
+            this.button10.Text = "[F6]";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.button10);
+            this.panel1.Controls.Add(this.btn_pesquisar_animal);
+            this.panel1.Controls.Add(this.tb_pesquisar);
+            this.panel1.Controls.Add(this.comboBox_pesquisar_animal);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(773, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(471, 48);
+            this.panel1.TabIndex = 34;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Código";
+            this.columnHeader6.Width = 61;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Nome";
+            this.columnHeader7.Width = 1179;
             // 
             // Manter_ficha
             // 
@@ -353,16 +329,13 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1246, 837);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btn_alterar_animal);
-            this.Controls.Add(this.btn_novo_animal);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView3);
+            this.Controls.Add(this.lv_alimento);
             this.Controls.Add(this.lv_ficha);
             this.Controls.Add(this.lv_animal);
             this.Name = "Manter_ficha";
@@ -384,22 +357,13 @@
 
         private System.Windows.Forms.ListView lv_animal;
         private System.Windows.Forms.ListView lv_ficha;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ListView lv_alimento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btn_alterar_animal;
-        private System.Windows.Forms.Button btn_novo_animal;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button btn_pesquisar_animal;
-        private System.Windows.Forms.TextBox tb_pesquisar;
-        private System.Windows.Forms.ComboBox comboBox_pesquisar_animal;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ColumnHeader Código;
         private System.Windows.Forms.ColumnHeader Nome;
         private System.Windows.Forms.ColumnHeader Cor;
@@ -411,5 +375,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox_pesquisar_animal;
+        private System.Windows.Forms.TextBox tb_pesquisar;
+        private System.Windows.Forms.Button btn_pesquisar_animal;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }

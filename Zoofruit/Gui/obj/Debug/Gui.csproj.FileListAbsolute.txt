@@ -119,6 +119,7 @@ C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Teste.Form1.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_animal.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_animal_ed.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_alimento_ed.resources

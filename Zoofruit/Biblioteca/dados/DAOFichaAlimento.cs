@@ -15,6 +15,7 @@ namespace Biblioteca.dados
 
         int codigo;
         Conexao conexao;
+        Conexao conexao2;
         public DAOFichaAlimento()
         {
             conexao = new Conexao();
@@ -39,7 +40,7 @@ namespace Biblioteca.dados
 
                 cmd.ExecuteNonQuery();
 
-                /*sql = "SELECT MAX(CODIGO) FROM FICHA_ALIMENTO";
+                sql = "SELECT MAX(CODIGO) AS CODIGO FROM FICHA_ALIMENTO";
                 SqlCommand cmd2 = new SqlCommand(sql, conexao.sqlconn);
                 SqlDataReader reader = cmd2.ExecuteReader();
 
@@ -48,17 +49,19 @@ namespace Biblioteca.dados
                     codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
                 }
 
+                conexao.closeConnection();
+                conexao.openConnection();
+
                 foreach (Alimento a in fa.listaAlimento)
                 {
-                    sql = "INSERT INTO ALIMENTO_DA_FICHA (QUANTIDADE, CODIGO_ALIMENTO, CODIGO_FICHA) VALUES (@QUANTIDADE, @CODIGO_ALIMENTO, @CODIGO_FICHA)";
+                    sql = "INSERT INTO FICHA_CONTEM_ALIMENTO (CODIGO_ALIMENTO, CODIGO_FICHA) VALUES (@CODIGO_ALIMENTO, @CODIGO_FICHA)";
                     SqlCommand cmd3 = new SqlCommand(sql, conexao.sqlconn);
 
-                    cmd.Parameters.Add(new SqlParameter("@QUANTIDADE", a.Quantidade));
-                    cmd.Parameters.Add(new SqlParameter("@CODIGO_ALIMENTO", a.Codigo));
-                    cmd.Parameters.Add(new SqlParameter("@CODIGO_FICHA", codigo));
+                    cmd3.Parameters.Add(new SqlParameter("@CODIGO_ALIMENTO", a.Codigo));
+                    cmd3.Parameters.Add(new SqlParameter("@CODIGO_FICHA", codigo));
 
-                    cmd.ExecuteNonQuery();
-                }*/
+                    cmd3.ExecuteNonQuery();
+                }
             }
             catch (Exception ex)
             {
@@ -183,6 +186,7 @@ namespace Biblioteca.dados
                 }
 
                 SqlDataReader reader = cmd.ExecuteReader();
+           
 
                 while (reader.Read())
                 {
@@ -192,6 +196,30 @@ namespace Biblioteca.dados
                     fichaalimento.DataCriacao = reader.GetDateTime(reader.GetOrdinal("DT_CRIACAO")).ToString("dd/MM/yyyy");
                     fichaalimento.DataValidade = reader.GetDateTime(reader.GetOrdinal("DT_VALIDADE")).ToString("dd/MM/yyyy");
                     fichaalimento.usuario.Nome= reader.GetString(reader.GetOrdinal("NOME_USUARIO"));
+
+                    sql = "SELECT FICHA_CONTEM_ALIMENTO.CODIGO_ALIMENTO, ALIMENTO.NOME FROM FICHA_CONTEM_ALIMENTO INNER JOIN ALIMENTO ON (ALIMENTO.CODIGO = FICHA_CONTEM_ALIMENTO.CODIGO_ALIMENTO) " +
+                      "WHERE FICHA_CONTEM_ALIMENTO.CODIGO_FICHA = " + fichaalimento.Codigo;
+
+                    conexao2 = new Conexao();
+
+                    conexao2.openConnection();
+
+                    SqlCommand cmd2 = new SqlCommand(sql, conexao2.sqlconn);
+                    SqlDataReader reader2 = cmd2. ExecuteReader();
+
+                    List<Alimento> listaalimento = new List<Alimento>();
+
+                    while (reader2.Read())
+                    {
+                        Alimento alimento = new Alimento();
+                        alimento.Codigo = reader2.GetInt32(reader2.GetOrdinal("CODIGO_ALIMENTO"));
+                        alimento.Nome = reader2.GetString(reader2.GetOrdinal("NOME"));
+                        listaalimento.Add(alimento);
+                    }
+
+                    conexao2.closeConnection();
+
+                    fichaalimento.listaAlimento = listaalimento;
 
                     listafichaalimento.Add(fichaalimento);
                 }

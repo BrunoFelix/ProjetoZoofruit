@@ -72,7 +72,7 @@ namespace Gui
             fichaalimento.usuario.Codigo = 1;
             fichaalimento.animal = new Animal();
             fichaalimento.animal.Codigo = 1;
-            fichaalimento.listaAlimento = new List<Alimento>().ToArray();
+            fichaalimento.listaAlimento = listaalimento.ToArray();
             webservice.InserirFichaAlimento(fichaalimento);
 
             ((Manter_ficha)Application.OpenForms["manter_ficha"]).lv_animal_SelectedIndexChanged(sender, e);

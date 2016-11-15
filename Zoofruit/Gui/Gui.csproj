@@ -72,6 +72,12 @@
     <Compile Include="Manter_alimento_ed.Designer.cs">
       <DependentUpon>Manter_alimento_ed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_animal.Designer.cs">
+      <DependentUpon>Manter_animal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manter_animal_ed.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_alimento.resx">
       <DependentUpon>Manter_alimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_animal.resx">
+      <DependentUpon>Manter_animal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_animal_ed.resx">
       <DependentUpon>Manter_animal_ed.cs</DependentUpon>

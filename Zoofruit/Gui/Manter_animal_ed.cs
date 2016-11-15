@@ -100,7 +100,7 @@ namespace Gui
                 tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
                 animal.tipoAnimal = tipoanimal;
                 webservice.InserirAnimal(animal);
-                ((Manter_ficha)Application.OpenForms["manter_ficha"]).btn_pesquisar_animal_Click(sender, e);
+                ((Manter_animal)Application.OpenForms["manter_animal"]).btn_pesquisar_animal_Click(sender, e);
             }
             else
             {
@@ -121,7 +121,7 @@ namespace Gui
                 tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
                 animal.tipoAnimal = tipoanimal;
                 webservice.AlterarAnimal(animal);
-                ((Manter_ficha)Application.OpenForms["manter_ficha"]).btn_pesquisar_animal_Click(sender, e);
+                ((Manter_animal)Application.OpenForms["manter_animal"]).btn_pesquisar_animal_Click(sender, e);
             }
         }
     }

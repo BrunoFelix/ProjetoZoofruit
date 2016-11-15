@@ -74,7 +74,7 @@ namespace Gui
 
         private void button11_Click(object sender, EventArgs e)
         {
-                    }
+        }
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -172,19 +172,12 @@ namespace Gui
 
         private void btn_novo_animal_Click(object sender, EventArgs e)
         {
-            Manter_animal_ed manter_animal_ed = new Manter_animal_ed();
-            manter_animal_ed.ShowDialog();
+    
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (lv_animal.SelectedIndices.Count > 0)
-            {
-                Animal animal = new Animal();
-                animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
-                Manter_animal_ed manter_animal_ed = new Manter_animal_ed(animal);
-                manter_animal_ed.ShowDialog();
-            }
+
         }
 
         private void Manter_ficha_Load(object sender, EventArgs e)
@@ -208,11 +201,7 @@ namespace Gui
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Animal animal = new Animal();
-            TipoAnimal tipoanimal = new TipoAnimal();
-            animal.tipoAnimal = tipoanimal;
-            webservice.ExcluirAnimal(animal);
-            AtualizarGrid();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -230,6 +219,8 @@ namespace Gui
                 fichaalimento.usuario = new Usuario();
                 listafichaanimal = webservice.ListarFichaAlimento(fichaalimento).ToList();
                 AtualizarGridFicha();
+
+                //AtualizarGridAlimento(listafichaanimal[0]);
             }
         }
 
@@ -252,5 +243,33 @@ namespace Gui
             }
         }
 
+        public void AtualizarGridAlimento(FichaAlimento fa)
+        {
+            lv_alimento.Items.Clear();
+
+            ListViewItem item;
+            foreach (Alimento a in fa.listaAlimento)
+            {
+                item = new ListViewItem();
+                item.Text = a.Codigo.ToString();
+                item.SubItems.Add(a.Nome);
+
+                lv_alimento.Items.Add(item);
+            }
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lv_ficha_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_ficha.SelectedIndices.Count > 0)
+            {
+                AtualizarGridAlimento(listafichaanimal.ElementAt(lv_ficha.SelectedIndices[0]));
+            }
+        }
     }
 }

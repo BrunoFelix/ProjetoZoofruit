@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_alimento));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,19 @@
             this.panel1.Size = new System.Drawing.Size(965, 48);
             this.panel1.TabIndex = 8;
             // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 48);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Novo [F2]";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
@@ -73,6 +86,7 @@
             this.button3.Text = "Excluir [F4]";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -82,9 +96,10 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 48);
             this.button2.TabIndex = 8;
-            this.button2.Text = "Alterar [F4]";
+            this.button2.Text = "Alterar [F3]";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -97,6 +112,7 @@
             this.button4.Text = "[F6]";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btn_pesquisar
             // 
@@ -109,6 +125,7 @@
             this.btn_pesquisar.Text = "[F5]";
             this.btn_pesquisar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_pesquisar.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
             // 
             // tb_pesquisar
             // 
@@ -151,7 +168,9 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lv_alimento.FullRowSelect = true;
             this.lv_alimento.Location = new System.Drawing.Point(0, 48);
+            this.lv_alimento.MultiSelect = false;
             this.lv_alimento.Name = "lv_alimento";
             this.lv_alimento.Size = new System.Drawing.Size(965, 495);
             this.lv_alimento.TabIndex = 1;
@@ -166,7 +185,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nome";
-            this.columnHeader2.Width = 438;
+            this.columnHeader2.Width = 575;
             // 
             // columnHeader3
             // 
@@ -176,20 +195,7 @@
             // columnHeader4
             // 
             this.columnHeader4.Text = "Quantidade";
-            this.columnHeader4.Width = 125;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 48);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Novo [F3]";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.columnHeader4.Width = 128;
             // 
             // Manter_alimento
             // 
@@ -198,10 +204,15 @@
             this.ClientSize = new System.Drawing.Size(965, 543);
             this.Controls.Add(this.lv_alimento);
             this.Controls.Add(this.panel1);
+            this.KeyPreview = true;
             this.Name = "Manter_alimento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Alimentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manter_alimento_FormClosed);
             this.Load += new System.EventHandler(this.Manter_alimento_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Manter_alimento_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Manter_alimento_KeyPress);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

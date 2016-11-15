@@ -117,7 +117,7 @@ namespace Gui
             manter_login_ed.ShowDialog();
         }
 
-        private void btn_pesquisar_Click_1(object sender, EventArgs e)
+        public void btn_pesquisar_Click_1(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
             TipoUsuario tipousuario = new TipoUsuario();
@@ -202,6 +202,7 @@ namespace Gui
                     webservice.ExcluirUsuario(listausuario.ElementAt(lv_usuario.SelectedIndices[0]));
                     listausuario.Remove(listausuario.ElementAt(lv_usuario.SelectedIndices[0]));
                     MessageBox.Show("Removido com sucesso!");
+                    AtualizarGrid();
                 }
             }
         }

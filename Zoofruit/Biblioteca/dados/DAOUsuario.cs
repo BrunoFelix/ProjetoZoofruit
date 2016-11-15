@@ -79,9 +79,25 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "DELETE FROM USUARIO WHERE CODIGO=@CODIGO";
+                string sql = "DELETE FROM FICHA_ALIMENTO WHERE CODIGO_USUARIO=@CODIGO_USUARIO";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", u.Codigo));
+
+                cmd.ExecuteNonQuery();
+
+                sql = "DELETE FROM FICHA_MEDICAMENTO WHERE CODIGO_USUARIO=@CODIGO_USUARIO";
+
+                cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", u.Codigo));
+
+                cmd.ExecuteNonQuery();
+
+                sql = "DELETE FROM USUARIO WHERE CODIGO=@CODIGO";
+
+                cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", u.Codigo));
 

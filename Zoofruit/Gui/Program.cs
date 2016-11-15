@@ -21,8 +21,7 @@ namespace Gui
 
             if (tela_login.ShowDialog() == DialogResult.OK)
             {
-                Principal principal = new Principal();
-                principal.usuario = tela_login.usuario;
+                Principal principal = new Principal(tela_login.usuario);
                 Application.Run(principal);
             }
         }

@@ -165,5 +165,15 @@ namespace Gui
             listaanimal = webservice.ListarAnimal(animal).ToList();
             AtualizarGrid();
         }
+
+        private void Manter_animal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void Manter_animal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            manter_animal = null;
+        }
     }
 }

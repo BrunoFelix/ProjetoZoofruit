@@ -221,7 +221,7 @@
             this.Controls.Add(this.lv_usuario);
             this.Name = "Manter_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Usuários";
+            this.Text = "Cadastro de Alimentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manter_login_FormClosed);
             this.Load += new System.EventHandler(this.Manter_login_Load);

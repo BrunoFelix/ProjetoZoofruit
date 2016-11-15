@@ -15,10 +15,12 @@ namespace Gui
     public partial class Principal : Form
     {
         public Usuario usuario;
-        public Principal()
+        public Principal(Usuario u)
         {
-            usuario = new Usuario();
+            usuario = u;
             InitializeComponent();
+            lb_usuario.Text = "Usuario logado: " + usuario.Nome + " (" + usuario.Login + ")";
+            lb_data.Text = "Versão: 15/11/2016"; 
         }
 
         private void quadroDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -61,6 +63,11 @@ namespace Gui
             Manter_ficha manter_ficha = Manter_ficha.getInstance();
             manter_ficha.Show();
             manter_ficha.BringToFront();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

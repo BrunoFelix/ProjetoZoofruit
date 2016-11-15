@@ -38,11 +38,15 @@
             this.usuárioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAnimalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quadroDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.histórioDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alimentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.medicamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quadroDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.histórioDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_usuario = new System.Windows.Forms.Label();
+            this.lb_data = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -121,6 +125,19 @@
             this.consultarAnimalToolStripMenuItem.Text = "Gerenciar Fichas";
             this.consultarAnimalToolStripMenuItem.Click += new System.EventHandler(this.consultarAnimalToolStripMenuItem_Click);
             // 
+            // alimentoToolStripMenuItem1
+            // 
+            this.alimentoToolStripMenuItem1.Name = "alimentoToolStripMenuItem1";
+            this.alimentoToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.alimentoToolStripMenuItem1.Text = "Alimento";
+            this.alimentoToolStripMenuItem1.Click += new System.EventHandler(this.alimentoToolStripMenuItem1_Click);
+            // 
+            // medicamentoToolStripMenuItem
+            // 
+            this.medicamentoToolStripMenuItem.Name = "medicamentoToolStripMenuItem";
+            this.medicamentoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.medicamentoToolStripMenuItem.Text = "Medicamento";
+            // 
             // quadroDeTarefasToolStripMenuItem
             // 
             this.quadroDeTarefasToolStripMenuItem.Name = "quadroDeTarefasToolStripMenuItem";
@@ -134,24 +151,46 @@
             this.histórioDeTarefasToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.histórioDeTarefasToolStripMenuItem.Text = "Histório de tarefas";
             // 
-            // alimentoToolStripMenuItem1
+            // panel1
             // 
-            this.alimentoToolStripMenuItem1.Name = "alimentoToolStripMenuItem1";
-            this.alimentoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.alimentoToolStripMenuItem1.Text = "Alimento";
-            this.alimentoToolStripMenuItem1.Click += new System.EventHandler(this.alimentoToolStripMenuItem1_Click);
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.lb_data);
+            this.panel1.Controls.Add(this.lb_usuario);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(0, 388);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(814, 42);
+            this.panel1.TabIndex = 1;
             // 
-            // medicamentoToolStripMenuItem
+            // lb_usuario
             // 
-            this.medicamentoToolStripMenuItem.Name = "medicamentoToolStripMenuItem";
-            this.medicamentoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.medicamentoToolStripMenuItem.Text = "Medicamento";
+            this.lb_usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lb_usuario.AutoSize = true;
+            this.lb_usuario.Location = new System.Drawing.Point(12, 15);
+            this.lb_usuario.Name = "lb_usuario";
+            this.lb_usuario.Size = new System.Drawing.Size(43, 13);
+            this.lb_usuario.TabIndex = 0;
+            this.lb_usuario.Text = "Usuario";
+            // 
+            // lb_data
+            // 
+            this.lb_data.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_data.AutoSize = true;
+            this.lb_data.Location = new System.Drawing.Point(691, 15);
+            this.lb_data.Name = "lb_data";
+            this.lb_data.Size = new System.Drawing.Size(43, 13);
+            this.lb_data.TabIndex = 1;
+            this.lb_data.Text = "Usuario";
             // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 430);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -162,6 +201,8 @@
             this.Load += new System.EventHandler(this.Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,5 +223,8 @@
         private System.Windows.Forms.ToolStripMenuItem histórioDeTarefasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alimentoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem medicamentoToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lb_usuario;
+        private System.Windows.Forms.Label lb_data;
     }
 }

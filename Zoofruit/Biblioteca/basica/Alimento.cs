@@ -12,7 +12,6 @@ namespace Biblioteca.basica
         private string nome;
         private double quantidade;
         private double valorCalorico;
-        private string dataReposicao;
 
         public int Codigo
         {
@@ -63,19 +62,6 @@ namespace Biblioteca.basica
             set
             {
                 valorCalorico = value;
-            }
-        }
-
-        public string DataReposicao
-        {
-            get
-            {
-                return dataReposicao;
-            }
-
-            set
-            {
-                dataReposicao = value;
             }
         }
     }

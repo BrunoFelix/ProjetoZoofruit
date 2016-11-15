@@ -19,12 +19,11 @@ namespace Gui
         public Manter_alimento_ed()
         {
             InitializeComponent();
+            webservice = new Service1();
            
         }
 
- 
-
-        private void btnconfirmar_Click(object sender, EventArgs e)
+        private void btnconfirmar_Click_1(object sender, EventArgs e)
         {
             if (this.alimento == null)
             {
@@ -32,31 +31,8 @@ namespace Gui
                 alimento.Nome = tb_nome.Text;
                 alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
                 alimento.Quantidade = double.Parse(tb_quantidade.Text);
-                alimento.DataReposicao = tb_dataultimareposicao.Text;
-                webservice.InserirAlimento(alimento);             
-            }
-            else
-            {
-                Alimento alimento = new Alimento();
-                alimento.Nome = tb_nome.Text;
-                alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
-                alimento.Quantidade = double.Parse(tb_quantidade.Text);
-                alimento.DataReposicao = tb_dataultimareposicao.Text;
-                webservice.AlterarAlimento(alimento);
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            if (this.alimento == null)
-            {
-                Alimento alimento = new Alimento();
-                alimento.Nome = tb_nome.Text;
-                alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
-                alimento.Quantidade = double.Parse(tb_quantidade.Text);
-                alimento.DataReposicao = tb_dataultimareposicao.Text;
                 webservice.InserirAlimento(alimento);
+                ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
             }
             else
             {
@@ -64,10 +40,9 @@ namespace Gui
                 alimento.Nome = tb_nome.Text;
                 alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
                 alimento.Quantidade = double.Parse(tb_quantidade.Text);
-                alimento.DataReposicao = tb_dataultimareposicao.Text;
                 webservice.AlterarAlimento(alimento);
+                ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
             }
-
         }
     }
 }

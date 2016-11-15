@@ -220,7 +220,11 @@
             this.Controls.Add(this.btn_novo_animal);
             this.Controls.Add(this.lv_animal);
             this.Name = "Manter_animal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manter_animal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Manter_animal_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manter_animal_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

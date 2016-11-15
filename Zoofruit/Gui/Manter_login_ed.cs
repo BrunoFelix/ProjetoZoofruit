@@ -75,32 +75,47 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.usuario == null)
+            try
             {
-                Usuario usuario = new Usuario();
-                usuario.Nome = tb_nome.Text;
-                usuario.Cpf = tb_cpf.Text;
-                usuario.Crmv = tb_crmv.Text;
-                usuario.Login = tb_login.Text;
-                usuario.Senha = tb_senha.Text;
-                tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
-                usuario.tipousuario = tipousuario;
-                webservice.InserirUsuario(usuario);
-                ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click(sender, e);
-            }
-            else
+                if (comboBox1.SelectedIndex < 0)
+                {
+                    MessageBox.Show("Selecione um tipo!");
+                    comboBox1.Focus();
+                    this.DialogResult = DialogResult.None;
+                    return;
+                }
+                
+                if (this.usuario == null)
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.Nome = tb_nome.Text;
+                    usuario.Cpf = tb_cpf.Text;
+                    usuario.Crmv = tb_crmv.Text;
+                    usuario.Login = tb_login.Text;
+                    usuario.Senha = tb_senha.Text;
+                    tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
+                    usuario.tipousuario = tipousuario;
+                    webservice.InserirUsuario(usuario);
+                    ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click_1(sender, e);
+                }
+                else
+                {
+                    Usuario usuario = new Usuario();
+                    usuario.Codigo = this.usuario.Codigo;
+                    usuario.Nome = tb_nome.Text;
+                    usuario.Cpf = tb_cpf.Text;
+                    usuario.Crmv = tb_crmv.Text;
+                    usuario.Login = tb_login.Text;
+                    usuario.Senha = tb_senha.Text;
+                    tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
+                    usuario.tipousuario = tipousuario;
+                    webservice.AlterarUsuario(usuario);
+                    ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click_1(sender, e);
+                }
+            }catch (Exception ex)
             {
-                Usuario usuario = new Usuario();
-                usuario.Codigo = this.usuario.Codigo;
-                usuario.Nome = tb_nome.Text;
-                usuario.Cpf = tb_cpf.Text;
-                usuario.Crmv = tb_crmv.Text;
-                usuario.Login = tb_login.Text;
-                usuario.Senha = tb_senha.Text;
-                tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
-                usuario.tipousuario = tipousuario;
-                webservice.AlterarUsuario(usuario);
-                ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click(sender, e);
+                MessageBox.Show(ex.Message);
+                this.DialogResult = DialogResult.None;
             }
         }
     }

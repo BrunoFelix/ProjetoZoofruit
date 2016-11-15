@@ -78,8 +78,7 @@ CREATE TABLE Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
 	quantidade FLOAT NOT NULL,
-	valor_calorico FLOAT NOT NULL,
-	dt_reposicao DATE NOT NULL
+	valor_calorico FLOAT NOT NULL
 );
 
 CREATE TABLE Ficha_Contem_Alimento (

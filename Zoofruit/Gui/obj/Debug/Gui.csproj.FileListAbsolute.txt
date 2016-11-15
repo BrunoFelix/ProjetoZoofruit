@@ -116,9 +116,11 @@ C:\Users\aluno\Documents\Visual Studio 2015\Projects\ProjetoZoofruit\Zoofruit\Gu
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Teste.Form1.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento.resources
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento_ed.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_animal.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_animal_ed.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha.resources

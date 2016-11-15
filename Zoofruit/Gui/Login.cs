@@ -38,10 +38,15 @@ namespace Gui
 
                     if (listausuario.Count == 1)
                     {
-                       
-                            /*Principal principal = new Principal();
-                          
-                           principal.ShowDialog();*/
+
+                        /*Principal principal = new Principal();
+
+                       principal.ShowDialog();*/
+                       foreach(Usuario u in listausuario)
+                        {
+                            usuario = u;
+                        }
+                        
                         this.DialogResult = DialogResult.OK;
                            
 

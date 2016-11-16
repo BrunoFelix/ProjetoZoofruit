@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Biblioteca.basica
 {
-   public class Alimento
+    [Serializable]
+    [DataContract()]
+    public class Alimento
     {
         private int codigo;
         private string nome;
         private double quantidade;
         private double valorCalorico;
 
+        [DataMember(IsRequired = true)]
         public int Codigo
         {
             get
@@ -26,6 +31,7 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get
@@ -39,6 +45,7 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
         public double Quantidade
         {
             get
@@ -52,6 +59,7 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
         public double ValorCalorico
         {
             get

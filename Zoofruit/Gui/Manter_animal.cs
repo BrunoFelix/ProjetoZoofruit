@@ -39,7 +39,7 @@ namespace Gui
             webservice = new Service1();
             listaanimal = webservice.ListarAnimal(animal).ToList();
             animal = new Animal();
-            animal.tipoAnimal = new TipoAnimal();
+            animal.TipoAnimal = new TipoAnimal();
             AtualizarGrid();
         }
 
@@ -57,7 +57,7 @@ namespace Gui
                 item.SubItems.Add(a.Cor);
                 item.SubItems.Add(a.Porte);
                 item.SubItems.Add(Convert.ToString(a.Peso));
-                item.SubItems.Add(a.tipoAnimal.Descricao);
+                item.SubItems.Add(a.TipoAnimal.Descricao);
 
                 lv_animal.Items.Add(item);
             }
@@ -154,7 +154,7 @@ namespace Gui
             {
                 try
                 {
-                    animal.tipoAnimal.Descricao = tb_pesquisar.Text;
+                    animal.TipoAnimal.Descricao = tb_pesquisar.Text;
                 }
                 catch (Exception ex)
                 {

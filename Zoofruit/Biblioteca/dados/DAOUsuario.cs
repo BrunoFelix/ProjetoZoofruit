@@ -32,7 +32,7 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@LOGIN", u.Login));
                 cmd.Parameters.Add(new SqlParameter("@SENHA", u.Senha));
                 cmd.Parameters.Add(new SqlParameter("@CRMV", u.Crmv));
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOUSUARIO", u.tipousuario.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOUSUARIO", u.Tipousuario.Codigo));
 
                 cmd.ExecuteNonQuery();
             }
@@ -59,7 +59,7 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@LOGIN", u.Login));
                 cmd.Parameters.Add(new SqlParameter("@SENHA", u.Senha));
                 cmd.Parameters.Add(new SqlParameter("@CRMV", u.Crmv));
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOUSUARIO", u.tipousuario.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOUSUARIO", u.Tipousuario.Codigo));
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", u.Codigo));
 
                 cmd.ExecuteNonQuery();
@@ -148,7 +148,7 @@ namespace Biblioteca.dados
                     sql += " and crmv = @crmv";
                 }
 
-                if (u.tipousuario.Descricao != null && u.tipousuario.Descricao.Trim().Equals("") == false)
+                if (u.Tipousuario.Descricao != null && u.Tipousuario.Descricao.Trim().Equals("") == false)
                 {
                     sql += " and TipoUsuario.descricao = @descricao";
                 }
@@ -201,10 +201,10 @@ namespace Biblioteca.dados
                     cmd.Parameters["@crmv"].Value = u.Crmv;
                 }
 
-                if (u.tipousuario.Descricao != null && u.tipousuario.Descricao.Trim().Equals("") == false)
+                if (u.Tipousuario.Descricao != null && u.Tipousuario.Descricao.Trim().Equals("") == false)
                 {
                     cmd.Parameters.Add("@descricao", SqlDbType.VarChar);
-                    cmd.Parameters["@descricao"].Value = u.tipousuario.Descricao;
+                    cmd.Parameters["@descricao"].Value = u.Tipousuario.Descricao;
                 }
 
                 if (u.Codigo > 0)
@@ -224,8 +224,8 @@ namespace Biblioteca.dados
                     usuario.Login = reader.GetString(reader.GetOrdinal("login"));
                     usuario.Senha = reader.GetString(reader.GetOrdinal("senha"));
                     usuario.Crmv = reader.GetString(reader.GetOrdinal("crmv"));
-                    usuario.tipousuario.Codigo = reader.GetInt32(reader.GetOrdinal("codigo_TipoUsuario"));
-                    usuario.tipousuario.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
+                    usuario.Tipousuario.Codigo = reader.GetInt32(reader.GetOrdinal("codigo_TipoUsuario"));
+                    usuario.Tipousuario.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
 
                     listaUsuario.Add(usuario);
                 }

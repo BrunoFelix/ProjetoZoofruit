@@ -33,7 +33,7 @@ namespace Gui
                     Service1 webservice = new Service1();
                     usuario.Login = tb_usuario.Text;
                     usuario.Senha = tb_senha.Text;
-                    usuario.tipousuario = new TipoUsuario();
+                    usuario.Tipousuario = new TipoUsuario();
                     listausuario = webservice.ListarUsuario(usuario).ToList();
 
                     if (listausuario.Count == 1)

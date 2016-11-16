@@ -1,25 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.basica
 {
+    [Serializable]
+    [DataContract()]
     public abstract class Ficha
     {
         private int codigo;
         private string descricao;
         private string dataCriacao;
         private string dataValidade;
-        public Usuario usuario;
-        public Animal animal;
+        private Usuario usuario;
+        private Animal animal;
 
         public Ficha()
         {
-            animal = new Animal();
-            usuario = new Usuario();
+            Animal = new Animal();
+            Usuario = new Usuario();
         }
+        [DataMember(IsRequired = true)]
         public int Codigo
         {
             get
@@ -32,7 +36,7 @@ namespace Biblioteca.basica
                 codigo = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string DataCriacao
         {
             get
@@ -45,7 +49,7 @@ namespace Biblioteca.basica
                 dataCriacao = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string DataValidade
         {
             get
@@ -58,7 +62,7 @@ namespace Biblioteca.basica
                 dataValidade = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string Descricao
         {
             get
@@ -69,6 +73,32 @@ namespace Biblioteca.basica
             set
             {
                 descricao = value;
+            }
+        }
+        [DataMember(IsRequired = true)]
+        public Usuario Usuario
+        {
+            get
+            {
+                return usuario;
+            }
+
+            set
+            {
+                usuario = value;
+            }
+        }
+        [DataMember(IsRequired = true)]
+        public Animal Animal
+        {
+            get
+            {
+                return animal;
+            }
+
+            set
+            {
+                animal = value;
             }
         }
     }

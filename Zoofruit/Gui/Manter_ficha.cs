@@ -41,7 +41,7 @@ namespace Gui
             listaanimal = new List<Animal>();
             listafichaanimal = new List<FichaAlimento>();
             animal = new Animal();
-            animal.tipoAnimal = new TipoAnimal();
+            animal.TipoAnimal = new TipoAnimal();
         }
 
         public void AtualizarGrid()
@@ -58,7 +58,7 @@ namespace Gui
                 item.SubItems.Add(a.Cor);
                 item.SubItems.Add(a.Porte);
                 item.SubItems.Add(Convert.ToString(a.Peso));
-                item.SubItems.Add(a.tipoAnimal.Descricao);
+                item.SubItems.Add(a.TipoAnimal.Descricao);
 
                 lv_animal.Items.Add(item);
             }
@@ -158,7 +158,7 @@ namespace Gui
             {
                 try
                 {
-                    animal.tipoAnimal.Descricao = tb_pesquisar.Text;
+                    animal.TipoAnimal.Descricao = tb_pesquisar.Text;
                 }
                 catch (Exception ex)
                 {
@@ -184,7 +184,7 @@ namespace Gui
         {
             comboBox_pesquisar_animal.SelectedIndex = 1;
             Animal animal = new Animal();
-            animal.tipoAnimal = new TipoAnimal();
+            animal.TipoAnimal = new TipoAnimal();
             listaanimal = webservice.ListarAnimal(animal).ToList();
             AtualizarGrid();
         }
@@ -215,8 +215,8 @@ namespace Gui
             if (lv_animal.SelectedIndices.Count > 0)
             {
                 FichaAlimento fichaalimento = new FichaAlimento();
-                fichaalimento.animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
-                fichaalimento.usuario = new Usuario();
+                fichaalimento.Animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
+                fichaalimento.Usuario = new Usuario();
                 listafichaanimal = webservice.ListarFichaAlimento(fichaalimento).ToList();
                 AtualizarGridFicha();
 
@@ -237,7 +237,7 @@ namespace Gui
                 item.SubItems.Add(fa.Descricao);
                 item.SubItems.Add(fa.DataCriacao);
                 item.SubItems.Add(fa.DataValidade);
-                item.SubItems.Add(fa.usuario.Nome);
+                item.SubItems.Add(fa.Usuario.Nome);
 
                 lv_ficha.Items.Add(item);
             }
@@ -248,7 +248,7 @@ namespace Gui
             lv_alimento.Items.Clear();
 
             ListViewItem item;
-            foreach (Alimento a in fa.listaAlimento)
+            foreach (Alimento a in fa.ListaAlimento)
             {
                 item = new ListViewItem();
                 item.Text = a.Codigo.ToString();

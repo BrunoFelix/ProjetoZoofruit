@@ -59,7 +59,7 @@ namespace Gui
                 item.SubItems.Add(Convert.ToUInt64(u.Cpf).ToString(@"000\.000\.000\-00"));
                 item.SubItems.Add(u.Crmv);
                 item.SubItems.Add(u.Login);
-                item.SubItems.Add(u.tipousuario.Descricao);
+                item.SubItems.Add(u.Tipousuario.Descricao);
 
                 lv_usuario.Items.Add(item);
             }
@@ -70,7 +70,7 @@ namespace Gui
             comboBoxPesquisar.SelectedIndex = 1;
             Usuario usuario = new Usuario();
             TipoUsuario tipousuario = new TipoUsuario();
-            usuario.tipousuario = tipousuario;
+            usuario.Tipousuario = tipousuario;
             listausuario = webservice.ListarUsuario(usuario).ToList();
             AtualizarGrid();
         }
@@ -91,7 +91,7 @@ namespace Gui
             tb_pesquisar.Text = "";
             Usuario usuario = new Usuario();
             TipoUsuario tipousuario = new TipoUsuario();
-            usuario.tipousuario = tipousuario;
+            usuario.Tipousuario = tipousuario;
             listausuario = webservice.ListarUsuario(usuario).ToList();
             AtualizarGrid();
         }
@@ -121,7 +121,7 @@ namespace Gui
         {
             Usuario usuario = new Usuario();
             TipoUsuario tipousuario = new TipoUsuario();
-            usuario.tipousuario = tipousuario;
+            usuario.Tipousuario = tipousuario;
             if (comboBoxPesquisar.SelectedIndex == 0)
             {
                 try
@@ -182,7 +182,7 @@ namespace Gui
             {
                 try
                 {
-                    usuario.tipousuario.Descricao = tb_pesquisar.Text;
+                    usuario.Tipousuario.Descricao = tb_pesquisar.Text;
                 }
                 catch (Exception ex)
                 {

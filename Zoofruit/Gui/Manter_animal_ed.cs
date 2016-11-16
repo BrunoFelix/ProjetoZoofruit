@@ -56,13 +56,13 @@ namespace Gui
             tb_peso.Text = animal.Peso.ToString();
             tb_porte.Text = animal.Porte;
 
-            int index = comboBox1.FindString(animal.tipoAnimal.Descricao);
+            int index = comboBox1.FindString(animal.TipoAnimal.Descricao);
             comboBox1.SelectedIndex = index;
         }
 
         private void btnAddFoto_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            /*if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string nomeArquivo = openFileDialog1.FileName;
                 Bitmap bmp = new Bitmap(nomeArquivo);
@@ -71,7 +71,7 @@ namespace Gui
                 MemoryStream ms = new MemoryStream();
                 bmp.Save(ms, ImageFormat.Bmp);
                 animal.Foto = ms.ToArray();
-            }
+            }*/
         }
 
         private void tb_peso_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,7 +98,7 @@ namespace Gui
                 }
                 //animal.Foto = tb_senha.Text;
                 tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
-                animal.tipoAnimal = tipoanimal;
+                animal.TipoAnimal = tipoanimal;
                 webservice.InserirAnimal(animal);
                 ((Manter_animal)Application.OpenForms["manter_animal"]).btn_pesquisar_animal_Click(sender, e);
             }
@@ -119,7 +119,7 @@ namespace Gui
                 }
                 //animal.Foto = tb_senha.Text;
                 tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
-                animal.tipoAnimal = tipoanimal;
+                animal.TipoAnimal = tipoanimal;
                 webservice.AlterarAnimal(animal);
                 ((Manter_animal)Application.OpenForms["manter_animal"]).btn_pesquisar_animal_Click(sender, e);
             }

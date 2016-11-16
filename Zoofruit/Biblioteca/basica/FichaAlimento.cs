@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.basica
 {
+    [Serializable]
+    [DataContract()]
     public class FichaAlimento : Ficha
     {
         private double qtd_max_cal;
 
-        public List<Alimento> listaAlimento;
+        private List<Alimento> listaAlimento;
 
+        [DataMember(IsRequired = true)]
         public double Qtd_max_cal
         {
             get
@@ -25,9 +29,23 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
+        public List<Alimento> ListaAlimento
+        {
+            get
+            {
+                return listaAlimento;
+            }
+
+            set
+            {
+                listaAlimento = value;
+            }
+        }
+
         public FichaAlimento() : base()
         {
-            listaAlimento = new List<Alimento>();
+            ListaAlimento = new List<Alimento>();
         }
     }
 }

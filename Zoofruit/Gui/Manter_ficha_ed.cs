@@ -68,11 +68,11 @@ namespace Gui
             {
                 MessageBox.Show("Quantidade máxima de calórias inválida!");
             }
-            fichaalimento.usuario = new Usuario();
-            fichaalimento.usuario.Codigo = 1;
-            fichaalimento.animal = new Animal();
-            fichaalimento.animal.Codigo = 1;
-            fichaalimento.listaAlimento = listaalimento.ToArray();
+            fichaalimento.Usuario = new Usuario();
+            fichaalimento.Usuario.Codigo = 1;
+            fichaalimento.Animal = new Animal();
+            fichaalimento.Animal.Codigo = 1;
+            fichaalimento.ListaAlimento = listaalimento.ToArray();
             webservice.InserirFichaAlimento(fichaalimento);
 
             ((Manter_ficha)Application.OpenForms["manter_ficha"]).lv_animal_SelectedIndexChanged(sender, e);

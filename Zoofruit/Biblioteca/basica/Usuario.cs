@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.basica
 {
+    [Serializable]
+    [DataContract()]
     public class Usuario
     {
         private int codigo;
@@ -14,13 +17,14 @@ namespace Biblioteca.basica
         private string login;
         private string senha;
         private string crmv;
-        public TipoUsuario tipousuario;
+        private TipoUsuario tipousuario;
 
         public Usuario()
         {
-            tipousuario = new TipoUsuario();
+            Tipousuario = new TipoUsuario();
         }
 
+        [DataMember(IsRequired = true)]
         public int Codigo
         {
             get
@@ -33,7 +37,7 @@ namespace Biblioteca.basica
                 codigo = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string Cpf
         {
             get
@@ -46,7 +50,7 @@ namespace Biblioteca.basica
                 cpf = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string Login
         {
             get
@@ -59,7 +63,7 @@ namespace Biblioteca.basica
                 login = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string Senha
         {
             get
@@ -72,7 +76,7 @@ namespace Biblioteca.basica
                 senha = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string Crmv
         {
             get
@@ -85,7 +89,7 @@ namespace Biblioteca.basica
                 crmv = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get
@@ -96,6 +100,19 @@ namespace Biblioteca.basica
             set
             {
                 nome = value;
+            }
+        }
+        [DataMember(IsRequired = true)]
+        public TipoUsuario Tipousuario
+        {
+            get
+            {
+                return tipousuario;
+            }
+
+            set
+            {
+                tipousuario = value;
             }
         }
     }

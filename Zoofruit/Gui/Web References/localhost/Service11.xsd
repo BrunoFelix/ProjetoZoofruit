@@ -2,8 +2,8 @@
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Biblioteca.basica" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:complexType name="TipoUsuario">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="Descricao" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoUsuario" nillable="true" type="tns:TipoUsuario" />
@@ -15,13 +15,13 @@
   <xs:element name="ArrayOfTipoUsuario" nillable="true" type="tns:ArrayOfTipoUsuario" />
   <xs:complexType name="Usuario">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="Cpf" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Crmv" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Senha" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tipousuario" nillable="true" type="tns:TipoUsuario" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="Cpf" nillable="true" type="xs:string" />
+      <xs:element name="Crmv" nillable="true" type="xs:string" />
+      <xs:element name="Login" nillable="true" type="xs:string" />
+      <xs:element name="Nome" nillable="true" type="xs:string" />
+      <xs:element name="Senha" nillable="true" type="xs:string" />
+      <xs:element name="Tipousuario" nillable="true" type="tns:TipoUsuario" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
@@ -33,11 +33,10 @@
   <xs:element name="ArrayOfUsuario" nillable="true" type="tns:ArrayOfUsuario" />
   <xs:complexType name="Alimento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="DataReposicao" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Quantidade" type="xs:double" />
-      <xs:element minOccurs="0" name="ValorCalorico" type="xs:double" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="Nome" nillable="true" type="xs:string" />
+      <xs:element name="Quantidade" type="xs:double" />
+      <xs:element name="ValorCalorico" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Alimento" nillable="true" type="tns:Alimento" />
@@ -49,10 +48,10 @@
   <xs:element name="ArrayOfAlimento" nillable="true" type="tns:ArrayOfAlimento" />
   <xs:complexType name="Medicamento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="DataReposicao" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Quantidade" type="xs:int" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="DataReposicao" nillable="true" type="xs:string" />
+      <xs:element name="Nome" nillable="true" type="xs:string" />
+      <xs:element name="Quantidade" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Medicamento" nillable="true" type="tns:Medicamento" />
@@ -64,8 +63,8 @@
   <xs:element name="ArrayOfMedicamento" nillable="true" type="tns:ArrayOfMedicamento" />
   <xs:complexType name="TipoAnimal">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="Descricao" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TipoAnimal" nillable="true" type="tns:TipoAnimal" />
@@ -77,13 +76,12 @@
   <xs:element name="ArrayOfTipoAnimal" nillable="true" type="tns:ArrayOfTipoAnimal" />
   <xs:complexType name="Animal">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="Cor" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Foto" nillable="true" type="xs:base64Binary" />
-      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Peso" type="xs:double" />
-      <xs:element minOccurs="0" name="Porte" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="tipoAnimal" nillable="true" type="tns:TipoAnimal" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="Cor" nillable="true" type="xs:string" />
+      <xs:element name="Nome" nillable="true" type="xs:string" />
+      <xs:element name="Peso" type="xs:double" />
+      <xs:element name="Porte" nillable="true" type="xs:string" />
+      <xs:element name="TipoAnimal" nillable="true" type="tns:TipoAnimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Animal" nillable="true" type="tns:Animal" />
@@ -97,8 +95,8 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:Ficha">
         <xs:sequence>
-          <xs:element minOccurs="0" name="Qtd_max_cal" type="xs:double" />
-          <xs:element minOccurs="0" name="listaAlimento" nillable="true" type="tns:ArrayOfAlimento" />
+          <xs:element name="ListaAlimento" nillable="true" type="tns:ArrayOfAlimento" />
+          <xs:element name="Qtd_max_cal" type="xs:double" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -106,12 +104,12 @@
   <xs:element name="FichaAlimento" nillable="true" type="tns:FichaAlimento" />
   <xs:complexType name="Ficha">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Codigo" type="xs:int" />
-      <xs:element minOccurs="0" name="DataCriacao" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="DataValidade" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Descricao" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="animal" nillable="true" type="tns:Animal" />
-      <xs:element minOccurs="0" name="usuario" nillable="true" type="tns:Usuario" />
+      <xs:element name="Animal" nillable="true" type="tns:Animal" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="DataCriacao" nillable="true" type="xs:string" />
+      <xs:element name="DataValidade" nillable="true" type="xs:string" />
+      <xs:element name="Descricao" nillable="true" type="xs:string" />
+      <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ficha" nillable="true" type="tns:Ficha" />

@@ -30,7 +30,7 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@COR", a.Cor));
                 cmd.Parameters.Add(new SqlParameter("@PORTE", a.Porte));
                 cmd.Parameters.Add(new SqlParameter("@PESO", a.Peso));
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOANIMAL", a.tipoAnimal.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOANIMAL", a.TipoAnimal.Codigo));
                 //cmd.Parameters.Add(new SqlParameter("@FOTO", a.Foto));
 
 
@@ -59,7 +59,7 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@COR", a.Cor));
                 cmd.Parameters.Add(new SqlParameter("@PORTE", a.Porte));
                 cmd.Parameters.Add(new SqlParameter("@PESO", a.Peso));
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOANIMAL", a.tipoAnimal.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_TIPOANIMAL", a.TipoAnimal.Codigo));
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
 
                 cmd.ExecuteNonQuery();
@@ -133,7 +133,7 @@ namespace Biblioteca.dados
                 animal.Cor = reader.GetString(reader.GetOrdinal("Cor"));
                 animal.Porte = reader.GetString(reader.GetOrdinal("Porte"));
                 animal.Peso = reader.GetDouble(reader.GetOrdinal("Peso"));
-                animal.tipoAnimal.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
+                animal.TipoAnimal.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
       
                 listaAnimal.Add(animal);
             }

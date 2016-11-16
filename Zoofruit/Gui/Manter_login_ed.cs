@@ -51,7 +51,7 @@ namespace Gui
             tb_crmv.Text = usuario.Crmv;
             tb_login.Text = usuario.Login;
             tb_senha.Text = usuario.Senha;
-            int index = comboBox1.FindString(usuario.tipousuario.Descricao);
+            int index = comboBox1.FindString(usuario.Tipousuario.Descricao);
             comboBox1.SelectedIndex = index;
 
             //comboBox1.SelectedText = usuario.tipousuario.Descricao;
@@ -94,7 +94,7 @@ namespace Gui
                     usuario.Login = tb_login.Text;
                     usuario.Senha = tb_senha.Text;
                     tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
-                    usuario.tipousuario = tipousuario;
+                    usuario.Tipousuario = tipousuario;
                     webservice.InserirUsuario(usuario);
                     ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click_1(sender, e);
                 }
@@ -108,7 +108,7 @@ namespace Gui
                     usuario.Login = tb_login.Text;
                     usuario.Senha = tb_senha.Text;
                     tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
-                    usuario.tipousuario = tipousuario;
+                    usuario.Tipousuario = tipousuario;
                     webservice.AlterarUsuario(usuario);
                     ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click_1(sender, e);
                 }

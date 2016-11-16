@@ -93,11 +93,11 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("O campo Senha precisa ser preenchido!");
             }
-            if (u.tipousuario.Codigo <= 0)
+            if (u.Tipousuario.Codigo <= 0)
             {
                 throw new NegocioException("O campo Tipo de Usuário precisa ser preenchido!");
             }
-            if (u.tipousuario.Codigo == 2 && (u.Crmv == null || u.Crmv.Equals("") == true))
+            if (u.Tipousuario.Codigo == 2 && (u.Crmv == null || u.Crmv.Equals("") == true))
             {
                 throw new NegocioException("O campo CRMV precisa ser preenchido!");
             }

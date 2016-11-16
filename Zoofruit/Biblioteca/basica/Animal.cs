@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.basica
 {
+    [Serializable]
+    [DataContract()]
     public class Animal
     {
         private int codigo;
@@ -14,13 +17,14 @@ namespace Biblioteca.basica
         private string cor;
         private string porte;
         private double peso;
-        public TipoAnimal tipoAnimal;
+        private TipoAnimal tipoAnimal;
 
         public Animal()
         {
             tipoAnimal = new TipoAnimal();
         }
 
+        [DataMember(IsRequired = true)]
         public int Codigo
         {
             get
@@ -34,6 +38,7 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get
@@ -60,6 +65,7 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Cor
         {
             get
@@ -73,6 +79,7 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
         public string Porte
         {
             get
@@ -86,6 +93,7 @@ namespace Biblioteca.basica
             }
         }
 
+        [DataMember(IsRequired = true)]
         public double Peso
         {
             get
@@ -98,5 +106,19 @@ namespace Biblioteca.basica
                 peso = value;
             }
         }
-     }
+
+        [DataMember(IsRequired = true)]
+        public TipoAnimal TipoAnimal
+        {
+            get
+            {
+                return tipoAnimal;
+            }
+
+            set
+            {
+                tipoAnimal = value;
+            }
+        }
+    }
 }

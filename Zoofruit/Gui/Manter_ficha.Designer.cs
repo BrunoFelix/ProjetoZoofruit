@@ -43,6 +43,8 @@
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lv_alimento = new System.Windows.Forms.ListView();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@
             this.btn_pesquisar_animal = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,7 @@
             this.lv_animal.Location = new System.Drawing.Point(-1, 47);
             this.lv_animal.MultiSelect = false;
             this.lv_animal.Name = "lv_animal";
-            this.lv_animal.Size = new System.Drawing.Size(1245, 328);
+            this.lv_animal.Size = new System.Drawing.Size(1019, 328);
             this.lv_animal.TabIndex = 0;
             this.lv_animal.UseCompatibleStateImageBehavior = false;
             this.lv_animal.View = System.Windows.Forms.View.Details;
@@ -125,7 +125,7 @@
             this.lv_ficha.Location = new System.Drawing.Point(0, 421);
             this.lv_ficha.MultiSelect = false;
             this.lv_ficha.Name = "lv_ficha";
-            this.lv_ficha.Size = new System.Drawing.Size(1247, 203);
+            this.lv_ficha.Size = new System.Drawing.Size(1021, 203);
             this.lv_ficha.TabIndex = 1;
             this.lv_ficha.UseCompatibleStateImageBehavior = false;
             this.lv_ficha.View = System.Windows.Forms.View.Details;
@@ -165,10 +165,20 @@
             this.columnHeader7});
             this.lv_alimento.Location = new System.Drawing.Point(0, 670);
             this.lv_alimento.Name = "lv_alimento";
-            this.lv_alimento.Size = new System.Drawing.Size(1245, 175);
+            this.lv_alimento.Size = new System.Drawing.Size(1019, 79);
             this.lv_alimento.TabIndex = 2;
             this.lv_alimento.UseCompatibleStateImageBehavior = false;
             this.lv_alimento.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Código";
+            this.columnHeader6.Width = 61;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Nome";
+            this.columnHeader7.Width = 1179;
             // 
             // label1
             // 
@@ -307,27 +317,17 @@
             this.panel1.Controls.Add(this.tb_pesquisar);
             this.panel1.Controls.Add(this.comboBox_pesquisar_animal);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(773, 0);
+            this.panel1.Location = new System.Drawing.Point(547, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(471, 48);
             this.panel1.TabIndex = 34;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Código";
-            this.columnHeader6.Width = 61;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Nome";
-            this.columnHeader7.Width = 1179;
             // 
             // Manter_ficha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1246, 837);
+            this.ClientSize = new System.Drawing.Size(1020, 741);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Biblioteca.basica
 {
+    [Serializable]
+    [DataContract()]
     public class Medicamento
     {
         private int codigo;
@@ -13,6 +16,7 @@ namespace Biblioteca.basica
         private int quantidade;
         private string dataReposicao;
 
+        [DataMember(IsRequired = true)]
         public int Codigo
         {
             get
@@ -25,7 +29,7 @@ namespace Biblioteca.basica
                 codigo = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string Nome
         {
             get
@@ -38,7 +42,7 @@ namespace Biblioteca.basica
                 nome = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public int Quantidade
         {
             get
@@ -51,7 +55,7 @@ namespace Biblioteca.basica
                 quantidade = value;
             }
         }
-
+        [DataMember(IsRequired = true)]
         public string DataReposicao
         {
             get

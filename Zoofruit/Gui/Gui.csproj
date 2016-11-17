@@ -84,23 +84,23 @@
     <Compile Include="Manter_animal_ed.Designer.cs">
       <DependentUpon>Manter_animal_ed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manter_ficha.cs">
+    <Compile Include="Manter_ficha_alimento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Manter_ficha.Designer.cs">
-      <DependentUpon>Manter_ficha.cs</DependentUpon>
+    <Compile Include="Manter_ficha_alimento.Designer.cs">
+      <DependentUpon>Manter_ficha_alimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manter_ficha_buscar_alimento_ed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_ficha_buscar_alimento_ed.Designer.cs">
+      <DependentUpon>Manter_ficha_buscar_alimento_ed.cs</DependentUpon>
     </Compile>
     <Compile Include="Manter_ficha_alimento_ed.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Manter_ficha_alimento_ed.Designer.cs">
       <DependentUpon>Manter_ficha_alimento_ed.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Manter_ficha_ed.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Manter_ficha_ed.Designer.cs">
-      <DependentUpon>Manter_ficha_ed.cs</DependentUpon>
     </Compile>
     <Compile Include="Manter_login.cs">
       <SubType>Form</SubType>
@@ -145,14 +145,14 @@
     <EmbeddedResource Include="Manter_animal_ed.resx">
       <DependentUpon>Manter_animal_ed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manter_ficha.resx">
-      <DependentUpon>Manter_ficha.cs</DependentUpon>
+    <EmbeddedResource Include="Manter_ficha_alimento.resx">
+      <DependentUpon>Manter_ficha_alimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_ficha_buscar_alimento_ed.resx">
+      <DependentUpon>Manter_ficha_buscar_alimento_ed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_ficha_alimento_ed.resx">
       <DependentUpon>Manter_ficha_alimento_ed.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Manter_ficha_ed.resx">
-      <DependentUpon>Manter_ficha_ed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login.resx">
       <DependentUpon>Manter_login.cs</DependentUpon>

@@ -126,7 +126,34 @@ namespace Biblioteca.dados
 
         public void Excluir(FichaAlimento fa)
         {
-            throw new NotImplementedException();
+            conexao.openConnection();
+            try
+            {
+                string sql = "DELETE FROM FICHA_CONTEM_ALIMENTO WHERE CODIGO_FICHA=@CODIGO_FICHA";
+
+                SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_FICHA", fa.Codigo));
+
+                cmd.ExecuteNonQuery();
+
+                sql = "DELETE FROM FICHA_ALIMENTO WHERE CODIGO=@CODIGO";
+
+                cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO", fa.Codigo));
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                throw new DadosException(ex.Message);
+            }
+            finally
+            {
+                conexao.closeConnection();
+            }
         }
 
         public List<FichaAlimento> Pesquisar(FichaAlimento fa, bool alt = false)

@@ -11,21 +11,21 @@ using System.Windows.Forms;
 
 namespace Gui
 {
-    public partial class Manter_ficha : Form
+    public partial class Manter_ficha_alimento : Form
     {
         public List<Animal> listaanimal;
         public List<FichaAlimento> listafichaanimal;
-        private static Manter_ficha manter_ficha;
+        private static Manter_ficha_alimento manter_ficha;
         Service1 webservice;
         public Animal animal;
 
-        public static Manter_ficha getInstance()
+        public static Manter_ficha_alimento getInstance()
         {
             if (manter_ficha == null)
             {
                 try
                 {
-                    manter_ficha = new Manter_ficha();
+                    manter_ficha = new Manter_ficha_alimento();
                 }
                 catch (Exception ex)
                 {
@@ -34,7 +34,7 @@ namespace Gui
             }
             return manter_ficha;
         }
-        private Manter_ficha()
+        private Manter_ficha_alimento()
         {
             InitializeComponent();
             webservice = new Service1();
@@ -206,8 +206,8 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Manter_ficha_ed manter_ficha_ed = new Manter_ficha_ed(1);
-            manter_ficha_ed.ShowDialog();
+            Manter_ficha_alimento_ed manter_ficha_alimento_ed = new Manter_ficha_alimento_ed(1);
+            manter_ficha_alimento_ed.ShowDialog();
         }
 
         public void lv_animal_SelectedIndexChanged(object sender, EventArgs e)

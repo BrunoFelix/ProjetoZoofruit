@@ -1,6 +1,6 @@
 ﻿namespace Gui
 {
-    partial class Manter_ficha
+    partial class Manter_ficha_alimento
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_ficha));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_ficha_alimento));
             this.lv_animal = new System.Windows.Forms.ListView();
             this.Código = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,7 +62,7 @@
             // 
             // lv_animal
             // 
-            this.lv_animal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lv_animal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lv_animal.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Código,
@@ -113,7 +113,7 @@
             // 
             // lv_ficha
             // 
-            this.lv_ficha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lv_ficha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lv_ficha.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
@@ -157,8 +157,8 @@
             // 
             // lv_alimento
             // 
-            this.lv_alimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.lv_alimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lv_alimento.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
@@ -322,7 +322,7 @@
             this.panel1.Size = new System.Drawing.Size(471, 48);
             this.panel1.TabIndex = 34;
             // 
-            // Manter_ficha
+            // Manter_ficha_alimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.lv_alimento);
             this.Controls.Add(this.lv_ficha);
             this.Controls.Add(this.lv_animal);
-            this.Name = "Manter_ficha";
+            this.Name = "Manter_ficha_alimento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

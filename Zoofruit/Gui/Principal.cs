@@ -60,9 +60,9 @@ namespace Gui
 
         private void alimentoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Manter_ficha manter_ficha = Manter_ficha.getInstance();
-            manter_ficha.Show();
-            manter_ficha.BringToFront();
+            Manter_ficha_alimento manter_ficha_alimento = Manter_ficha_alimento.getInstance();
+            manter_ficha_alimento.Show();
+            manter_ficha_alimento.BringToFront();
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)

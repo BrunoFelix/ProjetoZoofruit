@@ -1,6 +1,6 @@
 ﻿namespace Teste
 {
-    partial class Form1
+    partial class Manter_ficha_execucao
     {
         /// <summary>
         /// Required designer variable.
@@ -90,22 +90,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Data:";
             // 
-            // Form1
+            // Manter_ficha_execucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1131, 507);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.MaximizedBoundsChanged += new System.EventHandler(this.Form1_MaximizedBoundsChanged);
-            this.MaximumSizeChanged += new System.EventHandler(this.Form1_MaximumSizeChanged);
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.MdiChildActivate += new System.EventHandler(this.Form1_MdiChildActivate);
-            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
-            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
-            this.Resize += new System.EventHandler(this.Form1_Resize);
+            this.Name = "Manter_ficha_execucao";
+            this.Text = "Quadro de tarefas";
+            this.Load += new System.EventHandler(this.Manter_ficha_execucao_Load);
+            this.Resize += new System.EventHandler(this.Manter_ficha_execucao_Resize);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

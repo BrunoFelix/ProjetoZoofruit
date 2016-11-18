@@ -60,7 +60,7 @@ namespace Gui
 
         private void alimentoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Manter_ficha_alimento manter_ficha_alimento = Manter_ficha_alimento.getInstance();
+            Manter_ficha_alimento manter_ficha_alimento = Manter_ficha_alimento.getInstance(usuario);
             manter_ficha_alimento.Show();
             manter_ficha_alimento.BringToFront();
         }

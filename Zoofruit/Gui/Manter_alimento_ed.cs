@@ -23,6 +23,18 @@ namespace Gui
            
         }
 
+        public Manter_alimento_ed(Alimento a)
+        {
+            InitializeComponent();
+            webservice = new Service1();
+            alimento = a;
+
+            tb_codigo.Text = alimento.Codigo.ToString();
+            tb_nome.Text = alimento.Nome;
+            tb_quantidade.Text = alimento.Quantidade.ToString();
+            tb_valorcalorico.Text = alimento.ValorCalorico.ToString();
+        }
+
         private void btnconfirmar_Click_1(object sender, EventArgs e)
         {
             if (this.alimento == null)
@@ -37,6 +49,7 @@ namespace Gui
             else
             {
                 Alimento alimento = new Alimento();
+                alimento.Codigo = this.alimento.Codigo;
                 alimento.Nome = tb_nome.Text;
                 alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
                 alimento.Quantidade = double.Parse(tb_quantidade.Text);

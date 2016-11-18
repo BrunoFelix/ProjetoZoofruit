@@ -35,60 +35,95 @@ namespace Gui
         }
         private Manter_animal()
         {
-            InitializeComponent();
-            webservice = new Service1();
-            listaanimal = webservice.ListarAnimal(animal).ToList();
-            animal = new Animal();
-            animal.TipoAnimal = new TipoAnimal();
-            AtualizarGrid();
+            try
+            {
+                InitializeComponent();
+                webservice = new Service1();
+                listaanimal = webservice.ListarAnimal(animal).ToList();
+                animal = new Animal();
+                animal.TipoAnimal = new TipoAnimal();
+                AtualizarGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void AtualizarGrid()
         {
-            lv_animal.Items.Clear();
-
-            ListViewItem item;
-
-            foreach (Animal a in listaanimal)
+            try
             {
-                item = new ListViewItem();
-                item.Text = a.Codigo.ToString();
-                item.SubItems.Add(a.Nome);
-                item.SubItems.Add(a.Cor);
-                item.SubItems.Add(a.Porte);
-                item.SubItems.Add(Convert.ToString(a.Peso));
-                item.SubItems.Add(a.TipoAnimal.Descricao);
+                lv_animal.Items.Clear();
 
-                lv_animal.Items.Add(item);
+                ListViewItem item;
+
+                foreach (Animal a in listaanimal)
+                {
+                    item = new ListViewItem();
+                    item.Text = a.Codigo.ToString();
+                    item.SubItems.Add(a.Nome);
+                    item.SubItems.Add(a.Cor);
+                    item.SubItems.Add(a.Porte);
+                    item.SubItems.Add(Convert.ToString(a.Peso));
+                    item.SubItems.Add(a.TipoAnimal.Descricao);
+
+                    lv_animal.Items.Add(item);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btn_novo_animal_Click(object sender, EventArgs e)
         {
-            Manter_animal_ed manter_animal_ed = new Manter_animal_ed();
-            manter_animal_ed.ShowDialog();
+            try
+            {
+                Manter_animal_ed manter_animal_ed = new Manter_animal_ed();
+                manter_animal_ed.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_alterar_animal_Click(object sender, EventArgs e)
         {
-            if (lv_animal.SelectedIndices.Count > 0)
+            try
             {
-                animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
-                Manter_animal_ed manter_animal_ed = new Manter_animal_ed(animal);
-                manter_animal_ed.ShowDialog();
+                if (lv_animal.SelectedIndices.Count > 0)
+                {
+                    animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
+                    Manter_animal_ed manter_animal_ed = new Manter_animal_ed(animal);
+                    manter_animal_ed.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (lv_animal.SelectedIndices.Count > 0)
+            try
             {
-                if (MessageBox.Show("Deseja remover o registro selecionado?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (lv_animal.SelectedIndices.Count > 0)
                 {
-                    animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
-                    webservice.ExcluirAnimal(animal);
-                    AtualizarGrid();
+                    if (MessageBox.Show("Deseja remover o registro selecionado?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
+                        webservice.ExcluirAnimal(animal);
+                        AtualizarGrid();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -100,7 +135,7 @@ namespace Gui
                 {
                     animal.Codigo = Int32.Parse(tb_pesquisar.Text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -111,7 +146,7 @@ namespace Gui
                 {
                     animal.Nome = tb_pesquisar.Text;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -122,7 +157,7 @@ namespace Gui
                 {
                     animal.Cor = tb_pesquisar.Text;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -133,7 +168,7 @@ namespace Gui
                 {
                     animal.Porte = tb_pesquisar.Text;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -145,7 +180,7 @@ namespace Gui
                 {
                     animal.Peso = double.Parse(tb_pesquisar.Text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -156,13 +191,21 @@ namespace Gui
                 {
                     animal.TipoAnimal.Descricao = tb_pesquisar.Text;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
             }
 
-            listaanimal = webservice.ListarAnimal(animal).ToList();
+            try
+            {
+
+                listaanimal = webservice.ListarAnimal(animal).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             AtualizarGrid();
         }
 

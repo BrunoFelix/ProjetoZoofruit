@@ -19,11 +19,18 @@ namespace Gui
         Service1 webservice;
         public Manter_alimento()
         {
-            InitializeComponent();
-            webservice = new Service1();
-            Alimento alimento = new Alimento();
-            listalimento = webservice.ListarAlimento(alimento).ToList();
-            AtualizarGrid();
+            try
+            {
+                InitializeComponent();
+                webservice = new Service1();
+                Alimento alimento = new Alimento();
+                listalimento = webservice.ListarAlimento(alimento).ToList();
+                AtualizarGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
      
         public static Manter_alimento getInstance()
@@ -44,19 +51,26 @@ namespace Gui
 
         public void AtualizarGrid()
         {
-            lv_alimento.Items.Clear();
-
-            ListViewItem item;
-
-            foreach (Alimento a in listalimento)
+            try
             {
-                item = new ListViewItem();
-                item.Text = a.Codigo.ToString();
-                item.SubItems.Add(a.Nome);
-                item.SubItems.Add(a.ValorCalorico.ToString());
-                item.SubItems.Add(a.Quantidade.ToString());
+                lv_alimento.Items.Clear();
 
-                lv_alimento.Items.Add(item);
+                ListViewItem item;
+
+                foreach (Alimento a in listalimento)
+                {
+                    item = new ListViewItem();
+                    item.Text = a.Codigo.ToString();
+                    item.SubItems.Add(a.Nome);
+                    item.SubItems.Add(a.ValorCalorico.ToString());
+                    item.SubItems.Add(a.Quantidade.ToString());
+
+                    lv_alimento.Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -68,8 +82,15 @@ namespace Gui
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Manter_alimento_ed manter_alimento_ed = new Manter_alimento_ed();
-            manter_alimento_ed.ShowDialog();
+            try
+            {
+                Manter_alimento_ed manter_alimento_ed = new Manter_alimento_ed();
+                manter_alimento_ed.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Manter_alimento_FormClosed(object sender, FormClosedEventArgs e)
@@ -86,7 +107,7 @@ namespace Gui
                 {
                     alimento.Codigo = Int32.Parse(tb_pesquisar.Text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -97,7 +118,7 @@ namespace Gui
                 {
                     alimento.Nome = tb_pesquisar.Text;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -108,7 +129,7 @@ namespace Gui
                 {
                     alimento.ValorCalorico = Convert.ToDouble(tb_pesquisar.Text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
@@ -120,34 +141,55 @@ namespace Gui
                 {
                     alimento.Quantidade = Convert.ToDouble(tb_pesquisar.Text);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Pesquisa inválida!");
                 }
             }
 
-            listalimento = webservice.ListarAlimento(alimento).ToList();
+            try
+            {
+                listalimento = webservice.ListarAlimento(alimento).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             AtualizarGrid();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Alimento alimento = new Alimento();
-            listalimento = webservice.ListarAlimento(alimento).ToList();
-            AtualizarGrid();
+            try
+            {
+                Alimento alimento = new Alimento();
+                listalimento = webservice.ListarAlimento(alimento).ToList();
+                AtualizarGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (lv_alimento.SelectedIndices.Count > 0)
+            try
             {
-                if (MessageBox.Show("Deseja remover o registro selecionado?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (lv_alimento.SelectedIndices.Count > 0)
                 {
-                    webservice.ExcluirAlimento(listalimento.ElementAt(lv_alimento.SelectedIndices[0]));
-                    listalimento.Remove(listalimento.ElementAt(lv_alimento.SelectedIndices[0]));
-                    MessageBox.Show("Removido com sucesso!");
-                    AtualizarGrid();
+                    if (MessageBox.Show("Deseja remover o registro selecionado?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        webservice.ExcluirAlimento(listalimento.ElementAt(lv_alimento.SelectedIndices[0]));
+                        listalimento.Remove(listalimento.ElementAt(lv_alimento.SelectedIndices[0]));
+                        MessageBox.Show("Removido com sucesso!");
+                        AtualizarGrid();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

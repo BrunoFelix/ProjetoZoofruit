@@ -47,6 +47,8 @@
     <Compile Include="basica\Animal.cs" />
     <Compile Include="basica\Ficha.cs" />
     <Compile Include="basica\FichaAlimento.cs" />
+    <Compile Include="basica\FichaExecucaoAlimento.cs" />
+    <Compile Include="basica\FichaExecucaoMedicamento.cs" />
     <Compile Include="basica\FichaMedicamento.cs" />
     <Compile Include="basica\Medicamento.cs" />
     <Compile Include="basica\TipoAnimal.cs" />
@@ -55,6 +57,8 @@
     <Compile Include="dados\DAOAlimento.cs" />
     <Compile Include="dados\DAOAnimal.cs" />
     <Compile Include="dados\DAOFichaAlimento.cs" />
+    <Compile Include="dados\DAOFichaExecucaoAlimento.cs" />
+    <Compile Include="dados\DAOFichaExecucaoMedicamento.cs" />
     <Compile Include="dados\DAOFichaMedicamento.cs" />
     <Compile Include="dados\DAOMedicamento.cs" />
     <Compile Include="dados\DAOTipoAnimal.cs" />
@@ -63,6 +67,8 @@
     <Compile Include="dados\iDAOAlimento.cs" />
     <Compile Include="dados\IDAOAnimal.cs" />
     <Compile Include="dados\iDAOFichaAlimento.cs" />
+    <Compile Include="dados\iDAOFichaExecucaoAlimento.cs" />
+    <Compile Include="dados\iDAOFichaExecucaoMedicamento.cs" />
     <Compile Include="dados\iDAOFichaMedicamento.cs" />
     <Compile Include="dados\iDAOMedicamento.cs" />
     <Compile Include="dados\iDAOTipoAnimal.cs" />

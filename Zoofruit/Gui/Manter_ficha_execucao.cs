@@ -1,21 +1,32 @@
-﻿using System;
+﻿using Gui.localhost;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace Teste
 {
-    public partial class Form1 : Form
+    public class Manter_ficha_execucao : Form
     {
         private int tamanho_panel = 10;
         private int altura_panel = 10;
         private int i = 0;
         private int z = 1;
         private double tamanho_form = 0;
+        Service1 webservice;
+        public List<FichaAlimento> listafichaanimal;
 
-        public Form1()
+        public Manter_ficha_execucao()
         {
             InitializeComponent();
+            webservice = new Service1();
+            Animal animal = new Animal();
+            animal.TipoAnimal = new TipoAnimal();
+            FichaAlimento fichaalimento = new FichaAlimento();
+            fichaalimento.Animal = new Animal();
+            fichaalimento.Usuario = new Usuario();
+            listafichaanimal = webservice.ListarFichaAlimento(fichaalimento).ToList();
         }
 
         private void atualizarTela()
@@ -57,10 +68,10 @@ namespace Teste
                     panel1.Size = new System.Drawing.Size(213, 150);
                     panel1.TabIndex = 0;
                     tamanho_panel += 223;
-                    panel1.BackgroundImage = Image.FromFile
+                    /* panel1.BackgroundImage = Image.FromFile
                            (System.Environment.GetFolderPath
                            (System.Environment.SpecialFolder.Personal)
-                           + @"\macaco.JPG");
+                           + @"\macaco.JPG");*/
                     panel1.Controls.Add(c1);
 
                     this.Controls.Add(panel1);
@@ -90,43 +101,7 @@ namespace Teste
 
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            /*FormWindowState LastWindowState = FormWindowState.Minimized;
-            // When window state changes
-            if (WindowState != LastWindowState)
-            {
-                LastWindowState = WindowState;
-
-
-                if (WindowState == FormWindowState.Maximized)
-                {
-
-                    atualizarTela();
-                }
-                /*if (WindowState == FormWindowState.Normal)
-                {
-
-                    atualizarTela();
-                }*/
-            //}
-
-            //atualizarTela();
-            panel1.Width = this.Width;
-        }
-
-
-        private void Form1_ResizeEnd(object sender, EventArgs e)
-        {
-            atualizarTela();
-        }
-
-        private void Form1_MaximumSizeChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void Manter_ficha_execucao_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
             //this.Location = new Point(100, 100);
@@ -137,19 +112,10 @@ namespace Teste
             lb_hora.Text = data2.Hour.ToString();
         }
 
-        private void Form1_MaximizedBoundsChanged(object sender, EventArgs e)
+        private void Manter_ficha_execucao_Resize(object sender, EventArgs e)
         {
-            
-        }
-
-        private void Form1_MdiChildActivate(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_SizeChanged(object sender, EventArgs e)
-        {
-            
+            atualizarTela();
+            panel1.Width = this.Width;
         }
     }
 

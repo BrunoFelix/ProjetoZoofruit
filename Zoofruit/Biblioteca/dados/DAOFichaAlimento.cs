@@ -35,8 +35,8 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@DT_CRIACAO", fa.DataCriacao));
                 cmd.Parameters.Add(new SqlParameter("@DT_VALIDADE", fa.DataValidade));
                 cmd.Parameters.Add(new SqlParameter("@QTD_MAX_CAL", fa.Qtd_max_cal));
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", 1));
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", 1));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", fa.Usuario.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", fa.Animal.Codigo));
 
                 cmd.ExecuteNonQuery();
 
@@ -87,7 +87,7 @@ namespace Biblioteca.dados
 
                 cmd.Parameters.Add(new SqlParameter("@DT_VALIDADE", fa.DataValidade));
                 cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", fa.Usuario.Codigo));
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", fa.Usuario.Codigo));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", fa.Animal.Codigo));
 
                 cmd.ExecuteNonQuery();
 

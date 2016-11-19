@@ -28,7 +28,7 @@ namespace Biblioteca.dados
             try
             {
                 
-                string sql = "INSERT INTO FICHA_ALIMENTO (DESCRICAO, DT_CRIACAO, DT_VALIDADE, QTD_MAX_CAL, CODIGO_USUARIO, CODIGO_ANIMAL) VALUES (@DESCRICAO, @DT_CRIACAO, @DT_VALIDADE, @QTD_MAX_CAL, @CODIGO_USUARIO, @CODIGO_ANIMAL)";
+                string sql = "INSERT INTO FICHA_ALIMENTO (DESCRICAO, DT_CRIACAO, DT_VALIDADE, QTD_MAX_CAL, CODIGO_USUARIO, CODIGO_ANIMAL) OUTPUT INSERTED.PK__Ficha_Al__40F9A207F3976258 VALUES (@DESCRICAO, @DT_CRIACAO, @DT_VALIDADE, @QTD_MAX_CAL, @CODIGO_USUARIO, @CODIGO_ANIMAL)";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@DESCRICAO", fa.Descricao));
@@ -40,14 +40,16 @@ namespace Biblioteca.dados
 
                 cmd.ExecuteNonQuery();
 
-                sql = "SELECT MAX(CODIGO) AS CODIGO FROM FICHA_ALIMENTO";
+                /*sql = "SELECT MAX(CODIGO) AS CODIGO FROM FICHA_ALIMENTO";
                 SqlCommand cmd2 = new SqlCommand(sql, conexao.sqlconn);
                 SqlDataReader reader = cmd2.ExecuteReader();
 
                 while (reader.Read())
                 {
                     codigo = reader.GetInt32(reader.GetOrdinal("codigo"));
-                }
+                }*/
+
+                int codigo = (int)cmd.ExecuteScalar();
 
                 conexao.closeConnection();
                 conexao.openConnection();
@@ -90,6 +92,10 @@ namespace Biblioteca.dados
                 cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", fa.Animal.Codigo));
 
                 cmd.ExecuteNonQuery();
+
+                /*INSERT INTO TESTE(NOME) OUTPUT INSERTED.NOME_DA_CHAVE_PRIMARIA VALUES ('melo');
+
+                int modified = (int)cmd.executescalar();*/
 
                 sql = "SELECT MAX(CODIGO) FROM FICHA_ALIMENTO";
                 SqlCommand cmd2 = new SqlCommand(sql, conexao.sqlconn);
@@ -163,8 +169,10 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, USUARIO.NOME AS NOME_USUARIO FROM FICHA_ALIMENTO " +
-                             "INNER JOIN USUARIO ON (USUARIO.CODIGO = FICHA_ALIMENTO.CODIGO_USUARIO) WHERE FICHA_ALIMENTO.CODIGO > 0 ";
+                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, USUARIO.NOME AS NOME_USUARIO, FICHA_ALIMENTO.CODIGO_USUARIO, ANIMAL.NOME AS NOME_ANIMAL, FICHA_ALIMENTO.CODIGO_ANIMAL FROM FICHA_ALIMENTO " +
+                             "INNER JOIN USUARIO ON (USUARIO.CODIGO = FICHA_ALIMENTO.CODIGO_USUARIO) "+
+                             "INNER JOIN ANIMAL ON (ANIMAL.CODIGO = FICHA_ALIMENTO.CODIGO_ANIMAL) "+
+                             "WHERE FICHA_ALIMENTO.CODIGO > 0 ";
 
                 if (fa.Animal.Codigo > 0)
                 {
@@ -222,7 +230,10 @@ namespace Biblioteca.dados
                     fichaalimento.Descricao = reader.GetString(reader.GetOrdinal("DESCRICAO"));
                     fichaalimento.DataCriacao = reader.GetDateTime(reader.GetOrdinal("DT_CRIACAO")).ToString("dd/MM/yyyy");
                     fichaalimento.DataValidade = reader.GetDateTime(reader.GetOrdinal("DT_VALIDADE")).ToString("dd/MM/yyyy");
-                    fichaalimento.Usuario.Nome= reader.GetString(reader.GetOrdinal("NOME_USUARIO"));
+                    fichaalimento.Usuario.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO_USUARIO"));
+                    fichaalimento.Usuario.Nome = reader.GetString(reader.GetOrdinal("NOME_USUARIO"));
+                    fichaalimento.Animal.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO_ANIMAL"));
+                    fichaalimento.Animal.Nome = reader.GetString(reader.GetOrdinal("NOME_ANIMAL"));
 
                     sql = "SELECT FICHA_CONTEM_ALIMENTO.CODIGO_ALIMENTO, ALIMENTO.NOME FROM FICHA_CONTEM_ALIMENTO INNER JOIN ALIMENTO ON (ALIMENTO.CODIGO = FICHA_CONTEM_ALIMENTO.CODIGO_ALIMENTO) " +
                       "WHERE FICHA_CONTEM_ALIMENTO.CODIGO_FICHA = " + fichaalimento.Codigo;

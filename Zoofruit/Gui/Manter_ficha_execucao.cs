@@ -1,35 +1,64 @@
 ﻿using Gui.localhost;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Teste
+namespace Gui
 {
-    public class Manter_ficha_execucao : Form
+    public partial class Manter_ficha_execucao : Form
     {
         private int tamanho_panel = 10;
         private int altura_panel = 10;
         private int i = 0;
         private int z = 1;
         private double tamanho_form = 0;
+        private static Manter_ficha_execucao manter_ficha_execucao;
+        List<FichaAlimento> listafichaalimento;
+        FichaAlimento fichaalimento = new FichaAlimento();
         Service1 webservice;
-        public List<FichaAlimento> listafichaanimal;
 
-        public Manter_ficha_execucao()
+        public static Manter_ficha_execucao getInstance()
+        {
+            if (manter_ficha_execucao == null)
+            {
+                try
+                {
+                    manter_ficha_execucao = new Manter_ficha_execucao();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            return manter_ficha_execucao;
+        }
+        private Manter_ficha_execucao()
         {
             InitializeComponent();
-            webservice = new Service1();
-            Animal animal = new Animal();
-            animal.TipoAnimal = new TipoAnimal();
-            FichaAlimento fichaalimento = new FichaAlimento();
-            fichaalimento.Animal = new Animal();
-            fichaalimento.Usuario = new Usuario();
-            listafichaanimal = webservice.ListarFichaAlimento(fichaalimento).ToList();
+            try
+            {
+                InitializeComponent();
+                webservice = new Service1();
+                FichaAlimento fichaalimento = new FichaAlimento();
+                fichaalimento.Animal = new Animal();
+                fichaalimento.Usuario = new Usuario();
+                fichaalimento.ListaAlimento = new List<Alimento>().ToArray();
+                listafichaalimento = webservice.ListarFichaAlimento(fichaalimento).ToList();
+                AtualizarTela();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void atualizarTela()
+        public void AtualizarTela()
         {
             tamanho_form = this.Width;
 
@@ -47,27 +76,40 @@ namespace Teste
             i = 0;
             z = 1;
 
-            
 
-            while (i < 30)
+
+            foreach (FichaAlimento fa in listafichaalimento)
             {
                 if (tamanho_panel < (tamanho_form - 150))
                 {
+
+                    Button button5 = new Button();
+                    //button5.Click += button_Click(fa);
+                    button5.Location = new System.Drawing.Point(70, 125);
+                    button5.Size = new System.Drawing.Size(80, 20);
+                    button5.TabIndex = 0;
+                    button5.Text = "Executar";
+                    button5.ForeColor = Color.Black;
+                    button5.UseVisualStyleBackColor = true;
+
                     Label c1 = new Label();
-                    c1.Text = z++.ToString();
+                    c1.Text = fa.Animal.Nome;
                     c1.Left = 10;
                     c1.Top = 10;
-                    c1.Width = 20;
                     c1.ForeColor = Color.Black;
 
                     Panel panel1 = new Panel();
                     panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
                     panel1.Location = new System.Drawing.Point(tamanho_panel, altura_panel);
-                    panel1.Name = "panel" + tamanho_panel;
+                    panel1.Name = "panel_" + fa.Codigo.ToString();
                     panel1.Size = new System.Drawing.Size(213, 150);
                     panel1.TabIndex = 0;
                     tamanho_panel += 223;
+
+                    panel1.Controls.Add(button5);
+
+
                     /* panel1.BackgroundImage = Image.FromFile
                            (System.Environment.GetFolderPath
                            (System.Environment.SpecialFolder.Personal)
@@ -75,7 +117,7 @@ namespace Teste
                     panel1.Controls.Add(c1);
 
                     this.Controls.Add(panel1);
-                    
+
                     i++;
                 }
                 else
@@ -84,39 +126,21 @@ namespace Teste
                     altura_panel = altura_panel + 160;
                 }
             }
-
-            
-
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Manter_ficha_execucao_FormClosed(object sender, FormClosedEventArgs e)
         {
-            atualizarTela();
-
+            manter_ficha_execucao = null;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_Click(FichaAlimento fa)
         {
-
-
-        }
-
-        private void Manter_ficha_execucao_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            //this.Location = new Point(100, 100);
-            DateTime data2 = DateTime.Now;
-            lb_data.Text = DateTime.Now.Day.ToString();
-            lb_data.Text = lb_data.Text + "/" + DateTime.Now.Month.ToString();
-            lb_data.Text = lb_data.Text + "/" + DateTime.Now.Year.ToString();
-            lb_hora.Text = data2.Hour.ToString();
+            MessageBox.Show(fa.Codigo.ToString());
         }
 
         private void Manter_ficha_execucao_Resize(object sender, EventArgs e)
         {
-            atualizarTela();
-            panel1.Width = this.Width;
+            AtualizarTela();
         }
     }
-
 }

@@ -48,12 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Manter_ficha_execucao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Manter_ficha_execucao.designer.cs">
-      <DependentUpon>Manter_ficha_execucao.cs</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +96,12 @@
     <Compile Include="Manter_ficha_alimento_ed.Designer.cs">
       <DependentUpon>Manter_ficha_alimento_ed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_ficha_execucao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_ficha_execucao.Designer.cs">
+      <DependentUpon>Manter_ficha_execucao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manter_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,9 +127,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Manter_ficha_execucao.resx">
-      <DependentUpon>Manter_ficha_execucao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_ficha_alimento_ed.resx">
       <DependentUpon>Manter_ficha_alimento_ed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_ficha_execucao.resx">
+      <DependentUpon>Manter_ficha_execucao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login.resx">
       <DependentUpon>Manter_login.cs</DependentUpon>

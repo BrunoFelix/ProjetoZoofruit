@@ -171,3 +171,5 @@ C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Properties.Re
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csproj.GenerateResource.Cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_execucao_ed_observacao.resources

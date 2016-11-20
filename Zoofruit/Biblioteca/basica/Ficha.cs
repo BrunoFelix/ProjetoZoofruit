@@ -15,6 +15,7 @@ namespace Biblioteca.basica
         private string descricao;
         private string dataCriacao;
         private string dataValidade;
+        private string hora_a_ser_executado;
         private Usuario usuario;
         private Animal animal;
 
@@ -99,6 +100,19 @@ namespace Biblioteca.basica
             set
             {
                 animal = value;
+            }
+        }
+        [DataMember(IsRequired = true)]
+        public string Hora_a_ser_executado
+        {
+            get
+            {
+                return hora_a_ser_executado;
+            }
+
+            set
+            {
+                hora_a_ser_executado = value;
             }
         }
     }

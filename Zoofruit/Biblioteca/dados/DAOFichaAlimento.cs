@@ -28,17 +28,18 @@ namespace Biblioteca.dados
             try
             {
                 
-                string sql = "INSERT INTO FICHA_ALIMENTO (DESCRICAO, DT_CRIACAO, DT_VALIDADE, QTD_MAX_CAL, CODIGO_USUARIO, CODIGO_ANIMAL) OUTPUT INSERTED.PK__Ficha_Al__40F9A207F3976258 VALUES (@DESCRICAO, @DT_CRIACAO, @DT_VALIDADE, @QTD_MAX_CAL, @CODIGO_USUARIO, @CODIGO_ANIMAL)";
+                string sql = "INSERT INTO FICHA_ALIMENTO (DESCRICAO, DT_CRIACAO, DT_VALIDADE, QTD_MAX_CAL, HORA_A_SER_EXECUTADO, CODIGO_USUARIO, CODIGO_ANIMAL) OUTPUT INSERTED.CODIGO VALUES (@DESCRICAO, @DT_CRIACAO, @DT_VALIDADE, @QTD_MAX_CAL, @HORA_A_SER_EXECUTADO, @CODIGO_USUARIO, @CODIGO_ANIMAL)";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@DESCRICAO", fa.Descricao));
                 cmd.Parameters.Add(new SqlParameter("@DT_CRIACAO", fa.DataCriacao));
                 cmd.Parameters.Add(new SqlParameter("@DT_VALIDADE", fa.DataValidade));
                 cmd.Parameters.Add(new SqlParameter("@QTD_MAX_CAL", fa.Qtd_max_cal));
+                cmd.Parameters.Add(new SqlParameter("@HORA_A_SER_EXECUTADO", fa.Hora_a_ser_executado));
                 cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", fa.Usuario.Codigo));
                 cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", fa.Animal.Codigo));
 
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
 
                 /*sql = "SELECT MAX(CODIGO) AS CODIGO FROM FICHA_ALIMENTO";
                 SqlCommand cmd2 = new SqlCommand(sql, conexao.sqlconn);
@@ -169,7 +170,7 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, "+
+                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, FICHA_ALIMENTO.HORA_A_SER_EXECUTADO, " +
                              "USUARIO.NOME AS NOME_USUARIO, USUARIO.LOGIN AS LOGIN_USUARIO, FICHA_ALIMENTO.CODIGO_USUARIO, ANIMAL.NOME AS NOME_ANIMAL, FICHA_ALIMENTO.CODIGO_ANIMAL FROM FICHA_ALIMENTO " +
                              "INNER JOIN USUARIO ON (USUARIO.CODIGO = FICHA_ALIMENTO.CODIGO_USUARIO) "+
                              "INNER JOIN ANIMAL ON (ANIMAL.CODIGO = FICHA_ALIMENTO.CODIGO_ANIMAL) "+
@@ -231,6 +232,7 @@ namespace Biblioteca.dados
                     fichaalimento.Descricao = reader.GetString(reader.GetOrdinal("DESCRICAO"));
                     fichaalimento.DataCriacao = reader.GetDateTime(reader.GetOrdinal("DT_CRIACAO")).ToString("dd/MM/yyyy");
                     fichaalimento.DataValidade = reader.GetDateTime(reader.GetOrdinal("DT_VALIDADE")).ToString("dd/MM/yyyy");
+                    fichaalimento.Hora_a_ser_executado = Convert.ToString(reader.GetInt32(reader.GetOrdinal("HORA_A_SER_EXECUTADO")));
                     fichaalimento.Usuario.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO_USUARIO"));
                     fichaalimento.Usuario.Nome = reader.GetString(reader.GetOrdinal("NOME_USUARIO"));
                     fichaalimento.Usuario.Login = reader.GetString(reader.GetOrdinal("LOGIN_USUARIO"));

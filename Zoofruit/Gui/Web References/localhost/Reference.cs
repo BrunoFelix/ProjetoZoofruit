@@ -925,6 +925,8 @@ namespace Gui.localhost {
         
         private string descricaoField;
         
+        private string hora_a_ser_executadoField;
+        
         private Usuario usuarioField;
         
         /// <remarks/>
@@ -978,6 +980,17 @@ namespace Gui.localhost {
             }
             set {
                 this.descricaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Hora_a_ser_executado {
+            get {
+                return this.hora_a_ser_executadoField;
+            }
+            set {
+                this.hora_a_ser_executadoField = value;
             }
         }
         

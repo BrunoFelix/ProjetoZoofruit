@@ -57,6 +57,7 @@
             this.btn_pesquisar_animal = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +121,8 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader8});
             this.lv_ficha.FullRowSelect = true;
             this.lv_ficha.Location = new System.Drawing.Point(0, 387);
             this.lv_ficha.MultiSelect = false;
@@ -138,20 +140,23 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Descricao";
-            this.columnHeader2.Width = 613;
+            this.columnHeader2.Width = 499;
             // 
             // columnHeader3
             // 
+            this.columnHeader3.DisplayIndex = 3;
             this.columnHeader3.Text = "Data Criação";
             this.columnHeader3.Width = 181;
             // 
             // columnHeader4
             // 
+            this.columnHeader4.DisplayIndex = 4;
             this.columnHeader4.Text = "Data Validade";
             this.columnHeader4.Width = 154;
             // 
             // columnHeader5
             // 
+            this.columnHeader5.DisplayIndex = 5;
             this.columnHeader5.Text = "Usuario";
             this.columnHeader5.Width = 235;
             // 
@@ -326,6 +331,12 @@
             this.panel1.Size = new System.Drawing.Size(471, 48);
             this.panel1.TabIndex = 34;
             // 
+            // columnHeader8
+            // 
+            this.columnHeader8.DisplayIndex = 2;
+            this.columnHeader8.Text = "Hora a ser executado";
+            this.columnHeader8.Width = 96;
+            // 
             // Manter_ficha_alimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,5 +398,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }

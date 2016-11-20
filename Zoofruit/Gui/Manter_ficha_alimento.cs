@@ -282,9 +282,11 @@ namespace Gui
                     item = new ListViewItem();
                     item.Text = fa.Codigo.ToString();
                     item.SubItems.Add(fa.Descricao);
+                    item.SubItems.Add(fa.Hora_a_ser_executado);
                     item.SubItems.Add(fa.DataCriacao);
                     item.SubItems.Add(fa.DataValidade);
                     item.SubItems.Add(fa.Usuario.Nome);
+
 
                     lv_ficha.Items.Add(item);
                 }

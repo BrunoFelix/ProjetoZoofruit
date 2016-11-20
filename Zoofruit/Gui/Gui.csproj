@@ -108,6 +108,12 @@
     <Compile Include="Manter_ficha_execucao_ed.Designer.cs">
       <DependentUpon>Manter_ficha_execucao_ed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_ficha_execucao_ed_observacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_ficha_execucao_ed_observacao.Designer.cs">
+      <DependentUpon>Manter_ficha_execucao_ed_observacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manter_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_ficha_execucao_ed.resx">
       <DependentUpon>Manter_ficha_execucao_ed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_ficha_execucao_ed_observacao.resx">
+      <DependentUpon>Manter_ficha_execucao_ed_observacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login.resx">
       <DependentUpon>Manter_login.cs</DependentUpon>

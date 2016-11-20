@@ -87,6 +87,7 @@ namespace Gui
                 fichaalimento.DataCriacao = dtp_validade.Text;
                 fichaalimento.DataValidade = dtp_validade.Text;
                 fichaalimento.Qtd_max_cal = Convert.ToDouble(tb_qtd_max_cal.Text);
+                fichaalimento.Hora_a_ser_executado = tb_hora_a_ser_executada.Text;
                 fichaalimento.Usuario = usuario;
                 fichaalimento.Animal = animal;
                 fichaalimento.ListaAlimento = listaalimento.ToArray();
@@ -113,6 +114,14 @@ namespace Gui
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tb_hora_a_ser_executada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != 8))
+            {
+                e.Handled = true;
             }
         }
     }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_ficha_alimento_ed));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_qtd_max_cal = new System.Windows.Forms.TextBox();
@@ -44,11 +45,16 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button4 = new System.Windows.Forms.Button();
             this.btn_novo_animal = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tb_hora_a_ser_executada = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.tb_hora_a_ser_executada);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.tb_qtd_max_cal);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tb_descricao);
@@ -108,7 +114,7 @@
             this.dtp_validade.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_validade.Location = new System.Drawing.Point(101, 46);
             this.dtp_validade.Name = "dtp_validade";
-            this.dtp_validade.Size = new System.Drawing.Size(200, 20);
+            this.dtp_validade.Size = new System.Drawing.Size(93, 20);
             this.dtp_validade.TabIndex = 1;
             this.dtp_validade.Value = new System.DateTime(2016, 11, 12, 0, 0, 0, 0);
             // 
@@ -198,6 +204,23 @@
             this.btn_novo_animal.UseVisualStyleBackColor = true;
             this.btn_novo_animal.Click += new System.EventHandler(this.btn_novo_animal_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(202, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 13);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Hora que deve ser exeutada:";
+            // 
+            // tb_hora_a_ser_executada
+            // 
+            this.tb_hora_a_ser_executada.Location = new System.Drawing.Point(353, 46);
+            this.tb_hora_a_ser_executada.Name = "tb_hora_a_ser_executada";
+            this.tb_hora_a_ser_executada.Size = new System.Drawing.Size(33, 20);
+            this.tb_hora_a_ser_executada.TabIndex = 39;
+            this.tb_hora_a_ser_executada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_hora_a_ser_executada_KeyPress);
+            // 
             // Manter_ficha_alimento_ed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,5 +261,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_novo_animal;
+        private System.Windows.Forms.TextBox tb_hora_a_ser_executada;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -107,12 +107,28 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (lv_alimento.SelectedIndices.Count > 0)
+            try
             {
-                Alimento alimento = listalimento.ElementAt(lv_alimento.SelectedIndices[0]);
-                alimento.Quantidade = 0;
-                listacardapio.Add(alimento);
-                AtualizarGridCardápio();
+                if (lv_alimento.SelectedIndices.Count > 0)
+                {
+                    if (tb_quantidade.Text == "")
+                    {
+                        MessageBox.Show("Informe a quantidade!");
+                        tb_quantidade.Focus();
+                    }
+                    Alimento alimento = listalimento.ElementAt(lv_alimento.SelectedIndices[0]);
+                    alimento.Quantidade = Convert.ToInt32(tb_quantidade.Text);
+                    listacardapio.Add(alimento);
+                    AtualizarGridCardápio();
+                }
+            }
+            catch (Exception)
+            {
+                //
+            }
+            finally
+            {
+                tb_quantidade.Text = "";
             }
         }
 
@@ -126,6 +142,20 @@ namespace Gui
                     listacardapio.Remove(listacardapio.ElementAt(lv_cardapio.SelectedIndices[0]));
                     AtualizarGridCardápio();
                 }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Manter_ficha_execucao_ed_observacao manter_ficha_execucao_ed_observacao = new Manter_ficha_execucao_ed_observacao();
+            manter_ficha_execucao_ed_observacao.ShowDialog();
+        }
+
+        private void tb_quantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != 8))
+            {
+                e.Handled = true;
             }
         }
     }

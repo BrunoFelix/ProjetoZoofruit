@@ -37,6 +37,7 @@
             this.lb_animal_ficha = new System.Windows.Forms.Label();
             this.lb_codigo_ficha = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lb_alimentos_permitidos = new System.Windows.Forms.Label();
             this.lb_montar_cardapio = new System.Windows.Forms.Label();
             this.lv_alimento = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,9 +52,10 @@
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.lb_alimentos_permitidos = new System.Windows.Forms.Label();
             this.lb_total_calorias = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tb_quantidade = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -138,6 +140,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(953, 52);
             this.panel1.TabIndex = 6;
+            // 
+            // lb_alimentos_permitidos
+            // 
+            this.lb_alimentos_permitidos.AutoSize = true;
+            this.lb_alimentos_permitidos.Location = new System.Drawing.Point(435, 30);
+            this.lb_alimentos_permitidos.Name = "lb_alimentos_permitidos";
+            this.lb_alimentos_permitidos.Size = new System.Drawing.Size(102, 13);
+            this.lb_alimentos_permitidos.TabIndex = 18;
+            this.lb_alimentos_permitidos.Text = "Alimentos permitidos";
             // 
             // lb_montar_cardapio
             // 
@@ -269,18 +280,10 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 48);
             this.button4.TabIndex = 16;
-            this.button4.Text = "Confirmar [F8]";
+            this.button4.Text = "Executar [F8]";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // lb_alimentos_permitidos
-            // 
-            this.lb_alimentos_permitidos.AutoSize = true;
-            this.lb_alimentos_permitidos.Location = new System.Drawing.Point(435, 30);
-            this.lb_alimentos_permitidos.Name = "lb_alimentos_permitidos";
-            this.lb_alimentos_permitidos.Size = new System.Drawing.Size(102, 13);
-            this.lb_alimentos_permitidos.TabIndex = 18;
-            this.lb_alimentos_permitidos.Text = "Alimentos permitidos";
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // lb_total_calorias
             // 
@@ -301,11 +304,30 @@
             this.label2.Text = "---------------------------------------------------------------------------------" +
     "-----------------";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(781, 343);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Quantidade:";
+            // 
+            // tb_quantidade
+            // 
+            this.tb_quantidade.Location = new System.Drawing.Point(852, 340);
+            this.tb_quantidade.Name = "tb_quantidade";
+            this.tb_quantidade.Size = new System.Drawing.Size(100, 20);
+            this.tb_quantidade.TabIndex = 22;
+            this.tb_quantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_quantidade_KeyPress);
+            // 
             // Manter_ficha_execucao_ed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 647);
+            this.Controls.Add(this.tb_quantidade);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_total_calorias);
             this.Controls.Add(this.button2);
@@ -360,5 +382,7 @@
         private System.Windows.Forms.Label lb_alimentos_permitidos;
         private System.Windows.Forms.Label lb_total_calorias;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tb_quantidade;
     }
 }

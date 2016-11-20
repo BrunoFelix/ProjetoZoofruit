@@ -109,6 +109,7 @@
       <xs:element name="DataCriacao" nillable="true" type="xs:string" />
       <xs:element name="DataValidade" nillable="true" type="xs:string" />
       <xs:element name="Descricao" nillable="true" type="xs:string" />
+      <xs:element name="Hora_a_ser_executado" nillable="true" type="xs:string" />
       <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
     </xs:sequence>
   </xs:complexType>

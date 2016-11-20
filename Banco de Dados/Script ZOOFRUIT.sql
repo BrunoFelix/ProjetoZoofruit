@@ -40,6 +40,7 @@ CREATE TABLE Ficha_Alimento (
 	dt_criacao DATETIME NOT NULL,
 	dt_validade DATE NOT NULL,
 	qtd_max_cal float NOT NULL,
+	hora_a_ser_executado INTEGER NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
 	codigo_Animal INTEGER REFERENCES Animal(codigo)
 );
@@ -49,6 +50,7 @@ CREATE TABLE Ficha_Medicamento (
 	descricao VARCHAR(60),
 	dt_criacao DATETIME NOT NULL,
 	dt_validade DATE NOT NULL,
+	hora_a_ser_executado INTEGER NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
 	codigo_Animal INTEGER REFERENCES Animal(codigo)
 );
@@ -82,7 +84,6 @@ CREATE TABLE Alimento (
 );
 
 CREATE TABLE Ficha_Contem_Alimento (
-	quantidade float NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
 	codigo_Ficha INTEGER REFERENCES Ficha_Alimento(codigo),
 	CONSTRAINT PK_Ficha_Alimento PRIMARY KEY(codigo_Alimento, codigo_Ficha)
@@ -96,7 +97,6 @@ CREATE TABLE Medicamento (
 );
 
 CREATE TABLE Ficha_Contem_Medicamento (
-	quantidade float NOT NULL,
 	codigo_Medicamento INTEGER REFERENCES Medicamento(codigo),
 	codigo_Ficha INTEGER REFERENCES Ficha_Medicamento(codigo)
 	CONSTRAINT PK_Ficha_Contem_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_Ficha)

@@ -88,7 +88,7 @@
             this.comboBox1.Location = new System.Drawing.Point(85, 171);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(492, 21);
-            this.comboBox1.TabIndex = 13;
+            this.comboBox1.TabIndex = 6;
             // 
             // label7
             // 
@@ -113,7 +113,7 @@
             this.tb_senha.Location = new System.Drawing.Point(85, 144);
             this.tb_senha.Name = "tb_senha";
             this.tb_senha.Size = new System.Drawing.Size(164, 20);
-            this.tb_senha.TabIndex = 10;
+            this.tb_senha.TabIndex = 5;
             // 
             // label5
             // 
@@ -129,7 +129,7 @@
             this.tb_login.Location = new System.Drawing.Point(85, 118);
             this.tb_login.Name = "tb_login";
             this.tb_login.Size = new System.Drawing.Size(164, 20);
-            this.tb_login.TabIndex = 8;
+            this.tb_login.TabIndex = 4;
             // 
             // label4
             // 
@@ -145,7 +145,7 @@
             this.tb_crmv.Location = new System.Drawing.Point(85, 92);
             this.tb_crmv.Name = "tb_crmv";
             this.tb_crmv.Size = new System.Drawing.Size(164, 20);
-            this.tb_crmv.TabIndex = 6;
+            this.tb_crmv.TabIndex = 3;
             // 
             // label3
             // 
@@ -161,7 +161,7 @@
             this.tb_cpf.Location = new System.Drawing.Point(85, 66);
             this.tb_cpf.Name = "tb_cpf";
             this.tb_cpf.Size = new System.Drawing.Size(164, 20);
-            this.tb_cpf.TabIndex = 4;
+            this.tb_cpf.TabIndex = 2;
             this.tb_cpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label2
@@ -178,7 +178,7 @@
             this.tb_nome.Location = new System.Drawing.Point(85, 40);
             this.tb_nome.Name = "tb_nome";
             this.tb_nome.Size = new System.Drawing.Size(492, 20);
-            this.tb_nome.TabIndex = 2;
+            this.tb_nome.TabIndex = 1;
             // 
             // label1
             // 
@@ -192,7 +192,7 @@
             // tb_codigo
             // 
             this.tb_codigo.Enabled = false;
-            this.tb_codigo.Location = new System.Drawing.Point(85, 14);
+            this.tb_codigo.Location = new System.Drawing.Point(85, 15);
             this.tb_codigo.Name = "tb_codigo";
             this.tb_codigo.Size = new System.Drawing.Size(66, 20);
             this.tb_codigo.TabIndex = 0;
@@ -205,7 +205,7 @@
             this.button2.Location = new System.Drawing.Point(298, 211);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 48);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Cancelar [F9]";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@
             this.button1.Location = new System.Drawing.Point(202, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 48);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Confirmar [F8]";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;

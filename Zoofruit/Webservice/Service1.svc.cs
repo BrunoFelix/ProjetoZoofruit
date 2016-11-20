@@ -24,6 +24,7 @@ namespace Webservice
         RNAnimal rnanimal;
         RNTipoAnimal rntipoanimal;
         RNFichaAlimento rnfichaalimento;
+        RNFichaExecucaoAlimento rnfichaexecucaoalimento;
 
         private Service1()
         {
@@ -34,6 +35,7 @@ namespace Webservice
             rnanimal = new RNAnimal();
             rntipoanimal = new RNTipoAnimal();
             rnfichaalimento = new RNFichaAlimento();
+            rnfichaexecucaoalimento = new RNFichaExecucaoAlimento();
         }
 
 
@@ -149,6 +151,12 @@ namespace Webservice
         public void ExcluirFichaAlimento(FichaAlimento fa)
         {
             rnfichaalimento.Excluir(fa);
-        } 
+        }
+
+        /* ------------------- Ficha Execução Alimento -------------------------------------- */
+        public List<Alimento> PesquisarAlimentoFichaExecucaoAlimento(int codigo)
+        {
+            return rnfichaexecucaoalimento.NListarFichaExecucaoAlimentoAlimento(codigo);
+        }
     }
 }

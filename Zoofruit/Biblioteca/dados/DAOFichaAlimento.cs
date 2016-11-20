@@ -169,7 +169,8 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, USUARIO.NOME AS NOME_USUARIO, FICHA_ALIMENTO.CODIGO_USUARIO, ANIMAL.NOME AS NOME_ANIMAL, FICHA_ALIMENTO.CODIGO_ANIMAL FROM FICHA_ALIMENTO " +
+                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, "+
+                             "USUARIO.NOME AS NOME_USUARIO, USUARIO.LOGIN AS LOGIN_USUARIO, FICHA_ALIMENTO.CODIGO_USUARIO, ANIMAL.NOME AS NOME_ANIMAL, FICHA_ALIMENTO.CODIGO_ANIMAL FROM FICHA_ALIMENTO " +
                              "INNER JOIN USUARIO ON (USUARIO.CODIGO = FICHA_ALIMENTO.CODIGO_USUARIO) "+
                              "INNER JOIN ANIMAL ON (ANIMAL.CODIGO = FICHA_ALIMENTO.CODIGO_ANIMAL) "+
                              "WHERE FICHA_ALIMENTO.CODIGO > 0 ";
@@ -232,6 +233,7 @@ namespace Biblioteca.dados
                     fichaalimento.DataValidade = reader.GetDateTime(reader.GetOrdinal("DT_VALIDADE")).ToString("dd/MM/yyyy");
                     fichaalimento.Usuario.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO_USUARIO"));
                     fichaalimento.Usuario.Nome = reader.GetString(reader.GetOrdinal("NOME_USUARIO"));
+                    fichaalimento.Usuario.Login = reader.GetString(reader.GetOrdinal("LOGIN_USUARIO"));
                     fichaalimento.Animal.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO_ANIMAL"));
                     fichaalimento.Animal.Nome = reader.GetString(reader.GetOrdinal("NOME_ANIMAL"));
 

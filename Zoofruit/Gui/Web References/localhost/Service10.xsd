@@ -279,4 +279,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="PesquisarAlimentoFichaExecucaoAlimento">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PesquisarAlimentoFichaExecucaoAlimentoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="PesquisarAlimentoFichaExecucaoAlimentoResult" nillable="true" type="q30:ArrayOfAlimento" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

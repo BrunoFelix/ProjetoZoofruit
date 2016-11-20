@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.basica
 {
-    class FichaExecucaoAlimento : Ficha
+    public class FichaExecucaoAlimento : Ficha
     {
         private List<Alimento> listaAlimento;
 

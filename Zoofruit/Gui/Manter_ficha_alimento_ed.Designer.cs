@@ -67,7 +67,7 @@
             this.tb_qtd_max_cal.Location = new System.Drawing.Point(165, 72);
             this.tb_qtd_max_cal.Name = "tb_qtd_max_cal";
             this.tb_qtd_max_cal.Size = new System.Drawing.Size(136, 20);
-            this.tb_qtd_max_cal.TabIndex = 38;
+            this.tb_qtd_max_cal.TabIndex = 2;
             // 
             // label3
             // 
@@ -83,7 +83,7 @@
             this.tb_descricao.Location = new System.Drawing.Point(101, 20);
             this.tb_descricao.Name = "tb_descricao";
             this.tb_descricao.Size = new System.Drawing.Size(515, 20);
-            this.tb_descricao.TabIndex = 36;
+            this.tb_descricao.TabIndex = 0;
             // 
             // label2
             // 
@@ -109,7 +109,7 @@
             this.dtp_validade.Location = new System.Drawing.Point(101, 46);
             this.dtp_validade.Name = "dtp_validade";
             this.dtp_validade.Size = new System.Drawing.Size(200, 20);
-            this.dtp_validade.TabIndex = 33;
+            this.dtp_validade.TabIndex = 1;
             this.dtp_validade.Value = new System.DateTime(2016, 11, 12, 0, 0, 0, 0);
             // 
             // button2
@@ -117,10 +117,10 @@
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(315, 471);
+            this.button2.Location = new System.Drawing.Point(315, 463);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 48);
-            this.button2.TabIndex = 15;
+            this.button2.TabIndex = 7;
             this.button2.Text = "Cancelar [F9]";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
@@ -130,10 +130,10 @@
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(219, 471);
+            this.button1.Location = new System.Drawing.Point(219, 463);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 48);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Confirmar [F8]";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
@@ -149,11 +149,11 @@
             this.columnHeader2,
             this.columnHeader3});
             this.lv_alimento.FullRowSelect = true;
-            this.lv_alimento.Location = new System.Drawing.Point(4, 153);
+            this.lv_alimento.Location = new System.Drawing.Point(4, 147);
             this.lv_alimento.MultiSelect = false;
             this.lv_alimento.Name = "lv_alimento";
-            this.lv_alimento.Size = new System.Drawing.Size(628, 312);
-            this.lv_alimento.TabIndex = 37;
+            this.lv_alimento.Size = new System.Drawing.Size(628, 311);
+            this.lv_alimento.TabIndex = 5;
             this.lv_alimento.UseCompatibleStateImageBehavior = false;
             this.lv_alimento.View = System.Windows.Forms.View.Details;
             // 
@@ -176,10 +176,10 @@
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(101, 102);
+            this.button4.Location = new System.Drawing.Point(101, 99);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 48);
-            this.button4.TabIndex = 39;
+            this.button4.TabIndex = 4;
             this.button4.Text = "Remover";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = true;
@@ -189,10 +189,10 @@
             // 
             this.btn_novo_animal.Image = ((System.Drawing.Image)(resources.GetObject("btn_novo_animal.Image")));
             this.btn_novo_animal.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_novo_animal.Location = new System.Drawing.Point(4, 102);
+            this.btn_novo_animal.Location = new System.Drawing.Point(4, 99);
             this.btn_novo_animal.Name = "btn_novo_animal";
             this.btn_novo_animal.Size = new System.Drawing.Size(97, 48);
-            this.btn_novo_animal.TabIndex = 38;
+            this.btn_novo_animal.TabIndex = 3;
             this.btn_novo_animal.Text = "Adicionar";
             this.btn_novo_animal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_novo_animal.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 524);
+            this.ClientSize = new System.Drawing.Size(632, 516);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btn_novo_animal);
             this.Controls.Add(this.lv_alimento);

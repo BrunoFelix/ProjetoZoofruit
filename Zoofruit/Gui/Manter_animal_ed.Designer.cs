@@ -59,7 +59,7 @@
             this.button2.Location = new System.Drawing.Point(313, 182);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 48);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Cancelar [F9]";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
@@ -72,7 +72,7 @@
             this.button1.Location = new System.Drawing.Point(217, 182);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 48);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Confirmar [F8]";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
@@ -108,7 +108,7 @@
             this.comboBox1.Location = new System.Drawing.Point(49, 145);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(425, 21);
-            this.comboBox1.TabIndex = 33;
+            this.comboBox1.TabIndex = 5;
             // 
             // codigo
             // 
@@ -125,7 +125,7 @@
             this.tb_codigo.Location = new System.Drawing.Point(49, 25);
             this.tb_codigo.Name = "tb_codigo";
             this.tb_codigo.Size = new System.Drawing.Size(66, 20);
-            this.tb_codigo.TabIndex = 31;
+            this.tb_codigo.TabIndex = 0;
             // 
             // ptbAnimal
             // 
@@ -141,21 +141,21 @@
             this.tb_cor.Location = new System.Drawing.Point(49, 73);
             this.tb_cor.Name = "tb_cor";
             this.tb_cor.Size = new System.Drawing.Size(154, 20);
-            this.tb_cor.TabIndex = 28;
+            this.tb_cor.TabIndex = 2;
             // 
             // tb_porte
             // 
             this.tb_porte.Location = new System.Drawing.Point(49, 97);
             this.tb_porte.Name = "tb_porte";
             this.tb_porte.Size = new System.Drawing.Size(154, 20);
-            this.tb_porte.TabIndex = 27;
+            this.tb_porte.TabIndex = 3;
             // 
             // tb_peso
             // 
             this.tb_peso.Location = new System.Drawing.Point(49, 121);
             this.tb_peso.Name = "tb_peso";
             this.tb_peso.Size = new System.Drawing.Size(154, 20);
-            this.tb_peso.TabIndex = 26;
+            this.tb_peso.TabIndex = 4;
             this.tb_peso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_peso_KeyPress);
             // 
             // tb_nome
@@ -163,7 +163,7 @@
             this.tb_nome.Location = new System.Drawing.Point(49, 49);
             this.tb_nome.Name = "tb_nome";
             this.tb_nome.Size = new System.Drawing.Size(425, 20);
-            this.tb_nome.TabIndex = 25;
+            this.tb_nome.TabIndex = 1;
             // 
             // nome
             // 
@@ -215,7 +215,7 @@
             this.btnAddFoto.Location = new System.Drawing.Point(478, 144);
             this.btnAddFoto.Name = "btnAddFoto";
             this.btnAddFoto.Size = new System.Drawing.Size(135, 23);
-            this.btnAddFoto.TabIndex = 19;
+            this.btnAddFoto.TabIndex = 6;
             this.btnAddFoto.Text = "Adicionar Foto";
             this.btnAddFoto.UseVisualStyleBackColor = true;
             this.btnAddFoto.Click += new System.EventHandler(this.btnAddFoto_Click);

@@ -89,6 +89,11 @@ namespace Webservice
         [OperationContract]
         void ExcluirFichaAlimento(FichaAlimento fa);
         #endregion
+
+        #region Ficha Execução Alimento
+        [OperationContract]
+        List<Alimento> PesquisarAlimentoFichaExecucaoAlimento(int codigo);
+        #endregion
     }
 
 

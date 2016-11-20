@@ -83,7 +83,7 @@
             this.tb_quantidade.Location = new System.Drawing.Point(146, 92);
             this.tb_quantidade.Name = "tb_quantidade";
             this.tb_quantidade.Size = new System.Drawing.Size(164, 20);
-            this.tb_quantidade.TabIndex = 6;
+            this.tb_quantidade.TabIndex = 3;
             // 
             // label3
             // 
@@ -99,7 +99,7 @@
             this.tb_valorcalorico.Location = new System.Drawing.Point(146, 66);
             this.tb_valorcalorico.Name = "tb_valorcalorico";
             this.tb_valorcalorico.Size = new System.Drawing.Size(164, 20);
-            this.tb_valorcalorico.TabIndex = 4;
+            this.tb_valorcalorico.TabIndex = 2;
             // 
             // label2
             // 
@@ -115,7 +115,7 @@
             this.tb_nome.Location = new System.Drawing.Point(146, 40);
             this.tb_nome.Name = "tb_nome";
             this.tb_nome.Size = new System.Drawing.Size(431, 20);
-            this.tb_nome.TabIndex = 2;
+            this.tb_nome.TabIndex = 1;
             // 
             // label1
             // 
@@ -142,7 +142,7 @@
             this.button2.Location = new System.Drawing.Point(295, 132);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 48);
-            this.button2.TabIndex = 12;
+            this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar [F9]";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.btnconfirmar.Location = new System.Drawing.Point(199, 132);
             this.btnconfirmar.Name = "btnconfirmar";
             this.btnconfirmar.Size = new System.Drawing.Size(97, 48);
-            this.btnconfirmar.TabIndex = 11;
+            this.btnconfirmar.TabIndex = 4;
             this.btnconfirmar.Text = "Confirmar [F8]";
             this.btnconfirmar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnconfirmar.UseVisualStyleBackColor = true;

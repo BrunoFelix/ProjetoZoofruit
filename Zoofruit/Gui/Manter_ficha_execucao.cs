@@ -14,7 +14,7 @@ namespace Gui
     public partial class Manter_ficha_execucao : Form
     {
         private int tamanho_panel = 10;
-        private int altura_panel = 10;
+        private int altura_panel = 90;
         private int i = 0;
         private int z = 1;
         private double tamanho_form = 0;
@@ -62,42 +62,18 @@ namespace Gui
         {
             tamanho_form = this.Width;
 
-            /*foreach (Control item in this.Controls.OfType<Panel>())
-            {
-                this.Controls.Remove(item);
-
-            }*/
-
             for (int ix = this.Controls.Count - 1; ix >= 0; ix--)
                 if ((this.Controls[ix] is Panel) && (this.Controls[ix].Tag != "1")) this.Controls[ix].Dispose();
 
             tamanho_panel = 10;
-            altura_panel = 10;
+            altura_panel = 90;
             i = 0;
             z = 1;
-
-
 
             foreach (FichaAlimento fa in listafichaalimento)
             {
                 if (tamanho_panel < (tamanho_form - 150))
                 {
-
-                    Button button5 = new Button();
-                    //button5.Click += button_Click(fa);
-                    button5.Location = new System.Drawing.Point(70, 125);
-                    button5.Size = new System.Drawing.Size(80, 20);
-                    button5.TabIndex = 0;
-                    button5.Text = "Executar";
-                    button5.ForeColor = Color.Black;
-                    button5.UseVisualStyleBackColor = true;
-
-                    Label c1 = new Label();
-                    c1.Text = fa.Animal.Nome;
-                    c1.Left = 10;
-                    c1.Top = 10;
-                    c1.ForeColor = Color.Black;
-
                     Panel panel1 = new Panel();
                     panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
                     panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
@@ -107,14 +83,65 @@ namespace Gui
                     panel1.TabIndex = 0;
                     tamanho_panel += 223;
 
+                    Panel panel2 = new Panel();
+                    panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+                    panel2.ForeColor = System.Drawing.SystemColors.ControlLight;
+                    panel2.Location = new System.Drawing.Point(2, 2);
+                    panel2.Size = new System.Drawing.Size(209, 25);
+
+                    Button button5 = new Button();
+                    button5.Tag = fa.Codigo.ToString();
+                    button5.Click += common_Click;
+                    button5.Location = new System.Drawing.Point(0, 125);
+                    button5.Size = new System.Drawing.Size(213, 25);
+                    button5.TabIndex = 0;
+                    button5.Text = "Executar";
+                    button5.ForeColor = Color.Black;
+                    button5.UseVisualStyleBackColor = true;
+
+                    Label c1 = new Label();
+                    c1.Text = "Animal: " + fa.Animal.Nome;
+                    c1.Top = 5;
+                    c1.Height = 15;
+                    c1.ForeColor = Color.Black;
+                    c1.AutoSize = true;
+                    c1.Left = (panel2.Width - c1.Width) / 2;
+
+                    panel2.Controls.Add(c1);
+
+                    Label c2 = new Label();
+                    c2.Text = "Ficha: " + fa.Descricao;
+                    c2.Left = 10;
+                    c2.Top = 40;
+                    c2.Height = 15;
+                    c2.AutoSize = true;
+                    c2.ForeColor = Color.Black;
+
+                    Label c3 = new Label();
+                    c3.Text = "Qtd. Máx. Cal.: " + fa.Qtd_max_cal.ToString();
+                    c3.Left = 10;
+                    c3.Top = 70;
+                    c3.Height = 15;
+                    c3.AutoSize = true;
+                    c3.ForeColor = Color.Black;
+
+                    Label c4 = new Label();
+                    c4.Text = "De/Até: " + fa.DataCriacao + " - " + fa.DataValidade;
+                    c4.Left = 10;
+                    c4.Top = 100;
+                    c4.Height = 15;
+                    c4.AutoSize = true;
+                    c4.ForeColor = Color.Black;
+ 
+                    panel1.Controls.Add(panel2);
+
+                    panel1.Controls.Add(c2);
+
+                    panel1.Controls.Add(c3);
+
+                    panel1.Controls.Add(c4);
+
                     panel1.Controls.Add(button5);
-
-
-                    /* panel1.BackgroundImage = Image.FromFile
-                           (System.Environment.GetFolderPath
-                           (System.Environment.SpecialFolder.Personal)
-                           + @"\macaco.JPG");*/
-                    panel1.Controls.Add(c1);
 
                     this.Controls.Add(panel1);
 
@@ -128,19 +155,44 @@ namespace Gui
             }
         }
 
+        private void ExecutarFicha(int codigo)
+        {
+            FichaAlimento fichaalimento = new FichaAlimento();
+            fichaalimento.Codigo = codigo;
+            fichaalimento.Animal = new Animal();
+            fichaalimento.Usuario = new Usuario();
+            fichaalimento.ListaAlimento = new List<Alimento>().ToArray();
+            fichaalimento = webservice.ListarFichaAlimento(fichaalimento)[0];
+            Manter_ficha_execucao_ed manter_ficha_execucao_ed = new Manter_ficha_execucao_ed(fichaalimento);
+            manter_ficha_execucao_ed.ShowDialog();
+        }
+
+
+        private void common_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;        
+            ExecutarFicha(Convert.ToInt32(btn.Tag));
+        }
+
         private void Manter_ficha_execucao_FormClosed(object sender, FormClosedEventArgs e)
         {
             manter_ficha_execucao = null;
         }
 
-        private void button_Click(FichaAlimento fa)
+        /*private void button_Click()
         {
-            MessageBox.Show(fa.Codigo.ToString());
-        }
+            //MessageBox.Show(fa.Codigo.ToString());
+        }*/
+
 
         private void Manter_ficha_execucao_Resize(object sender, EventArgs e)
         {
             AtualizarTela();
         }
+
+        private void Manter_ficha_execucao_Load(object sender, EventArgs e)
+        {
+        }
+
     }
 }

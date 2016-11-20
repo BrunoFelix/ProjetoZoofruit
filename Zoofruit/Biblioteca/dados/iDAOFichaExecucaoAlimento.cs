@@ -13,5 +13,6 @@ namespace Biblioteca.dados
         void Alterar(FichaExecucaoAlimento fea);
         void Excluir(FichaExecucaoAlimento fea);
         List<FichaExecucaoAlimento> Pesquisar(FichaExecucaoAlimento fea, bool alt = false);
+        List<Alimento> Pesquisar(int codigo);
     }
 }

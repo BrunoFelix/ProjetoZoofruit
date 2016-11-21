@@ -8,18 +8,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Xml.Linq;
 
 namespace Gui
 {
     public partial class Manter_alimento_ed : Form
     {
-      
+        const int MF_BYPOSITION = 0x400;
+        public string aviso = string.Empty;
+        private string nomeDoArquivo = "Alimentos.xml";
+        private XElement doc;
+
         Service1 webservice;
         Alimento alimento;
         public Manter_alimento_ed()
         {
+            if (File.Exists(nomeDoArquivo))
+            {
+                doc = XElement.Load(nomeDoArquivo);
+            }
+            else
+            {
+                doc = new XElement("Alimentos");
+            }
             InitializeComponent();
             webservice = new Service1();
+
            
         }
 
@@ -56,6 +71,21 @@ namespace Gui
                 webservice.AlterarAlimento(alimento);
                 ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
             }
+        }
+
+        private void Manter_alimento_ed_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            XElement alimento = new XElement("Alimento");
+            alimento.Add(new XElement("Nome", tb_nome.Text));
+            alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));
+            alimento.Add(new XElement("Quantidade", tb_quantidade.Text));
+            doc.Add(alimento);
+            doc.Save(nomeDoArquivo);
         }
     }
 }

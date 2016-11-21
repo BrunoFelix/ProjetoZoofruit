@@ -42,7 +42,6 @@ C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gu
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
-C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.CadastroAnimais.resources
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_login.resources
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Principal.resources
@@ -173,3 +172,13 @@ C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.exe
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.pdb
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_execucao_ed_observacao.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento_ed.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_animal.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_animal_ed.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_alimento.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_buscar_alimento_ed.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_alimento_ed.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_execucao.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_execucao_ed.resources
+C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_ficha_execucao_ed_observacao.resources

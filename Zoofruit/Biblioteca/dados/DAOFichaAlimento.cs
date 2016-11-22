@@ -81,7 +81,7 @@ namespace Biblioteca.dados
         public void Alterar(FichaAlimento fa)
         {
 
-            conexao.openConnection();
+            /*conexao.openConnection();
             try
             {
 
@@ -98,7 +98,7 @@ namespace Biblioteca.dados
 
                 int modified = (int)cmd.executescalar();*/
 
-                sql = "SELECT MAX(CODIGO) FROM FICHA_ALIMENTO";
+                /*sql = "SELECT MAX(CODIGO) FROM FICHA_ALIMENTO";
                 SqlCommand cmd2 = new SqlCommand(sql, conexao.sqlconn);
                 SqlDataReader reader = cmd2.ExecuteReader();
 
@@ -127,7 +127,7 @@ namespace Biblioteca.dados
             finally
             {
                 conexao.closeConnection();
-            }
+            }*/
         }
 
 
@@ -136,17 +136,9 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "DELETE FROM FICHA_CONTEM_ALIMENTO WHERE CODIGO_FICHA=@CODIGO_FICHA";
+                string sql = "UPDATE FICHA_ALIMENTO SET ATIVO = 'F' WHERE CODIGO=@CODIGO";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
-
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_FICHA", fa.Codigo));
-
-                cmd.ExecuteNonQuery();
-
-                sql = "DELETE FROM FICHA_ALIMENTO WHERE CODIGO=@CODIGO";
-
-                cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", fa.Codigo));
 
@@ -174,7 +166,7 @@ namespace Biblioteca.dados
                              "USUARIO.NOME AS NOME_USUARIO, USUARIO.LOGIN AS LOGIN_USUARIO, FICHA_ALIMENTO.CODIGO_USUARIO, ANIMAL.NOME AS NOME_ANIMAL, FICHA_ALIMENTO.CODIGO_ANIMAL FROM FICHA_ALIMENTO " +
                              "INNER JOIN USUARIO ON (USUARIO.CODIGO = FICHA_ALIMENTO.CODIGO_USUARIO) "+
                              "INNER JOIN ANIMAL ON (ANIMAL.CODIGO = FICHA_ALIMENTO.CODIGO_ANIMAL) "+
-                             "WHERE FICHA_ALIMENTO.CODIGO > 0 ";
+                             "WHERE FICHA_ALIMENTO.CODIGO > 0 AND FICHA_ALIMENTO.ATIVO = 'T' ";
 
                 if (fa.Animal.Codigo > 0)
                 {
@@ -191,27 +183,27 @@ namespace Biblioteca.dados
                     sql += " and FICHA_ALIMENTO.DT_VALIDADE >= @DT_VALIDADE";
                 }
 
-                if (fa.Hora_a_ser_executado != null && fa.Hora_a_ser_executado.Trim().Equals("") == false)
-                {
-                    sql += " and FICHA_ALIMENTO.HORA_A_SER_EXECUTADO <= @HORA_A_SER_EXECUTADO";
-                }
 
                 if (alt == false)
                 {
-                    if (fa.Codigo > 0)
+                    if (fa.Hora_a_ser_executado != null && fa.Hora_a_ser_executado.Trim().Equals("") == false)
                     {
-                        sql += " and FICHA_ALIMENTO.CODIGO = @CODIGO";
+                        sql += " and FICHA_ALIMENTO.HORA_A_SER_EXECUTADO <= @HORA_A_SER_EXECUTADO";
                     }
-
                 }
                 else
                 {
-                    if (fa.Codigo > 0)
+                    if (fa.Hora_a_ser_executado != null && fa.Hora_a_ser_executado.Trim().Equals("") == false)
                     {
-                        sql += " and FICHA_ALIMENTO.CODIGO <> @CODIGO";
+                        sql += " and FICHA_ALIMENTO.HORA_A_SER_EXECUTADO = @HORA_A_SER_EXECUTADO";
                     }
                 }
 
+                if (fa.Codigo > 0)
+                {
+                    sql += " and FICHA_ALIMENTO.CODIGO = @CODIGO";
+                }
+            
                 sql += " ORDER BY FICHA_ALIMENTO.DT_VALIDADE ASC, FICHA_ALIMENTO.HORA_A_SER_EXECUTADO ASC ";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);

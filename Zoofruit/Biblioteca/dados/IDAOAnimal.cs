@@ -12,6 +12,6 @@ namespace Biblioteca.dados
         void Adicionar(Animal a);
         void Alterar(Animal a);
         void Excluir(Animal a);
-        List<Animal> Pesquisar(Animal a);
+        List<Animal> Pesquisar(Animal a, bool alt=false);
     }
 }

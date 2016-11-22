@@ -29,7 +29,7 @@ CREATE TABLE Animal (
 	nome VARCHAR (20) NOT NULL,
 	foto VARBINARY(MAX),
 	cor VARCHAR (20),
-	porte VARCHAR (8),
+	porte VARCHAR (18),
 	peso float,
 	codigo_TipoAnimal INTEGER REFERENCES TipoAnimal(codigo)
 );
@@ -41,6 +41,7 @@ CREATE TABLE Ficha_Alimento (
 	dt_validade DATE NOT NULL,
 	qtd_max_cal float NOT NULL,
 	hora_a_ser_executado INTEGER NOT NULL,
+	ativo VARCHAR(1) DEFAULT 'T', 
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
 	codigo_Animal INTEGER REFERENCES Animal(codigo)
 );

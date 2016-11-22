@@ -79,27 +79,27 @@ namespace Biblioteca.negocio
         {
             if (u.Login == null || u.Login.Equals("") == true)
             {
-                throw new NegocioException("O campo Login precisa ser preenchido!");
+                throw new NegocioException("O campo \"Login\" precisa ser preenchido!");
             }
             if (u.Nome == null || u.Nome.Equals("") == true)
             {
-                throw new NegocioException("O campo Nome precisa ser preenchido!");
+                throw new NegocioException("O campo \"Nome\" precisa ser preenchido!");
             }
             if (u.Cpf == null || u.Cpf.Equals("") == true)
             {
-                throw new NegocioException("O campo CPF precisa ser preenchido!");
+                throw new NegocioException("O campo \"CPF\" precisa ser preenchido!");
             }
             if (u.Senha == null || u.Senha.Equals("") == true)
             {
-                throw new NegocioException("O campo Senha precisa ser preenchido!");
+                throw new NegocioException("O campo \"Senha\" precisa ser preenchido!");
             }
             if (u.Tipousuario.Codigo <= 0)
             {
-                throw new NegocioException("O campo Tipo de Usuário precisa ser preenchido!");
+                throw new NegocioException("O campo \"Tipo de Usuário\" precisa ser preenchido!");
             }
             if (u.Tipousuario.Codigo == 2 && (u.Crmv == null || u.Crmv.Equals("") == true))
             {
-                throw new NegocioException("O campo CRMV precisa ser preenchido!");
+                throw new NegocioException("O campo \"CRMV\" precisa ser preenchido!");
             }
         }
 
@@ -119,11 +119,11 @@ namespace Biblioteca.negocio
             }
             if (u.Login.Length < 3 || u.Login.Length > 20)
             {
-                throw new NegocioException("O campo login deve conter entre 3 e 20 caracteres!");
+                throw new NegocioException("O campo \"Login\" deve conter entre 3 e 20 caracteres!");
             }
             if (u.Senha.Length < 3 || u.Senha.Length > 8)
             {
-                throw new NegocioException("O campo senha deve conter entre 3 e 8 caracteres!");
+                throw new NegocioException("O campo \"Senha\" deve conter entre 3 e 8 caracteres!");
             }
         }
 
@@ -141,7 +141,7 @@ namespace Biblioteca.negocio
             u2.Senha = u.Senha;
             if (daousuario.Pesquisar(u2, alt).Count > 0)
             {
-                throw new NegocioException("Login e senha digitados já constam no sistema!");
+                throw new NegocioException("Login já consta no sistema!");
             }
         }
     }

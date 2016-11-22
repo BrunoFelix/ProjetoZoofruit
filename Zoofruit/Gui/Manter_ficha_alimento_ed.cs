@@ -18,7 +18,7 @@ namespace Gui
     public partial class Manter_ficha_alimento_ed : Form
     {
 
-        private Socket socket;
+        /*private Socket socket;
         private Thread thread;
 
 
@@ -26,7 +26,7 @@ namespace Gui
         private BinaryWriter binaryWriter;
         private BinaryReader binaryReader;
 
-        TcpListener tcpListener;
+        TcpListener tcpListener;*/
 
 
         int tipoficha;
@@ -39,8 +39,8 @@ namespace Gui
         {
             try { 
                 InitializeComponent();
-                thread = new Thread(new ThreadStart(RunServer));
-                thread.Start();
+                /*thread = new Thread(new ThreadStart(RunServer));
+                thread.Start();*/
 
                 this.tipoficha = tipoficha;
                 webservice = new Service1();
@@ -62,7 +62,7 @@ namespace Gui
         public void RunServer()
         {
 
-            try
+            /*try
             {
                 IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 24777);
                 tcpListener = new TcpListener(ipEndPoint);
@@ -111,7 +111,7 @@ namespace Gui
                 }
                 //MessageBox.Show("conexão finalizada", "Server App");
 
-            }
+            }*/
         }
 
         public void atualizarGridALimento()
@@ -159,14 +159,25 @@ namespace Gui
                 fichaalimento.Descricao = tb_descricao.Text;
                 fichaalimento.DataCriacao = dtp_validade.Text;
                 fichaalimento.DataValidade = dtp_validade.Text;
-                fichaalimento.Qtd_max_cal = Convert.ToDouble(tb_qtd_max_cal.Text);
+                try
+                {
+                    fichaalimento.Qtd_max_cal = Convert.ToDouble(tb_qtd_max_cal.Text);
+                }catch (Exception)
+                {
+                    MessageBox.Show("Quantida de Máxima de Calórias Inválida!");
+                    this.DialogResult = DialogResult.None;
+                    tb_qtd_max_cal.Focus();
+                    return;
+                }
                 fichaalimento.Hora_a_ser_executado = tb_hora_a_ser_executada.Text;
                 fichaalimento.Usuario = usuario;
                 fichaalimento.Animal = animal;
                 fichaalimento.ListaAlimento = listaalimento.ToArray();
                 webservice.InserirFichaAlimento(fichaalimento);
 
-                try
+                this.DialogResult = DialogResult.OK;
+
+                /*try
                 {
                     binaryWriter.Write("Funcionou");
                 }
@@ -177,12 +188,13 @@ namespace Gui
                 catch (Exception socketEx)
                 {
                     MessageBox.Show(socketEx.Message, "Erro");
-                }
+                }*/
 
                 ((Manter_ficha_alimento)Application.OpenForms["manter_ficha_alimento"]).lv_animal_SelectedIndexChanged(sender, e);
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                this.DialogResult = DialogResult.None;
             }
         }
 
@@ -213,8 +225,16 @@ namespace Gui
 
         private void Manter_ficha_alimento_ed_FormClosing(object sender, FormClosingEventArgs e)
         {
-            tcpListener.Stop();
-            Environment.Exit(0);
+            /*tcpListener.Stop();
+            Environment.Exit(0);*/
+        }
+
+        private void tb_qtd_max_cal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != 8))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

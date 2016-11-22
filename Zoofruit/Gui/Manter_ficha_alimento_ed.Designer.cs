@@ -91,6 +91,7 @@
             this.tb_qtd_max_cal.Name = "tb_qtd_max_cal";
             this.tb_qtd_max_cal.Size = new System.Drawing.Size(136, 20);
             this.tb_qtd_max_cal.TabIndex = 2;
+            this.tb_qtd_max_cal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_qtd_max_cal_KeyPress);
             // 
             // label3
             // 

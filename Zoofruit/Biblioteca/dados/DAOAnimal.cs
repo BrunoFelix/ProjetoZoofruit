@@ -113,7 +113,7 @@ namespace Biblioteca.dados
             }
         }
 
-        public List<Animal> Pesquisar(Animal a)
+        public List<Animal> Pesquisar(Animal a, bool alt = false)
         {
             List<Animal> listaAnimal = new List<Animal>();
 
@@ -121,6 +121,48 @@ namespace Biblioteca.dados
             conexao.openConnection();
             string sql = "SELECT Animal.codigo, Animal.Nome, Animal.Cor, Animal.Porte, Animal.Peso, Animal.codigo_TipoAnimal, " +
                 "TipoAnimal.descricao FROM Animal LEFT JOIN TipoAnimal ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 ";
+
+                if (a.Nome != null && a.Nome.Trim().Equals("") == false)
+                {
+                    sql += " and NOME = @NOME";
+                }
+
+                if (a.Cor != null && a.Cor.Trim().Equals("") == false)
+                {
+                    sql += " and COR = @COR";
+                }
+
+                if (a.Cor != null && a.Cor.Trim().Equals("") == false)
+                {
+                    sql += " and COR = @COR";
+                }
+
+
+
+
+                if (u.Tipousuario.Descricao != null && u.Tipousuario.Descricao.Trim().Equals("") == false)
+                {
+                    sql += " and TipoUsuario.descricao = @descricao";
+                }
+
+                if (alt == false)
+                {
+                    if (u.Codigo > 0)
+                    {
+                        sql += " and usuario.codigo = @codigo";
+                    }
+
+                }
+                else
+                {
+                    if (u.Codigo > 0)
+                    {
+                        sql += " and usuario.codigo <> @codigo";
+                    }
+                }
+
+
+
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
                 SqlDataReader reader = cmd.ExecuteReader();

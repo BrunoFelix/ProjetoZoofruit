@@ -4,8 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +16,16 @@ namespace Gui
 {
     public partial class Manter_ficha_execucao : Form
     {
+        private NetworkStream networkStream;
+        private BinaryWriter binaryWriter;
+        private BinaryReader binaryReader;
+        private TcpClient tcpClient;
+
+        private Thread thread;
+
+
+
+
         private int tamanho_panel = 10;
         private int altura_panel = 90;
         private int i = 0;
@@ -40,21 +53,67 @@ namespace Gui
         }
         private Manter_ficha_execucao()
         {
-            InitializeComponent();
             try
             {
                 InitializeComponent();
+                thread = new Thread(new ThreadStart(RunClient));
+                thread.Start();
                 webservice = new Service1();
                 FichaAlimento fichaalimento = new FichaAlimento();
                 fichaalimento.Animal = new Animal();
                 fichaalimento.Usuario = new Usuario();
                 fichaalimento.ListaAlimento = new List<Alimento>().ToArray();
+                fichaalimento.DataValidade = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
+                fichaalimento.Hora_a_ser_executado = DateTime.Now.Hour.ToString();
                 listafichaalimento = webservice.ListarFichaAlimento(fichaalimento).ToList();
                 AtualizarTela();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RunClient()
+        {
+            try
+            {
+                tcpClient = new TcpClient();
+                //conectando ao servidor
+                tcpClient.Connect("127.0.0.1", 2001);
+
+                networkStream = tcpClient.GetStream();
+                binaryWriter = new BinaryWriter(networkStream);
+                binaryReader = new BinaryReader(networkStream);
+                binaryWriter.Write("Conexão requisitada pelo cliente");
+                String message = "";
+
+                #region laço para receber mensagem do servidor
+                do
+                {
+                    try
+                    {
+                        message = binaryReader.ReadString();
+                        Invoke(new MethodInvoker(
+                          delegate { MessageBox.Show(message); }
+                          ));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Erro");
+                        message = "FIM";
+                    }
+                } while (message != "FIM");
+                #endregion
+
+                binaryWriter.Close();
+                binaryReader.Close();
+                networkStream.Close();
+                tcpClient.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro");
             }
         }
 
@@ -75,8 +134,15 @@ namespace Gui
                 if (tamanho_panel < (tamanho_form - 150))
                 {
                     Panel panel1 = new Panel();
-                    panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-                    panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+                    if (Convert.ToInt32(fa.Hora_a_ser_executado) >= DateTime.Now.Hour)
+                    {
+                        panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                        panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+                    }else
+                    {
+                        panel1.BackColor = System.Drawing.Color.Tomato;
+                        panel1.ForeColor = System.Drawing.Color.Tomato;
+                    }
                     panel1.Location = new System.Drawing.Point(tamanho_panel, altura_panel);
                     panel1.Name = "panel_" + fa.Codigo.ToString();
                     panel1.Size = new System.Drawing.Size(213, 150);
@@ -118,7 +184,14 @@ namespace Gui
                     c2.ForeColor = Color.Black;
 
                     Label c3 = new Label();
-                    c3.Text = "Qtd. Máx. Cal.: " + fa.Qtd_max_cal.ToString();
+                    if (Convert.ToInt32(fa.Hora_a_ser_executado) > DateTime.Now.Hour)
+                    {
+                        c3.Text = "Qtd. Máx. Cal.: " + fa.Qtd_max_cal.ToString();
+                    }
+                    else
+                    {
+                        c3.Text = "Qtd. Máx. Cal.: " + fa.Qtd_max_cal.ToString() + "        Hora: " + fa.Hora_a_ser_executado;
+                    }
                     c3.Left = 10;
                     c3.Top = 70;
                     c3.Height = 15;
@@ -192,7 +265,12 @@ namespace Gui
 
         private void Manter_ficha_execucao_Load(object sender, EventArgs e)
         {
+            lb_data.Text = "Data: " + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lb_hora.Text = "Hora: " + DateTime.Now.Hour.ToString();
+        }
     }
 }

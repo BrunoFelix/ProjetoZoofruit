@@ -43,8 +43,8 @@
             this.quadroDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.histórioDeTarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_usuario = new System.Windows.Forms.Label();
             this.lb_data = new System.Windows.Forms.Label();
+            this.lb_usuario = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -163,6 +163,17 @@
             this.panel1.Size = new System.Drawing.Size(814, 42);
             this.panel1.TabIndex = 1;
             // 
+            // lb_data
+            // 
+            this.lb_data.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_data.AutoSize = true;
+            this.lb_data.Location = new System.Drawing.Point(691, 15);
+            this.lb_data.Name = "lb_data";
+            this.lb_data.Size = new System.Drawing.Size(30, 13);
+            this.lb_data.TabIndex = 1;
+            this.lb_data.Text = "Data";
+            // 
             // lb_usuario
             // 
             this.lb_usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -173,17 +184,6 @@
             this.lb_usuario.Size = new System.Drawing.Size(43, 13);
             this.lb_usuario.TabIndex = 0;
             this.lb_usuario.Text = "Usuario";
-            // 
-            // lb_data
-            // 
-            this.lb_data.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_data.AutoSize = true;
-            this.lb_data.Location = new System.Drawing.Point(691, 15);
-            this.lb_data.Name = "lb_data";
-            this.lb_data.Size = new System.Drawing.Size(43, 13);
-            this.lb_data.TabIndex = 1;
-            this.lb_data.Text = "Usuario";
             // 
             // Principal
             // 

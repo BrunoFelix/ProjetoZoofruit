@@ -30,9 +30,11 @@ namespace Gui
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelExibirDataHora = new System.Windows.Forms.Panel();
             this.lb_hora = new System.Windows.Forms.Label();
             this.lb_data = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelExibirDataHora.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +71,12 @@ namespace Gui
             this.lb_data.TabIndex = 0;
             this.lb_data.Text = "Data: 19/11/2016";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 10000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Manter_ficha_execucao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,5 +101,6 @@ namespace Gui
         private System.Windows.Forms.Panel panelExibirDataHora;
         private System.Windows.Forms.Label lb_hora;
         private System.Windows.Forms.Label lb_data;
+        private System.Windows.Forms.Timer timer1;
     }
 }

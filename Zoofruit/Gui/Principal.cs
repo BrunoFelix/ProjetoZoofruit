@@ -20,7 +20,7 @@ namespace Gui
             usuario = u;
             InitializeComponent();
             lb_usuario.Text = "Usuario logado: " + usuario.Nome + " (" + usuario.Login + ")";
-            lb_data.Text = "Versão: 15/11/2016"; 
+            lb_data.Text = "Versão: 21/11/2016"; 
         }
 
         private void quadroDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)

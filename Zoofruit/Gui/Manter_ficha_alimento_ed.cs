@@ -4,8 +4,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +17,17 @@ namespace Gui
 {
     public partial class Manter_ficha_alimento_ed : Form
     {
+
+        private Socket socket;
+        private Thread thread;
+
+
+        private NetworkStream networkStream;
+        private BinaryWriter binaryWriter;
+        private BinaryReader binaryReader;
+
+        TcpListener tcpListener;
+
 
         int tipoficha;
         Service1 webservice;
@@ -24,6 +39,9 @@ namespace Gui
         {
             try { 
                 InitializeComponent();
+                thread = new Thread(new ThreadStart(RunServer));
+                thread.Start();
+
                 this.tipoficha = tipoficha;
                 webservice = new Service1();
 
@@ -38,6 +56,61 @@ namespace Gui
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RunServer()
+        {
+
+            try
+            {
+                IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 24777);
+                tcpListener = new TcpListener(ipEndPoint);
+                tcpListener.Start();
+
+                //AddToListBox("Servidor habilitado e escutando porta..." + "Server App");
+
+                //socket = ;
+                networkStream = new NetworkStream(tcpListener.AcceptSocket());
+                binaryWriter = new BinaryWriter(networkStream);
+                binaryReader = new BinaryReader(networkStream);
+
+                MessageBox.Show("conexão recebida!" + "Server App");
+                //binaryWriter.Write("\nconexão efetuada!");
+
+                string messageReceived = "";
+                do
+                {
+                    messageReceived = binaryReader.ReadString();
+
+                   // AddToListBox("Filtro da pesquisa:" + messageReceived);
+
+                } while (socket.Connected);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (binaryReader != null)
+                {
+                    binaryReader.Close();
+                }
+                if (binaryWriter != null)
+                {
+                    binaryWriter.Close();
+                }
+                if (networkStream != null)
+                {
+                    networkStream.Close();
+                }
+                if (socket != null)
+                {
+                    socket.Close();
+                }
+                //MessageBox.Show("conexão finalizada", "Server App");
+
             }
         }
 
@@ -93,6 +166,19 @@ namespace Gui
                 fichaalimento.ListaAlimento = listaalimento.ToArray();
                 webservice.InserirFichaAlimento(fichaalimento);
 
+                try
+                {
+                    binaryWriter.Write("Funcionou");
+                }
+                catch (SocketException socketEx)
+                {
+                    MessageBox.Show(socketEx.Message, "Erro");
+                }
+                catch (Exception socketEx)
+                {
+                    MessageBox.Show(socketEx.Message, "Erro");
+                }
+
                 ((Manter_ficha_alimento)Application.OpenForms["manter_ficha_alimento"]).lv_animal_SelectedIndexChanged(sender, e);
             }catch(Exception ex)
             {
@@ -123,6 +209,12 @@ namespace Gui
             {
                 e.Handled = true;
             }
+        }
+
+        private void Manter_ficha_alimento_ed_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            tcpListener.Stop();
+            Environment.Exit(0);
         }
     }
 }

@@ -185,7 +185,17 @@ namespace Biblioteca.dados
                 {
                     sql += " and FICHA_ALIMENTO.CODIGO_USUARIO = @CODIGO_USUARIO";
                 }
- 
+
+                if (fa.DataValidade != null && fa.DataValidade.Trim().Equals("") == false)
+                {
+                    sql += " and FICHA_ALIMENTO.DT_VALIDADE >= @DT_VALIDADE";
+                }
+
+                if (fa.Hora_a_ser_executado != null && fa.Hora_a_ser_executado.Trim().Equals("") == false)
+                {
+                    sql += " and FICHA_ALIMENTO.HORA_A_SER_EXECUTADO <= @HORA_A_SER_EXECUTADO";
+                }
+
                 if (alt == false)
                 {
                     if (fa.Codigo > 0)
@@ -201,6 +211,8 @@ namespace Biblioteca.dados
                         sql += " and FICHA_ALIMENTO.CODIGO <> @CODIGO";
                     }
                 }
+
+                sql += " ORDER BY FICHA_ALIMENTO.DT_VALIDADE ASC, FICHA_ALIMENTO.HORA_A_SER_EXECUTADO ASC ";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
@@ -220,6 +232,18 @@ namespace Biblioteca.dados
                 {
                     cmd.Parameters.Add("@CODIGO", SqlDbType.VarChar);
                     cmd.Parameters["@CODIGO"].Value = fa.Codigo;
+                }
+
+                if (fa.DataValidade != null && fa.DataValidade.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@DT_VALIDADE", SqlDbType.VarChar);
+                    cmd.Parameters["@DT_VALIDADE"].Value = fa.DataValidade;
+                }
+
+                if (fa.Hora_a_ser_executado != null && fa.Hora_a_ser_executado.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@HORA_A_SER_EXECUTADO", SqlDbType.VarChar);
+                    cmd.Parameters["@HORA_A_SER_EXECUTADO"].Value = fa.Hora_a_ser_executado;
                 }
 
                 SqlDataReader reader = cmd.ExecuteReader();

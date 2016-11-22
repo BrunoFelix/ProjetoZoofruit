@@ -22,14 +22,6 @@ C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.p
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.csprojResolveAssemblyReference.cache
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.dll
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll.config
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.csprojResolveAssemblyReference.cache
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.dll
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.pdb
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll.config
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll
 C:\Users\Maikon Silva\Documents\GitHub\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.pdb
@@ -46,3 +38,11 @@ C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Webservice\bin\Bibliote
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.csprojResolveAssemblyReference.cache
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.dll
 C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll.config
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Webservice.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\bin\Biblioteca.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.csprojResolveAssemblyReference.cache
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.dll
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Webservice\obj\Debug\Webservice.pdb

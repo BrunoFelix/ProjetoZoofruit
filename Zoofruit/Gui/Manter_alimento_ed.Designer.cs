@@ -146,7 +146,7 @@
             this.btnCancelar.Text = "Cancelar [F9]";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnconfirmar
             // 
@@ -176,7 +176,7 @@
             this.Name = "Manter_alimento_ed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alimentos";
-            this.Load += new System.EventHandler(this.Manter_alimento_ed_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manter_alimento_ed_FormClosed_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

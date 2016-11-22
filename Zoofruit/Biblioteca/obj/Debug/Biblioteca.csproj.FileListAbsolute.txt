@@ -18,11 +18,6 @@ D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 D:\Meus Arquivos\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
-C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
-C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
-C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
-C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
-C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\Users\aluno\Desktop\ProjetoZoofruit-master\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
@@ -46,3 +41,8 @@ C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
+C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb

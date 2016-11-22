@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml.Linq;
+using System.Xml;
 
 namespace Gui
 {
@@ -24,18 +25,17 @@ namespace Gui
         Alimento alimento;
         public Manter_alimento_ed()
         {
-            if (File.Exists(nomeDoArquivo))
-            {
-                doc = XElement.Load(nomeDoArquivo);
-            }
-            else
-            {
-                doc = new XElement("Alimentos");
-            }
             InitializeComponent();
             webservice = new Service1();
 
-           
+            /* if (File.Exists(nomeDoArquivo))
+             {
+                 doc = XElement.Load(nomeDoArquivo);
+             }
+             else*/
+
+            //  doc = new XElement("Alimentos");
+            
         }
 
         public Manter_alimento_ed(Alimento a)
@@ -73,13 +73,22 @@ namespace Gui
             }
         }
 
-        private void Manter_alimento_ed_Load(object sender, EventArgs e)
+
+
+        private void Manter_alimento_ed_FormClosed_1(object sender, FormClosedEventArgs e)
         {
 
+            XElement alimento = new XElement("Alimento");
+            alimento.Add(new XElement("Nome", tb_nome.Text));
+            alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));
+            alimento.Add(new XElement("Quantidade", tb_quantidade.Text));
+            doc.Add(alimento);
+            doc.Save(nomeDoArquivo);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
+
             XElement alimento = new XElement("Alimento");
             alimento.Add(new XElement("Nome", tb_nome.Text));
             alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));

@@ -240,6 +240,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ficha";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Manter_ficha_alimento_ed_FormClosing);
+            this.Load += new System.EventHandler(this.Manter_ficha_alimento_ed_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

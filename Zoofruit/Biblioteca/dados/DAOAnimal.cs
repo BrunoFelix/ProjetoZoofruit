@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Biblioteca.basica;
 using Biblioteca.util;
 using System.Data.SqlClient;
-
+using System.Data;
 
 namespace Biblioteca.dados
 {
@@ -79,25 +79,9 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "DELETE FROM FICHA_ALIMENTO WHERE CODIGO_ANIMAL=@CODIGO_ANIMAL";
+                string sql = "UPDATE ANIMAL SET ATIVO = 'F' WHERE CODIGO=@CODIGO";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
-
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", a.Codigo));
-
-                cmd.ExecuteNonQuery();
-
-                sql = "DELETE FROM FICHA_MEDICAMENTO WHERE CODIGO_ANIMAL=@CODIGO_ANIMAL";
-
-                cmd = new SqlCommand(sql, conexao.sqlconn);
-
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_ANIMAL", a.Codigo));
-
-                cmd.ExecuteNonQuery();
-
-                sql = "DELETE FROM ANIMAL WHERE CODIGO=@CODIGO";
-
-                cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", a.Codigo));
 
@@ -120,51 +104,87 @@ namespace Biblioteca.dados
            try { 
             conexao.openConnection();
             string sql = "SELECT Animal.codigo, Animal.Nome, Animal.Cor, Animal.Porte, Animal.Peso, Animal.codigo_TipoAnimal, " +
-                "TipoAnimal.descricao FROM Animal LEFT JOIN TipoAnimal ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 ";
+                "TipoAnimal.descricao FROM Animal LEFT JOIN TipoAnimal ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 AND ATIVO = 'T' ";
 
                 if (a.Nome != null && a.Nome.Trim().Equals("") == false)
                 {
-                    sql += " and NOME = @NOME";
+                    sql += " and ANIMAL.NOME = @NOME";
                 }
 
                 if (a.Cor != null && a.Cor.Trim().Equals("") == false)
                 {
-                    sql += " and COR = @COR";
+                    sql += " and ANIMAL.COR = @COR";
+                }
+                     
+                if (a.Porte != null && a.Porte.Trim().Equals("") == false)
+                {
+                    sql += " and ANIMAL.PORTE = @PORTE";
                 }
 
-                if (a.Cor != null && a.Cor.Trim().Equals("") == false)
+                if (a.Peso > 0)
                 {
-                    sql += " and COR = @COR";
+                    sql += " and ANIMAL.PESO = @PESO";
                 }
 
-
-
-
-                if (u.Tipousuario.Descricao != null && u.Tipousuario.Descricao.Trim().Equals("") == false)
+                if (a.TipoAnimal.Codigo > 0)
                 {
-                    sql += " and TipoUsuario.descricao = @descricao";
+                    sql += " and ANIMAL.CODIGO_TIPOANIMAL = @CODIGO_TIPOANIMAL";
                 }
 
                 if (alt == false)
                 {
-                    if (u.Codigo > 0)
+                    if (a.Codigo > 0)
                     {
-                        sql += " and usuario.codigo = @codigo";
+                        sql += " and ANIMAL.CODIGO = @codigo";
                     }
 
                 }
                 else
                 {
-                    if (u.Codigo > 0)
+                    if (a.Codigo > 0)
                     {
-                        sql += " and usuario.codigo <> @codigo";
+                        sql += " and ANIMAL.CODIGO <> @codigo";
                     }
                 }
 
-
-
-
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                if (a.Nome != null && a.Nome.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@NOME", SqlDbType.VarChar);
+                    cmd.Parameters["@NOME"].Value = a.Nome;
+                }
+
+                if (a.Cor != null && a.Cor.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@COR", SqlDbType.VarChar);
+                    cmd.Parameters["@COR"].Value = a.Cor;
+                }
+
+                if (a.Porte != null && a.Cor.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@PORTE", SqlDbType.VarChar);
+                    cmd.Parameters["@PORTE"].Value = a.Porte;
+                }
+
+                if (a.Peso > 0)
+                {
+                    cmd.Parameters.Add("@PESO", SqlDbType.VarChar);
+                    cmd.Parameters["@PESO"].Value = a.Peso;
+                }
+
+                if (a.TipoAnimal.Codigo > 0)
+                {
+                    cmd.Parameters.Add("@CODIGO_TIPOANIMAL", SqlDbType.VarChar);
+                    cmd.Parameters["@CODIGO_TIPOANIMAL"].Value = a.TipoAnimal.Codigo;
+                }
+
+                if (a.Codigo > 0)
+                {
+                    cmd.Parameters.Add("@CODIGO", SqlDbType.VarChar);
+                    cmd.Parameters["@CODIGO"].Value = a.Codigo;
+                }
+
                 SqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -175,6 +195,7 @@ namespace Biblioteca.dados
                 animal.Cor = reader.GetString(reader.GetOrdinal("Cor"));
                 animal.Porte = reader.GetString(reader.GetOrdinal("Porte"));
                 animal.Peso = reader.GetDouble(reader.GetOrdinal("Peso"));
+                animal.TipoAnimal.Codigo = reader.GetInt32(reader.GetOrdinal("codigo_TipoAnimal"));
                 animal.TipoAnimal.Descricao = reader.GetString(reader.GetOrdinal("descricao"));
       
                 listaAnimal.Add(animal);

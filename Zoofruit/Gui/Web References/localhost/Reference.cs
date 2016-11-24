@@ -1020,7 +1020,7 @@ namespace Gui.localhost {
         
         private string nomeField;
         
-        private double pesoField;
+        private System.Nullable<double> pesoField;
         
         private string porteField;
         
@@ -1059,7 +1059,8 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
-        public double Peso {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<double> Peso {
             get {
                 return this.pesoField;
             }
@@ -1270,9 +1271,9 @@ namespace Gui.localhost {
         
         private string nomeField;
         
-        private double quantidadeField;
+        private System.Nullable<double> quantidadeField;
         
-        private double valorCaloricoField;
+        private System.Nullable<double> valorCaloricoField;
         
         /// <remarks/>
         public int Codigo {
@@ -1296,7 +1297,8 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
-        public double Quantidade {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<double> Quantidade {
             get {
                 return this.quantidadeField;
             }
@@ -1306,7 +1308,8 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
-        public double ValorCalorico {
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<double> ValorCalorico {
             get {
                 return this.valorCaloricoField;
             }

@@ -16,7 +16,7 @@ namespace Biblioteca.basica
         private byte[] foto;
         private string cor;
         private string porte;
-        private double peso;
+        private Nullable<double> peso;
         private TipoAnimal tipoAnimal;
 
         public Animal()
@@ -93,19 +93,7 @@ namespace Biblioteca.basica
             }
         }
 
-        [DataMember(IsRequired = true)]
-        public double Peso
-        {
-            get
-            {
-                return peso;
-            }
 
-            set
-            {
-                peso = value;
-            }
-        }
 
         [DataMember(IsRequired = true)]
         public TipoAnimal TipoAnimal
@@ -118,6 +106,20 @@ namespace Biblioteca.basica
             set
             {
                 tipoAnimal = value;
+            }
+        }
+
+        [DataMember(IsRequired = true)]
+        public double? Peso
+        {
+            get
+            {
+                return peso;
+            }
+
+            set
+            {
+                peso = value;
             }
         }
     }

@@ -21,6 +21,7 @@ CREATE TABLE Usuario (
 	login VARCHAR (20) NOT NULL,
 	senha VARCHAR (8) NOT NULL,
 	crmv VARCHAR (15) NOT NULL,
+	ativo varchar(1) default 'T',
 	codigo_TipoUsuario INTEGER REFERENCES TipoUsuario(codigo)
 );
 
@@ -31,6 +32,7 @@ CREATE TABLE Animal (
 	cor VARCHAR (20),
 	porte VARCHAR (18),
 	peso float,
+	ativo varchar(1) default 'T',
 	codigo_TipoAnimal INTEGER REFERENCES TipoAnimal(codigo)
 );
 
@@ -81,7 +83,8 @@ CREATE TABLE Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
 	quantidade FLOAT NOT NULL,
-	valor_calorico FLOAT NOT NULL
+	valor_calorico FLOAT NOT NULL,
+	ativo varchar(1) default 'T',
 );
 
 CREATE TABLE Ficha_Contem_Alimento (
@@ -94,7 +97,8 @@ CREATE TABLE Medicamento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
 	quantidade float NOT NULL,
-	dt_reposicao DATE NOT NULL
+	dt_reposicao DATE NOT NULL,
+	ativo varchar(1) default 'T',
 );
 
 CREATE TABLE Ficha_Contem_Medicamento (

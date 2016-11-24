@@ -76,7 +76,7 @@ namespace Gui
 
         public void RunClient()
         {
-            try
+            /*try
             {
                 tcpClient = new TcpClient();
                 //conectando ao servidor
@@ -114,7 +114,7 @@ namespace Gui
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Erro");
-            }
+            }*/
         }
 
         public void AtualizarTela()

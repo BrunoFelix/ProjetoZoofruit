@@ -39,9 +39,9 @@ namespace Gui
             {
                 InitializeComponent();
                 webservice = new Service1();
-                listaanimal = webservice.ListarAnimal(animal).ToList();
                 animal = new Animal();
                 animal.TipoAnimal = new TipoAnimal();
+                listaanimal = webservice.ListarAnimal(animal).ToList();
                 AtualizarGrid();
             }
             catch (Exception ex)
@@ -117,6 +117,7 @@ namespace Gui
                     {
                         animal = listaanimal.ElementAt(lv_animal.SelectedIndices[0]);
                         webservice.ExcluirAnimal(animal);
+                        listaanimal.Remove(animal);
                         AtualizarGrid();
                     }
                 }
@@ -129,6 +130,8 @@ namespace Gui
 
         public void btn_pesquisar_animal_Click(object sender, EventArgs e)
         {
+            Animal animal = new Animal();
+            animal.TipoAnimal = new TipoAnimal();
             if (comboBox_pesquisar_animal.SelectedIndex == 0)
             {
                 try
@@ -217,6 +220,22 @@ namespace Gui
         private void Manter_animal_FormClosed(object sender, FormClosedEventArgs e)
         {
             manter_animal = null;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Animal animal = new Animal();
+                animal.TipoAnimal = new TipoAnimal();
+                listaanimal = webservice.ListarAnimal(animal).ToList();
+                comboBox_pesquisar_animal.SelectedIndex = 0;
+                AtualizarGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

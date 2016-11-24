@@ -97,11 +97,11 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("O campo \"Hora que deve ser executada\" precisa ser preenchido!");
             }
-            if (fa.Animal.Codigo < 0)
+            if (fa.Animal.Codigo <= 0)
             {
                 throw new NegocioException("Animal inválido!");
             }
-            if (fa.Usuario.Codigo < 0)
+            if (fa.Usuario.Codigo <= 0)
             {
                 throw new NegocioException("Usuário inválido!");
             }

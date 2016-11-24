@@ -49,7 +49,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "ALTER TABLE ALIMENTO SET NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO WHERE CODIGO=@CODIGO";
+                string sql = "UPDATE ALIMENTO SET NOME=@NOME, QUANTIDADE=@QUANTIDADE, VALOR_CALORICO=@VALOR_CALORICO WHERE CODIGO=@CODIGO";
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@NOME", a.Nome));
@@ -76,7 +76,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "DELETE FROM ALIMENTO WHERE CODIGO=@CODIGO";
+                string sql = "UPDATE ALIMENTO SET ATIVO = 'F' WHERE CODIGO=@CODIGO";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
@@ -95,16 +95,71 @@ namespace Biblioteca.dados
         }
 
         //Retorna uma Lista de todos os Alimentos.
-        public List<Alimento> Pesquisar(Alimento a)
+        public List<Alimento> Pesquisar(Alimento a, bool alt = false)
         {
             List<Alimento> listaAlimento = new List<Alimento>();
 
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT ALIMENTO.CODIGO ,ALIMENTO.NOME,ALIMENTO.QUANTIDADE, ALIMENTO.VALOR_CALORICO FROM ALIMENTO ";
+                string sql = "SELECT ALIMENTO.CODIGO, ALIMENTO.NOME, ALIMENTO.QUANTIDADE, ALIMENTO.VALOR_CALORICO FROM ALIMENTO WHERE ALIMENTO.ATIVO = 'T' ";
+
+                if (a.Nome != null && a.Nome.Trim().Equals("") == false)
+                {
+                    sql += " and ALIMENTO.NOME = @NOME";
+                }
+
+                if (a.Quantidade > 0)
+                {
+                    sql += " and ALIMENTO.QUANTIDADE >= @QUANTIDADE";
+                }
+
+                if (a.ValorCalorico > 0)
+                {
+                    sql += " and ALIMENTO.VALOR_CALORICO = @VALOR_CALORICO";
+                }
+
+                if (alt == false)
+                {
+                    if (a.Codigo > 0)
+                    {
+                        sql += " and ALIMENTO.CODIGO = @codigo";
+                    }
+
+                }
+                else
+                {
+                    if (a.Codigo > 0)
+                    {
+                        sql += " and ALIMENTO.CODIGO <> @codigo";
+                    }
+                }
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                if (a.Nome != null && a.Nome.Trim().Equals("") == false)
+                {
+                    cmd.Parameters.Add("@NOME", SqlDbType.VarChar);
+                    cmd.Parameters["@NOME"].Value = a.Nome;
+                }
+
+                if (a.Quantidade > 0)
+                {
+                    cmd.Parameters.Add("@QUANTIDADE", SqlDbType.VarChar);
+                    cmd.Parameters["@QUANTIDADE"].Value = a.Quantidade;
+                }
+
+                if (a.ValorCalorico > 0)
+                {
+                    cmd.Parameters.Add("@VALOR_CALORICO", SqlDbType.VarChar);
+                    cmd.Parameters["@VALOR_CALORICO"].Value = a.ValorCalorico;
+                }
+
+                if (a.Codigo > 0)
+                {
+                    cmd.Parameters.Add("@CODIGO", SqlDbType.VarChar);
+                    cmd.Parameters["@CODIGO"].Value = a.Codigo;
+                }
 
                 SqlDataReader reader = cmd.ExecuteReader();
 

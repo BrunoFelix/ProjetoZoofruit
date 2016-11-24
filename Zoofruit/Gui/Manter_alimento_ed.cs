@@ -52,49 +52,87 @@ namespace Gui
 
         private void btnconfirmar_Click_1(object sender, EventArgs e)
         {
-            if (this.alimento == null)
+            try
             {
-                Alimento alimento = new Alimento();
-                alimento.Nome = tb_nome.Text;
-                alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
-                alimento.Quantidade = double.Parse(tb_quantidade.Text);
-                webservice.InserirAlimento(alimento);
-                ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
+                if (this.alimento == null)
+                {
+                    Alimento alimento = new Alimento();
+                    alimento.Nome = tb_nome.Text;
+                    try
+                    {
+                        alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
+                    }
+                    catch (Exception)
+                    {
+                        alimento.ValorCalorico = null;
+                    }
+
+                    try
+                    {
+                        alimento.Quantidade = double.Parse(tb_quantidade.Text);
+                    }
+                    catch (Exception)
+                    {
+                        alimento.Quantidade = null;
+                    }
+                    webservice.InserirAlimento(alimento);
+                    ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    Alimento alimento = new Alimento();
+                    alimento.Codigo = this.alimento.Codigo;
+                    alimento.Nome = tb_nome.Text;
+                    try
+                    {
+                        alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
+                    }
+                    catch (Exception)
+                    {
+                        alimento.ValorCalorico = null;
+                    }
+
+                    try
+                    {
+                        alimento.Quantidade = double.Parse(tb_quantidade.Text);
+                    }
+                    catch (Exception)
+                    {
+                        alimento.Quantidade = null;
+                    }
+                    webservice.AlterarAlimento(alimento);
+                    ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
+                    this.DialogResult = DialogResult.OK;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Alimento alimento = new Alimento();
-                alimento.Codigo = this.alimento.Codigo;
-                alimento.Nome = tb_nome.Text;
-                alimento.ValorCalorico = double.Parse(tb_valorcalorico.Text);
-                alimento.Quantidade = double.Parse(tb_quantidade.Text);
-                webservice.AlterarAlimento(alimento);
-                ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
+                MessageBox.Show(ex.Message);
+                this.DialogResult = DialogResult.None;
             }
         }
-
-
 
         private void Manter_alimento_ed_FormClosed_1(object sender, FormClosedEventArgs e)
         {
 
-            XElement alimento = new XElement("Alimento");
+            /*XElement alimento = new XElement("Alimento");
             alimento.Add(new XElement("Nome", tb_nome.Text));
             alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));
             alimento.Add(new XElement("Quantidade", tb_quantidade.Text));
             doc.Add(alimento);
-            doc.Save(nomeDoArquivo);
+            doc.Save(nomeDoArquivo);*/
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
 
-            XElement alimento = new XElement("Alimento");
+            /*XElement alimento = new XElement("Alimento");
             alimento.Add(new XElement("Nome", tb_nome.Text));
             alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));
             alimento.Add(new XElement("Quantidade", tb_quantidade.Text));
             doc.Add(alimento);
-            doc.Save(nomeDoArquivo);
+            doc.Save(nomeDoArquivo);*/
         }
     }
 }

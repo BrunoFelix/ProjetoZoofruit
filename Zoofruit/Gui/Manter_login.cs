@@ -110,7 +110,7 @@ namespace Gui
         {
             try
             {
-                comboBoxPesquisar.SelectedIndex = 1;
+                comboBoxPesquisar.SelectedIndex = 0;
                 tb_pesquisar.Text = "";
                 Usuario usuario = new Usuario();
                 TipoUsuario tipousuario = new TipoUsuario();

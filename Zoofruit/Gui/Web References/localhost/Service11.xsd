@@ -35,8 +35,8 @@
     <xs:sequence>
       <xs:element name="Codigo" type="xs:int" />
       <xs:element name="Nome" nillable="true" type="xs:string" />
-      <xs:element name="Quantidade" type="xs:double" />
-      <xs:element name="ValorCalorico" type="xs:double" />
+      <xs:element name="Quantidade" nillable="true" type="xs:double" />
+      <xs:element name="ValorCalorico" nillable="true" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Alimento" nillable="true" type="tns:Alimento" />
@@ -79,7 +79,7 @@
       <xs:element name="Codigo" type="xs:int" />
       <xs:element name="Cor" nillable="true" type="xs:string" />
       <xs:element name="Nome" nillable="true" type="xs:string" />
-      <xs:element name="Peso" type="xs:double" />
+      <xs:element name="Peso" nillable="true" type="xs:double" />
       <xs:element name="Porte" nillable="true" type="xs:string" />
       <xs:element name="TipoAnimal" nillable="true" type="tns:TipoAnimal" />
     </xs:sequence>

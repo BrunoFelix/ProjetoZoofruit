@@ -51,6 +51,10 @@ namespace Biblioteca.negocio
         {
             try
             {
+                if (u.Codigo < 0)
+                {
+                    throw new NegocioException("A usuário que você está tentando excluir não existe!");
+                }
                 daousuario.Excluir(u);
             }
             catch (Exception ex)
@@ -77,10 +81,6 @@ namespace Biblioteca.negocio
 
         private void ValidarPreenchimentoDados(Usuario u)
         {
-            if (u.Login == null || u.Login.Equals("") == true)
-            {
-                throw new NegocioException("O campo \"Login\" precisa ser preenchido!");
-            }
             if (u.Nome == null || u.Nome.Equals("") == true)
             {
                 throw new NegocioException("O campo \"Nome\" precisa ser preenchido!");
@@ -89,11 +89,15 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("O campo \"CPF\" precisa ser preenchido!");
             }
+            if (u.Login == null || u.Login.Equals("") == true)
+            {
+                throw new NegocioException("O campo \"Login\" precisa ser preenchido!");
+            }
             if (u.Senha == null || u.Senha.Equals("") == true)
             {
                 throw new NegocioException("O campo \"Senha\" precisa ser preenchido!");
             }
-            if (u.Tipousuario.Codigo <= 0)
+            if (u.Tipousuario == null)
             {
                 throw new NegocioException("O campo \"Tipo de Usuário\" precisa ser preenchido!");
             }
@@ -125,6 +129,10 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("O campo \"Senha\" deve conter entre 3 e 8 caracteres!");
             }
+            if (u.Tipousuario.Codigo <= 0)
+            {
+                throw new NegocioException("Tipo de Usuário inválido!");
+            }
         }
 
         private void VerificarDuplicidade(Usuario u, bool alt=false)
@@ -137,6 +145,7 @@ namespace Biblioteca.negocio
                 throw new NegocioException("CPF digitado já consta no sistema!");
             }
             u2 = new Usuario();
+            u2.Codigo = u.Codigo;
             u2.Login = u.Login;
             u2.Senha = u.Senha;
             if (daousuario.Pesquisar(u2, alt).Count > 0)

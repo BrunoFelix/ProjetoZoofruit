@@ -52,6 +52,7 @@ namespace Gui
                 }
                 animal = a;
                 usuario = u;
+                dtp_validade.Value = Convert.ToDateTime(DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year);
             }
             catch (Exception ex)
             {
@@ -157,8 +158,8 @@ namespace Gui
             {
                 fichaalimento = new FichaAlimento();
                 fichaalimento.Descricao = tb_descricao.Text;
-                fichaalimento.DataCriacao = dtp_validade.Text;
-                fichaalimento.DataValidade = dtp_validade.Text;
+                fichaalimento.DataCriacao = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
+                fichaalimento.DataValidade = dtp_validade.Value.ToString("yyyy-MM-dd");
                 try
                 {
                     fichaalimento.Qtd_max_cal = Convert.ToDouble(tb_qtd_max_cal.Text);
@@ -235,6 +236,11 @@ namespace Gui
             {
                 e.Handled = true;
             }
+        }
+
+        private void Manter_ficha_alimento_ed_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -77,14 +77,6 @@ namespace Gui
         {
             try
             {
-                if (comboBox1.SelectedIndex < 0)
-                {
-                    MessageBox.Show("Selecione um tipo!");
-                    comboBox1.Focus();
-                    this.DialogResult = DialogResult.None;
-                    return;
-                }
-                
                 if (this.usuario == null)
                 {
                     Usuario usuario = new Usuario();
@@ -93,10 +85,18 @@ namespace Gui
                     usuario.Crmv = tb_crmv.Text;
                     usuario.Login = tb_login.Text;
                     usuario.Senha = tb_senha.Text;
-                    tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
+                    try
+                    {
+                        tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
+                    }
+                    catch (Exception)
+                    {
+                        tipousuario = null;
+                    }
                     usuario.Tipousuario = tipousuario;
                     webservice.InserirUsuario(usuario);
                     ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click_1(sender, e);
+                    this.DialogResult = DialogResult.OK;
                 }
                 else
                 {
@@ -107,10 +107,18 @@ namespace Gui
                     usuario.Crmv = tb_crmv.Text;
                     usuario.Login = tb_login.Text;
                     usuario.Senha = tb_senha.Text;
-                    tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
+                    try
+                    {
+                        tipousuario = listatipousuario.ElementAt(comboBox1.SelectedIndex);
+                    }
+                    catch (Exception)
+                    {
+                        tipousuario = null;
+                    }
                     usuario.Tipousuario = tipousuario;
                     webservice.AlterarUsuario(usuario);
                     ((Manter_login)Application.OpenForms["manter_login"]).btn_pesquisar_Click_1(sender, e);
+                    this.DialogResult = DialogResult.OK;
                 }
             }catch (Exception ex)
             {

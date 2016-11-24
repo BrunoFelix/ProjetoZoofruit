@@ -162,6 +162,7 @@ namespace Gui
         {
             try
             {
+                comboBoxPesquisar.SelectedIndex = 0;
                 Alimento alimento = new Alimento();
                 listalimento = webservice.ListarAlimento(alimento).ToList();
                 AtualizarGrid();
@@ -200,7 +201,19 @@ namespace Gui
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (lv_alimento.SelectedIndices.Count > 0)
+                {
+                    Alimento alimento = listalimento.ElementAt(lv_alimento.SelectedIndices[0]);
+                    Manter_alimento_ed manter_alimento_ed = new Manter_alimento_ed(alimento);
+                    manter_alimento_ed.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Manter_alimento_KeyDown(object sender, KeyEventArgs e)

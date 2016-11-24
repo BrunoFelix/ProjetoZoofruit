@@ -14,8 +14,8 @@ namespace Biblioteca.basica
     {
         private int codigo;
         private string nome;
-        private double quantidade;
-        private double valorCalorico;
+        private Nullable<double> quantidade;
+        private Nullable<double> valorCalorico;
 
         [DataMember(IsRequired = true)]
         public int Codigo
@@ -46,7 +46,7 @@ namespace Biblioteca.basica
         }
 
         [DataMember(IsRequired = true)]
-        public double Quantidade
+        public double? Quantidade
         {
             get
             {
@@ -60,7 +60,7 @@ namespace Biblioteca.basica
         }
 
         [DataMember(IsRequired = true)]
-        public double ValorCalorico
+        public double? ValorCalorico
         {
             get
             {

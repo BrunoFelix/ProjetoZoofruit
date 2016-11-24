@@ -51,7 +51,7 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "ALTER TABLE USUARIO SET CPF=@CPF, LOGIN=@LOGIN, SENHA=@SENHA, CRMV=@CRMV, CODIGO_TIPOUSUARIO=@CODIGO_TIPOUSUARIO) WHERE CODIGO=@CODIGO";
+                string sql = "UPDATE USUARIO SET CPF=@CPF, LOGIN=@LOGIN, SENHA=@SENHA, CRMV=@CRMV, CODIGO_TIPOUSUARIO=@CODIGO_TIPOUSUARIO WHERE CODIGO=@CODIGO";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
@@ -79,25 +79,9 @@ namespace Biblioteca.dados
             conexao.openConnection();
             try
             {
-                string sql = "DELETE FROM FICHA_ALIMENTO WHERE CODIGO_USUARIO=@CODIGO_USUARIO";
+                string sql = "UPDATE USUARIO SET ATIVO = 'F' WHERE CODIGO=@CODIGO";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
-
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", u.Codigo));
-
-                cmd.ExecuteNonQuery();
-
-                sql = "DELETE FROM FICHA_MEDICAMENTO WHERE CODIGO_USUARIO=@CODIGO_USUARIO";
-
-                cmd = new SqlCommand(sql, conexao.sqlconn);
-
-                cmd.Parameters.Add(new SqlParameter("@CODIGO_USUARIO", u.Codigo));
-
-                cmd.ExecuteNonQuery();
-
-                sql = "DELETE FROM USUARIO WHERE CODIGO=@CODIGO";
-
-                cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 cmd.Parameters.Add(new SqlParameter("@CODIGO", u.Codigo));
 
@@ -121,7 +105,7 @@ namespace Biblioteca.dados
             {
                 conexao.openConnection();
                 string sql = "SELECT Usuario.codigo, Usuario.nome, Usuario.cpf, Usuario.login, Usuario.senha, Usuario.crmv, Usuario.codigo_TipoUsuario, "+ 
-                    "TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoUsuario.codigo = Usuario.codigo_TipoUsuario) WHERE Usuario.codigo > 0 ";
+                    "TipoUsuario.descricao FROM Usuario LEFT JOIN TipoUsuario ON (TipoUsuario.codigo = Usuario.codigo_TipoUsuario) WHERE Usuario.codigo > 0 AND ATIVO = 'T' ";
         
                 if (u.Login != null && u.Login.Trim().Equals("") == false)
                 {

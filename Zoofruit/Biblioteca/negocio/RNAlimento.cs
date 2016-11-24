@@ -21,9 +21,9 @@ namespace Biblioteca.negocio
         {
             try
             {
-                /*ValidarPreenchimentoDados(u);
-                ValidarDados(u);
-                VerificarDuplicidade(u);*/
+                ValidarPreenchimentoDados(a);
+                ValidarDados(a);
+                VerificarDuplicidade(a);
                 daoalimento.Adicionar(a);
             }
             catch (Exception ex)
@@ -36,9 +36,9 @@ namespace Biblioteca.negocio
         {
             try
             {
-                /*ValidarPreenchimentoDados(u);
-                ValidarDados(u);
-                VerificarDuplicidade(u, true);*/
+                ValidarPreenchimentoDados(a);
+                ValidarDados(a);
+                VerificarDuplicidade(a, true);
                 daoalimento.Alterar(a);
             }
             catch (Exception ex)
@@ -51,6 +51,10 @@ namespace Biblioteca.negocio
         {
             try
             {
+                if (a.Codigo < 0)
+                {
+                    throw new NegocioException("O alimento que você está tentando excluir não existe!");
+                }
                 daoalimento.Excluir(a);
             }
             catch (Exception ex)
@@ -72,6 +76,50 @@ namespace Biblioteca.negocio
         }
 
         //######################################### VALIDAÇÕES
-    
+
+        private void ValidarPreenchimentoDados(Alimento a)
+        {
+            if (a.Nome == null || a.Nome.Equals("") == true)
+            {
+                throw new NegocioException("O campo \"Nome\" precisa ser preenchido!");
+            }
+            if (a.ValorCalorico == null)
+            {
+                throw new NegocioException("O campo \"Valor Calórico\" precisa ser preenchido!");
+            }
+            if (a.Quantidade == null)
+            {
+                throw new NegocioException("O campo \"Quantidade\" precisa ser preenchido!");
+            }
+        }
+
+        private void ValidarDados(Alimento a)
+        {
+            if (a.Nome.Length < 3 || a.Nome.Length > 20)
+            {
+                throw new NegocioException("Nome inválido!");
+            }
+            if (a.ValorCalorico <= 0)
+            {
+                throw new NegocioException("Valor Calórico inválido!");
+            }
+            if (a.Quantidade <= 0)
+            {
+                throw new NegocioException("Quantidade inválida!");
+            }
+        }
+
+        private void VerificarDuplicidade(Alimento a, bool alt = false)
+        {
+            Alimento a2 = new Alimento();
+            a2.Codigo = a.Codigo;
+            a2.Nome = a.Nome;
+            //a2.TipoAnimal = a.TipoAnimal;
+            if (daoalimento.Pesquisar(a2, alt).Count > 0)
+            {
+                throw new NegocioException("Alimento digitado já consta no sistema!");
+            }
+        }
+
     }
 }

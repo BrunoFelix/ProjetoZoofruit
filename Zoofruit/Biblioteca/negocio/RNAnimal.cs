@@ -21,9 +21,9 @@ namespace Biblioteca.negocio
         {
             try
             {
-                /*ValidarPreenchimentoDados(u);
-                ValidarDados(u);
-                VerificarDuplicidade(u);*/
+                ValidarPreenchimentoDados(a);
+                ValidarDados(a);
+                VerificarDuplicidade(a);
                 daoanimal.Adicionar(a);
             }
             catch (Exception ex)
@@ -36,9 +36,9 @@ namespace Biblioteca.negocio
         {
             try
             {
-                /*ValidarPreenchimentoDados(u);
-                ValidarDados(u);
-                VerificarDuplicidade(u, true);*/
+                ValidarPreenchimentoDados(a);
+                ValidarDados(a);
+                VerificarDuplicidade(a, true);
                 daoanimal.Alterar(a);
             }
             catch (Exception ex)
@@ -51,6 +51,10 @@ namespace Biblioteca.negocio
         {
             try
             {
+                if (a.Codigo < 0)
+                {
+                    throw new NegocioException("O animal que você está tentando excluir não existe!");
+                }
                 daoanimal.Excluir(a);
             }
             catch (Exception ex)
@@ -85,13 +89,13 @@ namespace Biblioteca.negocio
             }
             if (a.Porte == null || a.Porte.Equals("") == true)
             {
-                throw new NegocioException("O campo \"CPF\" precisa ser preenchido!");
+                throw new NegocioException("O campo \"Porte\" precisa ser preenchido!");
             }
-            if (a.Peso < 0)
+            if (a.Peso == null)
             {
                 throw new NegocioException("O campo \"Peso\" precisa ser preenchido!");
             }
-            if (a.TipoAnimal.Codigo <= 0)
+            if (a.TipoAnimal == null)
             {
                 throw new NegocioException("O campo \"Espécie\" precisa ser preenchido!");
             }
@@ -115,6 +119,10 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("Peso inválido!");
             }
+            if (a.TipoAnimal.Codigo <= 0)
+            {
+                throw new NegocioException("Espécie inválida!");
+            }
         }
 
         private void VerificarDuplicidade(Animal a, bool alt = false)
@@ -122,10 +130,11 @@ namespace Biblioteca.negocio
             Animal a2 = new Animal();
             a2.Codigo = a.Codigo;
             a2.Nome = a.Nome;
-            a2.TipoAnimal = a.TipoAnimal;
+            //a2.TipoAnimal = a.TipoAnimal;
             if (daoanimal.Pesquisar(a2, alt).Count > 0)
             {
-                throw new NegocioException("CPF digitado já consta no sistema!");
+                throw new NegocioException("Animal digitado já consta no sistema!");
             }
         }
+    }
 }

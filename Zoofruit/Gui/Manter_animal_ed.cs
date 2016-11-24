@@ -105,10 +105,23 @@ namespace Gui
                     animal.Nome = tb_nome.Text;
                     animal.Cor = tb_cor.Text;
                     animal.Porte = tb_porte.Text;
-                    animal.Peso = Int32.Parse(tb_peso.Text);
+                    try
+                    {
+                        animal.Peso = Int32.Parse(tb_peso.Text);
+                    }catch (Exception)
+                    {
+                        animal.Peso = null;
+                    }
                     //animal.Foto = tb_senha.Text;
-                    tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
-                    animal.TipoAnimal = tipoanimal;
+                    try
+                    {
+                        tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
+                    }
+                    catch (Exception)
+                    {
+                        tipoanimal = null;
+                    }
+                        animal.TipoAnimal = tipoanimal;
                     webservice.InserirAnimal(animal);
                     ((Manter_animal)Application.OpenForms["manter_animal"]).btn_pesquisar_animal_Click(sender, e);
                 }
@@ -119,9 +132,23 @@ namespace Gui
                     animal.Nome = tb_nome.Text;
                     animal.Cor = tb_cor.Text;
                     animal.Porte = tb_porte.Text;
-                    animal.Peso = Int32.Parse(tb_peso.Text);
+                    try
+                    {
+                        animal.Peso = Int32.Parse(tb_peso.Text);
+                    }
+                    catch (Exception)
+                    {
+                        animal.Peso = null;
+                    }
                     //animal.Foto = tb_senha.Text;
-                    tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
+                    try
+                    {
+                        tipoanimal = listatipoanimal.ElementAt(comboBox1.SelectedIndex);
+                    }
+                    catch (Exception)
+                    {
+                        tipoanimal = null;
+                    }
                     animal.TipoAnimal = tipoanimal;
                     webservice.AlterarAnimal(animal);
                     ((Manter_animal)Application.OpenForms["manter_animal"]).btn_pesquisar_animal_Click(sender, e);
@@ -129,6 +156,7 @@ namespace Gui
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                this.DialogResult = DialogResult.None;
             }
         }
     }

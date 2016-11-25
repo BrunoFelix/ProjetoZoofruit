@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -23,9 +24,6 @@ namespace Gui
 
         private Thread thread;
 
-
-
-
         private int tamanho_panel = 10;
         private int altura_panel = 90;
         private int i = 0;
@@ -35,14 +33,17 @@ namespace Gui
         List<FichaAlimento> listafichaalimento;
         FichaAlimento fichaalimento = new FichaAlimento();
         Service1 webservice;
+        Usuario usuario;
 
-        public static Manter_ficha_execucao getInstance()
+
+
+        public static Manter_ficha_execucao getInstance(Usuario u)
         {
             if (manter_ficha_execucao == null)
             {
                 try
                 {
-                    manter_ficha_execucao = new Manter_ficha_execucao();
+                    manter_ficha_execucao = new Manter_ficha_execucao(u);
                 }
                 catch (Exception ex)
                 {
@@ -51,11 +52,12 @@ namespace Gui
             }
             return manter_ficha_execucao;
         }
-        private Manter_ficha_execucao()
+        private Manter_ficha_execucao(Usuario u)
         {
             try
             {
                 InitializeComponent();
+                usuario = u;
                 thread = new Thread(new ThreadStart(RunClient));
                 thread.Start();
                 webservice = new Service1();
@@ -66,7 +68,7 @@ namespace Gui
                 fichaalimento.DataValidade = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
                 fichaalimento.Hora_a_ser_executado = DateTime.Now.Hour.ToString();
                 listafichaalimento = webservice.ListarFichaAlimento(fichaalimento).ToList();
-                AtualizarTela();
+                AtualizarTela();           
             }
             catch (Exception ex)
             {
@@ -236,7 +238,7 @@ namespace Gui
             fichaalimento.Usuario = new Usuario();
             fichaalimento.ListaAlimento = new List<Alimento>().ToArray();
             fichaalimento = webservice.ListarFichaAlimento(fichaalimento)[0];
-            Manter_ficha_execucao_ed manter_ficha_execucao_ed = new Manter_ficha_execucao_ed(fichaalimento);
+            Manter_ficha_execucao_ed manter_ficha_execucao_ed = new Manter_ficha_execucao_ed(fichaalimento, usuario);
             manter_ficha_execucao_ed.ShowDialog();
         }
 
@@ -266,6 +268,7 @@ namespace Gui
         private void Manter_ficha_execucao_Load(object sender, EventArgs e)
         {
             lb_data.Text = "Data: " + DateTime.Now.Day.ToString() + "/" + DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString();
+            lb_hora.Text = "Hora: " + DateTime.Now.Hour.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

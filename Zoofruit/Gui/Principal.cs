@@ -25,7 +25,7 @@ namespace Gui
 
         private void quadroDeTarefasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Manter_ficha_execucao manter_ficha_execucao = Manter_ficha_execucao.getInstance();
+            Manter_ficha_execucao manter_ficha_execucao = Manter_ficha_execucao.getInstance(usuario);
             manter_ficha_execucao.Show();
             manter_ficha_execucao.BringToFront();
         }
@@ -70,6 +70,10 @@ namespace Gui
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void testeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }

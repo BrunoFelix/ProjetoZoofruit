@@ -45,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_data = new System.Windows.Forms.Label();
             this.lb_usuario = new System.Windows.Forms.Label();
+            this.testeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -110,7 +111,8 @@
             this.movimentaçãoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consultarAnimalToolStripMenuItem,
             this.quadroDeTarefasToolStripMenuItem,
-            this.histórioDeTarefasToolStripMenuItem});
+            this.histórioDeTarefasToolStripMenuItem,
+            this.testeToolStripMenuItem});
             this.movimentaçãoToolStripMenuItem.Name = "movimentaçãoToolStripMenuItem";
             this.movimentaçãoToolStripMenuItem.Size = new System.Drawing.Size(99, 20);
             this.movimentaçãoToolStripMenuItem.Text = "Movimentação";
@@ -185,6 +187,13 @@
             this.lb_usuario.TabIndex = 0;
             this.lb_usuario.Text = "Usuario";
             // 
+            // testeToolStripMenuItem
+            // 
+            this.testeToolStripMenuItem.Name = "testeToolStripMenuItem";
+            this.testeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.testeToolStripMenuItem.Text = "Teste";
+            this.testeToolStripMenuItem.Click += new System.EventHandler(this.testeToolStripMenuItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,5 +235,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_usuario;
         private System.Windows.Forms.Label lb_data;
+        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem;
     }
 }

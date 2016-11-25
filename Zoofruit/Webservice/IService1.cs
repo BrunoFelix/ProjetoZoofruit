@@ -93,6 +93,9 @@ namespace Webservice
         #region Ficha Execução Alimento
         [OperationContract]
         List<Alimento> PesquisarAlimentoFichaExecucaoAlimento(int codigo);
+
+        [OperationContract]
+        void Salvar(FichaExecucaoAlimento fea,  double qtd_max_cal);
         #endregion
     }
 

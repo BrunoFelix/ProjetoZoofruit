@@ -11,19 +11,19 @@ namespace Biblioteca.negocio
 {
     public class RNFichaExecucaoAlimento : NegocioException
     {
+        private DateTime resultado;
         DAOFichaExecucaoAlimento daofichaexecucaoalimento;
         public RNFichaExecucaoAlimento()
         {
             daofichaexecucaoalimento = new DAOFichaExecucaoAlimento();
         }
 
-        public void Adicionar(FichaExecucaoAlimento fae)
+        public void Salvar(FichaExecucaoAlimento fae, double qtd_max_cal)
         {
             try
             {
-                /*ValidarPreenchimentoDados(u);
-                ValidarDados(u);
-                VerificarDuplicidade(u);*/
+                ValidarPreenchimentoDados(fae);
+                CalcularQtdMaxCal(fae, qtd_max_cal);
                 daofichaexecucaoalimento.Adicionar(fae);
             }
             catch (Exception ex)
@@ -32,44 +32,6 @@ namespace Biblioteca.negocio
             }
         }
 
-        public void Alterar(FichaExecucaoAlimento fae)
-        {
-            try
-            {
-                /*ValidarPreenchimentoDados(u);
-                ValidarDados(u);
-                VerificarDuplicidade(u, true);*/
-                daofichaexecucaoalimento.Alterar(fae);
-            }
-            catch (Exception ex)
-            {
-                throw new NegocioException(ex.Message);
-            }
-        }
-
-        public void Excluir(FichaExecucaoAlimento fae)
-        {
-            try
-            {
-                daofichaexecucaoalimento.Excluir(fae);
-            }
-            catch (Exception ex)
-            {
-                throw new NegocioException(ex.Message);
-            }
-        }
-
-        public List<FichaExecucaoAlimento> NListarFichaExecucaoAlimento(FichaExecucaoAlimento fae)
-        {
-            try
-            {
-                return daofichaexecucaoalimento.Pesquisar(fae);
-            }
-            catch (Exception ex)
-            {
-                throw new NegocioException(ex.Message);
-            }
-        }
 
         public List<Alimento> NListarFichaExecucaoAlimentoAlimento(int codigo)
         {
@@ -83,5 +45,51 @@ namespace Biblioteca.negocio
             }
         }
 
+        //######################################### VALIDAÇÕES
+
+        private void ValidarPreenchimentoDados(FichaExecucaoAlimento fae)
+        {
+            if (fae.DataExecucao == null || fae.DataExecucao.Equals("") == true)
+            {
+                throw new NegocioException("O campo \"Data de Execução\" precisa ser preenchido!");
+            }
+            if (!DateTime.TryParse(fae.DataExecucao.Trim(), out resultado))
+            {
+                throw new NegocioException("Data de Execução Inválida!");
+            }
+            if (fae.Usuario == null || fae.Usuario.Codigo <= 0)
+            {
+                throw new NegocioException("Usuário inválido!");
+            }
+            if (fae.FichaAlimento == null)
+            {
+                throw new NegocioException("Não é possivel executar uma ficha sem montar uma cesta!");
+            }
+        }
+
+        private void CalcularQtdMaxCal(FichaExecucaoAlimento fae, double qtd_max_cal)
+        {
+            double valoracumulado = 0;
+            double valorreal = (qtd_max_cal * 10) / 100;
+            foreach (Alimento alimento in fae.ListaAlimento)
+            {
+                valoracumulado += (double)(alimento.Quantidade * alimento.ValorCalorico);
+            }
+
+            if (qtd_max_cal > valoracumulado)
+            {
+                if ((qtd_max_cal - valoracumulado) > valorreal)
+                {
+                    throw new NegocioException("A quantidade máxima de calórias não pode ultrapassar 10% nem para mais, nem para menos!");
+                }
+            }
+            else if (valoracumulado >= qtd_max_cal)
+            {
+                if ((valoracumulado - qtd_max_cal) > valorreal)
+                {
+                    throw new NegocioException("A quantidade máxima de calórias não pode ultrapassar 10% nem para mais, nem para menos!");
+                }
+            }
+        }
     }
 }

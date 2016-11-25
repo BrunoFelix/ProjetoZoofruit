@@ -120,4 +120,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfFichaAlimento" nillable="true" type="tns:ArrayOfFichaAlimento" />
+  <xs:complexType name="FichaExecucaoAlimento">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:FichaExecucao">
+        <xs:sequence>
+          <xs:element name="ListaAlimento" nillable="true" type="tns:ArrayOfAlimento" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FichaExecucaoAlimento" nillable="true" type="tns:FichaExecucaoAlimento" />
+  <xs:complexType name="FichaExecucao">
+    <xs:sequence>
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element name="DataExecucao" nillable="true" type="xs:string" />
+      <xs:element name="FichaAlimento" nillable="true" type="tns:FichaAlimento" />
+      <xs:element name="Observacao" nillable="true" type="xs:string" />
+      <xs:element name="Status" nillable="true" type="xs:string" />
+      <xs:element name="Usuario" nillable="true" type="tns:Usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FichaExecucao" nillable="true" type="tns:FichaExecucao" />
 </xs:schema>

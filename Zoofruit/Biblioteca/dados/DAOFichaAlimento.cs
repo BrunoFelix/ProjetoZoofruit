@@ -204,7 +204,7 @@ namespace Biblioteca.dados
                     sql += " and FICHA_ALIMENTO.CODIGO = @CODIGO";
                 }
             
-                sql += " ORDER BY FICHA_ALIMENTO.DT_VALIDADE ASC, FICHA_ALIMENTO.HORA_A_SER_EXECUTADO ASC ";
+                sql += " ORDER BY FICHA_ALIMENTO.HORA_A_SER_EXECUTADO ASC ";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 

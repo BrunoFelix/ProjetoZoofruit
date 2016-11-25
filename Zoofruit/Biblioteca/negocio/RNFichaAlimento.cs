@@ -121,7 +121,7 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("Quantidade Máxima de Calórias Inválida!");
             }
-            if (!Int32.TryParse(fa.Hora_a_ser_executado, out resultado2))
+            if (!Int32.TryParse(fa.Hora_a_ser_executado, out resultado2) )
             {
                 throw new NegocioException("Hora que deve ser executada Inválida!");
             }

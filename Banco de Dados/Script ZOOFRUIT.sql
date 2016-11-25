@@ -61,8 +61,7 @@ CREATE TABLE Ficha_Medicamento (
 
 CREATE TABLE Ficha_Execucao_Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
-	dt_execucao DATE NOT NULL,
-	hr_execucao TIME NOT NULL,
+	dt_execucao DATETIME NOT NULL,
 	status VARCHAR (12) NOT NULL,
 	observacao VARCHAR (50) NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
@@ -71,8 +70,7 @@ CREATE TABLE Ficha_Execucao_Alimento (
 
 CREATE TABLE Ficha_Execucao_Medicamento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
-	dt_execucao DATE NOT NULL,
-	hr_execucao TIME NOT NULL,
+	dt_execucao DATETIME NOT NULL,
 	status VARCHAR (12) NOT NULL,
 	observacao VARCHAR (50) NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),

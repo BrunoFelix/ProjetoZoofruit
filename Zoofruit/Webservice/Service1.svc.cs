@@ -158,5 +158,10 @@ namespace Webservice
         {
             return rnfichaexecucaoalimento.NListarFichaExecucaoAlimentoAlimento(codigo);
         }
+
+        public void Salvar(FichaExecucaoAlimento fea, double qtd_max_cal)
+        {
+            rnfichaexecucaoalimento.Salvar(fea, qtd_max_cal);
+        }
     }
 }

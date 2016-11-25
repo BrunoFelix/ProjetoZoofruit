@@ -56,6 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_quantidade = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             this.groupBox1.Controls.Add(this.lb_codigo_ficha);
             this.groupBox1.Location = new System.Drawing.Point(5, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(944, 100);
+            this.groupBox1.Size = new System.Drawing.Size(944, 95);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados da ficha";
@@ -154,11 +155,11 @@
             // 
             this.lb_montar_cardapio.AutoSize = true;
             this.lb_montar_cardapio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold);
-            this.lb_montar_cardapio.Location = new System.Drawing.Point(421, 9);
+            this.lb_montar_cardapio.Location = new System.Drawing.Point(435, 8);
             this.lb_montar_cardapio.Name = "lb_montar_cardapio";
-            this.lb_montar_cardapio.Size = new System.Drawing.Size(128, 17);
+            this.lb_montar_cardapio.Size = new System.Drawing.Size(104, 17);
             this.lb_montar_cardapio.TabIndex = 0;
-            this.lb_montar_cardapio.Text = "Montar Cardápio";
+            this.lb_montar_cardapio.Text = "Montar Cesta";
             this.lb_montar_cardapio.Click += new System.EventHandler(this.label1_Click);
             // 
             // lv_alimento
@@ -233,7 +234,7 @@
             this.lv_cardapio.Location = new System.Drawing.Point(0, 378);
             this.lv_cardapio.MultiSelect = false;
             this.lv_cardapio.Name = "lv_cardapio";
-            this.lv_cardapio.Size = new System.Drawing.Size(953, 200);
+            this.lv_cardapio.Size = new System.Drawing.Size(953, 201);
             this.lv_cardapio.TabIndex = 14;
             this.lv_cardapio.UseCompatibleStateImageBehavior = false;
             this.lv_cardapio.View = System.Windows.Forms.View.Details;
@@ -263,7 +264,7 @@
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(478, 588);
+            this.button2.Location = new System.Drawing.Point(478, 661);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 48);
             this.button2.TabIndex = 17;
@@ -276,7 +277,7 @@
             this.button4.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(382, 588);
+            this.button4.Location = new System.Drawing.Point(382, 661);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 48);
             this.button4.TabIndex = 16;
@@ -288,7 +289,7 @@
             // lb_total_calorias
             // 
             this.lb_total_calorias.AutoSize = true;
-            this.lb_total_calorias.Location = new System.Drawing.Point(657, 594);
+            this.lb_total_calorias.Location = new System.Drawing.Point(654, 604);
             this.lb_total_calorias.Name = "lb_total_calorias";
             this.lb_total_calorias.Size = new System.Drawing.Size(178, 13);
             this.lb_total_calorias.TabIndex = 18;
@@ -297,7 +298,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(648, 581);
+            this.label2.Location = new System.Drawing.Point(648, 591);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(301, 13);
             this.label2.TabIndex = 19;
@@ -321,11 +322,23 @@
             this.tb_quantidade.TabIndex = 22;
             this.tb_quantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_quantidade_KeyPress);
             // 
+            // 
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 581);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Observação:";
+            // 
             // Manter_ficha_execucao_ed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 647);
+            this.ClientSize = new System.Drawing.Size(953, 715);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_quantidade);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -343,7 +356,7 @@
             this.MinimizeBox = false;
             this.Name = "Manter_ficha_execucao_ed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Executar ficha";
+            this.Text = "Executando ficha";
             this.Load += new System.EventHandler(this.Manter_ficha_execucao_ed_Load);
             this.Resize += new System.EventHandler(this.Manter_ficha_execucao_ed_Resize);
             this.groupBox1.ResumeLayout(false);
@@ -384,5 +397,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_quantidade;
+        private System.Windows.Forms.Label label1;
     }
 }

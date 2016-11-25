@@ -293,4 +293,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Salvar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fea" nillable="true" type="q31:FichaExecucaoAlimento" />
+        <xs:element minOccurs="0" name="qtd_max_cal" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SalvarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

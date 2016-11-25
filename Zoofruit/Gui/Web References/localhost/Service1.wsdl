@@ -145,6 +145,12 @@
   <wsdl:message name="IService1_PesquisarAlimentoFichaExecucaoAlimento_OutputMessage">
     <wsdl:part name="parameters" element="tns:PesquisarAlimentoFichaExecucaoAlimentoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Salvar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Salvar" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Salvar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SalvarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ListarTipoUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoUsuario" message="tns:IService1_ListarTipoUsuario_InputMessage" />
@@ -237,6 +243,10 @@
     <wsdl:operation name="PesquisarAlimentoFichaExecucaoAlimento">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/PesquisarAlimentoFichaExecucaoAlimento" message="tns:IService1_PesquisarAlimentoFichaExecucaoAlimento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/PesquisarAlimentoFichaExecucaoAlimentoResponse" message="tns:IService1_PesquisarAlimentoFichaExecucaoAlimento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Salvar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Salvar" message="tns:IService1_Salvar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SalvarResponse" message="tns:IService1_Salvar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -441,6 +451,15 @@
     </wsdl:operation>
     <wsdl:operation name="PesquisarAlimentoFichaExecucaoAlimento">
       <soap:operation soapAction="http://tempuri.org/IService1/PesquisarAlimentoFichaExecucaoAlimento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Salvar">
+      <soap:operation soapAction="http://tempuri.org/IService1/Salvar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

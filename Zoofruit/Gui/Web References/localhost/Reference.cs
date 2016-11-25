@@ -27,6 +27,7 @@ namespace Gui.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_IService1", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FichaExecucao))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(Ficha))]
     public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
@@ -75,6 +76,8 @@ namespace Gui.localhost {
         private System.Threading.SendOrPostCallback ExcluirFichaAlimentoOperationCompleted;
         
         private System.Threading.SendOrPostCallback PesquisarAlimentoFichaExecucaoAlimentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SalvarOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -182,6 +185,9 @@ namespace Gui.localhost {
         
         /// <remarks/>
         public event PesquisarAlimentoFichaExecucaoAlimentoCompletedEventHandler PesquisarAlimentoFichaExecucaoAlimentoCompleted;
+        
+        /// <remarks/>
+        public event SalvarCompletedEventHandler SalvarCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -854,6 +860,38 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/Salvar", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void Salvar([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] FichaExecucaoAlimento fea, double qtd_max_cal, [System.Xml.Serialization.XmlIgnoreAttribute()] bool qtd_max_calSpecified) {
+            this.Invoke("Salvar", new object[] {
+                        fea,
+                        qtd_max_cal,
+                        qtd_max_calSpecified});
+        }
+        
+        /// <remarks/>
+        public void SalvarAsync(FichaExecucaoAlimento fea, double qtd_max_cal, bool qtd_max_calSpecified) {
+            this.SalvarAsync(fea, qtd_max_cal, qtd_max_calSpecified, null);
+        }
+        
+        /// <remarks/>
+        public void SalvarAsync(FichaExecucaoAlimento fea, double qtd_max_cal, bool qtd_max_calSpecified, object userState) {
+            if ((this.SalvarOperationCompleted == null)) {
+                this.SalvarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSalvarOperationCompleted);
+            }
+            this.InvokeAsync("Salvar", new object[] {
+                        fea,
+                        qtd_max_cal,
+                        qtd_max_calSpecified}, this.SalvarOperationCompleted, userState);
+        }
+        
+        private void OnSalvarOperationCompleted(object arg) {
+            if ((this.SalvarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SalvarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -902,6 +940,187 @@ namespace Gui.localhost {
             }
             set {
                 this.descricaoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FichaExecucaoAlimento))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class FichaExecucao {
+        
+        private int codigoField;
+        
+        private string dataExecucaoField;
+        
+        private FichaAlimento fichaAlimentoField;
+        
+        private string observacaoField;
+        
+        private string statusField;
+        
+        private Usuario usuarioField;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string DataExecucao {
+            get {
+                return this.dataExecucaoField;
+            }
+            set {
+                this.dataExecucaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public FichaAlimento FichaAlimento {
+            get {
+                return this.fichaAlimentoField;
+            }
+            set {
+                this.fichaAlimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Observacao {
+            get {
+                return this.observacaoField;
+            }
+            set {
+                this.observacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Usuario Usuario {
+            get {
+                return this.usuarioField;
+            }
+            set {
+                this.usuarioField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class FichaAlimento : Ficha {
+        
+        private Alimento[] listaAlimentoField;
+        
+        private double qtd_max_calField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Alimento[] ListaAlimento {
+            get {
+                return this.listaAlimentoField;
+            }
+            set {
+                this.listaAlimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Qtd_max_cal {
+            get {
+                return this.qtd_max_calField;
+            }
+            set {
+                this.qtd_max_calField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+    public partial class Alimento {
+        
+        private int codigoField;
+        
+        private string nomeField;
+        
+        private System.Nullable<double> quantidadeField;
+        
+        private System.Nullable<double> valorCaloricoField;
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string Nome {
+            get {
+                return this.nomeField;
+            }
+            set {
+                this.nomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<double> Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Nullable<double> ValorCalorico {
+            get {
+                return this.valorCaloricoField;
+            }
+            set {
+                this.valorCaloricoField = value;
             }
         }
     }
@@ -1231,11 +1450,9 @@ namespace Gui.localhost {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
-    public partial class FichaAlimento : Ficha {
+    public partial class FichaExecucaoAlimento : FichaExecucao {
         
         private Alimento[] listaAlimentoField;
-        
-        private double qtd_max_calField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
@@ -1245,76 +1462,6 @@ namespace Gui.localhost {
             }
             set {
                 this.listaAlimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Qtd_max_cal {
-            get {
-                return this.qtd_max_calField;
-            }
-            set {
-                this.qtd_max_calField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
-    public partial class Alimento {
-        
-        private int codigoField;
-        
-        private string nomeField;
-        
-        private System.Nullable<double> quantidadeField;
-        
-        private System.Nullable<double> valorCaloricoField;
-        
-        /// <remarks/>
-        public int Codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string Nome {
-            get {
-                return this.nomeField;
-            }
-            set {
-                this.nomeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<double> Quantidade {
-            get {
-                return this.quantidadeField;
-            }
-            set {
-                this.quantidadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public System.Nullable<double> ValorCalorico {
-            get {
-                return this.valorCaloricoField;
-            }
-            set {
-                this.valorCaloricoField = value;
             }
         }
     }
@@ -1645,6 +1792,10 @@ namespace Gui.localhost {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void SalvarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

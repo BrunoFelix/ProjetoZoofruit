@@ -47,6 +47,7 @@
     <Compile Include="basica\Animal.cs" />
     <Compile Include="basica\Ficha.cs" />
     <Compile Include="basica\FichaAlimento.cs" />
+    <Compile Include="basica\FichaExecucao.cs" />
     <Compile Include="basica\FichaExecucaoAlimento.cs" />
     <Compile Include="basica\FichaExecucaoMedicamento.cs" />
     <Compile Include="basica\FichaMedicamento.cs" />

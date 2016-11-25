@@ -56,6 +56,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_quantidade = new System.Windows.Forms.TextBox();
+            this.rtb_obs = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -322,7 +323,13 @@
             this.tb_quantidade.TabIndex = 22;
             this.tb_quantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_quantidade_KeyPress);
             // 
+            // rtb_obs
             // 
+            this.rtb_obs.Location = new System.Drawing.Point(5, 597);
+            this.rtb_obs.Name = "rtb_obs";
+            this.rtb_obs.Size = new System.Drawing.Size(646, 58);
+            this.rtb_obs.TabIndex = 23;
+            this.rtb_obs.Text = "";
             // 
             // label1
             // 
@@ -339,6 +346,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 715);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.rtb_obs);
             this.Controls.Add(this.tb_quantidade);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -397,6 +405,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tb_quantidade;
+        private System.Windows.Forms.RichTextBox rtb_obs;
         private System.Windows.Forms.Label label1;
     }
 }

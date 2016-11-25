@@ -108,14 +108,14 @@ CREATE TABLE Ficha_Contem_Medicamento (
 CREATE TABLE Ficha_Execucao_Contem_Medicamento (
 	quantidade float NOT NULL,
 	codigo_Medicamento INTEGER REFERENCES Medicamento(codigo),
-	codigo_Ficha_Execucao_Medicamento INTEGER REFERENCES Ficha_Medicamento(codigo)
+	codigo_Ficha_Execucao_Medicamento INTEGER REFERENCES Ficha_Execucao_Medicamento(codigo)
 	CONSTRAINT PK_Ficha_Execucao_Contem_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_Ficha_Execucao_Medicamento)
 );
 
 CREATE TABLE Ficha_Execucao_Contem_Alimento (
 	quantidade float NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
-	codigo_Ficha_Execucao_Alimento INTEGER REFERENCES Ficha_Alimento(codigo)
+	codigo_Ficha_Execucao_Alimento INTEGER REFERENCES Ficha_Execucao_Alimento(codigo)
 	CONSTRAINT PK_Ficha_Execucao_Contem_Alimento PRIMARY KEY(codigo_Alimento, codigo_Ficha_Execucao_Alimento)
 );
 
@@ -133,6 +133,12 @@ GO
 INSERT INTO TipoAnimal([descricao]) VALUES ('Réptil');
 GO
 INSERT INTO Animal([nome],[cor],[porte],[peso],[codigo_TipoAnimal])VALUES('Leão', 'Amarelo','Médio','69.00',1);
+GO
+INSERT INTO Alimento([nome],[quantidade],[valor_calorico])VALUES('Laranja', '500','69.00');
+GO
+INSERT INTO Alimento([nome],[quantidade],[valor_calorico])VALUES('Pêra', '124','42.00');
+GO
+INSERT INTO Alimento([nome],[quantidade],[valor_calorico])VALUES('Morango', '7894','95.00');
 
 
 

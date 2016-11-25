@@ -162,7 +162,7 @@ namespace Biblioteca.dados
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, FICHA_ALIMENTO.HORA_A_SER_EXECUTADO, " +
+                string sql = "SELECT FICHA_ALIMENTO.CODIGO, FICHA_ALIMENTO.DESCRICAO, FICHA_ALIMENTO.DT_CRIACAO, FICHA_ALIMENTO.DT_VALIDADE, FICHA_ALIMENTO.QTD_MAX_CAL, FICHA_ALIMENTO.HORA_A_SER_EXECUTADO, " +
                              "USUARIO.NOME AS NOME_USUARIO, USUARIO.LOGIN AS LOGIN_USUARIO, FICHA_ALIMENTO.CODIGO_USUARIO, ANIMAL.NOME AS NOME_ANIMAL, FICHA_ALIMENTO.CODIGO_ANIMAL FROM FICHA_ALIMENTO " +
                              "INNER JOIN USUARIO ON (USUARIO.CODIGO = FICHA_ALIMENTO.CODIGO_USUARIO) "+
                              "INNER JOIN ANIMAL ON (ANIMAL.CODIGO = FICHA_ALIMENTO.CODIGO_ANIMAL) "+
@@ -181,6 +181,9 @@ namespace Biblioteca.dados
                 if (fa.DataValidade != null && fa.DataValidade.Trim().Equals("") == false)
                 {
                     sql += " and FICHA_ALIMENTO.DT_VALIDADE >= @DT_VALIDADE";
+
+                    sql += " AND FICHA_ALIMENTO.CODIGO NOT IN(SELECT FICHA_EXECUCAO_ALIMENTO.CODIGO_FICHA FROM FICHA_EXECUCAO_ALIMENTO WHERE " +
+                           "CAST(FICHA_EXECUCAO_ALIMENTO.DT_EXECUCAO AS DATE) <= '"+ DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString()+"') ";
                 }
 
 
@@ -248,6 +251,7 @@ namespace Biblioteca.dados
                     fichaalimento.Descricao = reader.GetString(reader.GetOrdinal("DESCRICAO"));
                     fichaalimento.DataCriacao = reader.GetDateTime(reader.GetOrdinal("DT_CRIACAO")).ToString("dd/MM/yyyy");
                     fichaalimento.DataValidade = reader.GetDateTime(reader.GetOrdinal("DT_VALIDADE")).ToString("dd/MM/yyyy");
+                    fichaalimento.Qtd_max_cal = reader.GetDouble(reader.GetOrdinal("QTD_MAX_CAL"));
                     fichaalimento.Hora_a_ser_executado = Convert.ToString(reader.GetInt32(reader.GetOrdinal("HORA_A_SER_EXECUTADO")));
                     fichaalimento.Usuario.Codigo = reader.GetInt32(reader.GetOrdinal("CODIGO_USUARIO"));
                     fichaalimento.Usuario.Nome = reader.GetString(reader.GetOrdinal("NOME_USUARIO"));

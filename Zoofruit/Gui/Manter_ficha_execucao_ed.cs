@@ -18,12 +18,14 @@ namespace Gui
         double qtd_max_cal = 0;
         FichaAlimento fichaalimento;
         Service1 webservice;
-        public Manter_ficha_execucao_ed(FichaAlimento fa)
+        Usuario usuario;
+        public Manter_ficha_execucao_ed(FichaAlimento fa, Usuario u)
         {
             try
             {
                 InitializeComponent();
                 fichaalimento = fa;
+                usuario = u;
                 webservice = new Service1();
             }
             catch (Exception ex)
@@ -167,8 +169,21 @@ namespace Gui
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Manter_ficha_execucao_ed_observacao manter_ficha_execucao_ed_observacao = new Manter_ficha_execucao_ed_observacao();
-            manter_ficha_execucao_ed_observacao.ShowDialog();
+            try
+            {
+                FichaExecucaoAlimento fea = new FichaExecucaoAlimento();
+                fea.ListaAlimento = listacardapio.ToArray();
+                fea.Usuario = usuario;
+                fea.Observacao = rtb_obs.Text;
+                fea.FichaAlimento = fichaalimento;
+                fea.DataExecucao = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " +
+                    DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
+                webservice.Salvar(fea, qtd_max_cal, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void tb_quantidade_KeyPress(object sender, KeyPressEventArgs e)

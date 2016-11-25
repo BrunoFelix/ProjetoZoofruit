@@ -16,8 +16,6 @@ namespace Gui
 {
     public partial class Manter_alimento_ed : Form
     {
-        const int MF_BYPOSITION = 0x400;
-        public string aviso = string.Empty;
         private string nomeDoArquivo = "Alimentos.xml";
         private XElement doc;
 
@@ -27,15 +25,7 @@ namespace Gui
         {
             InitializeComponent();
             webservice = new Service1();
-
-            /* if (File.Exists(nomeDoArquivo))
-             {
-                 doc = XElement.Load(nomeDoArquivo);
-             }
-             else*/
-
-            //  doc = new XElement("Alimentos");
-            
+            exibirxml();
         }
 
         public Manter_alimento_ed(Alimento a)
@@ -112,27 +102,58 @@ namespace Gui
                 this.DialogResult = DialogResult.None;
             }
         }
-
-        private void Manter_alimento_ed_FormClosed_1(object sender, FormClosedEventArgs e)
+        private void Manter_alimento_ed_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-            /*XElement alimento = new XElement("Alimento");
-            alimento.Add(new XElement("Nome", tb_nome.Text));
-            alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));
-            alimento.Add(new XElement("Quantidade", tb_quantidade.Text));
-            doc.Add(alimento);
-            doc.Save(nomeDoArquivo);*/
+            this.gravarxml();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            this.gravarxml();
+           
+        }
+        /*Metodo Gravar XML*/
+        public void gravarxml()
+        {
+            if (File.Exists(nomeDoArquivo))
+            {
+                doc = new XElement("Alimentos");
+                XElement alimento = new XElement("Alimento");
+                alimento.Add(new XElement("Nome", tb_nome.Text));
+                alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));
+                alimento.Add(new XElement("Quantidade", tb_quantidade.Text));
+                doc.Add(alimento);
+                doc.Save(nomeDoArquivo);
 
-            /*XElement alimento = new XElement("Alimento");
-            alimento.Add(new XElement("Nome", tb_nome.Text));
-            alimento.Add(new XElement("ValorCalorico", tb_valorcalorico.Text));
-            alimento.Add(new XElement("Quantidade", tb_quantidade.Text));
-            doc.Add(alimento);
-            doc.Save(nomeDoArquivo);*/
+            }
+            else
+            {
+                doc = XElement.Load(nomeDoArquivo);
+            }
+
+        }
+        public void exibirxml()
+        {
+            XmlTextReader x = new XmlTextReader(@".\\Alimentos.xml");
+
+            while (x.Read())
+            {
+                if (x.NodeType == XmlNodeType.Element && x.Name == "Nome")
+                    tb_nome.Text = (x.ReadString());
+                if (x.NodeType == XmlNodeType.Element && x.Name == "ValorCalorico")
+                    tb_valorcalorico.Text = (x.ReadString());
+                if (x.NodeType == XmlNodeType.Element && x.Name == "Quantidade")
+                    tb_quantidade.Text = (x.ReadString());
+             
+            }
+
+            x.Close();
+            return;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.gravarxml();
         }
     }
 }

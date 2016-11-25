@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Alimentos>
   <Alimento>
-    <Nome></Nome>
-    <ValorCalorico></ValorCalorico>
-    <Quantidade></Quantidade>
+    <Nome>Lar</Nome>
+    <ValorCalorico>0</ValorCalorico>
+    <Quantidade>1</Quantidade>
   </Alimento>
 </Alimentos>

@@ -18,15 +18,14 @@ namespace Gui
     public partial class Manter_ficha_alimento_ed : Form
     {
 
-        /*private Socket socket;
+        private Socket socket;
         private Thread thread;
-
 
         private NetworkStream networkStream;
         private BinaryWriter binaryWriter;
         private BinaryReader binaryReader;
 
-        TcpListener tcpListener;*/
+        TcpListener tcpListener;
 
 
         int tipoficha;
@@ -39,8 +38,8 @@ namespace Gui
         {
             try { 
                 InitializeComponent();
-                /*thread = new Thread(new ThreadStart(RunServer));
-                thread.Start();*/
+                thread = new Thread(new ThreadStart(RunServer));
+                thread.Start();
 
                 this.tipoficha = tipoficha;
                 webservice = new Service1();
@@ -63,16 +62,16 @@ namespace Gui
         public void RunServer()
         {
 
-            /*try
+            try
             {
-                IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 24777);
+                IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2001);
                 tcpListener = new TcpListener(ipEndPoint);
                 tcpListener.Start();
 
                 //AddToListBox("Servidor habilitado e escutando porta..." + "Server App");
 
-                //socket = ;
-                networkStream = new NetworkStream(tcpListener.AcceptSocket());
+                socket = tcpListener.AcceptSocket();
+                networkStream = new NetworkStream(socket);
                 binaryWriter = new BinaryWriter(networkStream);
                 binaryReader = new BinaryReader(networkStream);
 
@@ -112,7 +111,7 @@ namespace Gui
                 }
                 //MessageBox.Show("conexão finalizada", "Server App");
 
-            }*/
+            }
         }
 
         public void atualizarGridALimento()
@@ -156,6 +155,22 @@ namespace Gui
         {
             try
             {
+                try
+                {
+                    binaryWriter.Write("Funcionou");
+                }
+                catch (SocketException socketEx)
+                {
+                    MessageBox.Show(socketEx.Message, "Erro");
+                }
+                catch (Exception socketEx)
+                {
+                    MessageBox.Show(socketEx.Message, "Erro");
+                }
+
+                return;
+
+
                 fichaalimento = new FichaAlimento();
                 fichaalimento.Descricao = tb_descricao.Text;
                 fichaalimento.DataCriacao = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
@@ -178,18 +193,7 @@ namespace Gui
 
                 this.DialogResult = DialogResult.OK;
 
-                /*try
-                {
-                    binaryWriter.Write("Funcionou");
-                }
-                catch (SocketException socketEx)
-                {
-                    MessageBox.Show(socketEx.Message, "Erro");
-                }
-                catch (Exception socketEx)
-                {
-                    MessageBox.Show(socketEx.Message, "Erro");
-                }*/
+                
 
                 ((Manter_ficha_alimento)Application.OpenForms["manter_ficha_alimento"]).lv_animal_SelectedIndexChanged(sender, e);
             }catch(Exception ex)

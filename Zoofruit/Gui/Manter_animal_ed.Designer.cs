@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_animal_ed));
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddFoto = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnimal)).BeginInit();
             this.SuspendLayout();
@@ -224,6 +226,11 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 50000;
+            // 
             // Manter_animal_ed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +242,7 @@
             this.Name = "Manter_animal_ed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manter_animal";
+            this.Load += new System.EventHandler(this.Manter_animal_ed_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAnimal)).EndInit();
@@ -262,5 +270,6 @@
         private System.Windows.Forms.Label codigo;
         private System.Windows.Forms.TextBox tb_codigo;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

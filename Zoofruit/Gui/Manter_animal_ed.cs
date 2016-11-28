@@ -10,20 +10,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Gui.localhost;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace Gui
 {
     public partial class Manter_animal_ed : Form
     {
+        private string nomeDoArquivo = "Animais.xml";
+        private XElement doc;
         List<TipoAnimal> listatipoanimal;
         TipoAnimal tipoanimal;
         Service1 webservice;
         Animal animal;
         public Manter_animal_ed()
         {
+        
             try
             {
                 InitializeComponent();
+                this.exibirxml();
                 listatipoanimal = new List<TipoAnimal>();
                 tipoanimal = new TipoAnimal();
                 webservice = new Service1();
@@ -159,5 +165,66 @@ namespace Gui
                 this.DialogResult = DialogResult.None;
             }
         }
+
+        private void Manter_animal_ed_Load(object sender, EventArgs e)
+        {
+
+        }
+        /*Metodo Gravar XML*/
+        public void gravarxml()
+        {
+            try
+            {
+
+                doc = new XElement("Animais");
+                XElement animal = new XElement("Animais");
+                animal.Add(new XElement("Nome", tb_nome.Text));
+                animal.Add(new XElement("Cor", tb_cor.Text));
+                animal.Add(new XElement("Porte", tb_porte.Text));
+                animal.Add(new XElement("Peso", tb_peso.Text));
+                doc.Add(animal);
+                doc.Save(nomeDoArquivo);
+            }
+            catch (Exception e)
+            {
+
+            }
+
+        }
+        /*Metodo Exibir XML*/
+        public void exibirxml()
+        {
+            try
+            {
+                XmlTextReader x = new XmlTextReader(@".\\Animais.xml");
+
+                while (x.Read())
+                {
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "Nome")
+                        tb_nome.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "Cor")
+                        tb_cor.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "Porte")
+                        tb_porte.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "Peso")
+                        tb_peso.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "Tipo")
+                        comboBox1.Text = (x.ReadString());
+
+                }
+                x.Close();
+                return;
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.gravarxml();
+        }
     }
 }
+

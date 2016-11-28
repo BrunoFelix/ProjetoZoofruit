@@ -9,24 +9,30 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Gui
 {
     public partial class Manter_ficha_alimento_ed : Form
     {
 
-
+        private string nomeDoArquivo = "FichaAlimentos.xml";
+        private XElement doc;
         int tipoficha;
         Service1 webservice;
         FichaAlimento fichaalimento;
         public List<Alimento> listaalimento = new List<Alimento>();
         private Animal animal;
         private Usuario usuario;
+
         public Manter_ficha_alimento_ed(int tipoficha, Animal a, Usuario u)
         {
+            
             try { 
-                InitializeComponent();
 
+                InitializeComponent();
+                this.exibirxml();
                 this.tipoficha = tipoficha;
                 webservice = new Service1();
 
@@ -169,6 +175,60 @@ namespace Gui
         private void Manter_ficha_alimento_ed_Load(object sender, EventArgs e)
         {
 
+        }
+        /*Metodo Gravar XML*/
+        public void gravarxml()
+        {
+            try
+            {
+
+                doc = new XElement("FichaAlimentos");
+                XElement fichaAlimento = new XElement("FichaAlimento");
+                fichaAlimento.Add(new XElement("Descricao", tb_descricao.Text));
+                fichaAlimento.Add(new XElement("DataValidade", dtp_validade.Text));
+                fichaAlimento.Add(new XElement("HoraExecusao", tb_hora_a_ser_executada.Text));
+                fichaAlimento.Add(new XElement("QuantidadeMaximaCaloria", tb_qtd_max_cal.Text));
+                doc.Add(fichaAlimento);
+                doc.Save(nomeDoArquivo);
+            }
+            catch (Exception e)
+            {
+
+            }
+
+        }
+        /*Metodo Exibir XML*/
+        public void exibirxml()
+        {
+            try
+            {
+                XmlTextReader x = new XmlTextReader(@".\\FichaAlimentos.xml");
+
+                while (x.Read())
+                {
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "Descricao")
+                        tb_descricao.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "DataValidade")
+                        dtp_validade.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "HoraExecusao")
+                        tb_hora_a_ser_executada.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "QuantidadeMaximaCaloria")
+                        tb_qtd_max_cal.Text = (x.ReadString());
+
+
+                }
+                x.Close();
+                return;
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.gravarxml();
         }
     }
 }

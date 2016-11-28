@@ -112,6 +112,16 @@ namespace Gui
             this.gravarxml();
            
         }
+      
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.gravarxml();
+        }
+
+        private void Manter_alimento_ed_Load(object sender, EventArgs e)
+        {
+
+        }
         /*Metodo Gravar XML*/
         public void gravarxml()
         {
@@ -144,16 +154,11 @@ namespace Gui
                     tb_valorcalorico.Text = (x.ReadString());
                 if (x.NodeType == XmlNodeType.Element && x.Name == "Quantidade")
                     tb_quantidade.Text = (x.ReadString());
-             
+
             }
 
             x.Close();
             return;
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.gravarxml();
         }
     }
 }

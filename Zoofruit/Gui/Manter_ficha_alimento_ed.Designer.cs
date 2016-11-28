@@ -45,9 +45,9 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button4 = new System.Windows.Forms.Button();
             this.btn_novo_animal = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -196,19 +196,6 @@
             this.columnHeader3.Text = "Valor Calórico";
             this.columnHeader3.Width = 179;
             // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(101, 99);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(97, 48);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Remover";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // btn_novo_animal
             // 
             this.btn_novo_animal.Image = ((System.Drawing.Image)(resources.GetObject("btn_novo_animal.Image")));
@@ -221,6 +208,25 @@
             this.btn_novo_animal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_novo_animal.UseVisualStyleBackColor = true;
             this.btn_novo_animal.Click += new System.EventHandler(this.btn_novo_animal_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button4.Location = new System.Drawing.Point(101, 99);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(97, 48);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Remover";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Manter_ficha_alimento_ed
             // 
@@ -262,10 +268,10 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_novo_animal;
         private System.Windows.Forms.TextBox tb_hora_a_ser_executada;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button4;
     }
 }

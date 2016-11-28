@@ -19,14 +19,14 @@ namespace Biblioteca.negocio
             daofichaalimento = new DAOFichaAlimento();
         }
 
-        public void Adicionar(FichaAlimento fa)
+        public FichaAlimento Adicionar(FichaAlimento fa)
         {
             try
             {
                 ValidarPreenchimentoDados(fa);
                 ValidarDados(fa);
                 VerificarDuplicidade(fa);
-                daofichaalimento.Adicionar(fa);
+                return daofichaalimento.Adicionar(fa);
             }
             catch (Exception ex)
             {

@@ -138,9 +138,9 @@ namespace Webservice
             return rnfichaalimento.NListarFichaAlimento(fa);
         }
 
-        public void InserirFichaAlimento(FichaAlimento fa)
+        public FichaAlimento InserirFichaAlimento(FichaAlimento fa)
         {
-            rnfichaalimento.Adicionar(fa);
+            return rnfichaalimento.Adicionar(fa);
         }
 
         public void AlterarFichaAlimento(FichaAlimento fa)

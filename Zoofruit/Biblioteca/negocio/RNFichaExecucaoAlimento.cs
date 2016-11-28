@@ -61,7 +61,7 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("Usuário inválido!");
             }
-            if (fae.FichaAlimento == null)
+            if (fae.ListaAlimento == null || fae.ListaAlimento.Count == 0)
             {
                 throw new NegocioException("Não é possivel executar uma ficha sem montar uma cesta!");
             }

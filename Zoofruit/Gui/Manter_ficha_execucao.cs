@@ -30,7 +30,7 @@ namespace Gui
         private int z = 1;
         private double tamanho_form = 0;
         private static Manter_ficha_execucao manter_ficha_execucao;
-        List<FichaAlimento> listafichaalimento;
+        public List<FichaAlimento> listafichaalimento;
         FichaAlimento fichaalimento = new FichaAlimento();
         Service1 webservice;
         Usuario usuario;
@@ -97,7 +97,22 @@ namespace Gui
                     {
                         message = binaryReader.ReadString();
                         Invoke(new MethodInvoker(
-                          delegate { MessageBox.Show(message); }
+                          delegate {
+
+                              fichaalimento = new FichaAlimento();
+                              fichaalimento.Codigo = Convert.ToInt32(message);
+                              fichaalimento.Animal = new Animal();
+                              fichaalimento.Usuario = new Usuario();
+                              fichaalimento.ListaAlimento = new List<Alimento>().ToArray();
+                              foreach(FichaAlimento a in webservice.ListarFichaAlimento(fichaalimento).ToList())
+                              {
+                                  listafichaalimento.Add(a);
+                              }
+
+                              listafichaalimento = listafichaalimento.OrderBy(m => m.Hora_a_ser_executado).ThenBy(m => m.Hora_a_ser_executado).ToList();
+
+                              AtualizarTela();
+                          }
                           ));
                     }
                     catch (Exception ex)

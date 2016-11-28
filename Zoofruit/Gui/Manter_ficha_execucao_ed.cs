@@ -179,10 +179,23 @@ namespace Gui
                 fea.DataExecucao = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + " " +
                     DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString();
                 webservice.Salvar(fea, qtd_max_cal, true);
+
+                FichaAlimento fichaalimento2 = new FichaAlimento();
+                fichaalimento2.Animal = new Animal();
+                fichaalimento2.Usuario = new Usuario();
+                fichaalimento2.ListaAlimento = new List<Alimento>().ToArray();
+                fichaalimento2.DataValidade = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
+                fichaalimento2.Hora_a_ser_executado = DateTime.Now.Hour.ToString();
+               
+                ((Manter_ficha_execucao)Application.OpenForms["manter_ficha_execucao"]).listafichaalimento = webservice.ListarFichaAlimento(fichaalimento2).ToList();
+                ((Manter_ficha_execucao)Application.OpenForms["manter_ficha_execucao"]).AtualizarTela();
+
+                this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                this.DialogResult = DialogResult.None;
             }
         }
 

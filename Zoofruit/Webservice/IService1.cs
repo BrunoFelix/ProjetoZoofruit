@@ -81,7 +81,7 @@ namespace Webservice
         List<FichaAlimento> ListarFichaAlimento(FichaAlimento fa);
 
         [OperationContract]
-        void InserirFichaAlimento(FichaAlimento fa);
+        FichaAlimento InserirFichaAlimento(FichaAlimento fa);
 
         [OperationContract]
         void AlterarFichaAlimento(FichaAlimento fa);

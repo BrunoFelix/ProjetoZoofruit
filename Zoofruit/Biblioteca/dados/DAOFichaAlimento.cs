@@ -22,7 +22,7 @@ namespace Biblioteca.dados
         }
 
 
-        public void Adicionar(FichaAlimento fa)
+        public FichaAlimento Adicionar(FichaAlimento fa)
         {
             conexao.openConnection();
             try
@@ -65,6 +65,11 @@ namespace Biblioteca.dados
 
                     cmd3.ExecuteNonQuery();
                 }
+
+                fa.Codigo = codigo;
+
+                return fa;
+
             }
             catch (Exception ex)
             {

@@ -252,13 +252,15 @@
   </xs:element>
   <xs:element name="InserirFichaAlimentoResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="InserirFichaAlimentoResult" nillable="true" type="q28:FichaAlimento" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AlterarFichaAlimento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q28:FichaAlimento" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q29:FichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -270,7 +272,7 @@
   <xs:element name="ExcluirFichaAlimento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q29:FichaAlimento" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q30:FichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -289,14 +291,14 @@
   <xs:element name="PesquisarAlimentoFichaExecucaoAlimentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="PesquisarAlimentoFichaExecucaoAlimentoResult" nillable="true" type="q30:ArrayOfAlimento" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="PesquisarAlimentoFichaExecucaoAlimentoResult" nillable="true" type="q31:ArrayOfAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Salvar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fea" nillable="true" type="q31:FichaExecucaoAlimento" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fea" nillable="true" type="q32:FichaExecucaoAlimento" />
         <xs:element minOccurs="0" name="qtd_max_cal" type="xs:double" />
       </xs:sequence>
     </xs:complexType>

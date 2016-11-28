@@ -6,26 +6,14 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Gui
 {
     public partial class Manter_ficha_alimento_ed : Form
     {
-
-        private Socket socket;
-        private Thread thread;
-
-        private NetworkStream networkStream;
-        private BinaryWriter binaryWriter;
-        private BinaryReader binaryReader;
-
-        TcpListener tcpListener;
 
 
         int tipoficha;
@@ -38,8 +26,6 @@ namespace Gui
         {
             try { 
                 InitializeComponent();
-                thread = new Thread(new ThreadStart(RunServer));
-                thread.Start();
 
                 this.tipoficha = tipoficha;
                 webservice = new Service1();
@@ -59,61 +45,7 @@ namespace Gui
             }
         }
 
-        public void RunServer()
-        {
-
-            try
-            {
-                IPEndPoint ipEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2001);
-                tcpListener = new TcpListener(ipEndPoint);
-                tcpListener.Start();
-
-                //AddToListBox("Servidor habilitado e escutando porta..." + "Server App");
-
-                socket = tcpListener.AcceptSocket();
-                networkStream = new NetworkStream(socket);
-                binaryWriter = new BinaryWriter(networkStream);
-                binaryReader = new BinaryReader(networkStream);
-
-                MessageBox.Show("conexão recebida!" + "Server App");
-                //binaryWriter.Write("\nconexão efetuada!");
-
-                string messageReceived = "";
-                do
-                {
-                    messageReceived = binaryReader.ReadString();
-
-                   // AddToListBox("Filtro da pesquisa:" + messageReceived);
-
-                } while (socket.Connected);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                if (binaryReader != null)
-                {
-                    binaryReader.Close();
-                }
-                if (binaryWriter != null)
-                {
-                    binaryWriter.Close();
-                }
-                if (networkStream != null)
-                {
-                    networkStream.Close();
-                }
-                if (socket != null)
-                {
-                    socket.Close();
-                }
-                //MessageBox.Show("conexão finalizada", "Server App");
-
-            }
-        }
-
+        
         public void atualizarGridALimento()
         {
             try
@@ -153,24 +85,9 @@ namespace Gui
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string codigo;
             try
-            {
-                try
-                {
-                    binaryWriter.Write("Funcionou");
-                }
-                catch (SocketException socketEx)
-                {
-                    MessageBox.Show(socketEx.Message, "Erro");
-                }
-                catch (Exception socketEx)
-                {
-                    MessageBox.Show(socketEx.Message, "Erro");
-                }
-
-                return;
-
-
+            {            
                 fichaalimento = new FichaAlimento();
                 fichaalimento.Descricao = tb_descricao.Text;
                 fichaalimento.DataCriacao = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString();
@@ -189,11 +106,18 @@ namespace Gui
                 fichaalimento.Usuario = usuario;
                 fichaalimento.Animal = animal;
                 fichaalimento.ListaAlimento = listaalimento.ToArray();
-                webservice.InserirFichaAlimento(fichaalimento);
+                codigo = webservice.InserirFichaAlimento(fichaalimento).Codigo.ToString();
+
+                try
+                {
+                    Program.binaryWriter.Write(codigo);
+                }
+                catch (Exception)
+                {
+                    //
+                }
 
                 this.DialogResult = DialogResult.OK;
-
-                
 
                 ((Manter_ficha_alimento)Application.OpenForms["manter_ficha_alimento"]).lv_animal_SelectedIndexChanged(sender, e);
             }catch(Exception ex)

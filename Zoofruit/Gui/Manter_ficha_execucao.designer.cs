@@ -57,9 +57,9 @@ namespace Gui
             this.lb_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_hora.Location = new System.Drawing.Point(388, 25);
             this.lb_hora.Name = "lb_hora";
-            this.lb_hora.Size = new System.Drawing.Size(81, 24);
+            this.lb_hora.Size = new System.Drawing.Size(131, 24);
             this.lb_hora.TabIndex = 1;
-            this.lb_hora.Text = "Hora: 19";
+            this.lb_hora.Text = "Hora: 00:00:00";
             // 
             // lb_data
             // 

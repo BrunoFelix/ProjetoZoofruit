@@ -68,7 +68,7 @@ namespace Gui
                 binaryWriter = new BinaryWriter(networkStream);
                 binaryReader = new BinaryReader(networkStream);
 
-                MessageBox.Show("conexão recebida!" + "Server App");
+                //MessageBox.Show("conexão recebida!" + "Server App");
                 //binaryWriter.Write("\nconexão efetuada!");
 
                 string messageReceived = "";

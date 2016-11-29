@@ -1,5 +1,4 @@
-
-	IF DB_ID('zoofruit') IS NOT NULL
+IF DB_ID('zoofruit') IS NOT NULL
 	BEGIN
 		USE Master
 		DROP DATABASE zoofruit;
@@ -28,6 +27,7 @@ CREATE TABLE Usuario (
 	login VARCHAR (20) NOT NULL,
 	senha VARCHAR (8) NOT NULL,
 	crmv VARCHAR (15) NOT NULL,
+	ativo varchar(1) default 'T',
 	codigo_TipoUsuario INTEGER REFERENCES TipoUsuario(codigo)
 );
 
@@ -36,18 +36,20 @@ CREATE TABLE Animal (
 	nome VARCHAR (20) NOT NULL,
 	foto VARBINARY(MAX),
 	cor VARCHAR (20),
-	porte VARCHAR (8),
+	porte VARCHAR (18),
 	peso float,
+	ativo varchar(1) default 'T',
 	codigo_TipoAnimal INTEGER REFERENCES TipoAnimal(codigo)
 );
 
 CREATE TABLE Ficha_Alimento (
 	codigo INTEGER IDENTITY (1,1) PRIMARY KEY,
 	descricao VARCHAR(60),
-	dt_criacao DATETIME NOT NULL,
+	dt_criacao DATE NOT NULL,
 	dt_validade DATE NOT NULL,
 	qtd_max_cal float NOT NULL,
 	hora_a_ser_executado INTEGER NOT NULL,
+	ativo VARCHAR(1) DEFAULT 'T', 
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
 	codigo_Animal INTEGER REFERENCES Animal(codigo)
 );
@@ -65,8 +67,7 @@ CREATE TABLE Ficha_Medicamento (
 
 CREATE TABLE Ficha_Execucao_Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
-	dt_execucao DATE NOT NULL,
-	hr_execucao TIME NOT NULL,
+	dt_execucao DATETIME NOT NULL,
 	status VARCHAR (12) NOT NULL,
 	observacao VARCHAR (50) NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
@@ -75,8 +76,7 @@ CREATE TABLE Ficha_Execucao_Alimento (
 
 CREATE TABLE Ficha_Execucao_Medicamento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
-	dt_execucao DATE NOT NULL,
-	hr_execucao TIME NOT NULL,
+	dt_execucao DATETIME NOT NULL,
 	status VARCHAR (12) NOT NULL,
 	observacao VARCHAR (50) NOT NULL,
 	codigo_Usuario INTEGER REFERENCES Usuario(codigo),
@@ -87,7 +87,8 @@ CREATE TABLE Alimento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
 	quantidade FLOAT NOT NULL,
-	valor_calorico FLOAT NOT NULL
+	valor_calorico FLOAT NOT NULL,
+	ativo varchar(1) default 'T',
 );
 
 CREATE TABLE Ficha_Contem_Alimento (
@@ -100,7 +101,8 @@ CREATE TABLE Medicamento (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
 	nome VARCHAR (20) NOT NULL,
 	quantidade float NOT NULL,
-	dt_reposicao DATE NOT NULL
+	dt_reposicao DATE NOT NULL,
+	ativo varchar(1) default 'T',
 );
 
 CREATE TABLE Ficha_Contem_Medicamento (
@@ -112,14 +114,14 @@ CREATE TABLE Ficha_Contem_Medicamento (
 CREATE TABLE Ficha_Execucao_Contem_Medicamento (
 	quantidade float NOT NULL,
 	codigo_Medicamento INTEGER REFERENCES Medicamento(codigo),
-	codigo_Ficha_Execucao_Medicamento INTEGER REFERENCES Ficha_Medicamento(codigo)
+	codigo_Ficha_Execucao_Medicamento INTEGER REFERENCES Ficha_Execucao_Medicamento(codigo)
 	CONSTRAINT PK_Ficha_Execucao_Contem_Medicamento PRIMARY KEY(codigo_Medicamento, codigo_Ficha_Execucao_Medicamento)
 );
 
 CREATE TABLE Ficha_Execucao_Contem_Alimento (
 	quantidade float NOT NULL,
 	codigo_Alimento INTEGER REFERENCES Alimento(codigo),
-	codigo_Ficha_Execucao_Alimento INTEGER REFERENCES Ficha_Alimento(codigo)
+	codigo_Ficha_Execucao_Alimento INTEGER REFERENCES Ficha_Execucao_Alimento(codigo)
 	CONSTRAINT PK_Ficha_Execucao_Contem_Alimento PRIMARY KEY(codigo_Alimento, codigo_Ficha_Execucao_Alimento)
 );
 
@@ -137,6 +139,12 @@ GO
 INSERT INTO TipoAnimal([descricao]) VALUES ('Réptil');
 GO
 INSERT INTO Animal([nome],[cor],[porte],[peso],[codigo_TipoAnimal])VALUES('Leão', 'Amarelo','Médio','69.00',1);
+GO
+INSERT INTO Alimento([nome],[quantidade],[valor_calorico])VALUES('Laranja', '500','69.00');
+GO
+INSERT INTO Alimento([nome],[quantidade],[valor_calorico])VALUES('Pêra', '124','42.00');
+GO
+INSERT INTO Alimento([nome],[quantidade],[valor_calorico])VALUES('Morango', '7894','95.00');
 
 
 

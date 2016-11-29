@@ -288,7 +288,7 @@ namespace Gui
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lb_hora.Text = "Hora: " + DateTime.Now.ToString();
+            lb_hora.Text = "Hora: " + DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

@@ -57,8 +57,6 @@ namespace Gui.localhost {
         
         private System.Threading.SendOrPostCallback ExcluirMedicamentoOperationCompleted;
         
-        private System.Threading.SendOrPostCallback ListarTipoAnimalOperationCompleted;
-        
         private System.Threading.SendOrPostCallback ListarAnimalOperationCompleted;
         
         private System.Threading.SendOrPostCallback InserirAnimalOperationCompleted;
@@ -78,6 +76,14 @@ namespace Gui.localhost {
         private System.Threading.SendOrPostCallback PesquisarAlimentoFichaExecucaoAlimentoOperationCompleted;
         
         private System.Threading.SendOrPostCallback SalvarOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ListarTipoAnimalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback InserirTipoAnimalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarTipoAnimalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirTipoAnimalOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -157,9 +163,6 @@ namespace Gui.localhost {
         public event ExcluirMedicamentoCompletedEventHandler ExcluirMedicamentoCompleted;
         
         /// <remarks/>
-        public event ListarTipoAnimalCompletedEventHandler ListarTipoAnimalCompleted;
-        
-        /// <remarks/>
         public event ListarAnimalCompletedEventHandler ListarAnimalCompleted;
         
         /// <remarks/>
@@ -188,6 +191,18 @@ namespace Gui.localhost {
         
         /// <remarks/>
         public event SalvarCompletedEventHandler SalvarCompleted;
+        
+        /// <remarks/>
+        public event ListarTipoAnimalCompletedEventHandler ListarTipoAnimalCompleted;
+        
+        /// <remarks/>
+        public event InserirTipoAnimalCompletedEventHandler InserirTipoAnimalCompleted;
+        
+        /// <remarks/>
+        public event AlterarTipoAnimalCompletedEventHandler AlterarTipoAnimalCompleted;
+        
+        /// <remarks/>
+        public event ExcluirTipoAnimalCompletedEventHandler ExcluirTipoAnimalCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoUsuario", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -566,37 +581,6 @@ namespace Gui.localhost {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
-        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
-        public TipoAnimal[] ListarTipoAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] TipoAnimal ta) {
-            object[] results = this.Invoke("ListarTipoAnimal", new object[] {
-                        ta});
-            return ((TipoAnimal[])(results[0]));
-        }
-        
-        /// <remarks/>
-        public void ListarTipoAnimalAsync(TipoAnimal ta) {
-            this.ListarTipoAnimalAsync(ta, null);
-        }
-        
-        /// <remarks/>
-        public void ListarTipoAnimalAsync(TipoAnimal ta, object userState) {
-            if ((this.ListarTipoAnimalOperationCompleted == null)) {
-                this.ListarTipoAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarTipoAnimalOperationCompleted);
-            }
-            this.InvokeAsync("ListarTipoAnimal", new object[] {
-                        ta}, this.ListarTipoAnimalOperationCompleted, userState);
-        }
-        
-        private void OnListarTipoAnimalOperationCompleted(object arg) {
-            if ((this.ListarTipoAnimalCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.ListarTipoAnimalCompleted(this, new ListarTipoAnimalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
         [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
@@ -890,6 +874,121 @@ namespace Gui.localhost {
             if ((this.SalvarCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SalvarCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ListarTipoAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [return: System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://schemas.datacontract.org/2004/07/Biblioteca.basica")]
+        public TipoAnimal[] ListarTipoAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] TipoAnimal ta) {
+            object[] results = this.Invoke("ListarTipoAnimal", new object[] {
+                        ta});
+            return ((TipoAnimal[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ListarTipoAnimalAsync(TipoAnimal ta) {
+            this.ListarTipoAnimalAsync(ta, null);
+        }
+        
+        /// <remarks/>
+        public void ListarTipoAnimalAsync(TipoAnimal ta, object userState) {
+            if ((this.ListarTipoAnimalOperationCompleted == null)) {
+                this.ListarTipoAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnListarTipoAnimalOperationCompleted);
+            }
+            this.InvokeAsync("ListarTipoAnimal", new object[] {
+                        ta}, this.ListarTipoAnimalOperationCompleted, userState);
+        }
+        
+        private void OnListarTipoAnimalOperationCompleted(object arg) {
+            if ((this.ListarTipoAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ListarTipoAnimalCompleted(this, new ListarTipoAnimalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/InserirTipoAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void InserirTipoAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] TipoAnimal ta) {
+            this.Invoke("InserirTipoAnimal", new object[] {
+                        ta});
+        }
+        
+        /// <remarks/>
+        public void InserirTipoAnimalAsync(TipoAnimal ta) {
+            this.InserirTipoAnimalAsync(ta, null);
+        }
+        
+        /// <remarks/>
+        public void InserirTipoAnimalAsync(TipoAnimal ta, object userState) {
+            if ((this.InserirTipoAnimalOperationCompleted == null)) {
+                this.InserirTipoAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInserirTipoAnimalOperationCompleted);
+            }
+            this.InvokeAsync("InserirTipoAnimal", new object[] {
+                        ta}, this.InserirTipoAnimalOperationCompleted, userState);
+        }
+        
+        private void OnInserirTipoAnimalOperationCompleted(object arg) {
+            if ((this.InserirTipoAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.InserirTipoAnimalCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/AlterarTipoAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void AlterarTipoAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] TipoAnimal ta) {
+            this.Invoke("AlterarTipoAnimal", new object[] {
+                        ta});
+        }
+        
+        /// <remarks/>
+        public void AlterarTipoAnimalAsync(TipoAnimal ta) {
+            this.AlterarTipoAnimalAsync(ta, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarTipoAnimalAsync(TipoAnimal ta, object userState) {
+            if ((this.AlterarTipoAnimalOperationCompleted == null)) {
+                this.AlterarTipoAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarTipoAnimalOperationCompleted);
+            }
+            this.InvokeAsync("AlterarTipoAnimal", new object[] {
+                        ta}, this.AlterarTipoAnimalOperationCompleted, userState);
+        }
+        
+        private void OnAlterarTipoAnimalOperationCompleted(object arg) {
+            if ((this.AlterarTipoAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarTipoAnimalCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/ExcluirTipoAnimal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void ExcluirTipoAnimal([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] TipoAnimal ta) {
+            this.Invoke("ExcluirTipoAnimal", new object[] {
+                        ta});
+        }
+        
+        /// <remarks/>
+        public void ExcluirTipoAnimalAsync(TipoAnimal ta) {
+            this.ExcluirTipoAnimalAsync(ta, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirTipoAnimalAsync(TipoAnimal ta, object userState) {
+            if ((this.ExcluirTipoAnimalOperationCompleted == null)) {
+                this.ExcluirTipoAnimalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirTipoAnimalOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirTipoAnimal", new object[] {
+                        ta}, this.ExcluirTipoAnimalOperationCompleted, userState);
+        }
+        
+        private void OnExcluirTipoAnimalOperationCompleted(object arg) {
+            if ((this.ExcluirTipoAnimalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirTipoAnimalCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1669,32 +1768,6 @@ namespace Gui.localhost {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    public delegate void ListarTipoAnimalCompletedEventHandler(object sender, ListarTipoAnimalCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ListarTipoAnimalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal ListarTipoAnimalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public TipoAnimal[] Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((TipoAnimal[])(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void ListarAnimalCompletedEventHandler(object sender, ListarAnimalCompletedEventArgs e);
     
     /// <remarks/>
@@ -1820,6 +1893,44 @@ namespace Gui.localhost {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void SalvarCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ListarTipoAnimalCompletedEventHandler(object sender, ListarTipoAnimalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ListarTipoAnimalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ListarTipoAnimalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TipoAnimal[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TipoAnimal[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void InserirTipoAnimalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void AlterarTipoAnimalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
+    public delegate void ExcluirTipoAnimalCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591

@@ -61,9 +61,6 @@ namespace Webservice
         #region Animal
 
         [OperationContract]
-        List<TipoAnimal> ListarTipoAnimal(TipoAnimal ta);
-
-        [OperationContract]
         List<Animal> ListarAnimal(Animal a);
 
         [OperationContract]
@@ -96,6 +93,21 @@ namespace Webservice
 
         [OperationContract]
         void Salvar(FichaExecucaoAlimento fea,  double qtd_max_cal);
+        #endregion
+
+        #region Tipo Animal
+
+        [OperationContract]
+        List<TipoAnimal> ListarTipoAnimal(TipoAnimal ta);
+
+        [OperationContract]
+        void InserirTipoAnimal(TipoAnimal ta);
+
+        [OperationContract]
+        void AlterarTipoAnimal(TipoAnimal ta);
+
+        [OperationContract]
+        void ExcluirTipoAnimal(TipoAnimal ta);
         #endregion
     }
 

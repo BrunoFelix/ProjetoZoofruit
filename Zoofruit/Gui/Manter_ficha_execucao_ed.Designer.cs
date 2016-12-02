@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manter_ficha_execucao_ed));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lb_usuario_ficha = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.tb_quantidade = new System.Windows.Forms.TextBox();
             this.rtb_obs = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -272,6 +274,7 @@
             this.button2.Text = "Cancelar [F9]";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
@@ -340,6 +343,12 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "Observação:";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Manter_ficha_execucao_ed
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,6 +374,7 @@
             this.Name = "Manter_ficha_execucao_ed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Executando ficha";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manter_ficha_execucao_ed_FormClosed);
             this.Load += new System.EventHandler(this.Manter_ficha_execucao_ed_Load);
             this.Resize += new System.EventHandler(this.Manter_ficha_execucao_ed_Resize);
             this.groupBox1.ResumeLayout(false);
@@ -407,5 +417,6 @@
         private System.Windows.Forms.TextBox tb_quantidade;
         private System.Windows.Forms.RichTextBox rtb_obs;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

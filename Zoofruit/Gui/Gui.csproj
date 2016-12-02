@@ -126,6 +126,18 @@
     <Compile Include="Manter_login_ed.Designer.cs">
       <DependentUpon>Manter_login_ed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manter_tipo_animal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_tipo_animal.Designer.cs">
+      <DependentUpon>Manter_tipo_animal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manter_tipo_animal_ed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manter_tipo_animal_ed.Designer.cs">
+      <DependentUpon>Manter_tipo_animal_ed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manter_login_ed.resx">
       <DependentUpon>Manter_login_ed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_tipo_animal.resx">
+      <DependentUpon>Manter_tipo_animal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manter_tipo_animal_ed.resx">
+      <DependentUpon>Manter_tipo_animal_ed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

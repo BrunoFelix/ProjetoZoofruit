@@ -53,7 +53,7 @@ namespace Biblioteca.negocio
             {
                 if (u.Codigo < 0)
                 {
-                    throw new NegocioException("A usuário que você está tentando excluir não existe!");
+                    throw new NegocioException("O usuário que você está tentando excluir não existe!");
                 }
                 daousuario.Excluir(u);
             }
@@ -111,15 +111,15 @@ namespace Biblioteca.negocio
         {
             if (u.Nome.Length < 3 || u.Nome.Length > 60)
             {
-                throw new NegocioException("Nome inválido!");
+                throw new NegocioException("O campo \"Nome\" precisa conter entre 3 e 60 caracteres!");
             }
             if (u.Cpf.Length != 11)
             {
-                throw new NegocioException("CPF inválido!");
+                throw new NegocioException("O campo \"CPF\" precisa conter 11 caracteres!");
             }
             if (u.Crmv.Length > 15)
             {
-                throw new NegocioException("CRMV inválido!");
+                throw new NegocioException("O campo \"CRMV\" precisa conter menos de 16 caracteres!");
             }
             if (u.Login.Length < 3 || u.Login.Length > 20)
             {
@@ -131,7 +131,7 @@ namespace Biblioteca.negocio
             }
             if (u.Tipousuario.Codigo <= 0)
             {
-                throw new NegocioException("Tipo de Usuário inválido!");
+                throw new NegocioException("O campo \"Tipo\" é inválido!");
             }
         }
 
@@ -142,7 +142,7 @@ namespace Biblioteca.negocio
             u2.Cpf = u.Cpf;
             if (daousuario.Pesquisar(u2, alt).Count > 0)
             {
-                throw new NegocioException("CPF digitado já consta no sistema!");
+                throw new NegocioException("\"CPF\" do usuário digitado já consta no sistema!");
             }
             u2 = new Usuario();
             u2.Codigo = u.Codigo;
@@ -150,7 +150,7 @@ namespace Biblioteca.negocio
             u2.Senha = u.Senha;
             if (daousuario.Pesquisar(u2, alt).Count > 0)
             {
-                throw new NegocioException("Login já consta no sistema!");
+                throw new NegocioException("\"Login\" do usuário digitado já consta no sistema!");
             }
         }
     }

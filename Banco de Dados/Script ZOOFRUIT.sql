@@ -17,7 +17,8 @@ CREATE TABLE TipoUsuario (
 
 CREATE TABLE TipoAnimal (
 	codigo INTEGER IDENTITY(1,1) PRIMARY KEY,
-	descricao VARCHAR (20) NOT NULL
+	descricao VARCHAR (20) NOT NULL,
+	ativo VARCHAR(1) DEFAULT 'T'
 );
 
 CREATE TABLE Usuario (

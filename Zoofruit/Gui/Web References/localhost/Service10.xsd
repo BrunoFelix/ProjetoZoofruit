@@ -165,38 +165,24 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ListarTipoAnimal">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ta" nillable="true" type="q18:TipoAnimal" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ListarTipoAnimalResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ListarTipoAnimalResult" nillable="true" type="q19:ArrayOfTipoAnimal" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="ListarAnimal">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q20:Animal" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q18:Animal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListarAnimalResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ListarAnimalResult" nillable="true" type="q21:ArrayOfAnimal" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ListarAnimalResult" nillable="true" type="q19:ArrayOfAnimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InserirAnimal">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q22:Animal" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q20:Animal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -208,7 +194,7 @@
   <xs:element name="AlterarAnimal">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q23:Animal" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q21:Animal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -220,7 +206,7 @@
   <xs:element name="ExcluirAnimal">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q24:Animal" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="a" nillable="true" type="q22:Animal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,35 +218,35 @@
   <xs:element name="ListarFichaAlimento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q25:FichaAlimento" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q23:FichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ListarFichaAlimentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ListarFichaAlimentoResult" nillable="true" type="q26:ArrayOfFichaAlimento" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ListarFichaAlimentoResult" nillable="true" type="q24:ArrayOfFichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InserirFichaAlimento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q27:FichaAlimento" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q25:FichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="InserirFichaAlimentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="InserirFichaAlimentoResult" nillable="true" type="q28:FichaAlimento" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="InserirFichaAlimentoResult" nillable="true" type="q26:FichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="AlterarFichaAlimento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q29:FichaAlimento" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q27:FichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -272,7 +258,7 @@
   <xs:element name="ExcluirFichaAlimento">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q30:FichaAlimento" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fa" nillable="true" type="q28:FichaAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -291,19 +277,69 @@
   <xs:element name="PesquisarAlimentoFichaExecucaoAlimentoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="PesquisarAlimentoFichaExecucaoAlimentoResult" nillable="true" type="q31:ArrayOfAlimento" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="PesquisarAlimentoFichaExecucaoAlimentoResult" nillable="true" type="q29:ArrayOfAlimento" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Salvar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fea" nillable="true" type="q32:FichaExecucaoAlimento" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="fea" nillable="true" type="q30:FichaExecucaoAlimento" />
         <xs:element minOccurs="0" name="qtd_max_cal" type="xs:double" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SalvarResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoAnimal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ta" nillable="true" type="q31:TipoAnimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListarTipoAnimalResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ListarTipoAnimalResult" nillable="true" type="q32:ArrayOfTipoAnimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirTipoAnimal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ta" nillable="true" type="q33:TipoAnimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InserirTipoAnimalResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarTipoAnimal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ta" nillable="true" type="q34:TipoAnimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AlterarTipoAnimalResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExcluirTipoAnimal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Biblioteca.basica" minOccurs="0" name="ta" nillable="true" type="q35:TipoAnimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExcluirTipoAnimalResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

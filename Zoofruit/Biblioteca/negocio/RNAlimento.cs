@@ -97,15 +97,15 @@ namespace Biblioteca.negocio
         {
             if (a.Nome.Length < 3 || a.Nome.Length > 20)
             {
-                throw new NegocioException("Nome inválido!");
+                throw new NegocioException("O campo \"Nome\" precisa conter entre 3 e 20 caracteres!");
             }
             if (a.ValorCalorico <= 0)
             {
-                throw new NegocioException("Valor Calórico inválido!");
+                throw new NegocioException("O campo \"Valor Calórico\" deve ser um número maior do que zero!");
             }
             if (a.Quantidade <= 0)
             {
-                throw new NegocioException("Quantidade inválida!");
+                throw new NegocioException("O campo \"Quantidade\" deve ser um número maior do que zero!");
             }
         }
 
@@ -117,7 +117,7 @@ namespace Biblioteca.negocio
             //a2.TipoAnimal = a.TipoAnimal;
             if (daoalimento.Pesquisar(a2, alt).Count > 0)
             {
-                throw new NegocioException("Alimento digitado já consta no sistema!");
+                throw new NegocioException("\"Nome\" do alimento digitado já consta no sistema!");
             }
         }
 

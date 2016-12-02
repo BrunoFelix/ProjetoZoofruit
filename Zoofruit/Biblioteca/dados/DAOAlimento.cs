@@ -135,6 +135,8 @@ namespace Biblioteca.dados
                     }
                 }
 
+                sql += " ORDER BY NOME ASC, QUANTIDADE ASC, VALOR_CALORICO ASC ";
+
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 if (a.Nome != null && a.Nome.Trim().Equals("") == false)

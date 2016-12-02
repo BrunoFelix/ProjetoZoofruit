@@ -123,6 +123,7 @@ namespace Gui
                     //
                 }
 
+                destruirxml();
                 this.DialogResult = DialogResult.OK;
 
                 ((Manter_ficha_alimento)Application.OpenForms["manter_ficha_alimento"]).lv_animal_SelectedIndexChanged(sender, e);
@@ -162,6 +163,7 @@ namespace Gui
         {
             /*tcpListener.Stop();
             Environment.Exit(0);*/
+            timer1.Enabled = false;
         }
 
         private void tb_qtd_max_cal_KeyPress(object sender, KeyPressEventArgs e)
@@ -174,20 +176,37 @@ namespace Gui
 
         private void Manter_ficha_alimento_ed_Load(object sender, EventArgs e)
         {
-
+            timer1.Enabled = true;
         }
         /*Metodo Gravar XML*/
         public void gravarxml()
         {
             try
             {
-
                 doc = new XElement("FichaAlimentos");
                 XElement fichaAlimento = new XElement("FichaAlimento");
                 fichaAlimento.Add(new XElement("Descricao", tb_descricao.Text));
                 fichaAlimento.Add(new XElement("DataValidade", dtp_validade.Text));
                 fichaAlimento.Add(new XElement("HoraExecusao", tb_hora_a_ser_executada.Text));
                 fichaAlimento.Add(new XElement("QuantidadeMaximaCaloria", tb_qtd_max_cal.Text));
+
+                //Alimento alimento = listaalimento.ElementAt(lv_alimento.SelectedIndices[0]);
+
+                IList<Alimento> alimento = new List<Alimento>();
+
+                foreach (ListViewItem listViewItem in this.lv_alimento.Items)
+                {
+                    
+                    alimento.Add(new Alimento { Codigo = Convert.ToInt32(listViewItem.SubItems[0].Text), Nome = listViewItem.SubItems[1].Text, ValorCalorico = Convert.ToDouble(listViewItem.SubItems[2].Text) });
+                }
+
+                fichaAlimento.Add(new XElement("Alimentos",    
+                    from na in alimento
+                    select new XElement("Alimento",
+                            new XElement("Codigo", na.Codigo),
+                            new XElement("Nome", na.Nome),
+                            new XElement("ValorCalorico", na.ValorCalorico))));
+
                 doc.Add(fichaAlimento);
                 doc.Save(nomeDoArquivo);
             }
@@ -202,7 +221,7 @@ namespace Gui
         {
             try
             {
-                XmlTextReader x = new XmlTextReader(@".\\FichaAlimentos.xml");
+                XmlTextReader x = new XmlTextReader(@".\\" + nomeDoArquivo);
 
                 while (x.Read())
                 {
@@ -214,10 +233,26 @@ namespace Gui
                         tb_hora_a_ser_executada.Text = (x.ReadString());
                     if (x.NodeType == XmlNodeType.Element && x.Name == "QuantidadeMaximaCaloria")
                         tb_qtd_max_cal.Text = (x.ReadString());
-
-
                 }
-                x.Close();
+
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(@".\\" + nomeDoArquivo); //Carregando o arquivo
+
+                //Pegando elemento pelo nome da TAG
+                XmlNodeList xnList = xmlDoc.GetElementsByTagName("Alimento");
+
+                //Usando for para imprimir na tela
+                for (int i = 0; i < xnList.Count; i++)
+                {
+                    Alimento alimento = new Alimento();
+                    alimento.Codigo = Convert.ToInt32(xnList[i]["Codigo"].InnerText);
+                    alimento.Nome = xnList[i]["Nome"].InnerText;
+                    alimento.ValorCalorico = Convert.ToInt32(xnList[i]["ValorCalorico"].InnerText);
+                    listaalimento.Add(alimento);
+                }
+
+                    x.Close();
+                atualizarGridALimento();
                 return;
             }
             catch (Exception e)
@@ -226,9 +261,37 @@ namespace Gui
             }
         }
 
+        public void destruirxml()
+        {
+            try
+            {
+                if (System.IO.File.Exists(Application.StartupPath + "\\" + nomeDoArquivo))
+                {
+                    System.IO.File.Delete(Application.StartupPath + "\\" + nomeDoArquivo);
+                }
+            }
+            catch (Exception)
+            {
+                //
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.gravarxml();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Todos os dados serão perdidos e não poderão ser recuperados, deseja realmente cancelar a operação?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                destruirxml();
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.None;
+            }
         }
     }
 }

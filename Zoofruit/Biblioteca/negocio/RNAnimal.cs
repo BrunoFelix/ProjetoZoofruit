@@ -97,7 +97,7 @@ namespace Biblioteca.negocio
             }
             if (a.TipoAnimal == null)
             {
-                throw new NegocioException("O campo \"Espécie\" precisa ser preenchido!");
+                throw new NegocioException("O campo \"Tipo\" precisa ser preenchido!");
             }
         }
 
@@ -105,23 +105,23 @@ namespace Biblioteca.negocio
         {
             if (a.Nome.Length < 3 || a.Nome.Length > 20)
             {
-                throw new NegocioException("Nome inválido!");
+                throw new NegocioException("O campo \"Nome\" precisa conter entre 3 e 20 caracteres!");
             }
             if (a.Cor.Length < 3 || a.Cor.Length > 20)
             {
-                throw new NegocioException("Cor inválida!");
+                throw new NegocioException("O campo \"Cor\" precisa conter entre 3 e 20 caracteres!");
             }
-            if (a.Porte.Length < 1 || a.Cor.Length > 18)
+            if (a.Porte.Length < 3 || a.Cor.Length > 18)
             {
-                throw new NegocioException("Porte inválido!");
+                throw new NegocioException("O campo \"Porte\" precisa conter entre 3 e 18 caracteres!");
             }
             if (a.Peso <= 0)
             {
-                throw new NegocioException("Peso inválido!");
+                throw new NegocioException("O campo \"Peso\" deve ser um número maior do que zero!");
             }
             if (a.TipoAnimal.Codigo <= 0)
             {
-                throw new NegocioException("Espécie inválida!");
+                throw new NegocioException("O campo \"Tipo\" é inválido!");
             }
         }
 
@@ -133,7 +133,7 @@ namespace Biblioteca.negocio
             //a2.TipoAnimal = a.TipoAnimal;
             if (daoanimal.Pesquisar(a2, alt).Count > 0)
             {
-                throw new NegocioException("Animal digitado já consta no sistema!");
+                throw new NegocioException("\"Nome\" do animal digitado já consta no sistema!");
             }
         }
     }

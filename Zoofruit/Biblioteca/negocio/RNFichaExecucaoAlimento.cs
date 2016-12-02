@@ -23,6 +23,7 @@ namespace Biblioteca.negocio
             try
             {
                 ValidarPreenchimentoDados(fae);
+                ValidarDados(fae);
                 CalcularQtdMaxCal(fae, qtd_max_cal);
                 daofichaexecucaoalimento.Adicionar(fae);
             }
@@ -53,17 +54,29 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("O campo \"Data de Execução\" precisa ser preenchido!");
             }
+            if (fae.Usuario == null)
+            {
+                throw new NegocioException("O campo \"Usuário\" precisa ser preenchido!");
+            }
+            if (fae.ListaAlimento == null)
+            {
+                throw new NegocioException("A \"Cesta de Alimentos\" precisa ser preenchida!");
+            }
+        }
+
+        public void ValidarDados(FichaExecucaoAlimento fae)
+        {
             if (!DateTime.TryParse(fae.DataExecucao.Trim(), out resultado))
             {
                 throw new NegocioException("Data de Execução Inválida!");
             }
-            if (fae.Usuario == null || fae.Usuario.Codigo <= 0)
+            if (fae.Usuario.Codigo <= 0)
             {
-                throw new NegocioException("Usuário inválido!");
+                throw new NegocioException("O campo \"Usuário\" é inválido!");
             }
-            if (fae.ListaAlimento == null || fae.ListaAlimento.Count == 0)
+            if (fae.ListaAlimento.Count <= 0)
             {
-                throw new NegocioException("Não é possivel executar uma ficha sem montar uma cesta!");
+                throw new NegocioException("A \"Cesta de Alimentos\" precisa conter ao menos um alimento!");
             }
         }
 
@@ -80,14 +93,14 @@ namespace Biblioteca.negocio
             {
                 if ((qtd_max_cal - valoracumulado) > valorreal)
                 {
-                    throw new NegocioException("A quantidade máxima de calórias não pode ultrapassar 10% nem para mais, nem para menos!");
+                    throw new NegocioException("A \"Cesta de Alimentos\" não pode ultrapassar a quantidade máxima de calórias para mais de 10%!");
                 }
             }
             else if (valoracumulado >= qtd_max_cal)
             {
                 if ((valoracumulado - qtd_max_cal) > valorreal)
                 {
-                    throw new NegocioException("A quantidade máxima de calórias não pode ultrapassar 10% nem para mais, nem para menos!");
+                    throw new NegocioException("A \"Cesta de Alimentos\" não pode ultrapassar a quantidade máxima de calórias para mais de 10%!");
                 }
             }
         }

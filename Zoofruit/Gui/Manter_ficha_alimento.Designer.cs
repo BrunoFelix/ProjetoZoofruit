@@ -42,6 +42,7 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lv_alimento = new System.Windows.Forms.ListView();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox_pesquisar_animal = new System.Windows.Forms.ComboBox();
@@ -57,7 +57,6 @@
             this.btn_pesquisar_animal = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +75,7 @@
             this.lv_animal.Location = new System.Drawing.Point(-1, 48);
             this.lv_animal.MultiSelect = false;
             this.lv_animal.Name = "lv_animal";
-            this.lv_animal.Size = new System.Drawing.Size(1136, 292);
+            this.lv_animal.Size = new System.Drawing.Size(1136, 293);
             this.lv_animal.TabIndex = 0;
             this.lv_animal.UseCompatibleStateImageBehavior = false;
             this.lv_animal.View = System.Windows.Forms.View.Details;
@@ -160,6 +159,12 @@
             this.columnHeader5.Text = "Usuario";
             this.columnHeader5.Width = 235;
             // 
+            // columnHeader8
+            // 
+            this.columnHeader8.DisplayIndex = 2;
+            this.columnHeader8.Text = "Hora a ser executado";
+            this.columnHeader8.Width = 96;
+            // 
             // lv_alimento
             // 
             this.lv_alimento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -224,7 +229,7 @@
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(192, 340);
+            this.button3.Location = new System.Drawing.Point(97, 340);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 48);
             this.button3.TabIndex = 12;
@@ -232,19 +237,6 @@
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(96, 340);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 48);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Alterar [F4]";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -331,12 +323,6 @@
             this.panel1.Size = new System.Drawing.Size(471, 48);
             this.panel1.TabIndex = 34;
             // 
-            // columnHeader8
-            // 
-            this.columnHeader8.DisplayIndex = 2;
-            this.columnHeader8.Text = "Hora a ser executado";
-            this.columnHeader8.Width = 96;
-            // 
             // Manter_ficha_alimento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +331,6 @@
             this.ClientSize = new System.Drawing.Size(1137, 692);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -377,7 +362,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ColumnHeader Código;
         private System.Windows.Forms.ColumnHeader Nome;

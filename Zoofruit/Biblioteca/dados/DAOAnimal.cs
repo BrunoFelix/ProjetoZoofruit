@@ -104,11 +104,11 @@ namespace Biblioteca.dados
            try { 
             conexao.openConnection();
             string sql = "SELECT Animal.codigo, Animal.Nome, Animal.Cor, Animal.Porte, Animal.Peso, Animal.codigo_TipoAnimal, " +
-                "TipoAnimal.descricao FROM Animal LEFT JOIN TipoAnimal ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 AND ATIVO = 'T' ";
+                "TipoAnimal.descricao FROM Animal LEFT JOIN TipoAnimal ON (TipoAnimal.codigo = Animal.codigo_TipoAnimal) WHERE Animal.codigo > 0 AND Animal.ATIVO = 'T' ";
 
                 if (a.Nome != null && a.Nome.Trim().Equals("") == false)
                 {
-                    sql += " and ANIMAL.NOME = @NOME";
+                    sql += " and ANIMAL.NOME LIKE @NOME";
                 }
 
                 if (a.Cor != null && a.Cor.Trim().Equals("") == false)
@@ -147,12 +147,14 @@ namespace Biblioteca.dados
                     }
                 }
 
+                sql += " ORDER BY TIPOANIMAL.DESCRICAO ASC, NOME ASC "; 
+
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 if (a.Nome != null && a.Nome.Trim().Equals("") == false)
                 {
                     cmd.Parameters.Add("@NOME", SqlDbType.VarChar);
-                    cmd.Parameters["@NOME"].Value = a.Nome;
+                    cmd.Parameters["@NOME"].Value = "%"+a.Nome+"%";
                 }
 
                 if (a.Cor != null && a.Cor.Trim().Equals("") == false)

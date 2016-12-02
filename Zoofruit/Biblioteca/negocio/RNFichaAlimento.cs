@@ -97,17 +97,17 @@ namespace Biblioteca.negocio
             {
                 throw new NegocioException("O campo \"Hora que deve ser executada\" precisa ser preenchido!");
             }
-            if (fa.Animal.Codigo <= 0)
+            if (fa.Animal == null)
             {
-                throw new NegocioException("Animal inválido!");
+                throw new NegocioException("O campo \"Animal\" precisa ser preenchido!");
             }
-            if (fa.Usuario.Codigo <= 0)
+            if (fa.Usuario == null)
             {
-                throw new NegocioException("Usuário inválido!");
+                throw new NegocioException("O campo \"Usuário\" precisa ser preenchido!");
             }
-            if (fa.ListaAlimento.Count <= 0)
+            if (fa.ListaAlimento == null)
             {
-                throw new NegocioException("Não é possivel criar uma ficha sem nenhum alimento!");
+                throw new NegocioException("A lista de \"Alimentos\" precisa ser preenchida!");
             }
         }
 
@@ -115,27 +115,39 @@ namespace Biblioteca.negocio
         {
             if (fa.Descricao.Length > 60)
             {
-                throw new NegocioException("Descrição com limite de 60 caracteres!");
+                throw new NegocioException("O campo \"Nome\" precisa conter menos de 60 caracteres!");
             }
             if (fa.Qtd_max_cal <= 0)
             {
-                throw new NegocioException("Quantidade Máxima de Calórias Inválida!");
+                throw new NegocioException("O campo \"Quantidade Máxima de Calórias\" deve ser um número maior do que zero!");
             }
             if (!Int32.TryParse(fa.Hora_a_ser_executado, out resultado2) )
             {
-                throw new NegocioException("Hora que deve ser executada Inválida!");
+                throw new NegocioException("O campo \"Hora que deve ser executada\" foi informado em um formato inválido!");
             }
             if ((resultado2 <= 0) || (resultado2 >= 24))
             {
-                throw new NegocioException("Hora que deve ser executada Inválida!");
+                throw new NegocioException("O campo \"Hora que deve ser executada\" foi informado em um formato inválido!");
             }
             if (!DateTime.TryParse(fa.DataValidade.Trim(), out resultado))
             {
-                throw new NegocioException("Data de Validade Inválida!");
+                throw new NegocioException("O campo \"Data de Validade\" foi informado em um formato inválido!");
             }
             if (!DateTime.TryParse(fa.DataCriacao.Trim(), out resultado))
             {
-                throw new NegocioException("Data de Criação Inválida!");
+                throw new NegocioException("O campo \"Data de Criação\" foi informado em um formato inválido!");
+            }
+            if (fa.Animal.Codigo <= 0)
+            {
+                throw new NegocioException("O campo \"Animal\" é inválido!");
+            }
+            if (fa.Usuario.Codigo <= 0)
+            {
+                throw new NegocioException("O campo \"Usuário\" é inválido!");
+            }
+            if (fa.ListaAlimento.Count <= 0)
+            {
+                throw new NegocioException("A lista de \"Alimentos\" precisa conter ao menos um alimento!");
             }
         }
 
@@ -150,7 +162,7 @@ namespace Biblioteca.negocio
 
             if (daofichaalimento.Pesquisar(fa2, true).Count > 0)
             {
-                throw new NegocioException("Já existe uma ficha cadastrada nesse mesmo horário para esse animal!");
+                throw new NegocioException("\"Ficha\" com o mesmo horário digitado para esse animal já consta no sistema!");
             }
         }
     }

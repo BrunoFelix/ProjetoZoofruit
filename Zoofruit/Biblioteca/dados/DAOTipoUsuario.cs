@@ -36,6 +36,8 @@ namespace Biblioteca.dados
                     sql += " and DESCRICAO = @DESCRICAO";
                 }
 
+                sql += " ORDER BY DESCRICAO ASC ";
+
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 if (tu.Codigo > 0)

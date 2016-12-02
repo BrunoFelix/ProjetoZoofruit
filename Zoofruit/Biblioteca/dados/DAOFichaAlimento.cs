@@ -188,7 +188,7 @@ namespace Biblioteca.dados
                     sql += " and FICHA_ALIMENTO.DT_VALIDADE >= @DT_VALIDADE";
 
                     sql += " AND FICHA_ALIMENTO.CODIGO NOT IN(SELECT FICHA_EXECUCAO_ALIMENTO.CODIGO_FICHA FROM FICHA_EXECUCAO_ALIMENTO WHERE " +
-                           "CAST(FICHA_EXECUCAO_ALIMENTO.DT_EXECUCAO AS DATE) <= '"+ DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString()+"') ";
+                           "CAST(FICHA_EXECUCAO_ALIMENTO.DT_EXECUCAO AS DATE) = '"+ DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString()+"') ";
                 }
 
 

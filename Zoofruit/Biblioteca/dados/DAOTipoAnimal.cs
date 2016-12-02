@@ -17,14 +17,86 @@ namespace Biblioteca.dados
         {
             conexao = new Conexao();
         }
-        public List<TipoAnimal> Pesquisar(TipoAnimal ta)
+
+        public void Adicionar(TipoAnimal ta)
+        {
+            conexao.openConnection();
+            try
+            {
+                string sql = "INSERT INTO TIPOANIMAL (DESCRICAO) VALUES (@DESCRICAO)";
+
+                SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@DESCRICAO", ta.Descricao));
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new DadosException(ex.Message);
+            }
+            finally
+            {
+                conexao.closeConnection();
+            }
+        }
+
+        public void Alterar(TipoAnimal ta)
+        {
+            conexao.openConnection();
+            try
+            {
+                string sql = "UPDATE TIPOANIMAL SET DESCRICAO=@DESCRICAO WHERE CODIGO=@CODIGO";
+
+                SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@DESCRICAO", ta.Descricao));
+                cmd.Parameters.Add(new SqlParameter("@CODIGO", ta.Codigo));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new DadosException(ex.Message);
+            }
+            finally
+            {
+                conexao.closeConnection();
+            }
+        }
+
+        public void Excluir(TipoAnimal ta)
+        {
+            conexao.openConnection();
+            try
+            {
+                string sql = "UPDATE TIPOANIMAL SET ATIVO = 'F' WHERE CODIGO=@CODIGO";
+
+                SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
+
+                cmd.Parameters.Add(new SqlParameter("@CODIGO", ta.Codigo));
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new DadosException(ex.Message);
+            }
+            finally
+            {
+                conexao.closeConnection();
+            }
+        }
+
+        public List<TipoAnimal> Pesquisar(TipoAnimal ta, bool alt=false)
         {
             List<TipoAnimal> listatipoanimal = new List<TipoAnimal>();
 
             try
             {
                 conexao.openConnection();
-                string sql = "SELECT CODIGO, DESCRICAO FROM TIPOANIMAL WHERE CODIGO > 0 ";
+                string sql = "SELECT CODIGO, DESCRICAO FROM TIPOANIMAL WHERE CODIGO > 0 AND TIPOANIMAL.ATIVO = 'T' ";
 
                 if (ta.Codigo > 0)
                 {
@@ -35,6 +107,8 @@ namespace Biblioteca.dados
                 {
                     sql += " and DESCRICAO = @DESCRICAO";
                 }
+
+                sql += " ORDER BY DESCRICAO ASC ";
 
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 

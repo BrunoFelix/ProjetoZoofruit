@@ -85,12 +85,6 @@
   <wsdl:message name="IService1_ExcluirMedicamento_OutputMessage">
     <wsdl:part name="parameters" element="tns:ExcluirMedicamentoResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_ListarTipoAnimal_InputMessage">
-    <wsdl:part name="parameters" element="tns:ListarTipoAnimal" />
-  </wsdl:message>
-  <wsdl:message name="IService1_ListarTipoAnimal_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ListarTipoAnimalResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_ListarAnimal_InputMessage">
     <wsdl:part name="parameters" element="tns:ListarAnimal" />
   </wsdl:message>
@@ -151,6 +145,30 @@
   <wsdl:message name="IService1_Salvar_OutputMessage">
     <wsdl:part name="parameters" element="tns:SalvarResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_ListarTipoAnimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoAnimal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListarTipoAnimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarTipoAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirTipoAnimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:InserirTipoAnimal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InserirTipoAnimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InserirTipoAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarTipoAnimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarTipoAnimal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AlterarTipoAnimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AlterarTipoAnimalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirTipoAnimal_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirTipoAnimal" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ExcluirTipoAnimal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcluirTipoAnimalResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="ListarTipoUsuario">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoUsuario" message="tns:IService1_ListarTipoUsuario_InputMessage" />
@@ -204,10 +222,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirMedicamento" message="tns:IService1_ExcluirMedicamento_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirMedicamentoResponse" message="tns:IService1_ExcluirMedicamento_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ListarTipoAnimal">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoAnimal" message="tns:IService1_ListarTipoAnimal_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarTipoAnimalResponse" message="tns:IService1_ListarTipoAnimal_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="ListarAnimal">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarAnimal" message="tns:IService1_ListarAnimal_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarAnimalResponse" message="tns:IService1_ListarAnimal_OutputMessage" />
@@ -247,6 +261,22 @@
     <wsdl:operation name="Salvar">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Salvar" message="tns:IService1_Salvar_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/SalvarResponse" message="tns:IService1_Salvar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoAnimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListarTipoAnimal" message="tns:IService1_ListarTipoAnimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListarTipoAnimalResponse" message="tns:IService1_ListarTipoAnimal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InserirTipoAnimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InserirTipoAnimal" message="tns:IService1_InserirTipoAnimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InserirTipoAnimalResponse" message="tns:IService1_InserirTipoAnimal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AlterarTipoAnimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AlterarTipoAnimal" message="tns:IService1_AlterarTipoAnimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AlterarTipoAnimalResponse" message="tns:IService1_AlterarTipoAnimal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirTipoAnimal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ExcluirTipoAnimal" message="tns:IService1_ExcluirTipoAnimal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ExcluirTipoAnimalResponse" message="tns:IService1_ExcluirTipoAnimal_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -368,15 +398,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListarTipoAnimal">
-      <soap:operation soapAction="http://tempuri.org/IService1/ListarTipoAnimal" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="ListarAnimal">
       <soap:operation soapAction="http://tempuri.org/IService1/ListarAnimal" style="document" />
       <wsdl:input>
@@ -460,6 +481,42 @@
     </wsdl:operation>
     <wsdl:operation name="Salvar">
       <soap:operation soapAction="http://tempuri.org/IService1/Salvar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarTipoAnimal">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListarTipoAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InserirTipoAnimal">
+      <soap:operation soapAction="http://tempuri.org/IService1/InserirTipoAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlterarTipoAnimal">
+      <soap:operation soapAction="http://tempuri.org/IService1/AlterarTipoAnimal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcluirTipoAnimal">
+      <soap:operation soapAction="http://tempuri.org/IService1/ExcluirTipoAnimal" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

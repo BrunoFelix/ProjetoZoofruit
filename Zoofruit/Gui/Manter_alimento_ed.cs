@@ -66,6 +66,7 @@ namespace Gui
                         alimento.Quantidade = null;
                     }
                     webservice.InserirAlimento(alimento);
+                    destruirxml();
                     ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
                     this.DialogResult = DialogResult.OK;
                 }
@@ -92,6 +93,7 @@ namespace Gui
                         alimento.Quantidade = null;
                     }
                     webservice.AlterarAlimento(alimento);
+                    destruirxml();
                     ((Manter_alimento)Application.OpenForms["manter_alimento"]).btn_pesquisar_Click(sender, e);
                     this.DialogResult = DialogResult.OK;
                 }
@@ -104,13 +106,20 @@ namespace Gui
         }
         private void Manter_alimento_ed_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.gravarxml();
+            //this.gravarxml();
+            timer1.Enabled = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.gravarxml();
-           
+            if (MessageBox.Show("Todos os dados serão perdidos e não poderão ser recuperados, deseja realmente cancelar a operação?", "Zoofruit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.None;
+            }
         }
       
         private void timer1_Tick(object sender, EventArgs e)
@@ -120,7 +129,7 @@ namespace Gui
 
         private void Manter_alimento_ed_Load(object sender, EventArgs e)
         {
-
+            timer1.Enabled = true;
         }
         /*Metodo Gravar XML*/
         public void gravarxml()
@@ -159,6 +168,21 @@ namespace Gui
 
             x.Close();
             return;
+        }
+
+        public void destruirxml()
+        {
+            try
+            {
+                if (System.IO.File.Exists(Application.StartupPath + "\\Alimentos.xml"))
+                {
+                    System.IO.File.Delete(Application.StartupPath + "\\Alimentos.xml");
+                }
+            }
+            catch (Exception)
+            {
+                //
+            }
         }
     }
 }

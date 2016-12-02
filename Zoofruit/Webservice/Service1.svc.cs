@@ -108,10 +108,6 @@ namespace Webservice
         }
 
         /* ------------------- Animal -------------------------------------- */
-        public List<TipoAnimal> ListarTipoAnimal(TipoAnimal ta)
-        {
-            return rntipoanimal.NListarTipoAnimal(ta);
-        }
         public List<Animal> ListarAnimal(Animal a)
         {
             return rnanimal.NListarAnimal(a);
@@ -162,6 +158,27 @@ namespace Webservice
         public void Salvar(FichaExecucaoAlimento fea, double qtd_max_cal)
         {
             rnfichaexecucaoalimento.Salvar(fea, qtd_max_cal);
+        }
+
+        /* ------------------- Ficha Execução Alimento -------------------------------------- */
+        public List<TipoAnimal> ListarTipoAnimal(TipoAnimal ta)
+        {
+            return rntipoanimal.NListarTipoAnimal(ta);
+        }
+
+        public void InserirTipoAnimal(TipoAnimal ta)
+        {
+            rntipoanimal.Adicionar(ta);
+        }
+
+        public void AlterarTipoAnimal(TipoAnimal ta)
+        {
+            rntipoanimal.Alterar(ta);
+        }
+
+        public void ExcluirTipoAnimal(TipoAnimal ta)
+        {
+            rntipoanimal.Excluir(ta);
         }
     }
 }

@@ -153,6 +153,8 @@ namespace Biblioteca.dados
                     }
                 }
 
+                sql += " ORDER BY NOME ASC ";
+
                 SqlCommand cmd = new SqlCommand(sql, conexao.sqlconn);
 
                 if (u.Login != null && u.Login.Trim().Equals("") == false)

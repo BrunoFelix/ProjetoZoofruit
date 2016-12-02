@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FichaAlimentoExecucao>
+  <FichaAlimentoExecucao>
+    <Observacao>ABC</Observacao>
+    <qtx_max_cal_cardapio>285</qtx_max_cal_cardapio>
+    <Alimentos>
+      <Alimento>
+        <Codigo>3</Codigo>
+        <Nome>Morango</Nome>
+        <Quantidade>95</Quantidade>
+        <ValorCalorico>3</ValorCalorico>
+      </Alimento>
+    </Alimentos>
+  </FichaAlimentoExecucao>
+</FichaAlimentoExecucao>

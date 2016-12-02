@@ -44,6 +44,5 @@ C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblio
 C:\Users\aluno\Source\Repos\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.dll
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\bin\Debug\Biblioteca.pdb
-C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.dll
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Biblioteca\obj\Debug\Biblioteca.pdb

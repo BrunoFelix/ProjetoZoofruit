@@ -9,6 +9,11 @@ namespace Biblioteca.dados
 {
     interface iDAOTipoAnimal
     {
-        List<TipoAnimal> Pesquisar(TipoAnimal ta);
+        void Adicionar(TipoAnimal ta);
+
+        void Alterar(TipoAnimal ta);
+
+        void Excluir(TipoAnimal ta);
+        List<TipoAnimal> Pesquisar(TipoAnimal ta, bool alt = false);
     }
 }

@@ -240,8 +240,14 @@ namespace Gui
         {
             try
             {
-                Manter_ficha_alimento_ed manter_ficha_alimento_ed = new Manter_ficha_alimento_ed(1, listaanimal.ElementAt(lv_animal.SelectedIndices[0]), usuario);
-                manter_ficha_alimento_ed.ShowDialog();
+                if (lv_animal.SelectedIndices.Count > 0)
+                {
+                    Manter_ficha_alimento_ed manter_ficha_alimento_ed = new Manter_ficha_alimento_ed(1, listaanimal.ElementAt(lv_animal.SelectedIndices[0]), usuario);
+                    manter_ficha_alimento_ed.ShowDialog();
+                }else
+                {
+                    MessageBox.Show("Nenhum animal selecionado!");
+                }
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -331,7 +337,18 @@ namespace Gui
 
         private void button10_Click(object sender, EventArgs e)
         {
+            Animal animal = new Animal();
 
+            try
+            {
+                listaanimal = webservice.ListarAnimal(animal).ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            AtualizarGrid();
         }
 
         private void lv_ficha_SelectedIndexChanged(object sender, EventArgs e)
@@ -367,6 +384,10 @@ namespace Gui
                         AtualizarGridFicha();
                         AtualizarGridAlimento(null);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Nenhuma ficha selecionada!");
                 }
             }
             catch(Exception ex)

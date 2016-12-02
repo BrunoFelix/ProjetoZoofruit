@@ -131,7 +131,9 @@ INSERT INTO TipoUsuario([descricao]) VALUES ('Tratador');
 GO
 INSERT INTO TipoUsuario([descricao]) VALUES ('Veterinário');
 GO
-INSERT INTO Usuario([nome],[cpf],[login],[senha],[crmv],[codigo_TipoUsuario])VALUES('Administrador do Sistema','39194717338','admin','123','012345',1);
+INSERT INTO TipoUsuario([descricao]) VALUES ('Administrador');
+GO
+INSERT INTO Usuario([nome],[cpf],[login],[senha],[crmv],[codigo_TipoUsuario])VALUES('Administrador do Sistema','39194717338','admin','123','012345',3);
 GO
 INSERT INTO TipoAnimal([descricao]) VALUES ('Felino');
 GO

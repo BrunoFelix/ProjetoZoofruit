@@ -74,6 +74,7 @@ namespace Gui
                 usuario.Add(new XElement("CRMV", tb_crmv.Text));
                 usuario.Add(new XElement("Login", tb_login.Text));
                 usuario.Add(new XElement("Senha", tb_senha.Text));
+                usuario.Add(new XElement("Tipo", listatipousuario.ElementAt(comboBox1.SelectedIndex).Descricao));
                 doc.Add(usuario);
                 doc.Save(nomeDoArquivo);
             }
@@ -102,6 +103,11 @@ namespace Gui
                         tb_login.Text = (x.ReadString());
                     if (x.NodeType == XmlNodeType.Element && x.Name == "Senha")
                         tb_senha.Text = (x.ReadString());
+                    if (x.NodeType == XmlNodeType.Element && x.Name == "Tipo")
+                    {
+                        int index = comboBox1.FindString(x.ReadString());
+                        comboBox1.SelectedIndex = index;
+                    }
                 }
                 x.Close();
                 return;

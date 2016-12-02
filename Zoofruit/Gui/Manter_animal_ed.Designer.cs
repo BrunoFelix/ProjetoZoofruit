@@ -230,7 +230,8 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 50000;
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // Manter_animal_ed
             // 
@@ -243,6 +244,7 @@
             this.Name = "Manter_animal_ed";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manter Animal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Manter_animal_ed_FormClosed);
             this.Load += new System.EventHandler(this.Manter_animal_ed_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

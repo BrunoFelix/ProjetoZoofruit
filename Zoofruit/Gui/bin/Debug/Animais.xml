@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animais>
+  <Animais>
+    <Nome>TESTE</Nome>
+    <Cor>PRETO</Cor>
+    <Porte>MÉDIO</Porte>
+    <Peso>120</Peso>
+    <Tipo>Aquático</Tipo>
+  </Animais>
+</Animais>

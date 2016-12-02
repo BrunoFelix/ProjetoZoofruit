@@ -29,7 +29,6 @@ namespace Gui
             try
             {
                 InitializeComponent();
-                this.exibirxml();
                 listatipoanimal = new List<TipoAnimal>();
                 tipoanimal = new TipoAnimal();
                 webservice = new Service1();
@@ -40,6 +39,8 @@ namespace Gui
                 {
                     comboBox1.Items.Add(a.Descricao);
                 }
+
+                this.exibirxml();
             }
             catch (Exception ex)
             {
@@ -168,7 +169,7 @@ namespace Gui
 
         private void Manter_animal_ed_Load(object sender, EventArgs e)
         {
-
+            timer1.Enabled = true;
         }
         /*Metodo Gravar XML*/
         public void gravarxml()
@@ -182,6 +183,7 @@ namespace Gui
                 animal.Add(new XElement("Cor", tb_cor.Text));
                 animal.Add(new XElement("Porte", tb_porte.Text));
                 animal.Add(new XElement("Peso", tb_peso.Text));
+                animal.Add(new XElement("Tipo", listatipoanimal.ElementAt(comboBox1.SelectedIndex).Descricao));
                 doc.Add(animal);
                 doc.Save(nomeDoArquivo);
             }
@@ -209,7 +211,10 @@ namespace Gui
                     if (x.NodeType == XmlNodeType.Element && x.Name == "Peso")
                         tb_peso.Text = (x.ReadString());
                     if (x.NodeType == XmlNodeType.Element && x.Name == "Tipo")
-                        comboBox1.Text = (x.ReadString());
+                    {
+                        int index = comboBox1.FindString(x.ReadString());
+                        comboBox1.SelectedIndex = index;
+                    }
 
                 }
                 x.Close();
@@ -223,7 +228,7 @@ namespace Gui
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.gravarxml();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -236,6 +241,16 @@ namespace Gui
             {
                 this.DialogResult = DialogResult.None;
             }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            this.gravarxml();
+        }
+
+        private void Manter_animal_ed_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            timer1.Enabled = false;
         }
     }
 }

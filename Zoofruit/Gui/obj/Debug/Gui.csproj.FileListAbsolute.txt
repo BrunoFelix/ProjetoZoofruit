@@ -173,6 +173,7 @@ C:\Users\tiago\Documents\GitHub\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Mante
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe.config
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.exe
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\bin\Debug\Gui.pdb
+C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.csprojResolveAssemblyReference.cache
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.tela_login.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento.resources
 C:\xampp\htdocs\Projeto\ProjetoZoofruit\Zoofruit\Gui\obj\Debug\Gui.Manter_alimento_ed.resources
